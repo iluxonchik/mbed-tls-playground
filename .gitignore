@@ -1,52 +1,49 @@
-# Prerequisites
-*.d
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and WebStorm
+# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+# User-specific stuff:
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/dictionaries
 
-# Linker output
-*.ilk
-*.map
-*.exp
+# Sensitive or high-churn files:
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
 
-# Precompiled Headers
-*.gch
-*.pch
+# Gradle:
+.idea/**/gradle.xml
+.idea/**/libraries
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+# CMake
+cmake-build-debug/
+cmake-build-release/
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+# Mongo Explorer plugin:
+.idea/**/mongoSettings.xml
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+## File-based project format:
+*.iws
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+## Plugin-specific files:
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+# IntelliJ
+out/
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+# Cursive Clojure plugin
+.idea/replstate.xml
+
+# Crashlytics plugin (for Android Studio and IntelliJ)
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
