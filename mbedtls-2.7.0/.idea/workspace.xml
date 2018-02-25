@@ -93,6 +93,7 @@
       <config projectName="mbed TLS" targetName="rsa_sign_pss" />
       <config projectName="mbed TLS" targetName="test_suite_blowfish" />
       <config projectName="mbed TLS" targetName="dtls_client" />
+      <config projectName="mbed TLS" targetName="server" />
       <config projectName="mbed TLS" targetName="pk_sign" />
       <config projectName="mbed TLS" targetName="test_suite_md" />
       <config projectName="mbed TLS" targetName="req_app" />
@@ -154,17 +155,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="client.c" pinned="false" current-in-tab="true">
+      <file leaf-file-name="client.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/playground/client.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+            <state relative-caret-position="280">
+              <caret line="67" column="21" lean-forward="false" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
               <folding>
                 <element signature="e#841#869#0" expanded="true" />
                 <element signature="e#946#1119#0" expanded="true" />
                 <element signature="e#1471#1794#0" expanded="true" />
                 <element signature="e#1802#1834#0" expanded="true" />
-                <element signature="e#8649#8742#0" expanded="true" />
+                <element signature="e#8675#8768#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="server.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/playground/server.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#68#96#0" expanded="true" />
+                <element signature="e#173#346#0" expanded="true" />
+                <element signature="e#732#1105#0" expanded="true" />
+                <element signature="e#1113#1132#0" expanded="true" />
+                <element signature="e#1174#1194#0" expanded="true" />
+                <element signature="e#1203#1231#0" expanded="true" />
+                <element signature="e#10437#10528#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -200,21 +219,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/playground/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="selftest.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/programs/test/selftest.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="100">
+              <caret line="5" column="10" lean-forward="false" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -243,8 +252,8 @@
       <file leaf-file-name="ssl_server.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/programs/ssl/ssl_server.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="164" column="6" lean-forward="false" selection-start-line="164" selection-start-column="6" selection-end-line="164" selection-end-column="6" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="e#11086#11177#0" expanded="true" />
               </folding>
@@ -261,8 +270,9 @@
         <option value="$PROJECT_DIR$/programs/ssl/ssl_client1.c" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/programs/ssl/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/playground/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/playground/client.c" />
+        <option value="$PROJECT_DIR$/playground/server.c" />
+        <option value="$PROJECT_DIR$/playground/CMakeLists.txt" />
       </list>
     </option>
   </component>
@@ -338,7 +348,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.client">
+  <component name="RunManager" selected="Application.server">
     <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mbed TLS" RUN_TARGET_NAME="client" EXPLICIT_BUILD_TARGET_NAME="all">
       <envs />
     </configuration>
@@ -481,6 +491,9 @@
       <envs />
     </configuration>
     <configuration name="selftest" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mbed TLS" TARGET_NAME="selftest" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mbed TLS" RUN_TARGET_NAME="selftest">
+      <envs />
+    </configuration>
+    <configuration name="server" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mbed TLS" TARGET_NAME="server" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mbed TLS" RUN_TARGET_NAME="server">
       <envs />
     </configuration>
     <configuration name="ssl_cert_test" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mbed TLS" TARGET_NAME="ssl_cert_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mbed TLS" RUN_TARGET_NAME="ssl_cert_test">
@@ -693,7 +706,7 @@
     <configuration name="udp_proxy" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mbed TLS" TARGET_NAME="udp_proxy" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mbed TLS" RUN_TARGET_NAME="udp_proxy">
       <envs />
     </configuration>
-    <list size="118">
+    <list size="119">
       <item index="0" class="java.lang.String" itemvalue="Application.Build All" />
       <item index="1" class="java.lang.String" itemvalue="Application.apidoc" />
       <item index="2" class="java.lang.String" itemvalue="Application.covtest" />
@@ -704,114 +717,115 @@
       <item index="7" class="java.lang.String" itemvalue="Application.mbedtls" />
       <item index="8" class="java.lang.String" itemvalue="Application.mbedx509" />
       <item index="9" class="java.lang.String" itemvalue="Application.client" />
-      <item index="10" class="java.lang.String" itemvalue="Application.aescrypt2" />
-      <item index="11" class="java.lang.String" itemvalue="Application.crypt_and_hash" />
-      <item index="12" class="java.lang.String" itemvalue="Application.generic_sum" />
-      <item index="13" class="java.lang.String" itemvalue="Application.hello" />
-      <item index="14" class="java.lang.String" itemvalue="Application.dh_client" />
-      <item index="15" class="java.lang.String" itemvalue="Application.dh_genprime" />
-      <item index="16" class="java.lang.String" itemvalue="Application.dh_server" />
-      <item index="17" class="java.lang.String" itemvalue="Application.ecdh_curve25519" />
-      <item index="18" class="java.lang.String" itemvalue="Application.ecdsa" />
-      <item index="19" class="java.lang.String" itemvalue="Application.gen_key" />
-      <item index="20" class="java.lang.String" itemvalue="Application.key_app" />
-      <item index="21" class="java.lang.String" itemvalue="Application.key_app_writer" />
-      <item index="22" class="java.lang.String" itemvalue="Application.mpi_demo" />
-      <item index="23" class="java.lang.String" itemvalue="Application.pk_decrypt" />
-      <item index="24" class="java.lang.String" itemvalue="Application.pk_encrypt" />
-      <item index="25" class="java.lang.String" itemvalue="Application.pk_sign" />
-      <item index="26" class="java.lang.String" itemvalue="Application.pk_verify" />
-      <item index="27" class="java.lang.String" itemvalue="Application.rsa_decrypt" />
-      <item index="28" class="java.lang.String" itemvalue="Application.rsa_encrypt" />
-      <item index="29" class="java.lang.String" itemvalue="Application.rsa_genkey" />
-      <item index="30" class="java.lang.String" itemvalue="Application.rsa_sign" />
-      <item index="31" class="java.lang.String" itemvalue="Application.rsa_sign_pss" />
-      <item index="32" class="java.lang.String" itemvalue="Application.rsa_verify" />
-      <item index="33" class="java.lang.String" itemvalue="Application.rsa_verify_pss" />
-      <item index="34" class="java.lang.String" itemvalue="Application.gen_entropy" />
-      <item index="35" class="java.lang.String" itemvalue="Application.gen_random_ctr_drbg" />
-      <item index="36" class="java.lang.String" itemvalue="Application.gen_random_havege" />
-      <item index="37" class="java.lang.String" itemvalue="Application.dtls_client" />
-      <item index="38" class="java.lang.String" itemvalue="Application.dtls_server" />
-      <item index="39" class="java.lang.String" itemvalue="Application.mini_client" />
-      <item index="40" class="java.lang.String" itemvalue="Application.ssl_client1" />
-      <item index="41" class="java.lang.String" itemvalue="Application.ssl_client2" />
-      <item index="42" class="java.lang.String" itemvalue="Application.ssl_fork_server" />
-      <item index="43" class="java.lang.String" itemvalue="Application.ssl_mail_client" />
-      <item index="44" class="java.lang.String" itemvalue="Application.ssl_pthread_server" />
-      <item index="45" class="java.lang.String" itemvalue="Application.ssl_server" />
-      <item index="46" class="java.lang.String" itemvalue="Application.ssl_server2" />
-      <item index="47" class="java.lang.String" itemvalue="Application.benchmark" />
-      <item index="48" class="java.lang.String" itemvalue="Application.selftest" />
-      <item index="49" class="java.lang.String" itemvalue="Application.ssl_cert_test" />
-      <item index="50" class="java.lang.String" itemvalue="Application.udp_proxy" />
-      <item index="51" class="java.lang.String" itemvalue="Application.pem2der" />
-      <item index="52" class="java.lang.String" itemvalue="Application.strerror" />
-      <item index="53" class="java.lang.String" itemvalue="Application.cert_app" />
-      <item index="54" class="java.lang.String" itemvalue="Application.cert_req" />
-      <item index="55" class="java.lang.String" itemvalue="Application.cert_write" />
-      <item index="56" class="java.lang.String" itemvalue="Application.crl_app" />
-      <item index="57" class="java.lang.String" itemvalue="Application.req_app" />
-      <item index="58" class="java.lang.String" itemvalue="Application.test_suite_aes.cbc" />
-      <item index="59" class="java.lang.String" itemvalue="Application.test_suite_aes.cfb" />
-      <item index="60" class="java.lang.String" itemvalue="Application.test_suite_aes.ecb" />
-      <item index="61" class="java.lang.String" itemvalue="Application.test_suite_aes.rest" />
-      <item index="62" class="java.lang.String" itemvalue="Application.test_suite_arc4" />
-      <item index="63" class="java.lang.String" itemvalue="Application.test_suite_asn1write" />
-      <item index="64" class="java.lang.String" itemvalue="Application.test_suite_base64" />
-      <item index="65" class="java.lang.String" itemvalue="Application.test_suite_blowfish" />
-      <item index="66" class="java.lang.String" itemvalue="Application.test_suite_camellia" />
-      <item index="67" class="java.lang.String" itemvalue="Application.test_suite_ccm" />
-      <item index="68" class="java.lang.String" itemvalue="Application.test_suite_cipher.aes" />
-      <item index="69" class="java.lang.String" itemvalue="Application.test_suite_cipher.arc4" />
-      <item index="70" class="java.lang.String" itemvalue="Application.test_suite_cipher.blowfish" />
-      <item index="71" class="java.lang.String" itemvalue="Application.test_suite_cipher.camellia" />
-      <item index="72" class="java.lang.String" itemvalue="Application.test_suite_cipher.ccm" />
-      <item index="73" class="java.lang.String" itemvalue="Application.test_suite_cipher.des" />
-      <item index="74" class="java.lang.String" itemvalue="Application.test_suite_cipher.gcm" />
-      <item index="75" class="java.lang.String" itemvalue="Application.test_suite_cipher.null" />
-      <item index="76" class="java.lang.String" itemvalue="Application.test_suite_cipher.padding" />
-      <item index="77" class="java.lang.String" itemvalue="Application.test_suite_cmac" />
-      <item index="78" class="java.lang.String" itemvalue="Application.test_suite_ctr_drbg" />
-      <item index="79" class="java.lang.String" itemvalue="Application.test_suite_debug" />
-      <item index="80" class="java.lang.String" itemvalue="Application.test_suite_des" />
-      <item index="81" class="java.lang.String" itemvalue="Application.test_suite_dhm" />
-      <item index="82" class="java.lang.String" itemvalue="Application.test_suite_ecdh" />
-      <item index="83" class="java.lang.String" itemvalue="Application.test_suite_ecdsa" />
-      <item index="84" class="java.lang.String" itemvalue="Application.test_suite_ecjpake" />
-      <item index="85" class="java.lang.String" itemvalue="Application.test_suite_ecp" />
-      <item index="86" class="java.lang.String" itemvalue="Application.test_suite_entropy" />
-      <item index="87" class="java.lang.String" itemvalue="Application.test_suite_error" />
-      <item index="88" class="java.lang.String" itemvalue="Application.test_suite_gcm.aes128_de" />
-      <item index="89" class="java.lang.String" itemvalue="Application.test_suite_gcm.aes128_en" />
-      <item index="90" class="java.lang.String" itemvalue="Application.test_suite_gcm.aes192_de" />
-      <item index="91" class="java.lang.String" itemvalue="Application.test_suite_gcm.aes192_en" />
-      <item index="92" class="java.lang.String" itemvalue="Application.test_suite_gcm.aes256_de" />
-      <item index="93" class="java.lang.String" itemvalue="Application.test_suite_gcm.aes256_en" />
-      <item index="94" class="java.lang.String" itemvalue="Application.test_suite_gcm.camellia" />
-      <item index="95" class="java.lang.String" itemvalue="Application.test_suite_hmac_drbg.misc" />
-      <item index="96" class="java.lang.String" itemvalue="Application.test_suite_hmac_drbg.no_reseed" />
-      <item index="97" class="java.lang.String" itemvalue="Application.test_suite_hmac_drbg.nopr" />
-      <item index="98" class="java.lang.String" itemvalue="Application.test_suite_hmac_drbg.pr" />
-      <item index="99" class="java.lang.String" itemvalue="Application.test_suite_md" />
-      <item index="100" class="java.lang.String" itemvalue="Application.test_suite_mdx" />
-      <item index="101" class="java.lang.String" itemvalue="Application.test_suite_memory_buffer_alloc" />
-      <item index="102" class="java.lang.String" itemvalue="Application.test_suite_mpi" />
-      <item index="103" class="java.lang.String" itemvalue="Application.test_suite_pem" />
-      <item index="104" class="java.lang.String" itemvalue="Application.test_suite_pk" />
-      <item index="105" class="java.lang.String" itemvalue="Application.test_suite_pkcs1_v15" />
-      <item index="106" class="java.lang.String" itemvalue="Application.test_suite_pkcs1_v21" />
-      <item index="107" class="java.lang.String" itemvalue="Application.test_suite_pkcs5" />
-      <item index="108" class="java.lang.String" itemvalue="Application.test_suite_pkparse" />
-      <item index="109" class="java.lang.String" itemvalue="Application.test_suite_pkwrite" />
-      <item index="110" class="java.lang.String" itemvalue="Application.test_suite_rsa" />
-      <item index="111" class="java.lang.String" itemvalue="Application.test_suite_shax" />
-      <item index="112" class="java.lang.String" itemvalue="Application.test_suite_ssl" />
-      <item index="113" class="java.lang.String" itemvalue="Application.test_suite_timing" />
-      <item index="114" class="java.lang.String" itemvalue="Application.test_suite_version" />
-      <item index="115" class="java.lang.String" itemvalue="Application.test_suite_x509parse" />
-      <item index="116" class="java.lang.String" itemvalue="Application.test_suite_x509write" />
-      <item index="117" class="java.lang.String" itemvalue="Application.test_suite_xtea" />
+      <item index="10" class="java.lang.String" itemvalue="Application.server" />
+      <item index="11" class="java.lang.String" itemvalue="Application.aescrypt2" />
+      <item index="12" class="java.lang.String" itemvalue="Application.crypt_and_hash" />
+      <item index="13" class="java.lang.String" itemvalue="Application.generic_sum" />
+      <item index="14" class="java.lang.String" itemvalue="Application.hello" />
+      <item index="15" class="java.lang.String" itemvalue="Application.dh_client" />
+      <item index="16" class="java.lang.String" itemvalue="Application.dh_genprime" />
+      <item index="17" class="java.lang.String" itemvalue="Application.dh_server" />
+      <item index="18" class="java.lang.String" itemvalue="Application.ecdh_curve25519" />
+      <item index="19" class="java.lang.String" itemvalue="Application.ecdsa" />
+      <item index="20" class="java.lang.String" itemvalue="Application.gen_key" />
+      <item index="21" class="java.lang.String" itemvalue="Application.key_app" />
+      <item index="22" class="java.lang.String" itemvalue="Application.key_app_writer" />
+      <item index="23" class="java.lang.String" itemvalue="Application.mpi_demo" />
+      <item index="24" class="java.lang.String" itemvalue="Application.pk_decrypt" />
+      <item index="25" class="java.lang.String" itemvalue="Application.pk_encrypt" />
+      <item index="26" class="java.lang.String" itemvalue="Application.pk_sign" />
+      <item index="27" class="java.lang.String" itemvalue="Application.pk_verify" />
+      <item index="28" class="java.lang.String" itemvalue="Application.rsa_decrypt" />
+      <item index="29" class="java.lang.String" itemvalue="Application.rsa_encrypt" />
+      <item index="30" class="java.lang.String" itemvalue="Application.rsa_genkey" />
+      <item index="31" class="java.lang.String" itemvalue="Application.rsa_sign" />
+      <item index="32" class="java.lang.String" itemvalue="Application.rsa_sign_pss" />
+      <item index="33" class="java.lang.String" itemvalue="Application.rsa_verify" />
+      <item index="34" class="java.lang.String" itemvalue="Application.rsa_verify_pss" />
+      <item index="35" class="java.lang.String" itemvalue="Application.gen_entropy" />
+      <item index="36" class="java.lang.String" itemvalue="Application.gen_random_ctr_drbg" />
+      <item index="37" class="java.lang.String" itemvalue="Application.gen_random_havege" />
+      <item index="38" class="java.lang.String" itemvalue="Application.dtls_client" />
+      <item index="39" class="java.lang.String" itemvalue="Application.dtls_server" />
+      <item index="40" class="java.lang.String" itemvalue="Application.mini_client" />
+      <item index="41" class="java.lang.String" itemvalue="Application.ssl_client1" />
+      <item index="42" class="java.lang.String" itemvalue="Application.ssl_client2" />
+      <item index="43" class="java.lang.String" itemvalue="Application.ssl_fork_server" />
+      <item index="44" class="java.lang.String" itemvalue="Application.ssl_mail_client" />
+      <item index="45" class="java.lang.String" itemvalue="Application.ssl_pthread_server" />
+      <item index="46" class="java.lang.String" itemvalue="Application.ssl_server" />
+      <item index="47" class="java.lang.String" itemvalue="Application.ssl_server2" />
+      <item index="48" class="java.lang.String" itemvalue="Application.benchmark" />
+      <item index="49" class="java.lang.String" itemvalue="Application.selftest" />
+      <item index="50" class="java.lang.String" itemvalue="Application.ssl_cert_test" />
+      <item index="51" class="java.lang.String" itemvalue="Application.udp_proxy" />
+      <item index="52" class="java.lang.String" itemvalue="Application.pem2der" />
+      <item index="53" class="java.lang.String" itemvalue="Application.strerror" />
+      <item index="54" class="java.lang.String" itemvalue="Application.cert_app" />
+      <item index="55" class="java.lang.String" itemvalue="Application.cert_req" />
+      <item index="56" class="java.lang.String" itemvalue="Application.cert_write" />
+      <item index="57" class="java.lang.String" itemvalue="Application.crl_app" />
+      <item index="58" class="java.lang.String" itemvalue="Application.req_app" />
+      <item index="59" class="java.lang.String" itemvalue="Application.test_suite_aes.cbc" />
+      <item index="60" class="java.lang.String" itemvalue="Application.test_suite_aes.cfb" />
+      <item index="61" class="java.lang.String" itemvalue="Application.test_suite_aes.ecb" />
+      <item index="62" class="java.lang.String" itemvalue="Application.test_suite_aes.rest" />
+      <item index="63" class="java.lang.String" itemvalue="Application.test_suite_arc4" />
+      <item index="64" class="java.lang.String" itemvalue="Application.test_suite_asn1write" />
+      <item index="65" class="java.lang.String" itemvalue="Application.test_suite_base64" />
+      <item index="66" class="java.lang.String" itemvalue="Application.test_suite_blowfish" />
+      <item index="67" class="java.lang.String" itemvalue="Application.test_suite_camellia" />
+      <item index="68" class="java.lang.String" itemvalue="Application.test_suite_ccm" />
+      <item index="69" class="java.lang.String" itemvalue="Application.test_suite_cipher.aes" />
+      <item index="70" class="java.lang.String" itemvalue="Application.test_suite_cipher.arc4" />
+      <item index="71" class="java.lang.String" itemvalue="Application.test_suite_cipher.blowfish" />
+      <item index="72" class="java.lang.String" itemvalue="Application.test_suite_cipher.camellia" />
+      <item index="73" class="java.lang.String" itemvalue="Application.test_suite_cipher.ccm" />
+      <item index="74" class="java.lang.String" itemvalue="Application.test_suite_cipher.des" />
+      <item index="75" class="java.lang.String" itemvalue="Application.test_suite_cipher.gcm" />
+      <item index="76" class="java.lang.String" itemvalue="Application.test_suite_cipher.null" />
+      <item index="77" class="java.lang.String" itemvalue="Application.test_suite_cipher.padding" />
+      <item index="78" class="java.lang.String" itemvalue="Application.test_suite_cmac" />
+      <item index="79" class="java.lang.String" itemvalue="Application.test_suite_ctr_drbg" />
+      <item index="80" class="java.lang.String" itemvalue="Application.test_suite_debug" />
+      <item index="81" class="java.lang.String" itemvalue="Application.test_suite_des" />
+      <item index="82" class="java.lang.String" itemvalue="Application.test_suite_dhm" />
+      <item index="83" class="java.lang.String" itemvalue="Application.test_suite_ecdh" />
+      <item index="84" class="java.lang.String" itemvalue="Application.test_suite_ecdsa" />
+      <item index="85" class="java.lang.String" itemvalue="Application.test_suite_ecjpake" />
+      <item index="86" class="java.lang.String" itemvalue="Application.test_suite_ecp" />
+      <item index="87" class="java.lang.String" itemvalue="Application.test_suite_entropy" />
+      <item index="88" class="java.lang.String" itemvalue="Application.test_suite_error" />
+      <item index="89" class="java.lang.String" itemvalue="Application.test_suite_gcm.aes128_de" />
+      <item index="90" class="java.lang.String" itemvalue="Application.test_suite_gcm.aes128_en" />
+      <item index="91" class="java.lang.String" itemvalue="Application.test_suite_gcm.aes192_de" />
+      <item index="92" class="java.lang.String" itemvalue="Application.test_suite_gcm.aes192_en" />
+      <item index="93" class="java.lang.String" itemvalue="Application.test_suite_gcm.aes256_de" />
+      <item index="94" class="java.lang.String" itemvalue="Application.test_suite_gcm.aes256_en" />
+      <item index="95" class="java.lang.String" itemvalue="Application.test_suite_gcm.camellia" />
+      <item index="96" class="java.lang.String" itemvalue="Application.test_suite_hmac_drbg.misc" />
+      <item index="97" class="java.lang.String" itemvalue="Application.test_suite_hmac_drbg.no_reseed" />
+      <item index="98" class="java.lang.String" itemvalue="Application.test_suite_hmac_drbg.nopr" />
+      <item index="99" class="java.lang.String" itemvalue="Application.test_suite_hmac_drbg.pr" />
+      <item index="100" class="java.lang.String" itemvalue="Application.test_suite_md" />
+      <item index="101" class="java.lang.String" itemvalue="Application.test_suite_mdx" />
+      <item index="102" class="java.lang.String" itemvalue="Application.test_suite_memory_buffer_alloc" />
+      <item index="103" class="java.lang.String" itemvalue="Application.test_suite_mpi" />
+      <item index="104" class="java.lang.String" itemvalue="Application.test_suite_pem" />
+      <item index="105" class="java.lang.String" itemvalue="Application.test_suite_pk" />
+      <item index="106" class="java.lang.String" itemvalue="Application.test_suite_pkcs1_v15" />
+      <item index="107" class="java.lang.String" itemvalue="Application.test_suite_pkcs1_v21" />
+      <item index="108" class="java.lang.String" itemvalue="Application.test_suite_pkcs5" />
+      <item index="109" class="java.lang.String" itemvalue="Application.test_suite_pkparse" />
+      <item index="110" class="java.lang.String" itemvalue="Application.test_suite_pkwrite" />
+      <item index="111" class="java.lang.String" itemvalue="Application.test_suite_rsa" />
+      <item index="112" class="java.lang.String" itemvalue="Application.test_suite_shax" />
+      <item index="113" class="java.lang.String" itemvalue="Application.test_suite_ssl" />
+      <item index="114" class="java.lang.String" itemvalue="Application.test_suite_timing" />
+      <item index="115" class="java.lang.String" itemvalue="Application.test_suite_version" />
+      <item index="116" class="java.lang.String" itemvalue="Application.test_suite_x509parse" />
+      <item index="117" class="java.lang.String" itemvalue="Application.test_suite_x509write" />
+      <item index="118" class="java.lang.String" itemvalue="Application.test_suite_xtea" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -826,12 +840,12 @@
       <updated>1519460084674</updated>
       <workItem from="1519460087106" duration="1384000" />
       <workItem from="1519461487720" duration="645000" />
-      <workItem from="1519555212186" duration="5914000" />
+      <workItem from="1519555212186" duration="6329000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7943000" />
+    <option name="totallyTimeSpent" value="8358000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
@@ -956,16 +970,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/programs/ssl/ssl_server.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="164" column="6" lean-forward="false" selection-start-line="164" selection-start-column="6" selection-end-line="164" selection-end-column="6" />
-          <folding>
-            <element signature="e#11086#11177#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/programs/test/selftest.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1027,14 +1031,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/playground/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/library/ssl_tls.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="488">
@@ -1043,17 +1039,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/programs/ssl/ssl_server.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#11086#11177#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/playground/server.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#68#96#0" expanded="true" />
+            <element signature="e#173#346#0" expanded="true" />
+            <element signature="e#732#1105#0" expanded="true" />
+            <element signature="e#1113#1132#0" expanded="true" />
+            <element signature="e#1174#1194#0" expanded="true" />
+            <element signature="e#1203#1231#0" expanded="true" />
+            <element signature="e#10437#10528#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/playground/client.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+        <state relative-caret-position="280">
+          <caret line="67" column="21" lean-forward="false" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
           <folding>
             <element signature="e#841#869#0" expanded="true" />
             <element signature="e#946#1119#0" expanded="true" />
             <element signature="e#1471#1794#0" expanded="true" />
             <element signature="e#1802#1834#0" expanded="true" />
-            <element signature="e#8649#8742#0" expanded="true" />
+            <element signature="e#8675#8768#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/playground/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="10" lean-forward="false" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>

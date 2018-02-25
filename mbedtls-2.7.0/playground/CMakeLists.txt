@@ -1,11 +1,16 @@
-set(libs mbedtls)
+set(libs
+    mbedtls)
 
 
 set(targets
-    client)
+    client
+    server)
 
 add_executable(client client.c)
 target_link_libraries(client ${libs})
+
+add_executable(server server.c)
+target_link_libraries(server ${libs})
 
 install(TARGETS ${targets}
         DESTINATION "bin"
