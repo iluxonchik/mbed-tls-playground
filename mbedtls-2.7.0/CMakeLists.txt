@@ -8,6 +8,8 @@ option(ENABLE_PROGRAMS "Build mbed TLS programs." ON)
 
 option(UNSAFE_BUILD "Allow unsafe builds. These builds ARE NOT SECURE." OFF)
 
+option(ENABLE_PLAYGROUND "Enable playgournd programs." ON)
+
 # the test suites currently have compile errors with MSVC
 if(MSVC)
     option(ENABLE_TESTING "Build mbed TLS tests." OFF)
@@ -163,4 +165,8 @@ if(ENABLE_TESTING)
             COMMAND mv DartConfiguration.tcl.bak DartConfiguration.tcl
         )
     endif(UNIX)
+endif()
+
+if(ENABLE_PLAYGROUND)
+    add_subdirectory(playground)
 endif()
