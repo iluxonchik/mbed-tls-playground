@@ -140,33 +140,28 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ssl_client1.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/programs/ssl/ssl_client1.c">
+      <file leaf-file-name="client.c" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/playground/client.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="145">
+              <caret line="262" column="25" lean-forward="true" selection-start-line="262" selection-start-column="25" selection-end-line="262" selection-end-column="25" />
               <folding>
-                <element signature="e#841#869#0" expanded="true" />
-                <element signature="e#946#1120#0" expanded="true" />
-                <element signature="e#1472#1795#0" expanded="true" />
-                <element signature="e#1803#1835#0" expanded="true" />
+                <element signature="e#68#96#0" expanded="true" />
+                <element signature="e#173#346#0" expanded="true" />
+                <element signature="e#698#1021#0" expanded="true" />
+                <element signature="e#1029#1061#0" expanded="true" />
+                <element signature="e#8070#8163#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="client.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/playground/client.c">
+      <file leaf-file-name="ssl.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/mbedtls/ssl.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="67" column="21" lean-forward="false" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
-              <folding>
-                <element signature="e#841#869#0" expanded="true" />
-                <element signature="e#946#1119#0" expanded="true" />
-                <element signature="e#1471#1794#0" expanded="true" />
-                <element signature="e#1802#1834#0" expanded="true" />
-                <element signature="e#8675#8768#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="204">
+              <caret line="105" column="8" lean-forward="false" selection-start-line="105" selection-start-column="8" selection-end-line="105" selection-end-column="8" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -174,8 +169,8 @@
       <file leaf-file-name="server.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/playground/server.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="-660">
+              <caret line="303" column="31" lean-forward="false" selection-start-line="303" selection-start-column="31" selection-end-line="303" selection-end-column="31" />
               <folding>
                 <element signature="e#68#96#0" expanded="true" />
                 <element signature="e#173#346#0" expanded="true" />
@@ -183,28 +178,62 @@
                 <element signature="e#1113#1132#0" expanded="true" />
                 <element signature="e#1174#1194#0" expanded="true" />
                 <element signature="e#1203#1231#0" expanded="true" />
-                <element signature="e#10437#10528#0" expanded="true" />
+                <element signature="e#10526#10617#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ssl_tls.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/library/ssl_tls.c">
+      <file leaf-file-name="pk.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/library/pk.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="488">
-              <caret line="6639" column="4" lean-forward="false" selection-start-line="6639" selection-start-column="4" selection-end-line="6639" selection-end-column="4" />
+            <state relative-caret-position="-1836">
+              <caret line="52" column="5" lean-forward="false" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/programs/ssl/CMakeLists.txt">
+      <file leaf-file-name="certs.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/library/certs.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+            <state relative-caret-position="2840">
+              <caret line="375" column="35" lean-forward="false" selection-start-line="375" selection-start-column="35" selection-end-line="375" selection-end-column="35" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pkparse.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/library/pkparse.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="668">
+              <caret line="1159" column="28" lean-forward="false" selection-start-line="1159" selection-start-column="28" selection-end-line="1159" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pem.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/library/pem.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="239" column="51" lean-forward="false" selection-start-line="239" selection-start-column="51" selection-end-line="239" selection-end-column="51" />
+              <folding>
+                <element signature="e#7282#7316#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="x509_crt.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/library/x509_crt.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="975" column="25" lean-forward="false" selection-start-line="975" selection-start-column="25" selection-end-line="975" selection-end-column="25" />
+              <folding>
+                <element signature="e#28264#28320#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -212,56 +241,22 @@
       <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
+            <state relative-caret-position="245">
               <caret line="143" column="20" lean-forward="false" selection-start-line="143" selection-start-column="20" selection-end-line="143" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/playground/CMakeLists.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="5" column="10" lean-forward="false" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/programs/test/CMakeLists.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="7" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/programs/CMakeLists.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="1" column="6" lean-forward="false" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ssl_server.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/programs/ssl/ssl_server.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#11086#11177#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>mbedtls_test_srv_key</find>
+    </findStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$</dir>
+    </dirStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -270,9 +265,11 @@
         <option value="$PROJECT_DIR$/programs/ssl/ssl_client1.c" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/programs/ssl/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/playground/client.c" />
-        <option value="$PROJECT_DIR$/playground/server.c" />
         <option value="$PROJECT_DIR$/playground/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/playground/server.c" />
+        <option value="$PROJECT_DIR$/library/pem.c" />
+        <option value="$PROJECT_DIR$/library/ssl_tls.c" />
+        <option value="$PROJECT_DIR$/playground/client.c" />
       </list>
     </option>
   </component>
@@ -349,13 +346,13 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.server">
-    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mbed TLS" RUN_TARGET_NAME="client" EXPLICIT_BUILD_TARGET_NAME="all">
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mbed TLS" RUN_TARGET_NAME="server" EXPLICIT_BUILD_TARGET_NAME="all">
       <envs />
     </configuration>
     <configuration name="aescrypt2" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mbed TLS" TARGET_NAME="aescrypt2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mbed TLS" RUN_TARGET_NAME="aescrypt2">
       <envs />
     </configuration>
-    <configuration name="apidoc" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mbed TLS" TARGET_NAME="apidoc" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mbed TLS" RUN_TARGET_NAME="client">
+    <configuration name="apidoc" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mbed TLS" TARGET_NAME="apidoc" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mbed TLS" RUN_TARGET_NAME="server">
       <envs />
     </configuration>
     <configuration name="benchmark" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mbed TLS" TARGET_NAME="benchmark" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mbed TLS" RUN_TARGET_NAME="benchmark">
@@ -370,10 +367,10 @@
     <configuration name="cert_write" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mbed TLS" TARGET_NAME="cert_write" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mbed TLS" RUN_TARGET_NAME="cert_write">
       <envs />
     </configuration>
-    <configuration name="client" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mbed TLS" TARGET_NAME="client" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mbed TLS" RUN_TARGET_NAME="client">
+    <configuration name="client" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mbed TLS" TARGET_NAME="client" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mbed TLS" RUN_TARGET_NAME="server">
       <envs />
     </configuration>
-    <configuration name="covtest" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mbed TLS" TARGET_NAME="covtest" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mbed TLS" RUN_TARGET_NAME="client">
+    <configuration name="covtest" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mbed TLS" TARGET_NAME="covtest" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mbed TLS" RUN_TARGET_NAME="server">
       <envs />
     </configuration>
     <configuration name="crl_app" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mbed TLS" TARGET_NAME="crl_app" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mbed TLS" RUN_TARGET_NAME="crl_app">
@@ -427,22 +424,22 @@
     <configuration name="key_app_writer" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mbed TLS" TARGET_NAME="key_app_writer" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mbed TLS" RUN_TARGET_NAME="key_app_writer">
       <envs />
     </configuration>
-    <configuration name="lcov" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mbed TLS" TARGET_NAME="lcov" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mbed TLS" RUN_TARGET_NAME="client">
+    <configuration name="lcov" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mbed TLS" TARGET_NAME="lcov" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mbed TLS" RUN_TARGET_NAME="server">
       <envs />
     </configuration>
-    <configuration name="lib" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mbed TLS" TARGET_NAME="lib" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mbed TLS" RUN_TARGET_NAME="client">
+    <configuration name="lib" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mbed TLS" TARGET_NAME="lib" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mbed TLS" RUN_TARGET_NAME="server">
       <envs />
     </configuration>
-    <configuration name="mbedcrypto" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mbed TLS" TARGET_NAME="mbedcrypto" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mbed TLS" RUN_TARGET_NAME="client">
+    <configuration name="mbedcrypto" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mbed TLS" TARGET_NAME="mbedcrypto" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mbed TLS" RUN_TARGET_NAME="server">
       <envs />
     </configuration>
-    <configuration name="mbedtls" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mbed TLS" TARGET_NAME="mbedtls" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mbed TLS" RUN_TARGET_NAME="client">
+    <configuration name="mbedtls" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mbed TLS" TARGET_NAME="mbedtls" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mbed TLS" RUN_TARGET_NAME="server">
       <envs />
     </configuration>
-    <configuration name="mbedx509" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mbed TLS" TARGET_NAME="mbedx509" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mbed TLS" RUN_TARGET_NAME="client">
+    <configuration name="mbedx509" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mbed TLS" TARGET_NAME="mbedx509" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mbed TLS" RUN_TARGET_NAME="server">
       <envs />
     </configuration>
-    <configuration name="memcheck" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mbed TLS" TARGET_NAME="memcheck" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mbed TLS" RUN_TARGET_NAME="client">
+    <configuration name="memcheck" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mbed TLS" TARGET_NAME="memcheck" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mbed TLS" RUN_TARGET_NAME="server">
       <envs />
     </configuration>
     <configuration name="mini_client" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mbed TLS" TARGET_NAME="mini_client" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mbed TLS" RUN_TARGET_NAME="mini_client">
@@ -840,27 +837,28 @@
       <updated>1519460084674</updated>
       <workItem from="1519460087106" duration="1384000" />
       <workItem from="1519461487720" duration="645000" />
-      <workItem from="1519555212186" duration="6329000" />
+      <workItem from="1519555212186" duration="13807000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8358000" />
+    <option name="totallyTimeSpent" value="15836000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11666667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912722" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912722" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912722" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912722" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11666667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912722" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912722" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39957938" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -895,10 +893,10 @@
         <state relative-caret-position="3000">
           <caret line="150" column="29" lean-forward="false" selection-start-line="150" selection-start-column="29" selection-end-line="150" selection-end-column="29" />
           <folding>
-            <element signature="e#841#869#0" expanded="true" />
-            <element signature="e#946#1120#0" expanded="true" />
-            <element signature="e#1472#1795#0" expanded="true" />
-            <element signature="e#1803#1835#0" expanded="true" />
+            <element signature="e#841#869#0" expanded="false" />
+            <element signature="e#946#1120#0" expanded="false" />
+            <element signature="e#1472#1795#0" expanded="false" />
+            <element signature="e#1803#1835#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -908,7 +906,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#11086#11177#0" expanded="true" />
+            <element signature="e#11086#11177#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -926,10 +924,10 @@
         <state relative-caret-position="3480">
           <caret line="174" column="45" lean-forward="false" selection-start-line="174" selection-start-column="45" selection-end-line="174" selection-end-column="45" />
           <folding>
-            <element signature="e#841#869#0" expanded="true" />
-            <element signature="e#946#1120#0" expanded="true" />
-            <element signature="e#1472#1795#0" expanded="true" />
-            <element signature="e#1803#1835#0" expanded="true" />
+            <element signature="e#841#869#0" expanded="false" />
+            <element signature="e#946#1120#0" expanded="false" />
+            <element signature="e#1472#1795#0" expanded="false" />
+            <element signature="e#1803#1835#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -983,19 +981,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#841#869#0" expanded="true" />
-            <element signature="e#946#1120#0" expanded="true" />
-            <element signature="e#1472#1795#0" expanded="true" />
-            <element signature="e#1803#1835#0" expanded="true" />
+            <element signature="e#841#869#0" expanded="false" />
+            <element signature="e#946#1120#0" expanded="false" />
+            <element signature="e#1472#1795#0" expanded="false" />
+            <element signature="e#1803#1835#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="143" column="20" lean-forward="false" selection-start-line="143" selection-start-column="20" selection-end-line="143" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1015,26 +1005,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/mbedtls/certs.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/programs/test/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="7" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library/ssl_tls.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="6639" column="4" lean-forward="false" selection-start-line="6639" selection-start-column="4" selection-end-line="6639" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -1044,15 +1018,99 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#11086#11177#0" expanded="true" />
+            <element signature="e#11086#11177#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/playground/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="37" lean-forward="true" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="143" column="20" lean-forward="false" selection-start-line="143" selection-start-column="20" selection-end-line="143" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/x509_crt.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="975" column="25" lean-forward="false" selection-start-line="975" selection-start-column="25" selection-end-line="975" selection-end-column="25" />
+          <folding>
+            <element signature="e#28264#28320#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/programs/ssl/ssl_server2.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="1660" column="58" lean-forward="false" selection-start-line="1660" selection-start-column="58" selection-end-line="1660" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/mbedtls/certs.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="22" column="2" lean-forward="false" selection-start-line="22" selection-start-column="2" selection-end-line="22" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/certs.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2840">
+          <caret line="375" column="35" lean-forward="false" selection-start-line="375" selection-start-column="35" selection-end-line="375" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/mbedtls/pem.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/pk.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1836">
+          <caret line="52" column="5" lean-forward="false" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/pkparse.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="668">
+          <caret line="1159" column="28" lean-forward="false" selection-start-line="1159" selection-start-column="28" selection-end-line="1159" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/pem.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="239" column="51" lean-forward="false" selection-start-line="239" selection-start-column="51" selection-end-line="239" selection-end-column="51" />
+          <folding>
+            <element signature="e#7282#7316#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/playground/server.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="-660">
+          <caret line="303" column="31" lean-forward="false" selection-start-line="303" selection-start-column="31" selection-end-line="303" selection-end-column="31" />
           <folding>
             <element signature="e#68#96#0" expanded="true" />
             <element signature="e#173#346#0" expanded="true" />
@@ -1060,30 +1118,48 @@
             <element signature="e#1113#1132#0" expanded="true" />
             <element signature="e#1174#1194#0" expanded="true" />
             <element signature="e#1203#1231#0" expanded="true" />
-            <element signature="e#10437#10528#0" expanded="true" />
+            <element signature="e#10526#10617#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/debug.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="131" column="15" lean-forward="false" selection-start-line="131" selection-start-column="15" selection-end-line="131" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/mbedtls/ssl.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="105" column="8" lean-forward="false" selection-start-line="105" selection-start-column="8" selection-end-line="105" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/ssl_tls.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="3054" column="32" lean-forward="false" selection-start-line="3054" selection-start-column="32" selection-end-line="3054" selection-end-column="32" />
+          <folding>
+            <element signature="e#238019#238057#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/playground/client.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="67" column="21" lean-forward="false" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
+        <state relative-caret-position="145">
+          <caret line="262" column="25" lean-forward="true" selection-start-line="262" selection-start-column="25" selection-end-line="262" selection-end-column="25" />
           <folding>
-            <element signature="e#841#869#0" expanded="true" />
-            <element signature="e#946#1119#0" expanded="true" />
-            <element signature="e#1471#1794#0" expanded="true" />
-            <element signature="e#1802#1834#0" expanded="true" />
-            <element signature="e#8675#8768#0" expanded="true" />
+            <element signature="e#68#96#0" expanded="true" />
+            <element signature="e#173#346#0" expanded="true" />
+            <element signature="e#698#1021#0" expanded="true" />
+            <element signature="e#1029#1061#0" expanded="true" />
+            <element signature="e#8070#8163#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/playground/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="10" lean-forward="false" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>

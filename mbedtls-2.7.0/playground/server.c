@@ -129,6 +129,7 @@ int main( void )
         goto exit;
     }
 
+    // INFO: mbedtls_test_srv_key is defined in certs.c. It's literally a defined string
     ret =  mbedtls_pk_parse_key( &pkey, (const unsigned char *) mbedtls_test_srv_key,
                                  mbedtls_test_srv_key_len, NULL, 0 );
     if( ret != 0 )

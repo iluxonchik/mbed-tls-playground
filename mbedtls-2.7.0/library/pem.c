@@ -235,6 +235,11 @@ int mbedtls_pem_read_buffer( mbedtls_pem_context *ctx, const char *header, const
                      const unsigned char *data, const unsigned char *pwd,
                      size_t pwdlen, size_t *use_len )
 {
+    /* INFO: read the default private key file, determine which type of a private key it is (AES_128_CBC, DES, etc),
+     * decode it, decrypt it with the provided password and copy it to ctx->buff and ctx->bufflen.
+     * Checks if the key is valid is done here too.
+     */
+
     int ret, enc;
     size_t len;
     unsigned char *buf;
@@ -277,6 +282,8 @@ int mbedtls_pem_read_buffer( mbedtls_pem_context *ctx, const char *header, const
 
     enc = 0;
 
+    // INFO: based on the size of the text between the header and the footer, determine what type of key is encoded in
+    //       in it.
     if( s2 - s1 >= 22 && memcmp( s1, "Proc-Type: 4,ENCRYPTED", 22 ) == 0 )
     {
 #if defined(MBEDTLS_MD5_C) && defined(MBEDTLS_CIPHER_MODE_CBC) &&         \
@@ -357,8 +364,10 @@ int mbedtls_pem_read_buffer( mbedtls_pem_context *ctx, const char *header, const
     if( ( buf = mbedtls_calloc( 1, len ) ) == NULL )
         return( MBEDTLS_ERR_PEM_ALLOC_FAILED );
 
+    // INFO: decode what's between the header and the footer (---BEGIN ...--- and ---END ...---)
     if( ( ret = mbedtls_base64_decode( buf, len, &len, s1, s2 - s1 ) ) != 0 )
     {
+        // INFO: zero the whole buffer to make sure that no information is leaked
         mbedtls_zeroize( buf, len );
         mbedtls_free( buf );
         return( MBEDTLS_ERR_PEM_INVALID_DATA + ret );
@@ -377,6 +386,7 @@ int mbedtls_pem_read_buffer( mbedtls_pem_context *ctx, const char *header, const
 
         ret = 0;
 
+        // INFO: Now, decrypt the decoded data
 #if defined(MBEDTLS_DES_C)
         if( enc_alg == MBEDTLS_CIPHER_DES_EDE3_CBC )
             ret = pem_des3_decrypt( pem_iv, buf, len, pwd, pwdlen );
