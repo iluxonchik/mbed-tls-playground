@@ -64,6 +64,7 @@ int main( void )
     uint32_t flags;
     unsigned char buf[1024];
     const char *pers = "ssl_client1";
+    char *chosen_cipher;
 
     mbedtls_entropy_context entropy;
     mbedtls_ctr_drbg_context ctr_drbg;
@@ -183,6 +184,8 @@ int main( void )
     }
 
     mbedtls_printf( " ok\n" );
+    chosen_cipher = mbedtls_ssl_get_ciphersuite( &ssl );
+    mbedtls_printf("   Negotiated Ciphersutie: %s\n", chosen_cipher);
 
     /*
      * 5. Verify the server certificate
@@ -223,7 +226,7 @@ int main( void )
     }
 
     len = ret;
-    mbedtls_printf( " %d bytes written\n\n%s", len, (char *) buf );
+    mbedtls_printf( " %d bytes written\n%s\n", len, (char *) buf );
 
     /*
      * 7. Read the HTTP response
@@ -256,7 +259,7 @@ int main( void )
         }
 
         len = ret;
-        mbedtls_printf( " %d bytes read\n\n%s", len, (char *) buf );
+        mbedtls_printf( " %d bytes read\n%s\n", len, (char *) buf );
     }
     while( 1 );
 

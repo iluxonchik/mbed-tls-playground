@@ -52,10 +52,7 @@ int main( void )
 #include "mbedtls/ssl_cache.h"
 #endif
 
-#define HTTP_RESPONSE \
-    "HTTP/1.0 200 OK\r\nContent-Type: text/html\r\n\r\n" \
-    "<h2>mbed TLS Test Server</h2>\r\n" \
-    "<p>Successful connection using: %s</p>\r\n"
+#define SERVER_MSG "pong"
 
 #define DEBUG_LEVEL 0
 
@@ -75,6 +72,7 @@ int main( void )
     mbedtls_net_context listen_fd, client_fd;
     unsigned char buf[1024];
     const char *pers = "ssl_server";
+    char *chosen_cipher;
 
     mbedtls_entropy_context entropy;
     mbedtls_ctr_drbg_context ctr_drbg;
@@ -256,6 +254,8 @@ int main( void )
     }
 
     mbedtls_printf( " ok\n" );
+    chosen_cipher = mbedtls_ssl_get_ciphersuite( &ssl );
+    mbedtls_printf("   Negotiated Ciphersuite: %s\n", chosen_cipher);
 
     /*
      * 6. Read the HTTP Request
@@ -293,7 +293,7 @@ int main( void )
         }
 
         len = ret;
-        mbedtls_printf( " %d bytes read\n\n%s", len, (char *) buf );
+        mbedtls_printf( " %d bytes read:\n%s\n", len, (char *) buf );
 
         if( ret > 0 )
             break;
@@ -306,8 +306,7 @@ int main( void )
     mbedtls_printf( "  > Write to client:" );
     fflush( stdout );
 
-    len = sprintf( (char *) buf, HTTP_RESPONSE,
-                   mbedtls_ssl_get_ciphersuite( &ssl ) );
+    len = sprintf( (char *) buf, SERVER_MSG);
 
     while( ( ret = mbedtls_ssl_write( &ssl, buf, len ) ) <= 0 )
     {
@@ -325,7 +324,7 @@ int main( void )
     }
 
     len = ret;
-    mbedtls_printf( " %d bytes written\n\n%s\n", len, (char *) buf );
+    mbedtls_printf( " %d bytes written\n%s\n", len, (char *) buf );
 
     mbedtls_printf( "  . Closing the connection..." );
 
