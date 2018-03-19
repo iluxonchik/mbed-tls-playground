@@ -56,6 +56,39 @@ CMAKE_BINARY_DIR = /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/opt/clion/bin/cmake/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/opt/clion/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/opt/clion/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
@@ -68,17 +101,15 @@ install/strip/fast: preinstall/fast
 	/opt/clion/bin/cmake/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/opt/clion/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
 
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/opt/clion/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target install
 install: preinstall
@@ -92,48 +123,17 @@ install/fast: preinstall/fast
 	/opt/clion/bin/cmake/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/opt/clion/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
 
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/opt/clion/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/opt/clion/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/opt/clion/bin/cmake/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/opt/clion/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,6 +168,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+playground/CMakeFiles/client.dir/rule:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f CMakeFiles/Makefile2 playground/CMakeFiles/client.dir/rule
+.PHONY : playground/CMakeFiles/client.dir/rule
+
+# Convenience name for target.
+client: playground/CMakeFiles/client.dir/rule
+
+.PHONY : client
+
+# fast build rule for target.
+client/fast:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f playground/CMakeFiles/client.dir/build.make playground/CMakeFiles/client.dir/build
+.PHONY : client/fast
+
+# Convenience name for target.
 playground/CMakeFiles/server.dir/rule:
 	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f CMakeFiles/Makefile2 playground/CMakeFiles/server.dir/rule
 .PHONY : playground/CMakeFiles/server.dir/rule
@@ -183,19 +198,34 @@ server/fast:
 .PHONY : server/fast
 
 # Convenience name for target.
-playground/CMakeFiles/client.dir/rule:
-	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f CMakeFiles/Makefile2 playground/CMakeFiles/client.dir/rule
-.PHONY : playground/CMakeFiles/client.dir/rule
+playground/CMakeFiles/client_cc.dir/rule:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f CMakeFiles/Makefile2 playground/CMakeFiles/client_cc.dir/rule
+.PHONY : playground/CMakeFiles/client_cc.dir/rule
 
 # Convenience name for target.
-client: playground/CMakeFiles/client.dir/rule
+client_cc: playground/CMakeFiles/client_cc.dir/rule
 
-.PHONY : client
+.PHONY : client_cc
 
 # fast build rule for target.
-client/fast:
-	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f playground/CMakeFiles/client.dir/build.make playground/CMakeFiles/client.dir/build
-.PHONY : client/fast
+client_cc/fast:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f playground/CMakeFiles/client_cc.dir/build.make playground/CMakeFiles/client_cc.dir/build
+.PHONY : client_cc/fast
+
+# Convenience name for target.
+playground/CMakeFiles/server_cc.dir/rule:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f CMakeFiles/Makefile2 playground/CMakeFiles/server_cc.dir/rule
+.PHONY : playground/CMakeFiles/server_cc.dir/rule
+
+# Convenience name for target.
+server_cc: playground/CMakeFiles/server_cc.dir/rule
+
+.PHONY : server_cc
+
+# fast build rule for target.
+server_cc/fast:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f playground/CMakeFiles/server_cc.dir/build.make playground/CMakeFiles/server_cc.dir/build
+.PHONY : server_cc/fast
 
 client.o: client.c.o
 
@@ -224,6 +254,33 @@ client.c.s:
 	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f playground/CMakeFiles/client.dir/build.make playground/CMakeFiles/client.dir/client.c.s
 .PHONY : client.c.s
 
+client_cust_cipher.o: client_cust_cipher.c.o
+
+.PHONY : client_cust_cipher.o
+
+# target to build an object file
+client_cust_cipher.c.o:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f playground/CMakeFiles/client_cc.dir/build.make playground/CMakeFiles/client_cc.dir/client_cust_cipher.c.o
+.PHONY : client_cust_cipher.c.o
+
+client_cust_cipher.i: client_cust_cipher.c.i
+
+.PHONY : client_cust_cipher.i
+
+# target to preprocess a source file
+client_cust_cipher.c.i:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f playground/CMakeFiles/client_cc.dir/build.make playground/CMakeFiles/client_cc.dir/client_cust_cipher.c.i
+.PHONY : client_cust_cipher.c.i
+
+client_cust_cipher.s: client_cust_cipher.c.s
+
+.PHONY : client_cust_cipher.s
+
+# target to generate assembly for a file
+client_cust_cipher.c.s:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f playground/CMakeFiles/client_cc.dir/build.make playground/CMakeFiles/client_cc.dir/client_cust_cipher.c.s
+.PHONY : client_cust_cipher.c.s
+
 server.o: server.c.o
 
 .PHONY : server.o
@@ -251,27 +308,62 @@ server.c.s:
 	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f playground/CMakeFiles/server.dir/build.make playground/CMakeFiles/server.dir/server.c.s
 .PHONY : server.c.s
 
+server_cust_cipher.o: server_cust_cipher.c.o
+
+.PHONY : server_cust_cipher.o
+
+# target to build an object file
+server_cust_cipher.c.o:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f playground/CMakeFiles/server_cc.dir/build.make playground/CMakeFiles/server_cc.dir/server_cust_cipher.c.o
+.PHONY : server_cust_cipher.c.o
+
+server_cust_cipher.i: server_cust_cipher.c.i
+
+.PHONY : server_cust_cipher.i
+
+# target to preprocess a source file
+server_cust_cipher.c.i:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f playground/CMakeFiles/server_cc.dir/build.make playground/CMakeFiles/server_cc.dir/server_cust_cipher.c.i
+.PHONY : server_cust_cipher.c.i
+
+server_cust_cipher.s: server_cust_cipher.c.s
+
+.PHONY : server_cust_cipher.s
+
+# target to generate assembly for a file
+server_cust_cipher.c.s:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f playground/CMakeFiles/server_cc.dir/build.make playground/CMakeFiles/server_cc.dir/server_cust_cipher.c.s
+.PHONY : server_cust_cipher.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/strip"
-	@echo "... install/local"
-	@echo "... install"
-	@echo "... list_install_components"
-	@echo "... rebuild_cache"
-	@echo "... edit_cache"
-	@echo "... test"
-	@echo "... server"
 	@echo "... client"
+	@echo "... server"
+	@echo "... client_cc"
+	@echo "... test"
+	@echo "... edit_cache"
+	@echo "... rebuild_cache"
+	@echo "... install/strip"
+	@echo "... server_cc"
+	@echo "... list_install_components"
+	@echo "... install"
+	@echo "... install/local"
 	@echo "... client.o"
 	@echo "... client.i"
 	@echo "... client.s"
+	@echo "... client_cust_cipher.o"
+	@echo "... client_cust_cipher.i"
+	@echo "... client_cust_cipher.s"
 	@echo "... server.o"
 	@echo "... server.i"
 	@echo "... server.s"
+	@echo "... server_cust_cipher.o"
+	@echo "... server_cust_cipher.i"
+	@echo "... server_cust_cipher.s"
 .PHONY : help
 
 

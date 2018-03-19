@@ -4697,6 +4697,46 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/tests/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="client">
+				<Option output="/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/client" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.1/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.1/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/Makefile&quot;  VERBOSE=1 client"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="client/fast">
+				<Option output="/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/client" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.1/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.1/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/Makefile&quot;  VERBOSE=1 client/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="server">
 				<Option output="/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/server" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground"/>
@@ -4737,8 +4777,8 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="client">
-				<Option output="/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/client" prefix_auto="0" extension_auto="0"/>
+			<Target title="client_cc">
+				<Option output="/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/client_cc" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -4751,14 +4791,14 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/Makefile&quot;  VERBOSE=1 client"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/Makefile&quot;  VERBOSE=1 client_cc"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="client/fast">
-				<Option output="/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/client" prefix_auto="0" extension_auto="0"/>
+			<Target title="client_cc/fast">
+				<Option output="/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/client_cc" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -4771,7 +4811,47 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/Makefile&quot;  VERBOSE=1 client/fast"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/Makefile&quot;  VERBOSE=1 client_cc/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="server_cc">
+				<Option output="/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/server_cc" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.1/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.1/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/Makefile&quot;  VERBOSE=1 server_cc"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="server_cc/fast">
+				<Option output="/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/server_cc" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.1/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.1/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/Makefile&quot;  VERBOSE=1 server_cc/fast"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/Makefile&quot;  VERBOSE=1 clean"/>
@@ -4997,8 +5077,14 @@
 		<Unit filename="/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/client.c">
 			<Option target="client"/>
 		</Unit>
+		<Unit filename="/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/client_cust_cipher.c">
+			<Option target="client_cc"/>
+		</Unit>
 		<Unit filename="/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/server.c">
 			<Option target="server"/>
+		</Unit>
+		<Unit filename="/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/server_cust_cipher.c">
+			<Option target="server_cc"/>
 		</Unit>
 		<Unit filename="/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/programs/aes/aescrypt2.c">
 			<Option target="aescrypt2"/>

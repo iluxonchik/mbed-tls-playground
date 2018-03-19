@@ -1676,6 +1676,19 @@ test_suite_pem/fast:
 .PHONY : test_suite_pem/fast
 
 #=============================================================================
+# Target rules for targets named client
+
+# Build rule for target.
+client: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 client
+.PHONY : client
+
+# fast build rule for target.
+client/fast:
+	$(MAKE) -f playground/CMakeFiles/client.dir/build.make playground/CMakeFiles/client.dir/build
+.PHONY : client/fast
+
+#=============================================================================
 # Target rules for targets named server
 
 # Build rule for target.
@@ -1689,17 +1702,30 @@ server/fast:
 .PHONY : server/fast
 
 #=============================================================================
-# Target rules for targets named client
+# Target rules for targets named client_cc
 
 # Build rule for target.
-client: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 client
-.PHONY : client
+client_cc: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 client_cc
+.PHONY : client_cc
 
 # fast build rule for target.
-client/fast:
-	$(MAKE) -f playground/CMakeFiles/client.dir/build.make playground/CMakeFiles/client.dir/build
-.PHONY : client/fast
+client_cc/fast:
+	$(MAKE) -f playground/CMakeFiles/client_cc.dir/build.make playground/CMakeFiles/client_cc.dir/build
+.PHONY : client_cc/fast
+
+#=============================================================================
+# Target rules for targets named server_cc
+
+# Build rule for target.
+server_cc: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 server_cc
+.PHONY : server_cc
+
+# fast build rule for target.
+server_cc/fast:
+	$(MAKE) -f playground/CMakeFiles/server_cc.dir/build.make playground/CMakeFiles/server_cc.dir/build
+.PHONY : server_cc/fast
 
 # Help Target
 help:
@@ -1830,8 +1856,10 @@ help:
 	@echo "... test_suite_ecdh"
 	@echo "... test_suite_md"
 	@echo "... test_suite_pem"
-	@echo "... server"
 	@echo "... client"
+	@echo "... server"
+	@echo "... client_cc"
+	@echo "... server_cc"
 .PHONY : help
 
 
