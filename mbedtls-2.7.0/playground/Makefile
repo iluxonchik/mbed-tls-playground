@@ -137,14 +137,14 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(CMAKE_COMMAND) -E cmake_progress_start /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/CMakeFiles /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/programs/CMakeFiles/progress.marks
-	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f CMakeFiles/Makefile2 programs/all
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(CMAKE_COMMAND) -E cmake_progress_start /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/CMakeFiles /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/CMakeFiles/progress.marks
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f CMakeFiles/Makefile2 playground/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f CMakeFiles/Makefile2 programs/clean
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f CMakeFiles/Makefile2 playground/clean
 .PHONY : clean
 
 # The main clean target
@@ -154,18 +154,102 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f CMakeFiles/Makefile2 programs/preinstall
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f CMakeFiles/Makefile2 playground/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f CMakeFiles/Makefile2 programs/preinstall
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f CMakeFiles/Makefile2 playground/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
 	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+# Convenience name for target.
+playground/CMakeFiles/server.dir/rule:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f CMakeFiles/Makefile2 playground/CMakeFiles/server.dir/rule
+.PHONY : playground/CMakeFiles/server.dir/rule
+
+# Convenience name for target.
+server: playground/CMakeFiles/server.dir/rule
+
+.PHONY : server
+
+# fast build rule for target.
+server/fast:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f playground/CMakeFiles/server.dir/build.make playground/CMakeFiles/server.dir/build
+.PHONY : server/fast
+
+# Convenience name for target.
+playground/CMakeFiles/client.dir/rule:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f CMakeFiles/Makefile2 playground/CMakeFiles/client.dir/rule
+.PHONY : playground/CMakeFiles/client.dir/rule
+
+# Convenience name for target.
+client: playground/CMakeFiles/client.dir/rule
+
+.PHONY : client
+
+# fast build rule for target.
+client/fast:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f playground/CMakeFiles/client.dir/build.make playground/CMakeFiles/client.dir/build
+.PHONY : client/fast
+
+client.o: client.c.o
+
+.PHONY : client.o
+
+# target to build an object file
+client.c.o:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f playground/CMakeFiles/client.dir/build.make playground/CMakeFiles/client.dir/client.c.o
+.PHONY : client.c.o
+
+client.i: client.c.i
+
+.PHONY : client.i
+
+# target to preprocess a source file
+client.c.i:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f playground/CMakeFiles/client.dir/build.make playground/CMakeFiles/client.dir/client.c.i
+.PHONY : client.c.i
+
+client.s: client.c.s
+
+.PHONY : client.s
+
+# target to generate assembly for a file
+client.c.s:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f playground/CMakeFiles/client.dir/build.make playground/CMakeFiles/client.dir/client.c.s
+.PHONY : client.c.s
+
+server.o: server.c.o
+
+.PHONY : server.o
+
+# target to build an object file
+server.c.o:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f playground/CMakeFiles/server.dir/build.make playground/CMakeFiles/server.dir/server.c.o
+.PHONY : server.c.o
+
+server.i: server.c.i
+
+.PHONY : server.i
+
+# target to preprocess a source file
+server.c.i:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f playground/CMakeFiles/server.dir/build.make playground/CMakeFiles/server.dir/server.c.i
+.PHONY : server.c.i
+
+server.s: server.c.s
+
+.PHONY : server.s
+
+# target to generate assembly for a file
+server.c.s:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f playground/CMakeFiles/server.dir/build.make playground/CMakeFiles/server.dir/server.c.s
+.PHONY : server.c.s
 
 # Help Target
 help:
@@ -180,6 +264,14 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test"
+	@echo "... server"
+	@echo "... client"
+	@echo "... client.o"
+	@echo "... client.i"
+	@echo "... client.s"
+	@echo "... server.o"
+	@echo "... server.i"
+	@echo "... server.s"
 .PHONY : help
 
 

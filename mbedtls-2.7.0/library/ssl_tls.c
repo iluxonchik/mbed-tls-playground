@@ -2460,8 +2460,17 @@ int mbedtls_ssl_flush_output( mbedtls_ssl_context *ssl )
         MBEDTLS_SSL_DEBUG_MSG( 2, ( "message length: %d, out_left: %d",
                        mbedtls_ssl_hdr_len( ssl ) + ssl->out_msglen, ssl->out_left ) );
 
+        /*
+         * BELOW:
+         *  + ssl->out_hdr is a pointer (address) to the beginning of the Record Header
+         *  + summing the length of the header to that address, points us to the beginning of the message
+         *  + summing the length of the message ot that points us to the end of the message
+         *  + subtracting the number of bytes left to write points us to the beginning of the part of the message
+         *      that has not yet been written.
+         *  This way buf contains a pointer to the beginning part of the message that is yet to write.
+         */
         buf = ssl->out_hdr + mbedtls_ssl_hdr_len( ssl ) +
-              ssl->out_msglen - ssl->out_left;
+              ssl->out_msglen - ssl->out_left; // pointer in buffer from where to write (ssl->buff contains everything to write, while ssl->out_msg only the actual message)
         ret = ssl->f_send( ssl->p_bio, buf, ssl->out_left );
 
         MBEDTLS_SSL_DEBUG_RET( 2, "ssl->f_send", ret );

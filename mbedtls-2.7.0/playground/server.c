@@ -341,7 +341,8 @@ int main( void )
     mbedtls_printf( " ok\n" );
 
     ret = 0;
-    goto reset;
+    mbedtls_printf("Terminating server...\n");
+    goto exit;
 
     exit:
 

@@ -2869,7 +2869,11 @@ static int ssl_write_server_key_exchange( mbedtls_ssl_context *ssl )
 #endif /* MBEDTLS_KEY_EXCHANGE__SOME__ECDH_ENABLED */
 
     /* Key exchanges not involving ephemeral keys don't use
-     * ServerKeyExchange, so end here. */
+     * ServerKeyExchange, so end here.
+     * The server does not need to sign any parameters, since the digitally signed struct
+     * is only used in case if the PMS is generated using ECDH. If we're not using ECDH(therefore no PFS)
+     * we don't need to sing anything in SKE, since the client will generate the PMS and send it
+     * encrypted with server's public key to the server.*/
 #if defined(MBEDTLS_KEY_EXCHANGE__SOME_NON_PFS__ENABLED)
     if( mbedtls_ssl_ciphersuite_no_pfs( ciphersuite_info ) )
     {
