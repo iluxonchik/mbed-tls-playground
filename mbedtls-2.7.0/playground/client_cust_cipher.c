@@ -59,8 +59,14 @@ static void my_debug( void *ctx, int level,
     fflush(  (FILE *) ctx  );
 }
 
-int main( void )
+int main( int argc, char** argv )
 {
+
+
+    char *ciphersuite_str_id;
+    int ciphersuite_id;
+    int custom_cipher_suite[2];
+
     int ret, len;
     mbedtls_net_context server_fd;
     uint32_t flags;
@@ -73,6 +79,21 @@ int main( void )
     mbedtls_ssl_context ssl;
     mbedtls_ssl_config conf;
     mbedtls_x509_crt cacert;
+
+
+    // parse arg
+    if (argc < 2) {
+        mbedtls_printf("[!!!] No ciphersuite argument provided\n");
+        return ( -1 );
+    }
+
+    ciphersuite_str_id = argv[1];
+
+    ciphersuite_id = strtol(ciphersuite_str_id, NULL, 10);
+    custom_cipher_suite[0] = ciphersuite_id;
+    custom_cipher_suite[1] = 0;
+
+    mbedtls_printf("Chosen ciphersuite id: %d\n", custom_cipher_suite[0]);
 
 #if defined(MBEDTLS_DEBUG_C)
     mbedtls_debug_set_threshold( DEBUG_LEVEL );
@@ -152,8 +173,7 @@ int main( void )
     mbedtls_printf( "  . Setting up custom ciphersuite..." );
     fflush( stdout );
 
-    int cipher_suite[] = {MBEDTLS_TLS_DHE_RSA_WITH_AES_128_CBC_SHA256, NULL};
-    mbedtls_ssl_conf_ciphersuites(&conf, cipher_suite);
+    mbedtls_ssl_conf_ciphersuites(&conf, custom_cipher_suite);
     mbedtls_printf(" ok\n");
 
 
@@ -283,6 +303,13 @@ int main( void )
         char error_buf[100];
         mbedtls_strerror( ret, error_buf, 100 );
         mbedtls_printf("Last error was: %d - %s\n\n", ret, error_buf );
+
+        if (ret == MBEDTLS_ERR_SSL_PEER_CLOSE_NOTIFY ) {
+            // if the server closed the connection it's all good
+            // let's make sure that the app returns 0 here, so that the script
+            // does not treat this as an error.
+            ret = 0;
+        }
     }
 #endif
 

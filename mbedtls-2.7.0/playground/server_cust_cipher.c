@@ -66,8 +66,14 @@ static void my_debug( void *ctx, int level,
     fflush(  (FILE *) ctx  );
 }
 
-int main( void )
+int main( int argc, char** argv )
 {
+
+
+    char *ciphersuite_str_id;
+    int ciphersuite_id;
+    int custom_cipher_suite[2];
+
     int ret, len;
     mbedtls_net_context listen_fd, client_fd;
     unsigned char buf[1024];
@@ -99,6 +105,20 @@ int main( void )
 #if defined(MBEDTLS_DEBUG_C)
     mbedtls_debug_set_threshold( DEBUG_LEVEL );
 #endif
+
+
+  // parse arg
+    if (argc < 2) {
+        mbedtls_printf("[!!!] No ciphersuite argument provided\n");
+        return ( -1 );
+    }
+
+    ciphersuite_str_id = argv[1];
+
+    ciphersuite_id = strtol(ciphersuite_str_id, NULL, 10);
+    custom_cipher_suite[0] = ciphersuite_id;
+    custom_cipher_suite[1] = 0;
+    mbedtls_printf("Chosen ciphersuite id: %d\n", custom_cipher_suite[0]);
 
     /*
      * 1. Load the certificates and private RSA key
@@ -183,6 +203,15 @@ int main( void )
         goto exit;
     }
 
+    mbedtls_printf(" ok\n");
+
+    mbedtls_printf( "  . Setting up custom ciphersuite..." );
+    fflush( stdout );
+
+    mbedtls_ssl_conf_ciphersuites(&conf, custom_cipher_suite);
+
+    mbedtls_printf(" ok\n");
+
     mbedtls_ssl_conf_rng( &conf, mbedtls_ctr_drbg_random, &ctr_drbg );
     mbedtls_ssl_conf_dbg( &conf, my_debug, stdout );
 
@@ -205,15 +234,14 @@ int main( void )
         goto exit;
     }
 
-    mbedtls_printf( " ok\n" );
-
     reset:
 #ifdef MBEDTLS_ERROR_C
-    if( ret != 0 )
-    {
+    if( ret != 0 ) {
         char error_buf[100];
-        mbedtls_strerror( ret, error_buf, 100 );
-        mbedtls_printf("Last error was: %d - %s\n\n", ret, error_buf );
+        mbedtls_strerror(ret, error_buf, 100);
+        mbedtls_printf("Last error was: %d - %s\n\n", ret, error_buf);
+        mbedtls_printf("The error might be caused by the fact that you're using incompatible certificate/ciphersuite types. For example, you might be trying to use a DSA ciphersuite when using an RSA certificate.");
+        goto exit_no_msg; // let's end on err here
     }
 #endif
 
@@ -354,6 +382,8 @@ int main( void )
         mbedtls_printf("Last error was: %d - %s\n\n", ret, error_buf );
     }
 #endif
+
+    exit_no_msg:
 
     mbedtls_net_free( &client_fd );
     mbedtls_net_free( &listen_fd );
