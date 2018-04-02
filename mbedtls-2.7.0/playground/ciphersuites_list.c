@@ -25,7 +25,7 @@ int main( void )
      * NAME ID FLAGS
      */
 
-    int *enabled_ciphersuites;
+    const int *enabled_ciphersuites;
     int index = 0;
     const char* cipher_name;
     unsigned char flags_raw;
@@ -53,7 +53,7 @@ int main( void )
         mbedtls_printf("%d %s %s\n", *enabled_ciphersuites, cipher_name, flags_str);
         enabled_ciphersuites++;
     }
-    
+
     return( 0 );
 }
 
