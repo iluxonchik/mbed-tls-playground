@@ -73,6 +73,7 @@ int main( int argc, char** argv )
     char *ciphersuite_str_id;
     int ciphersuite_id;
     int custom_cipher_suite[2];
+    char *ciphersuite_name;
 
     int ret, len;
     mbedtls_net_context listen_fd, client_fd;
@@ -131,11 +132,49 @@ int main( int argc, char** argv )
      * Instead, you may want to use mbedtls_x509_crt_parse_file() to read the
      * server and CA certificates, as well as mbedtls_pk_parse_keyfile().
      */
-    ret = mbedtls_x509_crt_parse( &srvcert, (const unsigned char *) mbedtls_test_srv_crt,
-                                  mbedtls_test_srv_crt_len );
+    ciphersuite_name = mbedtls_ssl_get_ciphersuite_name(ciphersuite_id);
+
+    unsigned char* srv_crt;
+    size_t srv_crt_len;
+    unsigned char *srv_key;
+    size_t srv_key_len;
+
+    // Now let's decide on which certificate to use
+    const char* use_cert_with_ecdh_params = "DH-";
+    const char* use_cert_with_ecdh_rsa_params = "ECDH-RSA";
+
+    // load the default server cert and key values
+    srv_crt = mbedtls_test_srv_crt_rsa;
+    srv_crt_len = mbedtls_test_srv_crt_rsa_len;
+    srv_key = mbedtls_test_srv_key_rsa;
+    srv_key_len = mbedtls_test_srv_key_rsa_len;
+    mbedtls_printf("Ciphersuite Name: %s\n", ciphersuite_name);
+
+    if (strstr(ciphersuite_name, use_cert_with_ecdh_params) != NULL){
+        mbedtls_printf("[INFO] Using DH certificate\n");
+        srv_crt = mbedtls_test_srv_crt_ec;
+        srv_crt_len = mbedtls_test_srv_crt_ec_len;
+
+        srv_key = mbedtls_test_srv_key_ec;
+        srv_key_len = mbedtls_test_srv_key_ec_len;
+
+        if (strstr(ciphersuite_name, use_cert_with_ecdh_rsa_params) != NULL) {
+            mbedtls_printf("\t[INFO] Using ECDH_RSA certificate\n");
+            srv_crt = mbedtls_test_srv_crt_ecdh_rsa;
+            srv_crt_len = mbedtls_test_srv_crt_ecdh_rsa_len;
+
+            //srv_key = mbedtls_test_srv_key_rsa;
+            //srv_key_len = mbedtls_test_srv_key_rsa_len;
+        }
+
+        mbedtls_printf("\n\n%s\n\n", srv_crt);
+    }
+
+    ret = mbedtls_x509_crt_parse( &srvcert, (const unsigned char *) srv_crt,
+                                  srv_crt_len );
     if( ret != 0 )
     {
-        mbedtls_printf( " failed\n  !  mbedtls_x509_crt_parse returned %d\n\n", ret );
+        mbedtls_printf( " failed\n  !  mbedtls_x509_crt_parse #1 returned %d\n\n", ret );
         goto exit;
     }
 
@@ -143,13 +182,13 @@ int main( int argc, char** argv )
                                   mbedtls_test_cas_pem_len );
     if( ret != 0 )
     {
-        mbedtls_printf( " failed\n  !  mbedtls_x509_crt_parse returned %d\n\n", ret );
+        mbedtls_printf( " failed\n  !  mbedtls_x509_crt_parse #2 returned %d\n\n", ret );
         goto exit;
     }
 
     // INFO: mbedtls_test_srv_key is defined in certs.c. It's literally a defined string
-    ret =  mbedtls_pk_parse_key( &pkey, (const unsigned char *) mbedtls_test_srv_key,
-                                 mbedtls_test_srv_key_len, NULL, 0 );
+    ret =  mbedtls_pk_parse_key( &pkey, (const unsigned char *) srv_key,
+                                 srv_key_len, NULL, 0 );
     if( ret != 0 )
     {
         mbedtls_printf( " failed\n  !  mbedtls_pk_parse_key returned %d\n\n", ret );

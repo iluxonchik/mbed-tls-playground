@@ -58,6 +58,8 @@ extern const char * mbedtls_test_cli_crt;
 extern const size_t mbedtls_test_cli_crt_len;
 extern const char * mbedtls_test_cli_key;
 extern const size_t mbedtls_test_cli_key_len;
+extern const char mbedtls_test_srv_crt_ecdh_rsa[];
+extern const size_t mbedtls_test_srv_crt_ecdh_rsa_len;
 
 #if defined(MBEDTLS_ECDSA_C)
 extern const char   mbedtls_test_ca_crt_ec[];
