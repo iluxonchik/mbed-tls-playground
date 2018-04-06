@@ -1,6 +1,11 @@
 cmake_minimum_required(VERSION 2.6)
 project("mbed TLS" C)
 
+set(CMAKE_C_FLAGS "")
+message(WARNING "CMAKE_C_FLAGS_DEBUG is ${CMAKE_C_FLAGS_DEBUG}")
+message(WARNING "CMAKE_C_FLAGS is a ${CMAKE_C_FLAGS}")
+
+
 option(USE_PKCS11_HELPER_LIBRARY "Build mbed TLS with the pkcs11-helper library." OFF)
 option(ENABLE_ZLIB_SUPPORT "Build mbed TLS with zlib library." OFF)
 
@@ -170,3 +175,6 @@ endif()
 if(ENABLE_PLAYGROUND)
     add_subdirectory(playground)
 endif()
+
+message(WARNING "CMAKE_C_FLAGS_DEBUG is ${CMAKE_C_FLAGS_DEBUG}")
+message(WARNING "CMAKE_C_FLAGS is ${CMAKE_C_FLAGS}")
