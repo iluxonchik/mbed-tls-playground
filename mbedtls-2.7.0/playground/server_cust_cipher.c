@@ -142,13 +142,16 @@ int main( int argc, char** argv )
     // Now let's decide on which certificate to use
     const char* use_cert_with_ecdh_params = "DH-";
     const char* use_cert_with_ecdh_rsa_params = "ECDH-RSA";
+    const char* use_cert_with_ecdsa_sig = "ECDSA";
+
+    const char* use_psk = "PSK";
 
     // load the default server cert and key values
     srv_crt = mbedtls_test_srv_crt_rsa;
     srv_crt_len = mbedtls_test_srv_crt_rsa_len;
     srv_key = mbedtls_test_srv_key_rsa;
     srv_key_len = mbedtls_test_srv_key_rsa_len;
-    mbedtls_printf("Ciphersuite Name: %s\n", ciphersuite_name);
+    mbedtls_printf("\nCiphersuite Name: %s\n", ciphersuite_name);
 
     if (strstr(ciphersuite_name, use_cert_with_ecdh_params) != NULL){
         mbedtls_printf("[INFO] Using DH certificate\n");
@@ -163,11 +166,26 @@ int main( int argc, char** argv )
             srv_crt = mbedtls_test_srv_crt_ecdh_rsa;
             srv_crt_len = mbedtls_test_srv_crt_ecdh_rsa_len;
 
-            //srv_key = mbedtls_test_srv_key_rsa;
-            //srv_key_len = mbedtls_test_srv_key_rsa_len;
         }
 
         mbedtls_printf("\n\n%s\n\n", srv_crt);
+    }
+
+    // This one is here for the TLS-ECDHE-ECDSA-* cipher suites
+    if (strstr(ciphersuite_name, use_cert_with_ecdsa_sig) != NULL) {
+        mbedtls_printf("[INFO] Using ECDSA signed certificate (ECDH-ECDSA)\n");
+        srv_crt = mbedtls_test_srv_crt_ec;
+        srv_crt_len = mbedtls_test_srv_crt_ec_len;
+
+        srv_key = mbedtls_test_srv_key_ec;
+        srv_key_len = mbedtls_test_srv_key_ec_len;
+    }
+
+    if (strstr(ciphersuite_name, use_psk) != NULL) {
+        // TODO
+        mbedtls_printf("[INFO]Using PSK\n");
+        mbedtls_printf("\t[!!!]This functionality is NOT yet implemented. Terminating...\n");
+        goto exit;
     }
 
     ret = mbedtls_x509_crt_parse( &srvcert, (const unsigned char *) srv_crt,
