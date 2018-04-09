@@ -66,6 +66,74 @@ static void my_debug( void *ctx, int level,
     fflush(  (FILE *) ctx  );
 }
 
+// TODO: refactor into a new file
+// Setup PSK Stuff
+
+typedef struct _psk_entry psk_entry;
+
+struct _psk_entry
+{
+    const char *name;
+    size_t key_len;
+    unsigned char key[MBEDTLS_PSK_MAX_LEN];
+    psk_entry *next;
+};
+
+/*
+ * PSK callback. For now, this method completely ignores the
+ * PSK identity name and uses the same key for any PSK id you pass.
+ *
+ * Later, this should handle different PSK ids, corresponding to
+ * different PSK sizes, for example.
+ */
+int psk_callback( void *p_info, mbedtls_ssl_context *ssl,
+                  const unsigned char *name, size_t name_len )
+{
+    // in a normal setting, you would get the PSK value and length from
+    // the p_info structure.
+    mbedtls_printf("psk_callback()\n");
+    return( mbedtls_ssl_set_hs_psk( ssl, psk_value, sizeof(psk_value) ));
+}
+
+#define HEX2NUM( c )                    \
+        if( c >= '0' && c <= '9' )      \
+            c -= '0';                   \
+        else if( c >= 'a' && c <= 'f' ) \
+            c -= 'a' - 10;              \
+        else if( c >= 'A' && c <= 'F' ) \
+            c -= 'A' - 10;              \
+        else                            \
+            return( -1 );
+
+/*
+ * Convert a hex string to bytes.
+ * Return 0 on success, -1 on error.
+ */
+int unhexify( unsigned char *output, const char *input, size_t *olen )
+{
+    unsigned char c;
+    size_t j;
+
+    *olen = strlen( input );
+    if( *olen % 2 != 0 || *olen / 2 > MBEDTLS_PSK_MAX_LEN )
+        return( -1 );
+    *olen /= 2;
+
+    for( j = 0; j < *olen * 2; j += 2 )
+    {
+        c = input[j];
+        HEX2NUM( c );
+        output[ j / 2 ] = c << 4;
+
+        c = input[j + 1];
+        HEX2NUM( c );
+        output[ j / 2 ] |= c;
+    }
+
+    return( 0 );
+}
+
+
 int main( int argc, char** argv )
 {
 
@@ -87,6 +155,10 @@ int main( int argc, char** argv )
     mbedtls_ssl_config conf;
     mbedtls_x509_crt srvcert;
     mbedtls_pk_context pkey;
+
+    unsigned char psk[MBEDTLS_PSK_MAX_LEN];
+
+
 #if defined(MBEDTLS_SSL_CACHE_C)
     mbedtls_ssl_cache_context cache;
 #endif
@@ -106,7 +178,6 @@ int main( int argc, char** argv )
 #if defined(MBEDTLS_DEBUG_C)
     mbedtls_debug_set_threshold( DEBUG_LEVEL );
 #endif
-
 
   // parse arg
     if (argc < 2) {
@@ -182,10 +253,24 @@ int main( int argc, char** argv )
     }
 
     if (strstr(ciphersuite_name, use_psk) != NULL) {
-        // TODO
         mbedtls_printf("[INFO]Using PSK\n");
-        mbedtls_printf("\t[!!!]This functionality is NOT yet implemented. Terminating...\n");
-        goto exit;
+        int psk_len = strlen(psk_value);
+
+        if( unhexify( psk, psk_value, &psk_len ) != 0 )
+        {
+            mbedtls_printf( "pre-shared key not valid hex\n" );
+            goto exit;
+        }
+
+        ret = mbedtls_ssl_conf_psk( &conf, psk, psk_len, psk_identity, strlen(psk_identity));
+
+        if( ret != 0 )
+        {
+            mbedtls_printf( "  failed\n  mbedtls_ssl_conf_psk returned -0x%04X\n\n", - ret );
+            goto exit;
+        }
+
+        mbedtls_ssl_conf_psk_cb( &conf, psk_callback, NULL );
     }
 
     ret = mbedtls_x509_crt_parse( &srvcert, (const unsigned char *) srv_crt,

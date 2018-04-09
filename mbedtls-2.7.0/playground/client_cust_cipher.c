@@ -94,7 +94,6 @@ int main( int argc, char** argv )
     custom_cipher_suite[1] = 0;
 
     chosen_cipher = mbedtls_ssl_get_ciphersuite_name(ciphersuite_id);
-
     mbedtls_printf("Chosen ciphersuite id: %d\n\t%s\n", custom_cipher_suite[0], chosen_cipher);
 
 #if defined(MBEDTLS_DEBUG_C)
@@ -109,6 +108,21 @@ int main( int argc, char** argv )
     mbedtls_ssl_config_init( &conf );
     mbedtls_x509_crt_init( &cacert );
     mbedtls_ctr_drbg_init( &ctr_drbg );
+
+
+    const char* use_psk = "PSK";
+
+    if (strstr(chosen_cipher, use_psk) != NULL) {
+        mbedtls_printf("[INFO]Using PSK\n");
+        ret = mbedtls_ssl_conf_psk( &conf, psk_value, sizeof(psk_value), psk_identity, strlen(psk_identity));
+
+        if( ret != 0 )
+        {
+            mbedtls_printf( "  failed\n  mbedtls_ssl_conf_psk returned -0x%04X\n\n", - ret );
+            goto exit;
+        }
+
+    }
 
     mbedtls_printf( "\n  . Seeding the random number generator..." );
     fflush( stdout );

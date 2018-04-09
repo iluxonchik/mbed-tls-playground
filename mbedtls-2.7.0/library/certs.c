@@ -27,6 +27,12 @@
 
 #include "mbedtls/certs.h"
 
+#define PSK_VALUE "71bc53a3beeaa416a4050653cec13d288e3eb692959cd0828499b702739e482c"
+
+const char* psk_value = PSK_VALUE;
+const size_t psk_value_len = sizeof(psk_value);
+const char* psk_identity = "The_Game";
+
 #if defined(MBEDTLS_CERTS_C)
 
 #if defined(MBEDTLS_ECDSA_C)
