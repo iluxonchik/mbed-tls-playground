@@ -217,6 +217,7 @@ int main( int argc, char** argv )
     const char* use_cert_with_ecdsa_sig = "ECDSA";
 
     const char* use_psk = "PSK";
+    const char* use_rsa = "RSA"; // for RSA_PSK ciphersuites
 
     // load the default server cert and key values
     srv_crt = mbedtls_test_srv_crt_rsa;
@@ -257,6 +258,12 @@ int main( int argc, char** argv )
         is_use_psk = 1;
         int psk_len = strlen(psk_value);
         mbedtls_printf("[INFO]Using PSK\n");
+
+        // For the case where RSA_PSK ciphersuites are used. Here, we still want to use a certificate.
+        // This "if" can be refactored and put above, but I'd like to keep it here for easier readability.
+        if (strstr(ciphersuite_name, use_rsa) != NULL) {
+           is_use_psk = 0;
+        }
 
         if( unhexify( psk, psk_value, &psk_len ) != 0 )
         {

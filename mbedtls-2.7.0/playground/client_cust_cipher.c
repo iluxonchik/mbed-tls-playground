@@ -113,10 +113,18 @@ int main( int argc, char** argv )
 
 
     const char* use_psk = "PSK";
+    const char* use_rsa = "RSA"; // for RSA_PSK ciphersuites
 
     if (strstr(chosen_cipher, use_psk) != NULL) {
         mbedtls_printf("[INFO]Using PSK\n");
         is_use_psk = 1;
+
+        // For the case where RSA_PSK ciphersuites are used. Here, we still want to use a certificate.
+        // This "if" can be refactored and put above, but I'd like to keep it here for easier readability.
+        if (strstr(chosen_cipher, use_rsa) != NULL) {
+            is_use_psk = 0;
+        }
+
 
         ret = mbedtls_ssl_conf_psk( &conf, psk_value, sizeof(psk_value), psk_identity, strlen(psk_identity));
         if( ret != 0 )
@@ -263,7 +271,7 @@ int main( int argc, char** argv )
 
         mbedtls_printf("\tSkipping certificate verification because a PSK ciphersuite is in use\n");
     }
-    
+
     /*
      * 3. Write the GET request
      */
