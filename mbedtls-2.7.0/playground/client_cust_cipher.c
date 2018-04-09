@@ -80,6 +80,8 @@ int main( int argc, char** argv )
     mbedtls_ssl_config conf;
     mbedtls_x509_crt cacert;
 
+    unsigned short int is_use_psk = 0;
+
 
     // parse arg
     if (argc < 2) {
@@ -114,8 +116,9 @@ int main( int argc, char** argv )
 
     if (strstr(chosen_cipher, use_psk) != NULL) {
         mbedtls_printf("[INFO]Using PSK\n");
-        ret = mbedtls_ssl_conf_psk( &conf, psk_value, sizeof(psk_value), psk_identity, strlen(psk_identity));
+        is_use_psk = 1;
 
+        ret = mbedtls_ssl_conf_psk( &conf, psk_value, sizeof(psk_value), psk_identity, strlen(psk_identity));
         if( ret != 0 )
         {
             mbedtls_printf( "  failed\n  mbedtls_ssl_conf_psk returned -0x%04X\n\n", - ret );
@@ -141,18 +144,23 @@ int main( int argc, char** argv )
     /*
      * 0. Initialize certificates
      */
-    mbedtls_printf( "  . Loading the CA root certificate ..." );
-    fflush( stdout );
+    if (is_use_psk == 0) {
 
-    ret = mbedtls_x509_crt_parse( &cacert, (const unsigned char *) mbedtls_test_cas_pem,
-                                  mbedtls_test_cas_pem_len );
-    if( ret < 0 )
-    {
-        mbedtls_printf( " failed\n  !  mbedtls_x509_crt_parse returned -0x%x\n\n", -ret );
-        goto exit;
+        mbedtls_printf("  . Loading the CA root certificate ...");
+        fflush(stdout);
+
+        ret = mbedtls_x509_crt_parse(&cacert, (const unsigned char *) mbedtls_test_cas_pem,
+                                     mbedtls_test_cas_pem_len);
+        if (ret < 0) {
+            mbedtls_printf(" failed\n  !  mbedtls_x509_crt_parse returned -0x%x\n\n", -ret);
+            goto exit;
+        }
+
+        mbedtls_printf(" ok (%d skipped)\n", ret);
+    } else {
+
+        mbedtls_printf("\tSkipping certificate loading because a PSK ciphersuite is in use\n");
     }
-
-    mbedtls_printf( " ok (%d skipped)\n", ret );
 
     /*
      * 1. Start the connection
@@ -236,22 +244,26 @@ int main( int argc, char** argv )
     /*
      * 5. Verify the server certificate
      */
-    mbedtls_printf( "  . Verifying peer X.509 certificate..." );
+    if (is_use_psk == 0) {
 
-    /* In real life, we probably want to bail out when ret != 0 */
-    if( ( flags = mbedtls_ssl_get_verify_result( &ssl ) ) != 0 )
-    {
-        char vrfy_buf[512];
+        mbedtls_printf("  . Verifying peer X.509 certificate...");
 
-        mbedtls_printf( " failed\n" );
+        /* In real life, we probably want to bail out when ret != 0 */
+        if ((flags = mbedtls_ssl_get_verify_result(&ssl)) != 0) {
+            char vrfy_buf[512];
 
-        mbedtls_x509_crt_verify_info( vrfy_buf, sizeof( vrfy_buf ), "  ! ", flags );
+            mbedtls_printf(" failed\n");
 
-        mbedtls_printf( "%s\n", vrfy_buf );
+            mbedtls_x509_crt_verify_info(vrfy_buf, sizeof(vrfy_buf), "  ! ", flags);
+
+            mbedtls_printf("%s\n", vrfy_buf);
+        } else
+            mbedtls_printf(" ok\n");
+    } else {
+
+        mbedtls_printf("\tSkipping certificate verification because a PSK ciphersuite is in use\n");
     }
-    else
-        mbedtls_printf( " ok\n" );
-
+    
     /*
      * 3. Write the GET request
      */

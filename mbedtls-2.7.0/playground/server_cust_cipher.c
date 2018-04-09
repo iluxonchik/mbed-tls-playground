@@ -157,6 +157,7 @@ int main( int argc, char** argv )
     mbedtls_pk_context pkey;
 
     unsigned char psk[MBEDTLS_PSK_MAX_LEN];
+    unsigned short int is_use_psk = 0;
 
 
 #if defined(MBEDTLS_SSL_CACHE_C)
@@ -253,8 +254,9 @@ int main( int argc, char** argv )
     }
 
     if (strstr(ciphersuite_name, use_psk) != NULL) {
-        mbedtls_printf("[INFO]Using PSK\n");
+        is_use_psk = 1;
         int psk_len = strlen(psk_value);
+        mbedtls_printf("[INFO]Using PSK\n");
 
         if( unhexify( psk, psk_value, &psk_len ) != 0 )
         {
@@ -273,32 +275,36 @@ int main( int argc, char** argv )
         mbedtls_ssl_conf_psk_cb( &conf, psk_callback, NULL );
     }
 
-    ret = mbedtls_x509_crt_parse( &srvcert, (const unsigned char *) srv_crt,
-                                  srv_crt_len );
-    if( ret != 0 )
-    {
-        mbedtls_printf( " failed\n  !  mbedtls_x509_crt_parse #1 returned %d\n\n", ret );
-        goto exit;
-    }
+    if (is_use_psk == 0) {
 
-    ret = mbedtls_x509_crt_parse( &srvcert, (const unsigned char *) mbedtls_test_cas_pem,
-                                  mbedtls_test_cas_pem_len );
-    if( ret != 0 )
-    {
-        mbedtls_printf( " failed\n  !  mbedtls_x509_crt_parse #2 returned %d\n\n", ret );
-        goto exit;
-    }
+        ret = mbedtls_x509_crt_parse(&srvcert, (const unsigned char *) srv_crt,
+                                     srv_crt_len);
+        if (ret != 0) {
+            mbedtls_printf(" failed\n  !  mbedtls_x509_crt_parse #1 returned %d\n\n", ret);
+            goto exit;
+        }
 
-    // INFO: mbedtls_test_srv_key is defined in certs.c. It's literally a defined string
-    ret =  mbedtls_pk_parse_key( &pkey, (const unsigned char *) srv_key,
-                                 srv_key_len, NULL, 0 );
-    if( ret != 0 )
-    {
-        mbedtls_printf( " failed\n  !  mbedtls_pk_parse_key returned %d\n\n", ret );
-        goto exit;
-    }
+        ret = mbedtls_x509_crt_parse(&srvcert, (const unsigned char *) mbedtls_test_cas_pem,
+                                     mbedtls_test_cas_pem_len);
+        if (ret != 0) {
+            mbedtls_printf(" failed\n  !  mbedtls_x509_crt_parse #2 returned %d\n\n", ret);
+            goto exit;
+        }
 
-    mbedtls_printf( " ok\n" );
+        // INFO: mbedtls_test_srv_key is defined in certs.c. It's literally a defined string
+        ret = mbedtls_pk_parse_key(&pkey, (const unsigned char *) srv_key,
+                                   srv_key_len, NULL, 0);
+        if (ret != 0) {
+            mbedtls_printf(" failed\n  !  mbedtls_pk_parse_key returned %d\n\n", ret);
+            goto exit;
+        }
+
+        mbedtls_printf(" ok\n");
+
+    } else {
+
+        mbedtls_printf("\tSkipping certificate loading because a PSK ciphersuite is in use...\n");
+    }
 
     /*
      * 2. Setup the listening TCP socket
@@ -363,11 +369,14 @@ int main( int argc, char** argv )
                                     mbedtls_ssl_cache_set );
 #endif
 
-    mbedtls_ssl_conf_ca_chain( &conf, srvcert.next, NULL );
-    if( ( ret = mbedtls_ssl_conf_own_cert( &conf, &srvcert, &pkey ) ) != 0 )
-    {
-        mbedtls_printf( " failed\n  ! mbedtls_ssl_conf_own_cert returned %d\n\n", ret );
-        goto exit;
+    if (is_use_psk == 0) {
+        mbedtls_ssl_conf_ca_chain(&conf, srvcert.next, NULL);
+        if ((ret = mbedtls_ssl_conf_own_cert(&conf, &srvcert, &pkey)) != 0) {
+            mbedtls_printf(" failed\n  ! mbedtls_ssl_conf_own_cert returned %d\n\n", ret);
+            goto exit;
+        }
+    } else {
+        mbedtls_printf("\tSkipping CA chain conf, because a PSK ciphersuite is in use...\n");
     }
 
     if( ( ret = mbedtls_ssl_setup( &ssl, &conf ) ) != 0 )
