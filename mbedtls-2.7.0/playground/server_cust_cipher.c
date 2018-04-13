@@ -240,8 +240,6 @@ int main( int argc, char** argv )
             srv_crt_len = mbedtls_test_srv_crt_ecdh_rsa_len;
 
         }
-
-        mbedtls_printf("\n\n%s\n\n", srv_crt);
     }
 
     // This one is here for the TLS-ECDHE-ECDSA-* cipher suites
@@ -307,6 +305,7 @@ int main( int argc, char** argv )
         }
 
         mbedtls_printf(" ok\n");
+        mbedtls_printf("\n\n%s\n\n", srv_crt);
 
     } else {
 
@@ -358,6 +357,8 @@ int main( int argc, char** argv )
         goto exit;
     }
 
+    // Enable RC4 cipher support
+    mbedtls_ssl_conf_arc4_support(&conf, MBEDTLS_SSL_ARC4_ENABLED);
     mbedtls_printf(" ok\n");
 
     mbedtls_printf( "  . Setting up custom ciphersuite..." );

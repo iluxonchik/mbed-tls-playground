@@ -202,6 +202,9 @@ int main( int argc, char** argv )
     }
     mbedtls_printf( " ok\n" );
 
+    // Enable RC4 ciphers
+    mbedtls_ssl_conf_arc4_support(&conf, MBEDTLS_SSL_ARC4_ENABLED);
+
     mbedtls_printf( "  . Setting up custom ciphersuite..." );
     fflush( stdout );
 
