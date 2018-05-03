@@ -27,7 +27,22 @@
 
 #include "mbedtls/certs.h"
 
-#define PSK_VALUE "71bc53a3beeaa416a4050653cec13d288e3eb692959cd0828499b702739e482c"
+/*
+* Here, you have a lot of options for the PSK key sizes. Set the PSK_VALUE to the one
+* that you want to use.
+*
+* To generate PSKs you can use openssl. For example, to generate a 256 bit (32 byte) PSK, you can simply run:
+*     $ openssl rand -hex 32
+*
+*/
+
+#define PSK_112_BIT "52126f1e258dba64e31d1572174b"
+#define PSK_127_BIT "2b88bcc7caec33b6cf61cdf06887d683"
+#define PSK_256_BIT "71bc53a3beeaa416a4050653cec13d288e3eb692959cd0828499b702739e482c"
+
+#define PSK_VALUE PSK_256_BIT
+
+
 
 const char* psk_value = PSK_VALUE;
 const size_t psk_value_len = sizeof(psk_value);
