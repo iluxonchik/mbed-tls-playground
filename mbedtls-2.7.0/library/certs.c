@@ -102,23 +102,27 @@ const char mbedtls_test_srv_crt_ec[] =
 "-----END CERTIFICATE-----\r\n";
 const size_t mbedtls_test_srv_crt_ec_len = sizeof( mbedtls_test_srv_crt_ec );
 
+/*
+ * WARNING: this certificate will expire on July 5th, 2018
+ *
+ * To generate a new one, follow the steps in ~/Documents/tmp/certs/commands.txt
+ */
 const char mbedtls_test_srv_crt_ecdh_rsa[] =
 "-----BEGIN CERTIFICATE-----\r\n"
-"MIICojCCAYqgAwIBAgIJAL8pIYrgtDAdMA0GCSqGSIb3DQEBCwUAMDsxCzAJBgNV\r\n"
+"MIICczCCAVugAwIBAgIJAL8pIYrgtDAkMA0GCSqGSIb3DQEBCwUAMDsxCzAJBgNV\r\n"
 "BAYTAk5MMREwDwYDVQQKDAhQb2xhclNTTDEZMBcGA1UEAwwQUG9sYXJTU0wgVGVz\r\n"
-"dCBDQTAeFw0xODA0MDYwODI3MThaFw0xODA1MDYwODI3MThaMGIxCzAJBgNVBAYT\r\n"
-"Ak5MMRMwEQYDVQQIDApTb21lLVN0YXRlMSowKAYDVQQKDCFNYmVkVExTIEVDREgt\r\n"
-"UlNBIFRlc3QgQ2VydGlmaWNhdGUxEjAQBgNVBAMMCWxvY2FsaG9zdDBZMBMGByqG\r\n"
-"SM49AgEGCCqGSM49AwEHA0IABDfMVtl2CR5acj7HWS3/IG7ufPkGkXTQrRS192gi\r\n"
-"WWKSTuUA2CMR/+ov0jRdXRa9iojCa3cNVc2KKg76Aci07f+jTTBLMB0GA1UdDgQW\r\n"
-"BBRQYaWP1AfZ14IBDOVlf4xjRqcTvjAJBgNVHRMEAjAAMB8GA1UdIwQYMBaAFLRa\r\n"
-"5KWz3tJS9rnVppUP6z68x/3/MA0GCSqGSIb3DQEBCwUAA4IBAQAI8YhuKVOQOx9+\r\n"
-"/xkAOVL37Xsqw690FSpG6YZkS7YgR9JAlkjcaSFe7BRfZmO1/RrlI1Vn8mkbWcpR\r\n"
-"LGLNN2oOK2LvUBGk1KFdZSBxoZ/MRvWgCbmREX+mogJQ1vJ8++qSvBxHPKVFiXu/\r\n"
-"wpvBiC2GuXJo/5cGd2gtxsch3/IO737gFDpJbKBmz2IEiS5UoqFQd7IFgxDyD0gA\r\n"
-"D4XNaA8mANXMKMNh70eGnY5MTU2R8F+BNCncDDnru0eM9q46g6P5BxcSSxXBey3K\r\n"
-"OAMyWUQHmL5aJdnIdSaqNBkd9RFjpkfSVGx57MPqdsu6WgPRXu8j6k0O0vjotyXY\r\n"
-"HOvc5C6g\r\n"
+"dCBDQTAeFw0xODA1MDYxNDUxMTlaFw0xODA2MDUxNDUxMTlaMDMxCzAJBgNVBAYT\r\n"
+"Ak5MMRAwDgYDVQQKDAdtYmVkVExTMRIwEAYDVQQDDAlsb2NhbGhvc3QwWTATBgcq\r\n"
+"hkjOPQIBBggqhkjOPQMBBwNCAAQ3zFbZdgkeWnI+x1kt/yBu7nz5BpF00K0Utfdo\r\n"
+"Illikk7lANgjEf/qL9I0XV0WvYqIwmt3DVXNiioO+gHItO3/o00wSzAdBgNVHQ4E\r\n"
+"FgQUUGGlj9QH2deCAQzlZX+MY0anE74wCQYDVR0TBAIwADAfBgNVHSMEGDAWgBS0\r\n"
+"WuSls97SUva51aaVD+s+vMf9/zANBgkqhkiG9w0BAQsFAAOCAQEAbROjJvA+6sts\r\n"
+"cTGV71oHOObWBYfJSTK3mFt+qN5LUDRUvRJXBG+0tVEAW9PGyS2jh4+SMCPk+Kgx\r\n"
+"xBbNLWBAJoW5KF22PjrCV3KkCcWX8hqzLKq1M5vLrOvYAqroGCS2rCxJJP05tGNm\r\n"
+"yK5Spc6X/M0Y79vCzVNSrKsBA2lOJ/TpPNpILkcJf6DUjNE43RxgcblW8lJgW3AL\r\n"
+"MVMb4aEgbEmZRh850DHvrs8WRBjdRKG4yDJMD7xHMgGwlJo+ULuqw6ICt0noqUdJ\r\n"
+"uaIZ8LnS9faLtbHskd8rtFoUFW/mzqierRpmCLslxswdARRP0LjjQhJzbxUmlOpE\r\n"
+"OLARMYNTSA==\r\n"
 "-----END CERTIFICATE-----\r\n";
 const size_t mbedtls_test_srv_crt_ecdh_rsa_len = sizeof(mbedtls_test_srv_crt_ecdh_rsa);
 
