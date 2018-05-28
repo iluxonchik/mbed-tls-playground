@@ -554,7 +554,7 @@
  *
  * Uncomment this macro to remove RC4 ciphersuites by default.
  */
-#define MBEDTLS_REMOVE_ARC4_CIPHERSUITES
+//#define MBEDTLS_REMOVE_ARC4_CIPHERSUITES
 
 /**
  * \def MBEDTLS_ECP_DP_SECP192R1_ENABLED
@@ -1950,7 +1950,7 @@
  *
  * Requires: MBEDTLS_ECP_C, MBEDTLS_MD_C
  */
-//#define MBEDTLS_ECJPAKE_C
+#define MBEDTLS_ECJPAKE_C
 
 /**
  * \def MBEDTLS_ECP_C

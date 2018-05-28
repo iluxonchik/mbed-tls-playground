@@ -1153,6 +1153,7 @@ int mbedtls_pk_parse_key( mbedtls_pk_context *pk,
     mbedtls_pem_init( &pem );
 
 #if defined(MBEDTLS_RSA_C)
+    mbedtls_printf("\tmbedtls_pk_parse_key():\n\t\tParsing RSA private key...\n");
     /* Avoid calling mbedtls_pem_read_buffer() on non-null-terminated string */
     if( keylen == 0 || key[keylen - 1] != '\0' )
         ret = MBEDTLS_ERR_PEM_NO_HEADER_FOOTER_PRESENT;
@@ -1184,6 +1185,7 @@ int mbedtls_pk_parse_key( mbedtls_pk_context *pk,
 #endif /* MBEDTLS_RSA_C */
 
 #if defined(MBEDTLS_ECP_C)
+    mbedtls_printf("\tmbedtls_pk_parse_key():\n\t\tParsing EC private key...\n");
     /* Avoid calling mbedtls_pem_read_buffer() on non-null-terminated string */
     if( keylen == 0 || key[keylen - 1] != '\0' )
         ret = MBEDTLS_ERR_PEM_NO_HEADER_FOOTER_PRESENT;
@@ -1237,6 +1239,7 @@ int mbedtls_pk_parse_key( mbedtls_pk_context *pk,
         return( ret );
 
 #if defined(MBEDTLS_PKCS12_C) || defined(MBEDTLS_PKCS5_C)
+    mbedtls_printf("\tmbedtls_pk_parse_key():\n\t\tParsing ENCRYPTED private key...\n");
     /* Avoid calling mbedtls_pem_read_buffer() on non-null-terminated string */
     if( keylen == 0 || key[keylen - 1] != '\0' )
         ret = MBEDTLS_ERR_PEM_NO_HEADER_FOOTER_PRESENT;
@@ -1275,6 +1278,7 @@ int mbedtls_pk_parse_key( mbedtls_pk_context *pk,
      */
 #if defined(MBEDTLS_PKCS12_C) || defined(MBEDTLS_PKCS5_C)
     {
+        mbedtls_printf("\tmbedtls_pk_parse_key():\n\t\tParsing DER encoded ENCRYPTED private key...\n");
         unsigned char *key_copy;
 
         if( ( key_copy = mbedtls_calloc( 1, keylen ) ) == NULL )
@@ -1306,6 +1310,7 @@ int mbedtls_pk_parse_key( mbedtls_pk_context *pk,
     mbedtls_pk_free( pk );
 
 #if defined(MBEDTLS_RSA_C)
+    mbedtls_printf("\tmbedtls_pk_parse_key():\n\t\tParsing DER encoded RSA private key...\n");
 
     pk_info = mbedtls_pk_info_from_type( MBEDTLS_PK_RSA );
     if( ( ret = mbedtls_pk_setup( pk, pk_info ) ) != 0 ||
@@ -1322,7 +1327,7 @@ int mbedtls_pk_parse_key( mbedtls_pk_context *pk,
 #endif /* MBEDTLS_RSA_C */
 
 #if defined(MBEDTLS_ECP_C)
-
+    mbedtls_printf("\tmbedtls_pk_parse_key():\n\t\tParsing DER encoded EC private key...\n");
     pk_info = mbedtls_pk_info_from_type( MBEDTLS_PK_ECKEY );
     if( ( ret = mbedtls_pk_setup( pk, pk_info ) ) != 0 ||
         ( ret = pk_parse_key_sec1_der( mbedtls_pk_ec( *pk ),

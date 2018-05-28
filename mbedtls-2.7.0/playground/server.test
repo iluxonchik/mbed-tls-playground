@@ -1,0 +1,17350 @@
+# callgrind format
+version: 1
+creator: callgrind-3.13.0
+pid: 495
+cmd:  ./server_cc_lf 49200
+part: 1
+
+
+desc: I1 cache: 
+desc: D1 cache: 
+desc: LL cache: 
+
+desc: Timerange: Basic block 0 - 253761229
+desc: Trigger: Program termination
+
+positions: line
+events: Ir
+summary: 2627286231
+
+
+ob=(3) ???
+fl=(3) ???
+fn=(1594) 0x0000000004a277b8
+0 3
+
+fn=(1578) 0x0000000000182d44
+0 3
+
+fn=(266) 0x0000000000116d48
+0 6
+
+fn=(228) 0x0000000004a27530
+0 6
+
+ob=(4) /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+fl=(4) ???
+fn=(1580) 0x0000000000000610
+0 8
+cob=(2) /usr/lib/libc-2.26.so
+cfi=(2) ???
+cfn=(1566) __cxa_finalize
+calls=1 0 
+0 63
+0 1
+cfn=(1588) 0x0000000000000580
+calls=1 0 
+0 8
+0 3
+
+fn=(232) 0x0000000000000650
+0 17
+
+fn=(1588)
+0 8
+
+ob=(5) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/server_cc_lf
+fl=(47) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/include/mbedtls/cipher.h
+fn=(1418) mbedtls_cipher_get_block_size
+375 4401330
++1 8802660
++3 4401330
++1 2934220
+
+fn=(1432) mbedtls_cipher_get_cipher_mode
+392 4305
++1 8610
++3 4305
++1 2870
+
+fl=(14) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/library/ctr_drbg.c
+fn=(940) ctr_drbg_update_internal
+265 72
++2 18
++2 9
++2 45
+cob=(2)
+cfi=(2)
+cfn=(298) __memset_avx2_unaligned_erms
+calls=9 0 
+* 99
+* 9
++2 18
++5 54
++1 378
+-1 54
++2 27
++5 216
+cfi=(29) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/library/aes.c
+cfn=(930) mbedtls_aes_crypt_ecb
+calls=27 848 
+* 3429
+* 81
++5 27
+-17 99
++20 18
++1 5616
+-1 1314
++6 63
+cfi=(29)
+cfn=(872) mbedtls_aes_setkey_enc
+calls=9 486 
+* 2295
+* 27
++4 63
++2 9
++1 45
+
+fn=(866) mbedtls_ctr_drbg_seed
+114 8
++1 9
+cfn=(868) mbedtls_ctr_drbg_seed_entropy_len
+calls=1 -35 
+* 149786
++2 2
+
+fn=(868)
+80 12
++4 5
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=1 -84 
+* 11
+* 1
++2 4
+cfi=(29)
+cfn=(870) mbedtls_aes_init
+calls=1 468 
+* 47
++2 3
++1 3
++2 3
++1 2
++5 7
+cfi=(29)
+cfn=(872)
+calls=1 486 
+* 81481
+* 3
++5 6
+cfn=(882) mbedtls_ctr_drbg_reseed
+calls=1 327 
+* 68189
+* 3
++4 1
++1 5
+
+fn=(1170) mbedtls_ctr_drbg_random
+458 48
++2 16
++7 56
+cfn=(1172) mbedtls_ctr_drbg_random_with_add
+calls=8 -86 
+* 20282
+* 8
++7 8
++1 16
+
+fn=(1546) mbedtls_ctr_drbg_free
+120 4
++1 2
++6 4
+cfi=(29)
+cfn=(934) mbedtls_aes_free
+calls=1 473 
+* 2620
++1 4
+cfn=(938) mbedtls_zeroize
+calls=1 -75 
+* 3111
+* 1
++1 2
+
+fn=(1172)
+381 88
++1 8
++1 16
++2 16
++5 16
++3 16
++3 40
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=8 0 
+* 88
+* 8
++2 48
++1 16
+-1 16
++10 16
++17 78
++1 546
+-1 78
++2 39
++5 312
+cfi=(29)
+cfn=(930)
+calls=39 848 
+* 4953
+* 117
++5 156
++5 234
+cob=(2)
+cfi=(2)
+cfn=(426) __memcpy_avx_unaligned_erms
+calls=39 0 
+* 416
+* 39
++1 78
++1 78
+-24 94
++27 40
+cfn=(940)
+calls=8 265 
+* 12520
+* 24
++5 40
++2 8
++1 40
+
+fn=(314) mbedtls_ctr_drbg_init
+61 4
++1 5
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=1 -62 
+* 41
+* 1
++5 3
+
+fn=(882)
+327 9
++2 1
++3 4
++1 5
+-1 2
++4 5
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=1 0 
+* 41
+* 1
++5 9
+cfi=(12) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/library/entropy.c
+cfn=(884) mbedtls_entropy_func
+calls=1 -10 
+* 50396
+* 2
++6 3
++5 4
++2 8
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=1 0 
+* 12
+* 1
++1 2
++6 6
+cfn=(928) block_cipher_df
+calls=1 148 
+* 16094
+* 3
++8 5
+cfn=(940)
+calls=1 265 
+* 1565
+* 3
++4 2
++2 1
++1 5
+
+fn=(938)
+53 20
++1 7744
++1 15
+
+fn=(928)
+148 9
++7 1
++5 2
++3 5
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=1 0 
+* 41
+* 1
++1 3
+cfi=(29)
+cfn=(870)
+calls=1 468 
+* 47
++9 3
++1 8
++1 8
++1 8
++1 5
++1 1
++1 4
++1 6
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=1 0 
+* 11
+* 1
++1 4
++2 3
++2 2
++1 160
+-1 98
++3 6
+cfi=(29)
+cfn=(872)
+calls=1 486 
+* 255
+* 3
++8 2
++2 6
++1 15
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=3 0 
+* 33
+* 3
++1 6
++2 3
++2 36
++1 3744
+-1 900
++2 18
++2 54
+-1 18
++3 108
+cfi=(29)
+cfn=(930)
+calls=18 848 
+* 2286
+* 54
+-8 42
++14 24
++5 9
+-25 11
++31 6
+cfi=(29)
+cfn=(872)
+calls=1 486 
+* 255
+* 3
++4 3
++1 2
++2 2
++2 18
+cfi=(29)
+cfn=(930)
+calls=3 848 
+* 381
+* 9
++4 18
++1 3
+-7 11
++9 1
++1 3
+cfi=(29)
+cfn=(934)
+calls=1 473 
+* 2620
++4 4
+cfn=(938)
+calls=1 53 
+* 3759
++1 4
+cfn=(938)
+calls=1 53 
+* 447
++1 4
+cfn=(938)
+calls=1 53 
+* 303
++1 4
+cfn=(938)
+calls=1 53 
+* 159
++1 2
++8 1
++1 5
+
+fl=(32) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/library/timing.c
+fn=(926) mbedtls_timing_hardclock
+112 2
++2 3
++1 3
++1 2
+
+fl=(7) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/library/net_sockets.c
+fn=(1008) mbedtls_net_free
+581 12
++1 12
++3 10
+cob=(2)
+cfi=(2)
+cfn=(1506) shutdown
+calls=1 0 
+* 5
+cob=(1) /usr/lib/ld-2.26.so
+cfi=(1) ???
+cfn=(294) _dl_runtime_resolve_xsave
+calls=1 0 
+* 880
+* 6
++1 8
+cob=(2)
+cfi=(2)
+cfn=(1512) close
+calls=1 0 
+* 9
+cob=(1)
+cfi=(1)
+cfn=(294)
+calls=1 0 
+* 892
+* 6
++2 6
+-5 1
++6 6
+
+fn=(1084) mbedtls_net_recv
+465 8640
++2 4320
++2 2880
++3 8640
+cob=(2)
+cfi=(2)
+cfn=(396) read
+calls=1439 0 
+* 12951
+cob=(1)
+cfi=(1)
+cfn=(294)
+calls=1 0 
+* 887
+* 1444
+* 1440
++2 2880
++20 1440
++1 2880
+
+fn=(734) mbedtls_net_bind
+185 10
++4 1
+cfn=(736) net_prepare
+calls=1 -84 
+* 1100
+* 3
++4 5
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=1 0 
+* 11
+* 1
++1 1
++1 4
++1 4
++1 2
++1 1
++2 6
+cob=(1)
+cfi=(1)
+cfn=(294)
+calls=1 0 
+* 21350
+* 5
+* 2
++4 1
++1 3
++2 9
+cob=(1)
+cfi=(1)
+cfn=(294)
+calls=1 0 
+* 841
+* 5
+* 3
++2 4
++6 1
++1 9
+cob=(1)
+cfi=(1)
+cfn=(294)
+calls=1 0 
+* 903
+* 5
+* 2
++8 9
+cob=(1)
+cfi=(1)
+cfn=(294)
+calls=1 0 
+* 878
+* 5
+* 2
++8 2
++2 5
+cob=(1)
+cfi=(1)
+cfn=(294)
+calls=1 0 
+* 870
+* 5
+* 2
++9 1
++1 1
+-39 2
++42 3
+cob=(1)
+cfi=(1)
+cfn=(294)
+calls=1 0 
+* 1102
+* 5
++2 1
++2 5
+
+fn=(736)
+105 2
++14 3
+cob=(1)
+cfi=(1)
+cfn=(294)
+calls=1 0 
+* 1087
+* 5
++3 1
++1 2
+
+fn=(1052) mbedtls_net_accept
+304 11
++8 1
++1 1
++7 10
+cob=(1)
+cfi=(1)
+cfn=(294)
+calls=1 0 
+* 915
+* 5
+* 2
++2 1
+-1 2
++6 3
++3 7
+cob=(1)
+cfi=(1)
+cfn=(294)
+calls=1 0 
+* 905
+* 5
+* 7
++21 2
++10 3
++28 2
++24 1
++1 5
+
+fn=(1196) mbedtls_net_send
+545 4338
++2 2169
++2 1446
++3 4338
+cob=(2)
+cfi=(2)
+cfn=(446) write
+calls=722 0 
+* 6498
+cob=(1)
+cfi=(1)
+cfn=(294)
+calls=1 0 
+* 861
+* 727
+* 723
++2 1446
++20 723
++1 1446
+
+fn=(284) mbedtls_net_init
+129 6
++1 4
++1 6
+
+fl=(6) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground/server_cc_large_file.c
+fn=(282) main
+70 8
++8 2
++13 3
+cfi=(7)
+cfn=(284)
+calls=1 +38 
+* 8
++1 3
+cfi=(7)
+cfn=(284)
+calls=1 +37 
+* 8
++1 3
+cfi=(8) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/library/ssl_tls.c
+cfn=(286) mbedtls_ssl_init
+calls=1 5649 
+* 907
++1 3
+cfi=(8)
+cfn=(300) mbedtls_ssl_config_init
+calls=1 7520 
+* 47
++2 3
+cfi=(9) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/library/ssl_cache.c
+cfn=(302) mbedtls_ssl_cache_init
+calls=1 -49 
+* 28
++2 3
+cfi=(10) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/library/x509_crt.c
+cfn=(304) mbedtls_x509_crt_init
+calls=1 2339 
+* 68
++1 3
+cfi=(11) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/library/pk.c
+cfn=(306) mbedtls_pk_init
+calls=1 -45 
+* 12
++1 3
+cfi=(12)
+cfn=(308) mbedtls_entropy_init
+calls=1 -30 
+* 275
++1 3
+cfi=(14)
+cfn=(314)
+calls=1 -40 
+* 54
++3 2
+cfi=(15) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/library/debug.c
+cfn=(316) mbedtls_debug_set_threshold
+calls=1 -48 
+* 8
++5 2
++13 3
+cob=(1)
+cfi=(1)
+cfn=(294)
+calls=1 0 
+* 61340
+* 5
+* 1
++1 2
++5 5
+cob=(1)
+cfi=(1)
+cfn=(294)
+calls=1 0 
+* 1402
+* 5
++1 3
+cob=(1)
+cfi=(1)
+cfn=(294)
+calls=1 0 
+* 935
+* 5
+* 1
++1 5
+cob=(2)
+cfi=(2)
+cfn=(374) fseek
+calls=1 0 
+* 172
+* 1
++2 6
+cob=(1)
+cfi=(1)
+cfn=(294)
+calls=1 0 
+* 2634
+* 5
++1 4
+cob=(1)
+cfi=(1)
+cfn=(294)
+calls=1 0 
+* 1173
+* 5
+* 1
++1 2
++4 2
++2 3
++2 5
+cob=(1)
+cfi=(1)
+cfn=(294)
+calls=1 0 
+* 1076
+* 5
+* 1
++1 2
++1 1
++1 5
+cob=(2)
+cfi=(2)
+cfn=(408) printf
+calls=1 0 
+* 952
+* 1
++5 3
+cob=(2)
+cfi=(2)
+cfn=(408)
+calls=1 0 
+* 2672
+* 1
++1 3
+cob=(1)
+cfi=(1)
+cfn=(294)
+calls=1 0 
+* 1017
+* 5
++7 6
+cfi=(10)
+cfn=(456) mbedtls_x509_crt_parse
+calls=1 973 
+* 262659
+* 1
++2 2
++6 5
+cfi=(10)
+cfn=(456)
+calls=1 973 
+* 777059
+* 1
++2 2
++7 7
+cfi=(21) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/library/pkparse.c
+cfn=(696) mbedtls_pk_parse_key
+calls=1 1145 
+* 10809933
+* 1
++2 2
++6 2
+cob=(1)
+cfi=(1)
+cfn=(294)
+calls=1 0 
+* 1186
+* 5
++5 3
+cob=(2)
+cfi=(2)
+cfn=(408)
+calls=1 0 
+* 426
+* 1
++1 3
+cob=(2)
+cfi=(2)
+cfn=(452) fflush
+calls=1 0 
+* 189
+* 1
++2 6
+cfi=(7)
+cfn=(734)
+calls=1 -6 
+* 27190
+* 3
++6 2
+cob=(2)
+cfi=(2)
+cfn=(728) puts
+calls=1 0 
+* 340
+* 1
++5 3
+cob=(2)
+cfi=(2)
+cfn=(408)
+calls=1 0 
+* 449
+* 1
++1 3
+cob=(2)
+cfi=(2)
+cfn=(452)
+calls=1 0 
+* 189
+* 1
++2 3
+cob=(2)
+cfi=(2)
+cfn=(484) __strlen_avx2
+calls=1 0 
+* 19
+* 1
+* 8
+cfi=(14)
+cfn=(866)
+calls=1 -91 
+* 149805
+* 3
++8 2
+cob=(2)
+cfi=(2)
+cfn=(728)
+calls=1 0 
+* 340
+* 1
++5 3
+cob=(2)
+cfi=(2)
+cfn=(408)
+calls=1 0 
+* 374
+* 1
++1 3
+cob=(2)
+cfi=(2)
+cfn=(452)
+calls=1 0 
+* 189
+* 1
++2 6
+cfi=(8)
+cfn=(942) mbedtls_ssl_config_defaults
+calls=1 7568 
+* 113253
+* 3
++9 2
+cob=(2)
+cfi=(2)
+cfn=(728)
+calls=1 0 
+* 340
+* 1
++2 3
+cob=(2)
+cfi=(2)
+cfn=(408)
+calls=1 0 
+* 411
+* 1
++1 3
+cob=(2)
+cfi=(2)
+cfn=(452)
+calls=1 0 
+* 189
+* 1
++2 5
+cfi=(8)
+cfn=(958) mbedtls_ssl_conf_ciphersuites
+calls=1 5961 
+* 19
++2 2
+cob=(2)
+cfi=(2)
+cfn=(728)
+calls=1 0 
+* 340
+* 1
++2 6
+cfi=(8)
+cfn=(960) mbedtls_ssl_conf_rng
+calls=1 5882 
+* 14
++1 5
+cfi=(8)
+cfn=(962) mbedtls_ssl_conf_dbg
+calls=1 5890 
+* 14
++3 7
+cfi=(8)
+cfn=(964) mbedtls_ssl_conf_session_cache
+calls=1 5930 
+* 18
++5 6
+cfi=(8)
+cfn=(966) mbedtls_ssl_conf_ca_chain
+calls=1 6029 
+* 14
++1 6
+cfi=(8)
+cfn=(968) mbedtls_ssl_conf_own_cert
+calls=1 6022 
+* 195
+* 3
++6 5
+cfi=(8)
+cfn=(972) mbedtls_ssl_setup
+calls=1 5658 
+* 41030
+* 3
++6 1
++2 2
++9 3
+cfi=(7)
+cfn=(1008)
+calls=1 581 
+* 11
++2 3
+cfi=(8)
+cfn=(1010) mbedtls_ssl_session_reset
+calls=1 5825 
+* 76952
++5 3
+cob=(2)
+cfi=(2)
+cfn=(408)
+calls=1 0 
+* 426
+* 1
++1 3
+cob=(2)
+cfi=(2)
+cfn=(452)
+calls=1 0 
+* 189
+* 1
++2 7
+cfi=(7)
+cfn=(1052)
+calls=1 +22 
+* 1888
+* 3
++7 8
+cfi=(8)
+cfn=(1066) mbedtls_ssl_set_bio
+calls=1 5900 
+* 22
++2 2
+cob=(2)
+cfi=(2)
+cfn=(728)
+calls=1 0 
+* 340
+* 1
++5 3
+cob=(2)
+cfi=(2)
+cfn=(408)
+calls=1 0 
+* 426
+* 1
++1 3
+cob=(2)
+cfi=(2)
+cfn=(452)
+calls=1 0 
+* 189
+* 1
++2 4
+cfi=(8)
+cfn=(1068) mbedtls_ssl_handshake
+calls=1 6650 
+* 180468538
+* 3
++9 2
+cob=(2)
+cfi=(2)
+cfn=(728)
+calls=1 0 
+* 340
+* 1
++1 3
+cfi=(8)
+cfn=(1466) mbedtls_ssl_get_ciphersuite
+calls=1 6497 
+* 247
+* 1
++1 5
+cob=(2)
+cfi=(2)
+cfn=(408)
+calls=1 0 
+* 1017
+* 1
++5 3
+cob=(2)
+cfi=(2)
+cfn=(408)
+calls=1 0 
+* 328
+* 1
++1 3
+cob=(2)
+cfi=(2)
+cfn=(452)
+calls=1 0 
+* 189
+* 1
++1 1
++3 5
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=1 0 
+* 14
+* 1
+* 3575
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=715 0 
+* 10010
+* 715
++1 6444
+cob=(2)
+cfi=(2)
+cfn=(408)
+calls=716 0 
+* 704279
+* 716
++1 6444
+cfi=(8)
+cfn=(1468) mbedtls_ssl_read
+calls=716 6835 
+* 1214476881
+* 716
++1 3580
+cob=(2)
+cfi=(2)
+cfn=(408)
+calls=716 0 
+* 620772
+* 716
++1 1432
++1 1432
++1 7876
+cob=(2)
+cfi=(2)
+cfn=(408)
+calls=716 0 
+* 1403424
+* 716
++3 2864
++3 1432
++20 1432
++1 3580
+cob=(2)
+cfi=(2)
+cfn=(408)
+calls=716 0 
+* 607168
+* 716
++2 3579
++1 1
++10 7
+cob=(1)
+cfi=(1)
+cfn=(294)
+calls=1 0 
+* 1445
+* 5
++1 2
++1 3
+cob=(1)
+cfi=(1)
+cfn=(294)
+calls=1 0 
+* 1373
+* 5
++2 2
+cob=(2)
+cfi=(2)
+cfn=(728)
+calls=1 0 
+* 427
+* 1
++1 3
+cob=(2)
+cfi=(2)
+cfn=(452)
+calls=1 0 
+* 67
+* 1
++2 1
++1 1
++2 1432
++5 6444
+cob=(2)
+cfi=(2)
+cfn=(408)
+calls=716 0 
+* 539599
+* 716
++1 8592
+cfi=(8)
+cfn=(1486) mbedtls_ssl_write
+calls=716 7241 
+* 1213813854
+* 716
++1 1432
++3 1432
++1 1432
++1 3580
+cob=(2)
+cfi=(2)
+cfn=(408)
+calls=716 0 
+* 617192
+* 716
++1 4296
+cob=(2)
+cfi=(2)
+cfn=(408)
+calls=716 0 
+* 1033639
+* 716
+* 716
+-15 2868
++25 3
+cob=(2)
+cfi=(2)
+cfn=(408)
+calls=1 0 
+* 375
+* 1
++2 4
+cfi=(8)
+cfn=(1494) mbedtls_ssl_close_notify
+calls=1 7281 
+* 5441
+* 3
++10 2
+cob=(2)
+cfi=(2)
+cfn=(728)
+calls=1 0 
+* 340
+* 1
++2 1
++1 2
+cob=(2)
+cfi=(2)
+cfn=(728)
+calls=1 0 
+* 424
+* 1
++1 1
++5 2
++8 1
++2 3
+cob=(2)
+cfi=(2)
+cfn=(618) free
+calls=1 0 
+* 62
+* 1
++1 3
+cfi=(7)
+cfn=(1008)
+calls=1 581 
+* 1804
++1 3
+cfi=(7)
+cfn=(1008)
+calls=1 581 
+* 38
++2 3
+cfi=(10)
+cfn=(1514) mbedtls_x509_crt_free
+calls=1 2347 
+* 68042
++1 3
+cfi=(11)
+cfn=(1516) mbedtls_pk_free
+calls=1 66 
+* 5799
++1 3
+cfi=(8)
+cfn=(1530) mbedtls_ssl_free
+calls=1 7441 
+* 326295
++1 3
+cfi=(8)
+cfn=(1540) mbedtls_ssl_config_free
+calls=1 7725 
+* 3747
++2 3
+cfi=(9)
+cfn=(1544) mbedtls_ssl_cache_free
+calls=1 302 
+* 1542
++2 3
+cfi=(14)
+cfn=(1546)
+calls=1 120 
+* 5748
++1 3
+cfi=(12)
+cfn=(1548) mbedtls_entropy_free
+calls=1 127 
+* 9207
++7 1
++1 5
+
+fl=(42) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/library/ssl_srv.c
+fn=(1134) ssl_parse_session_ticket_ext
+499 9
++4 3
+cfi=(8)
+cfn=(978) mbedtls_ssl_session_init
+calls=1 5543 
+* 40
++2 5
++3 2
++58 5
+
+fn=(1162) ssl_write_server_hello
+2381 8
++5 1
++3 8
+cfi=(15)
+cfn=(1070) mbedtls_debug_print_msg
+calls=1 84 
+* 34
++3 6
++10 5
++13 3
++1 3
++3 5
+-1 8
+cfi=(8)
+cfn=(1164) mbedtls_ssl_write_version
+calls=1 8057 
+* 19
++2 1
++2 19
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
+* 1
++4 2
+cob=(1)
+cfi=(1)
+cfn=(294)
+calls=1 0 
+* 895
+* 5
+* 1
++1 8
++1 8
++1 8
++1 5
++2 10
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++8 10
+cfi=(14)
+cfn=(1170)
+calls=1 458 
+* 2024
+* 3
++3 1
++2 10
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=1 0 
+* 11
+* 1
++2 12
+cfi=(15)
+cfn=(1094) mbedtls_debug_print_buf
+calls=1 144 
+* 31
+* 1
++7 5
++2 2
+-2 2
++4 3
+-2 2
++10 5
++6 5
++3 4
+cob=(2)
+cfi=(2)
+cfn=(802) __time_syscall
+calls=1 0 
+* 3
+* 1
+* 1
++4 5
++8 5
++1 12
+cfi=(14)
+cfn=(1170)
+calls=1 458 
+* 2022
+* 3
++28 8
++1 10
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=1 0 
+* 11
+* 1
++1 4
++2 10
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++1 12
+cfi=(15)
+cfn=(1094)
+calls=1 144 
+* 31
+* 1
++1 14
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++3 10
++1 8
++1 8
++2 5
+cfi=(33) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/library/ssl_ciphersuites.c
+cfn=(1174) mbedtls_ssl_get_ciphersuite_name
+calls=1 1775 
+* 230
+* 10
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 12
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++12 9
+cfn=(1176) ssl_write_renegotiation_ext
+calls=1 2142 
+* 87
++1 2
++3 9
+cfn=(1178) ssl_write_max_fragment_length_ext
+calls=1 2183 
+* 18
++1 2
++4 9
+cfn=(1180) ssl_write_truncated_hmac_ext
+calls=1 2023 
+* 18
++1 2
++4 9
+cfn=(1182) ssl_write_encrypt_then_mac_ext
+calls=1 2048 
+* 404
++1 2
++4 9
+cfn=(1186) ssl_write_extended_ms_ext
+calls=1 2091 
+* 79
++1 2
++4 9
+cfn=(1188) ssl_write_session_ticket_ext
+calls=1 2118 
+* 18
++1 2
++5 9
+cfn=(1190) ssl_write_supported_point_formats_ext
+calls=1 2211 
+* 84
++1 2
++9 9
+cfn=(1192) ssl_write_alpn_ext
+calls=1 2284 
+* 15
++1 2
++3 10
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 2
++2 8
++1 5
++1 2
++7 7
++1 2
++1 3
++2 3
+cfi=(8)
+cfn=(1194) mbedtls_ssl_write_record
+calls=1 2732 
+* 12867
+* 1
++2 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 1
++1 6
+
+fn=(1346) ssl_parse_client_key_exchange
+3449 8
++5 4
++2 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 3
+cfi=(8)
+cfn=(1348) mbedtls_ssl_read_record
+calls=1 3769 
+* 32723
+* 3
++6 5
+cfi=(39) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/include/mbedtls/ssl_internal.h
+cfn=(1112) mbedtls_ssl_hs_hdr_len
+calls=1 599 
+* 12
+* 2
++1 6
++2 4
++6 5
++7 4
++32 4
++6 3
+-1 9
+cfi=(41) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/library/ecdh.c
+cfn=(1362) mbedtls_ecdh_read_public
+calls=1 226 
+* 5217
+* 3
++7 11
+cfi=(15)
+cfn=(1274) mbedtls_debug_print_ecp
+calls=1 199 
+* 30
++6 2
+-4 1
++4 2
+-4 1
++2 3
+-1 2
+-1 9
+cfi=(41)
+cfn=(1366) mbedtls_ecdh_calc_secret
+calls=1 249 
+* 51905613
+* 3
++10 11
+cfi=(15)
+cfn=(1372) mbedtls_debug_print_mpi
+calls=1 217 
+* 34
+* 1
+3685 3
+cfi=(8)
+cfn=(1374) mbedtls_ssl_derive_keys
+calls=1 496 
+* 728473
+* 3
++6 5
++2 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 1
++1 7
+
+fn=(1130) ssl_parse_encrypt_then_mac_ext
+449 6
++1 2
++10 6
++1 2
+-1 2
++3 3
++3 1
++1 2
+
+fn=(1136) ssl_ciphersuite_match
+792 6
++8 3
+cfi=(33)
+cfn=(952) mbedtls_ssl_ciphersuite_from_id
+calls=1 1760 
+* 216
+* 1
++1 2
++6 11
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 6
++1 4
+-1 2
++8 6
++6 6
++1 2
+-1 2
++20 3
+cfi=(33)
+cfn=(1138) mbedtls_ssl_ciphersuite_uses_ec
+calls=1 1842 
+* 13
+* 2
++1 3
+-1 2
++2 4
+-1 2
++26 4
++2 3
+cfi=(33)
+cfn=(1140) mbedtls_ssl_get_ciphersuite_sig_alg
+calls=1 1822 
+* 13
+* 1
++1 2
++1 7
+cfi=(8)
+cfn=(1142) mbedtls_ssl_sig_hash_set_find
+calls=1 7805 
+* 12
+-1 2
++20 5
+cfn=(1144) ssl_pick_cert
+calls=1 689 
+* 326
+* 2
++8 3
++1 1
++1 2
+
+fn=(1182)
+2048 6
++1 2
++1 1
++1 1
++2 5
++1 2
+-1 2
++14 2
+-1 3
+cfi=(33)
+cfn=(952)
+calls=1 1760 
+* 216
+* 3
++2 2
+-1 2
+cfi=(34) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/library/cipher.c
+cfn=(1184) mbedtls_cipher_info_from_type
+calls=1 92 
+* 145
+* 3
++2 2
+-1 2
++3 2
++1 1
++12 2
+
+fn=(1186)
+2091 6
++1 2
++2 5
++1 2
+-1 2
++7 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++3 4
++1 4
++2 4
++1 4
++2 2
++1 2
+
+fn=(1208) ssl_write_server_key_exchange
+2838 11
++2 1
++2 2
+-1 2
++4 4
++3 2
++1 1
++4 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++12 3
+cfi=(43) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/include/mbedtls/ssl_ciphersuites.h
+cfn=(1210) mbedtls_ssl_ciphersuite_uses_ecdh
+calls=1 405 
+* 11
+* 2
++13 3
+cfi=(43)
+cfn=(1212) mbedtls_ssl_ciphersuite_no_pfs
+calls=1 387 
+* 18
+* 2
++57 3
+cfi=(43)
+cfn=(1214) mbedtls_ssl_ciphersuite_uses_dhe
+calls=1 437 
+* 12
+* 2
++52 3
+cfi=(43)
+cfn=(1216) mbedtls_ssl_ciphersuite_uses_ecdhe
+calls=1 452 
+* 13
+* 2
++10 1
++4 5
++1 5
++1 7
+-1 4
+-1 4
++3 1
++3 6
++6 12
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++3 2
+-1 7
+cfi=(27) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/library/ecp_curves.c
+cfn=(640) mbedtls_ecp_group_load
+calls=1 694 
+* 3660
+* 3
++9 2
+-2 1
++2 2
+-2 13
+cfi=(41)
+cfn=(1218) mbedtls_ecdh_make_params
+calls=1 126 
+* 52229427
+* 3
++9 2
++1 2
++3 2
++1 2
++2 11
+cfi=(15)
+cfn=(1274)
+calls=1 199 
+* 30
++11 3
+cfi=(43)
+cfn=(1276) mbedtls_ssl_ciphersuite_uses_server_signature
+calls=1 468 
+* 12
+* 2
++2 1
++1 1
++15 3
+cfi=(33)
+cfn=(1146) mbedtls_ssl_get_ciphersuite_sig_pk_alg
+calls=1 1800 
+* 19
+* 1
++2 4
++4 2
++1 3
+-1 4
+cfi=(8)
+cfn=(1142)
+calls=1 7805 
+* 12
+* 3
++27 10
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++7 2
++14 2
++3 1
++1 8
+cfi=(8)
+cfn=(1278) mbedtls_ssl_get_key_exchange_md_tls1_2
+calls=1 8233 
+* 22150
+* 1
++4 2
++11 5
+cfi=(35) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/library/md.c
+cfn=(1280) mbedtls_md_info_from_type
+calls=1 141 
+* 19
+* 2
+cfi=(35)
+cfn=(1302) mbedtls_md_get_size
+calls=1 455 
+* 9
+* 12
+cfi=(15)
+cfn=(1094)
+calls=1 144 
+* 31
+* 1
++6 3
+cfi=(39)
+cfn=(1304) mbedtls_ssl_own_key
+calls=1 544 
+* 24
+* 2
++7 4
++18 6
+cfi=(8)
+cfn=(1160) mbedtls_ssl_hash_from_md_alg
+calls=1 7886 
+* 19
+* 1
++1 6
+cfi=(8)
+cfn=(1306) mbedtls_ssl_sig_from_pk_alg
+calls=1 7769 
+* 14
+* 1
++2 1
++5 2
+-1 1
++1 2
+-1 7
+cfi=(39)
+cfn=(1304)
+calls=1 544 
+* 24
+* 11
+cfi=(11)
+cfn=(1308) mbedtls_pk_sign
+calls=1 260 
+* 74233671
+* 4
++7 8
++1 6
++1 1
++2 12
+cfi=(15)
+cfn=(1094)
+calls=1 144 
+* 31
+* 1
++2 2
++6 4
++1 2
++1 3
++2 5
++2 3
+cfi=(8)
+cfn=(1194)
+calls=1 2732 
+* 93886
+* 3
++6 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 1
++1 10
+
+fn=(1422) ssl_parse_certificate_verify
+3727 7
++1 1
++3 2
++7 2
+-1 2
++3 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 4
++1 2
+-1 2
++2 2
+-1 2
++2 2
+-1 2
++2 2
+-1 2
++2 3
+-1 2
++3 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++1 5
++1 2
+3901 5
+
+fn=(1074) mbedtls_ssl_handshake_server_step
+3974 64
++1 16
++2 128
++3 176
+cfi=(15)
+cfn=(1070)
+calls=16 84 
+* 544
++2 48
+cfi=(8)
+cfn=(1076) mbedtls_ssl_flush_output
+calls=16 2438 
+* 1632
+* 48
++4 96
++8 192
++3 2
++1 1
++6 3
+cfn=(1078) ssl_parse_client_hello
+calls=1 1172 
+* 39413
+* 1
++1 1
++15 3
+cfn=(1162)
+calls=1 2381 
+* 19640
+* 1
++1 1
++3 3
+cfi=(8)
+cfn=(1204) mbedtls_ssl_write_certificate
+calls=1 4248 
+* 795045
+* 1
++1 1
++3 3
+cfn=(1208)
+calls=1 2838 
+* 126583569
+* 1
++1 1
++3 3
+cfn=(1340) ssl_write_certificate_request
+calls=1 2640 
+* 140
+* 1
++1 1
++3 3
+cfn=(1342) ssl_write_server_hello_done
+calls=1 3215 
+* 1147
+* 1
++1 1
++10 3
+cfi=(8)
+cfn=(1344) mbedtls_ssl_parse_certificate
+calls=1 4364 
+* 153
+* 1
++1 1
++3 3
+cfn=(1346)
+calls=1 3449 
+* 52672314
+* 1
++1 1
++3 3
+cfn=(1422)
+calls=1 3727 
+* 135
+* 1
++1 1
++3 3
+cfi=(8)
+cfn=(1424) mbedtls_ssl_parse_change_cipher_spec
+calls=1 4771 
+* 1454
+* 1
++1 1
++3 3
+cfi=(8)
+cfn=(1426) mbedtls_ssl_parse_finished
+calls=1 5405 
+* 154972
+* 1
++1 1
++9 5
++4 3
+cfi=(8)
+cfn=(1452) mbedtls_ssl_write_change_cipher_spec
+calls=1 4748 
+* 786
+* 1
++1 1
++3 3
+cfi=(8)
+cfn=(1454) mbedtls_ssl_write_finished
+calls=1 5281 
+* 142971
+* 1
++1 1
++3 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++1 2
++1 1
++3 3
+cfi=(8)
+cfn=(1460) mbedtls_ssl_handshake_wrapup
+calls=1 5219 
+* 52941
++1 1
++7 16
++1 32
+
+fn=(1114) ssl_parse_signature_algorithms_ext
+205 6
++4 4
++5 12
++1 4
++1 2
+-1 2
++18 4
++4 60
+cfi=(8)
+cfn=(1116) mbedtls_ssl_pk_alg_from_sig
+calls=10 7782 
+* 120
+* 30
++8 50
+cfi=(8)
+cfn=(1118) mbedtls_ssl_md_alg_from_hash
+calls=10 7854 
+* 190
+* 10
++1 20
++7 50
+cfi=(8)
+cfn=(1120) mbedtls_ssl_check_sig_hash
+calls=10 7941 
+* 470
+* 20
++2 80
+cfi=(8)
+cfn=(1122) mbedtls_ssl_sig_hash_set_add
+calls=10 7821 
+* 183
++1 130
+cfi=(15)
+cfn=(1070)
+calls=10 84 
+* 340
+* 20
+-23 43
++34 1
++1 2
+
+fn=(1188)
+2118 6
++1 2
++2 5
++2 2
++1 1
++12 2
+
+fn=(1144)
+689 8
++1 1
++1 3
+cfi=(33)
+cfn=(1146)
+calls=1 1800 
+* 19
+* 1
++5 5
++4 4
++2 2
++3 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 2
++6 3
++2 10
+cfi=(15)
+cfn=(1148) mbedtls_debug_print_crt
+calls=1 344 
+* 33
++3 6
+cfi=(11)
+cfn=(1150) mbedtls_pk_can_do
+calls=1 152 
+* 28
+* 2
++14 8
+cfi=(8)
+cfn=(1154) mbedtls_ssl_check_cert_usage
+calls=1 7960 
+* 78
+* 2
++9 2
++13 4
+-41 2
++54 1
++3 2
++4 2
++2 4
++1 12
+cfi=(15)
+cfn=(1148)
+calls=1 344 
+* 33
++2 2
++4 5
+
+fn=(1178)
+2183 6
++1 2
++2 5
++2 2
++1 1
++14 2
+
+fn=(1124) ssl_parse_supported_elliptic_curves
+277 6
++5 12
++1 4
++1 2
+-1 2
++10 5
++10 4
++1 2
++3 4
+cob=(2)
+cfi=(2)
+cfn=(496) calloc
+calls=1 0 
+* 410
+* 1
+* 3
++7 4
++2 3
++1 1
++2 143
+cfi=(26) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/library/ecp.c
+cfn=(1126) mbedtls_ecp_curve_info_from_tls_id
+calls=11 -92 
+* 770
+* 11
++2 22
++2 55
++1 11
++3 11
++1 11
+-11 46
++14 1
++1 2
+
+fn=(1128) ssl_parse_supported_point_formats
+337 6
++4 4
++1 4
++8 3
++1 1
++2 4
++4 6
++5 12
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++1 2
+-12 2
++20 2
+
+fn=(1132) ssl_parse_extended_ms_ext
+474 6
++1 2
++10 6
++1 2
+-1 2
++3 3
++3 1
++1 2
+
+fn=(1176)
+2142 6
++1 2
++2 4
++6 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 4
++1 4
++3 4
++14 4
++1 4
++1 4
++3 7
++1 2
+
+fn=(1192)
+2284 6
++1 4
++2 2
++1 1
++26 2
+
+fn=(1340)
+2640 4
++1 1
++2 2
+-1 2
++5 4
++4 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 5
++3 5
++4 7
++2 4
++1 2
+-1 2
++2 2
+-1 2
++2 2
+-1 2
++2 2
+-1 2
++1 2
++3 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++1 2
+2804 2
+
+fn=(1190)
+2211 6
++1 2
++3 6
++7 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 4
++1 4
++2 4
++1 4
++2 4
++1 4
++2 2
++1 2
+
+fn=(1180)
+2023 6
++1 2
++2 5
++2 2
++1 1
++12 2
+
+fn=(1342)
+3215 4
++3 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 2
++1 2
++1 3
++2 5
++3 6
++4 3
+cfi=(8)
+cfn=(1194)
+calls=1 2732 
+* 1032
+* 3
++6 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 1
++1 2
+
+fn=(1078)
+1172 7
++10 1
++2 1
++10 1
++4 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++11 4
++3 4
+cfi=(8)
+cfn=(1080) mbedtls_ssl_fetch_input
+calls=1 2230 
+* 1225
+* 3
++8 3
++10 3
+cfi=(39)
+cfn=(1092) mbedtls_ssl_hdr_len
+calls=1 588 
+* 12
+* 12
+cfi=(15)
+cfn=(1094)
+calls=1 144 
+* 31
+* 1
++11 12
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++3 4
++6 21
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++3 19
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
+* 1
++3 12
+cfi=(8)
+cfn=(1096) mbedtls_ssl_read_version
+calls=1 8079 
+* 22
++6 3
++9 6
++30 14
++3 4
++8 2
++7 3
+cfi=(39)
+cfn=(1092)
+calls=1 588 
+* 12
+* 1
+-1 6
+cfi=(8)
+cfn=(1080)
+calls=1 2230 
+* 343
+* 3
++9 6
++4 2
++3 3
++2 11
+cfi=(15)
+cfn=(1094)
+calls=1 144 
+* 31
+* 1
++2 8
+cfi=(8)
+cfn=(1098) ssl_update_checksum_start
+calls=1 4905 
+* 31204
++10 3
+cfi=(39)
+cfn=(1112)
+calls=1 599 
+* 12
+* 2
++6 12
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 4
++6 26
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++4 5
++1 3
+cfi=(39)
+cfn=(1112)
+calls=1 599 
+* 12
+* 14
+-1 2
++8 6
++45 3
+cfi=(39)
+cfn=(1112)
+calls=1 599 
+* 12
+* 1
++1 3
+cfi=(39)
+cfn=(1112)
+calls=1 599 
+* 12
+* 1
++23 2
++9 11
+cfi=(15)
+cfn=(1094)
+calls=1 144 
+* 31
+* 1
++3 5
+-1 9
+cfi=(8)
+cfn=(1096)
+calls=1 8079 
+* 22
++3 5
++1 5
++2 8
++1 6
+-1 2
++12 8
++5 8
++6 12
+cfi=(15)
+cfn=(1094)
+calls=1 144 
+* 31
+* 1
++2 9
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=1 0 
+* 11
+* 1
++5 5
++2 2
++1 2
+-1 2
++9 12
+cfi=(15)
+cfn=(1094)
+calls=1 144 
+* 31
+* 1
++2 4
++1 7
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=1 0 
+* 11
+* 1
++3 2
+-1 9
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=1 0 
+* 13
+* 1
++7 6
++57 3
++2 7
++1 7
+-1 2
++3 2
++1 4
+-1 2
++2 2
+-1 2
++9 14
+cfi=(15)
+cfn=(1094)
+calls=1 144 
+* 31
+* 1
++6 5
++2 6
++2 4
++2 4
+-1 2
++9 14
+cfi=(15)
+cfn=(1094)
+calls=1 144 
+* 31
+* 1
++3 3
++14 6
++12 5
++1 3
++2 4
++8 7
++1 7
+-1 2
++3 4
++1 4
+-1 2
++12 5
++1 11
+cfi=(15)
+cfn=(1094)
+calls=1 144 
+* 31
+* 1
++2 1
++2 35
++1 35
+-1 7
++2 42
++1 35
+-1 7
++3 35
++7 69
++4 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++1 5
++23 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 7
+cfn=(1114)
+calls=1 205 
+* 1853
+* 1
++1 2
++3 1
++1 1
++7 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 7
+cfn=(1124)
+calls=1 277 
+* 1546
+* 1
++1 2
++5 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++1 7
++2 7
+cfn=(1128)
+calls=1 337 
+* 80
+* 1
++1 2
++38 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 7
+cfn=(1130)
+calls=1 449 
+* 24
+* 1
++1 2
++7 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 7
+cfn=(1132)
+calls=1 474 
+* 24
+* 1
++1 2
++7 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 7
+cfn=(1134)
+calls=1 499 
+* 64
+* 1
++1 2
+1683 2
++41 2
++9 2
++41 2
++10 2
++10 2
++18 28
++1 28
++2 26
+1663 16
+1828 7
++2 8
+-2 14
++29 2
++16 7
++2 13
++2 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 4
++9 2
++1 1
+-16 8
++23 4
++7 4
++7 4
++7 4
++9 2
++12 1
++1 7
++1 1
++5 2
++1 7
++3 12
++1 10
+-1 2
++4 1
++2 10
+cfn=(1136)
+calls=1 792 
+* 713
+* 3
++4 3
+-13 3
+-1 7
++15 1
++20 11
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 8
++1 4
++2 5
++3 6
++8 4
++2 3
+cfi=(33)
+cfn=(1140)
+calls=1 1822 
+* 13
+* 1
++1 2
++2 7
+cfi=(8)
+cfn=(1142)
+calls=1 7805 
+* 12
+* 1
++2 3
+cfi=(8)
+cfn=(1160)
+calls=1 7886 
+* 19
+* 10
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
+* 1
++11 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 1
++1 5
+
+fl=(45) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/library/cipher_wrap.c
+fn=(1420) aes_crypt_ecb_wrap
+118 10269770
++1 8802660
+cfi=(29)
+cfn=(930)
+calls=1467110 848 
+* 186322970
++1 2934220
+
+fn=(1536) aes_ctx_free
+176 8
++1 6
+cfi=(29)
+cfn=(934)
+calls=2 473 
+* 5240
++1 6
+cob=(2)
+cfi=(2)
+cfn=(618)
+calls=2 0 
+* 160
+* 2
++1 6
+
+fn=(1396) gcm_ctx_alloc
+79 6
++1 6
+cob=(2)
+cfi=(2)
+cfn=(496)
+calls=2 -80 
+* 683
+* 2
+* 2
++2 4
++1 6
+cfi=(46) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/library/gcm.c
+cfn=(1398) mbedtls_gcm_init
+calls=2 +9 
+* 108
++2 2
++1 4
+
+fn=(1410) aes_ctx_alloc
+164 6
++1 6
+cob=(2)
+cfi=(2)
+cfn=(496)
+calls=2 0 
+* 475
+* 2
+* 2
++2 4
++3 6
+cfi=(29)
+cfn=(870)
+calls=2 468 
+* 101
++2 2
++1 4
+
+fn=(1412) aes_setkey_enc_wrap
+159 12
++1 12
+cfi=(29)
+cfn=(872)
+calls=2 486 
+* 510
++1 4
+
+fn=(1404) gcm_aes_setkey_wrap
+343 12
++1 12
+cfi=(46)
+cfn=(1406) mbedtls_gcm_setkey
+calls=2 168 
+* 3968
++2 4
+
+fn=(1532) gcm_ctx_free
+89 8
++1 6
+cfi=(46)
+cfn=(1534) mbedtls_gcm_free
+calls=2 509 
+* 14638
++1 6
+cob=(2)
+cfi=(2)
+cfn=(618)
+calls=2 -91 
+* 160
+* 2
++1 6
+
+fl=(25) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/library/bignum.c
+fn=(568) mbedtls_mpi_free
+101 281700
++1 140850
++3 281700
++2 152320
+cfn=(686) mbedtls_mpi_zeroize
+calls=21760 -45 
+* 2924520
++1 87040
+cob=(2)
+cfi=(2)
+cfn=(618)
+calls=21760 0 
+* 2445891
+* 21760
++3 140850
++1 140850
++1 211275
++1 140850
+
+fn=(666) mpi_mul_hlp
+1119 1446606
++1 413316
++17 206658
++2 18024426
+-2 729534
++15 206658
++2 9406033
+-2 723405
++11 206658
++2 4343157
+-2 1033767
++8 206658
++3 2686554
++2 413316
+-2 455
++2 70
++1 826632
+
+fn=(718) mbedtls_mpi_gcd
+1825 81
++5 27
+cfn=(570) mbedtls_mpi_init
+calls=9 88 
+* 126
+* 27
+cfn=(570)
+calls=9 88 
+* 126
+* 27
+cfn=(570)
+calls=9 88 
+* 126
++2 45
+cfn=(682) mbedtls_mpi_copy
+calls=9 186 
+* 3669
+* 27
++1 45
+cfn=(682)
+calls=9 186 
+* 3253
+* 27
++2 27
+cfn=(720) mbedtls_mpi_lsb
+calls=9 353 
+* 430
+* 9
++1 27
+cfn=(720)
+calls=9 353 
+* 270
+* 9
++2 27
++1 6
++2 15
+cfn=(708) mbedtls_mpi_shift_r
+calls=3 775 
+* 81
+* 30
+cfn=(708)
+calls=6 775 
+* 162
+* 27
++1 45
+cfn=(708)
+calls=9 775 
+* 243
+* 27
++2 27
++2 9
++2 17481
+cfn=(720)
+calls=5827 353 
+* 222506
+* 29135
+cfn=(708)
+calls=5827 775 
+* 1850860
+* 17481
++1 17481
+cfn=(720)
+calls=5827 353 
+* 220618
+* 29135
+cfn=(708)
+calls=5827 775 
+* 1811869
+* 17481
++2 29135
+cfn=(586) mbedtls_mpi_cmp_mpi
+calls=5827 848 
+* 1954933
+* 11654
++2 17502
+cfn=(678) mbedtls_mpi_sub_abs
+calls=2917 974 
+* 2727847
+* 8751
++1 11668
+cfn=(708)
+calls=2917 775 
+* 3394928
+* 8751
++4 17460
+cfn=(678)
+calls=2910 974 
+* 2716873
+* 8730
++1 11640
+cfn=(708)
+calls=2910 775 
+* 3379698
+* 8730
+-13 23344
+cfn=(584) mbedtls_mpi_cmp_int
+calls=5836 881 
+* 1182809
+* 11672
++17 45
+cfn=(706) mbedtls_mpi_shift_l
+calls=9 725 
+* 6676
+* 27
++1 45
+cfn=(682)
+calls=9 186 
+* 3595
+* 18
++2 9
++2 27
+cfn=(568)
+calls=9 101 
+* 171
+* 27
+cfn=(568)
+calls=9 101 
+* 2544
+* 27
+cfn=(568)
+calls=9 101 
+* 2626
++2 9
++1 45
+
+fn=(1272) mbedtls_mpi_write_binary
+705 30
++3 15
+cfn=(576) mbedtls_mpi_size
+calls=5 405 
+* 2383
+* 5
++2 15
++3 25
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=5 0 
+* 119
+* 5
++2 25
++1 12036
+-1 3550
++3 5
++1 10
+
+fn=(576)
+405 88
++1 66
+cfn=(578) mbedtls_mpi_bitlen
+calls=22 -20 
+* 4819
+* 44
++1 44
+
+fn=(1228) mbedtls_zeroize
+67 24
++1 55344
++1 18
+
+fn=(1330) mpi_montg_init
+1543 16
++1 16
++3 8
++1 20
++2 8
++1 112
+-1 88
++3 20
++1 12
+
+fn=(590) mbedtls_mpi_get_bit
+314 4268
++1 5335
++3 13871
++1 2134
+
+fn=(686)
+62 96868
++1 3001781
++1 72651
+
+fn=(664) mbedtls_mpi_mul_mpi
+1183 119034
++5 39678
+cfn=(570)
+calls=13226 88 
+* 185164
+* 39678
+cfn=(570)
+calls=13226 88 
+* 185164
++2 53663
+cfn=(682)
+calls=2797 186 
+* 1162820
+* 13985
++1 39678
++2 52904
++1 503559
+-1 154627
++2 13226
++2 52904
++1 476469
+-1 145597
++2 13226
++2 92582
+cfn=(572) mbedtls_mpi_grow
+calls=13226 120 
+* 2218105
+* 39678
++1 52904
+cfn=(574) mbedtls_mpi_lset
+calls=13226 296 
+* 1045035
+* 39678
++2 26452
++1 2190384
+cfn=(666)
+calls=104304 -86 
+* 16270831
+-1 339364
++3 105808
++4 39678
+cfn=(568)
+calls=13226 101 
+* 251294
+* 39678
+cfn=(568)
+calls=13226 101 
+* 808354
++2 13226
++1 66130
+
+fn=(706)
+725 22220
++3 4444
++2 13332
++1 13332
++2 13332
+cfn=(578)
+calls=4444 386 
+* 2619045
+* 17776
++2 22220
++1 520
+cfn=(572)
+calls=40 120 
+* 27354
+* 120
++2 4444
++5 8888
++2 868
++1 115020
+-1 31323
++3 217
++1 19649
+-1 8855
++7 8888
++2 12624
++2 1064420
++1 1216480
++1 988390
++1 152060
+-5 396982
++9 8652
++2 4444
++1 8888
+
+fn=(714) mbedtls_mpi_mul_int
+1220 16407
++4 1823
++1 1823
++1 3646
++1 3646
++2 10938
+cfn=(664)
+calls=1823 -46 
+* 1502676
++1 9115
+
+fn=(574)
+296 69765
++3 55812
+cfn=(572)
+calls=13953 120 
+* 201949
+* 41859
++1 111624
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=13953 0 
+* 375486
+* 13953
++2 111624
++1 83718
++4 13953
++1 27906
+
+fn=(678)
+974 335106
++5 186170
+cfn=(680) mbedtls_mpi_cmp_abs
+calls=37234 818 
+* 7189372
+* 74468
++3 111702
+cfn=(570)
+calls=37234 88 
+* 521276
++2 111702
++2 62045
+cfn=(682)
+calls=12409 186 
+* 4300424
+* 37227
++1 24818
++3 111702
++1 69485
+cfn=(682)
+calls=13897 186 
+* 2356132
+* 41691
++5 74468
++2 37234
++2 148936
++1 1541007
+-1 476499
++2 37218
++2 297744
+cfn=(684) mpi_sub_hlp
+calls=37218 -51 
+* 15692203
+* 128
+cfn=(684)
+calls=16 -51 
+* 288
+* 37234
++4 111702
+cfn=(568)
+calls=37234 101 
+* 3806807
++2 37234
++1 186170
+
+fn=(1332) mpi_montmul
+1561 23752
++4 32659
++3 23752
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=2969 0 
+* 111957
+* 2969
++2 8907
++1 8907
++1 14845
++2 5938
++5 358239
++1 511770
++2 358239
+cfn=(666)
+calls=51177 1119 
+* 12272652
++1 358239
+cfn=(666)
+calls=51177 1119 
+* 12330420
++2 562947
+-11 213615
++14 26721
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=2969 0 
+* 87157
+* 2969
++2 14845
+cfn=(680)
+calls=2969 818 
+* 350342
+* 5938
++4 23752
+cfn=(684)
+calls=2969 953 
+* 1870971
++2 2969
++1 5938
+
+fn=(1334) mpi_montred
+1603 80
++1 8
++3 40
++1 16
++2 64
+cfn=(1332)
+calls=8 -49 
+* 101134
++1 40
+
+fn=(572)
+120 458920
++3 183568
++3 367136
++2 96428
+cob=(2)
+cfi=(2)
+cfn=(496)
+calls=24107 0 
+* 4324805
+* 24107
+* 72321
++3 96428
++2 21123
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=2347 0 
+* 49110
+* 2347
++1 16429
+cfn=(686)
+calls=2347 -72 
+* 227310
++1 9388
+cob=(2)
+cfi=(2)
+cfn=(618)
+calls=2347 0 
+* 233148
+* 2347
++3 72321
++1 72321
++3 24107
++1 48214
+-1 67677
++1 135354
+
+fn=(578)
+386 63548
++3 63548
++3 79435
++1 558864
+-1 193835
++2 15850
++2 126800
+cfn=(580) mbedtls_clz
+calls=15850 -28 
+* 6551674
+* 296
+cfn=(580)
+calls=37 -28 
+* 18637
+* 63548
++2 79435
++1 31774
+
+fn=(580)
+368 47661
++2 31774
++2 31774
++2 3213664
++2 787529
+-4 2394361
++2 15887
++5 15887
++1 31774
+
+fn=(584)
+881 116784
++4 87588
++1 58392
++1 14598
++1 29196
++2 72990
+cfn=(586)
+calls=14598 -42 
+* 2235770
++1 72990
+
+fn=(690) mbedtls_mpi_sub_int
+1095 72
++4 48
++1 32
++1 8
++1 16
++2 48
+cfn=(692) mbedtls_mpi_sub_mpi
+calls=8 -56 
+* 4388
++1 40
+
+fn=(704) mbedtls_mpi_div_mpi
+1332 198
++5 72
+cfn=(584)
+calls=18 881 
+* 1560
+* 36
++3 54
+cfn=(570)
+calls=18 88 
+* 252
+* 54
+cfn=(570)
+calls=18 88 
+* 252
+* 54
+cfn=(570)
+calls=18 88 
+* 252
++1 54
+cfn=(570)
+calls=18 88 
+* 252
+* 54
+cfn=(570)
+calls=18 88 
+* 252
++2 90
+cfn=(680)
+calls=18 818 
+* 2486
+* 36
++2 16
++1 56
+cfn=(682)
+calls=8 186 
+* 3152
+* 24
++1 16
++3 50
+cfn=(682)
+calls=10 186 
+* 5312
+* 30
++1 50
+cfn=(682)
+calls=10 186 
+* 3719
+* 30
++1 30
++2 70
+cfn=(572)
+calls=10 120 
+* 3123
+* 30
++1 40
+cfn=(574)
+calls=10 296 
+* 944
+* 30
++1 40
+cfn=(572)
+calls=10 120 
+* 1747
+* 30
++1 40
+cfn=(572)
+calls=10 120 
+* 1747
+* 30
++2 30
+cfn=(578)
+calls=10 386 
+* 600
+* 20
++1 20
++2 30
++1 50
+cfn=(706)
+calls=10 725 
+* 30519
+* 30
++1 50
+cfn=(706)
+calls=10 725 
+* 18298
+* 30
++4 30
++1 30
++1 80
+cfn=(706)
+calls=10 725 
+* 14575
+* 30
++2 10
++2 24
++1 18
+cfn=(692)
+calls=3 1048 
+* 5647
+* 9
+-3 65
+cfn=(586)
+calls=13 848 
+* 1249
+* 26
++5 80
+cfn=(708)
+calls=10 775 
+* 7104
+* 30
++2 30
++2 2568
++5 856
+-1 4494
+cfn=(710) mbedtls_int_div_int
+calls=214 1238 
+* 14338
+* 214
++4 1926
++3 1926
++2 856
+cfn=(574)
+calls=214 296 
+* 19623
+-2 990
++2 440
+cfn=(574)
+calls=110 296 
+* 10240
+* 972
++1 3564
++1 2592
++1 3888
+cfn=(714)
+calls=324 1220 
+* 427554
+* 972
++2 1296
+cfn=(574)
+calls=324 296 
+* 20412
+* 972
++1 3564
++1 3888
++1 2592
++2 1620
+cfn=(586)
+calls=324 848 
+* 213137
+* 648
++2 2568
+cfn=(714)
+calls=214 1220 
+* 201904
+* 642
++1 1712
+cfn=(706)
+calls=214 725 
+* 251510
+* 642
++1 1284
+cfn=(692)
+calls=214 1048 
+* 496331
+* 642
++2 856
+cfn=(584)
+calls=214 881 
+* 49196
+* 428
+-31 886
++40 20
++6 20
++2 50
+cfn=(708)
+calls=10 775 
+* 23226
+* 30
++1 30
++1 50
+cfn=(682)
+calls=10 186 
+* 4420
+* 30
++2 40
+cfn=(584)
+calls=10 881 
+* 3068
+* 20
++4 20
++2 30
+cfn=(568)
+calls=10 101 
+* 5386
+* 30
+cfn=(568)
+calls=10 101 
+* 5358
+* 30
+cfn=(568)
+calls=10 101 
+* 5908
++1 30
+cfn=(568)
+calls=10 101 
+* 5497
+* 30
+cfn=(568)
+calls=10 101 
+* 1720
++2 10
++1 126
+
+fn=(1250) mbedtls_mpi_safe_cond_assign
+234 64554
++1 9222
++4 46110
++2 55332
+cfn=(572)
+calls=9222 120 
+* 130404
+* 27666
++2 129108
++2 18444
++1 2323944
+-1 451878
++3 9222
++1 342
+-1 36978
++3 9222
++1 9222
++1 18444
+
+fn=(684)
+953 201015
++4 160812
++2 5763120
++1 8164420
+-3 3002169
++6 40203
++2 20472
++1 6824
+-3 83818
++5 120609
+
+fn=(692)
+1048 149700
++1 74850
++2 174650
++2 97120
+cfn=(680)
+calls=19424 818 
+* 3774521
+* 38848
++2 67806
+cfn=(678)
+calls=11301 -81 
+* 9466790
+* 33903
++1 45204
++4 48738
+cfn=(678)
+calls=8123 -86 
+* 12172930
+* 24369
++1 48738
++5 33156
+cfn=(694) mbedtls_mpi_add_abs
+calls=5526 897 
+* 3704949
+* 16578
++1 22104
++5 24950
++1 49900
+
+fn=(694)
+897 125904
++5 62952
++5 62952
++1 5240
+cfn=(682)
+calls=1048 186 
+* 325547
+* 3144
++5 41968
++2 83936
++1 394866
+-1 110762
++2 20953
++2 104765
+cfn=(572)
+calls=20953 120 
+* 297674
+* 155
+cfn=(572)
+calls=31 120 
+* 434
+* 62952
++2 146888
++5 41968
++2 786003
++1 3144012
++1 3144012
+-4 1634958
++7 20984
++2 6088
++2 36
+cfn=(572)
+calls=6 120 
+* 4031
+* 18
++1 36
++3 84
+-8 12
++8 21224
+-8 45000
++11 20984
++2 20984
++1 41968
+
+fn=(702) mbedtls_mpi_mod_mpi
+1463 108
++3 72
+cfn=(584)
+calls=18 881 
+* 1560
+* 36
++3 108
+cfn=(704)
+calls=18 1332 
+* 1915000
+* 54
++2 90
+cfn=(584)
+calls=18 881 
+* 3708
+* 36
++3 108
+cfn=(586)
+calls=18 848 
+* 4188
+* 36
++3 18
++2 18
++1 36
+
+fn=(710)
+1238 1926
++14 1070
++8 1926
++1 1070
++1 2140
+cfi=(5) ???
+cfn=(712) __udivti3
+calls=214 0 
+* 2354
+* 428
++1 1712
++3 428
++3 214
++57 1070
+
+fn=(720)
+353 35016
++1 11672
++2 23344
++1 23344
++1 210312
++1 23344
+-2 46760
+-1 46688
++6 23344
+
+fn=(1246) mbedtls_mpi_shrink
+150 550
++5 440
++3 550
++1 8800
+-1 3190
++2 110
++1 110
++2 330
++3 440
+cob=(2)
+cfi=(2)
+cfn=(496)
+calls=110 0 
+* 15840
+* 110
+* 330
++3 440
++2 880
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=110 0 
+* 2310
+* 110
++1 770
+cfn=(686)
+calls=110 62 
+* 19470
++1 440
+cob=(2)
+cfi=(2)
+cfn=(618)
+calls=110 0 
+* 14506
+* 110
++3 330
++1 330
++2 110
++1 220
+
+fn=(708)
+775 275595
++2 55119
++2 165357
++1 165357
++2 440952
++6 110238
++2 20
++1 3052
+-1 1358
++3 10
++1 1284
+-1 1110
++7 110238
++2 185484
++2 11614785
++1 13937742
++1 11614785
++1 1548638
+-5 2415699
++9 55119
++1 110238
+
+fn=(1226) mbedtls_mpi_fill_random
+1883 60
++4 12
++3 36
+cfi=(14)
+cfn=(1170)
+calls=6 458 
+* 16388
+* 18
++1 36
+cfn=(566) mbedtls_mpi_read_binary
+calls=6 678 
+* 16183
+* 12
++2 6
++1 24
+cfn=(1228)
+calls=6 67 
+* 55386
++1 6
++1 30
+
+fn=(566)
+678 168
++3 280
++3 112
++2 81
+cfn=(568)
+calls=27 101 
+* 1122
++1 81
+cfn=(570)
+calls=27 88 
+* 378
++1 135
+cfn=(572)
+calls=27 120 
+* 6766
+* 81
++3 112
+cfn=(574)
+calls=28 296 
+* 2076
+* 84
++2 112
++1 82704
+-1 13840
++3 28
++2 28
++1 56
+
+fn=(570)
+88 210060
++1 140040
++3 140040
++1 140040
++1 210060
++1 140040
+
+fn=(586)
+848 200392
++3 200392
++1 4330467
+-1 1393495
++2 50072
++2 200392
++1 1325250
+-1 449932
++2 35528
++2 100248
++1 52
++2 194496
++1 106880
++2 280608
++1 280608
++4 603066
++1 467632
+-3 71373
++6 38
++1 100196
+
+fn=(680)
+818 258648
++3 258648
++1 3585060
+-1 1130398
++2 64652
++2 258648
++1 3210156
+-1 1005478
++2 64640
++2 129344
++3 202838
++1 183292
++4 1105084
++1 339714
+-3 131847
++6 49
++1 129324
+
+fn=(682)
+186 171085
++4 102651
++3 136868
++6 171085
++1 1517064
+-1 534950
++2 34150
++1 34150
++2 136600
++2 170750
+cfn=(572)
+calls=34150 -86 
+* 3676738
+-4 67
++2 268
++2 335
+cfn=(572)
+calls=67 -86 
+* 10351
+* 102651
++2 273736
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=34217 0 
+* 712210
+* 34217
++1 307953
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=34217 0 
+* 750275
+* 34217
+* 34217
++4 34217
++1 68434
+
+fn=(688) mbedtls_mpi_add_mpi
+1017 54606
++1 27303
++2 63707
++2 25085
+cfn=(680)
+calls=5017 818 
+* 741099
+* 10034
++2 528
+cfn=(678)
+calls=88 -50 
+* 89040
+* 264
++1 352
++4 29574
+cfn=(678)
+calls=4929 -55 
+* 6808369
+* 14787
++1 29574
++5 24504
+cfn=(694)
+calls=4084 897 
+* 2769150
+* 12252
++1 16336
++5 9101
++1 18202
+
+fn=(716) mbedtls_mpi_inv_mod
+1902 72
++4 32
+cfn=(584)
+calls=8 881 
+* 640
+* 16
++3 24
+cfn=(570)
+calls=8 88 
+* 112
+* 24
+cfn=(570)
+calls=8 88 
+* 112
+* 24
+cfn=(570)
+calls=8 88 
+* 112
+* 24
+cfn=(570)
+calls=8 88 
+* 112
++1 24
+cfn=(570)
+calls=8 88 
+* 112
+* 24
+cfn=(570)
+calls=8 88 
+* 112
+* 24
+cfn=(570)
+calls=8 88 
+* 112
++1 24
+cfn=(570)
+calls=8 88 
+* 112
+* 24
+cfn=(570)
+calls=8 88 
+* 112
++2 48
+cfn=(718)
+calls=8 -88 
+* 12822097
+* 24
++2 32
+cfn=(584)
+calls=8 881 
+* 1048
+* 16
++6 48
+cfn=(702)
+calls=8 1463 
+* 8452
+* 24
++1 40
+cfn=(682)
+calls=8 186 
+* 2456
+* 24
++1 40
+cfn=(682)
+calls=8 186 
+* 2821
+* 24
++1 40
+cfn=(682)
+calls=8 186 
+* 2784
+* 24
++2 32
+cfn=(574)
+calls=8 296 
+* 1735
+* 24
++1 32
+cfn=(574)
+calls=8 296 
+* 1859
+* 24
++1 32
+cfn=(574)
+calls=8 296 
+* 1957
+* 24
++1 32
+cfn=(574)
+calls=8 296 
+* 2028
+* 24
++4 8
++2 17652
+cfn=(708)
+calls=4413 775 
+* 4308090
+* 13239
++2 33785
++2 12414
+cfn=(688)
+calls=2069 1017 
+* 2586502
+* 6207
++1 12414
+cfn=(692)
+calls=2069 1048 
+* 2571661
+* 6207
++3 17652
+cfn=(708)
+calls=4413 775 
+* 4422782
+* 13239
++1 17652
+cfn=(708)
+calls=4413 775 
+* 4344766
+* 13239
+-11 43970
++14 4381
++2 17296
+cfn=(708)
+calls=4324 775 
+* 4239433
+* 12972
++2 29985
++2 15906
+cfn=(688)
+calls=2651 1017 
+* 2296992
+* 7953
++1 15906
+cfn=(692)
+calls=2651 1048 
+* 2282368
+* 7953
++3 17296
+cfn=(708)
+calls=4324 775 
+* 4352959
+* 12972
++1 17296
+cfn=(708)
+calls=4324 775 
+* 4277646
+* 12972
+-11 43525
++14 21905
+cfn=(586)
+calls=4381 848 
+* 1294317
+* 8762
++2 13146
+cfn=(692)
+calls=2191 1048 
+* 2455146
+* 6573
++1 13146
+cfn=(692)
+calls=2191 1048 
+* 2636297
+* 6573
++1 13146
+cfn=(692)
+calls=2191 1048 
+* 2599333
+* 6573
++4 13140
+cfn=(692)
+calls=2190 1048 
+* 2447534
+* 6570
++1 13140
+cfn=(692)
+calls=2190 1048 
+* 2327888
+* 6570
++1 13140
+cfn=(692)
+calls=2190 1048 
+* 2290276
+* 6570
++3 17524
+cfn=(584)
+calls=4381 881 
+* 800584
+* 8762
++2 8
++1 6
+cfn=(688)
+calls=1 1017 
+* 1234
+* 3
+-1 36
+cfn=(584)
+calls=9 881 
+* 744
+* 18
++3 48
+cfn=(586)
+calls=8 848 
+* 848
+* 16
++3 40
+cfn=(682)
+calls=8 186 
+* 2587
+* 16
++2 8
++2 24
+cfn=(568)
+calls=8 101 
+* 2132
+* 24
+cfn=(568)
+calls=8 101 
+* 2174
+* 24
+cfn=(568)
+calls=8 101 
+* 2167
+* 24
+cfn=(568)
+calls=8 101 
+* 2147
++1 24
+cfn=(568)
+calls=8 101 
+* 1230
+* 24
+cfn=(568)
+calls=8 101 
+* 2174
+* 24
+cfn=(568)
+calls=8 101 
+* 2176
++1 24
+cfn=(568)
+calls=8 101 
+* 2211
+* 24
+cfn=(568)
+calls=8 101 
+* 2179
++2 8
++1 40
+
+fn=(1328) mbedtls_mpi_exp_mod
+1617 44
++2 4
++7 16
+cfn=(584)
+calls=4 881 
+* 368
+* 32
++3 16
+cfn=(584)
+calls=4 881 
+* 320
+* 8
++6 20
+cfn=(1330)
+calls=4 -92 
+* 300
++1 12
+cfn=(570)
+calls=4 88 
+* 56
+* 12
+cfn=(570)
+calls=4 88 
+* 56
++1 12
+cfn=(570)
+calls=4 88 
+* 56
++1 20
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=4 0 
+* 12352
+* 4
++2 12
+cfn=(578)
+calls=4 386 
+* 1520
+* 4
++2 28
++3 4
+-3 2
++3 4
++3 16
++1 20
+cfn=(572)
+calls=4 120 
+* 2568
+* 12
++1 24
+cfn=(572)
+calls=4 120 
+* 1767
+* 12
++1 24
+cfn=(572)
+calls=4 120 
+* 1621
+* 12
++5 24
++1 8
++10 24
++2 12
+cfn=(574)
+calls=3 296 
+* 645
+* 9
++1 24
+cfn=(706)
+calls=3 725 
+* 4573
+* 9
++1 18
+cfn=(702)
+calls=3 1463 
+* 674266
+* 9
++2 6
++1 18
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=3 0 
+* 30
+* 3
+-1 3
++4 6
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=1 0 
+* 10
+* 1
++5 20
+cfn=(586)
+calls=4 848 
+* 1156
+* 8
++1 14
+cfn=(702)
+calls=2 1463 
+* 221115
+* 6
++2 12
+cfn=(682)
+calls=2 186 
+* 333
+* 6
++2 36
+cfn=(1332)
+calls=4 1561 
+* 79478
+* 12
++5 20
+cfn=(682)
+calls=4 186 
+* 1745
+* 12
++1 24
+cfn=(1334)
+calls=4 -90 
+* 50700
+* 12
++2 8
++5 14
++2 26
+cfn=(572)
+calls=2 120 
+* 745
+* 6
++1 24
+cfn=(682)
+calls=2 186 
+* 312
+* 6
++2 4
++1 200
+cfn=(1332)
+calls=10 1561 
+* 96881
+* 30
+-1 58
++6 8
++2 806
+cfn=(572)
+calls=62 120 
+* 17743
+* 186
++1 1116
+cfn=(682)
+calls=62 186 
+* 9672
+* 186
++2 930
+cfn=(1332)
+calls=62 1561 
+* 600403
+* 186
+-5 510
++9 12
++1 4
++1 4
++1 4
++1 4
++4 5384
++2 92
++3 42
++2 42
++3 42
++2 462
++5 84
+-7 2646
++2 29106
++5 8190
++3 7626
++5 3176
+cfn=(1332)
+calls=397 1561 
+* 4455786
+* 1191
++7 2129
++2 2129
++1 21290
++2 6387
++5 716
++1 17024
+cfn=(1332)
+calls=2128 1561 
+* 20689622
+* 6384
+-1 9586
++6 5012
+cfn=(1332)
+calls=358 1561 
+* 3548743
+* 1074
++2 358
++1 358
++1 716
+-34 324
++8 397
+-26 397
++3 4
++56 8
++2 8
+cfn=(1332)
+calls=1 1561 
+* 9672
+* 3
++2 1
++2 8
++1 9
+cfn=(1332)
+calls=1 1561 
+* 9690
+* 3
+-7 16
++13 24
+cfn=(1334)
+calls=4 1603 
+* 50682
+* 12
++2 8
++6 4
++2 32
++1 594
+cfn=(568)
+calls=66 101 
+* 23815
+-1 556
++3 16
+cfn=(568)
+calls=4 101 
+* 726
+* 12
+cfn=(568)
+calls=4 101 
+* 2376
+* 12
+cfn=(568)
+calls=4 101 
+* 76
++2 24
++3 4
++1 20
+
+fl=(29)
+fn=(874) aes_gen_tables
+390 6
++8 3
++2 1024
++1 1024
++1 2432
+-4 384
++4 512
+-4 386
++10 3
++2 60
++1 98
+-3 27
++3 3
+-3 5
++9 1
++1 1
++2 2
++2 2295
++2 2295
++1 2295
++1 2295
++1 2295
++1 765
++2 1530
++1 1530
+-11 767
++17 2
++2 1536
++1 2304
++1 512
++3 384
+-1 256
++2 256
+-1 128
++2 256
+-1 256
+-2 640
++5 1536
++1 1536
++1 1408
+-10 384
++1 512
++3 384
+-1 256
++2 256
+-1 128
++2 256
+-1 256
+-2 640
++5 1536
++1 1536
++1 1664
++2 768
++2 256
+-2 768
++2 6377
++1 6633
+-1 1
++2 2
+-2 255
++2 6631
+-1 1
++2 2
+-2 255
++2 6631
+-1 2
+-2 5
++5 12
++1 12
++1 12
+-24 3
++19 510
+-2 1275
++5 3060
++1 3060
++1 3060
+-24 767
++26 6
+
+fn=(930)
+848 10270379
++2 2934394
+cfi=(30) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/library/aesni.c
+cfn=(876) mbedtls_aesni_has_support
+calls=1467197 49 
+* 22007955
+* 2934394
++1 8803182
+cfi=(30)
+cfn=(932) mbedtls_aesni_crypt_ecb
+calls=1467197 99 
+* 134982124
+* 1467197
++19 2934394
+
+fn=(870)
+468 16
++1 20
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=4 0 
+* 143
+* 4
++1 12
+
+fn=(934)
+473 16
++1 8
++3 16
+cfn=(936) mbedtls_zeroize
+calls=4 58 
+* 10428
+* 4
++1 8
+
+fn=(872)
+486 84
++5 42
++2 1
+cfn=(874)
+calls=1 390 
+* 81220
++1 1
++5 70
++4 42
++12 84
++3 28
+cfi=(30)
+cfn=(876)
+calls=14 49 
+* 214
+* 28
++1 98
+cfi=(30)
+cfn=(878) mbedtls_aesni_setkey_enc
+calls=14 -69 
+* 2842
+* 14
++72 28
+
+fn=(936)
+58 16
++1 10400
++1 12
+
+fl=(21)
+fn=(540) mbedtls_pk_parse_subpubkey
+604 36
++4 4
++3 24
+cfi=(18) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/library/asn1parse.c
+cfn=(502) mbedtls_asn1_get_tag
+calls=4 115 
+* 363
+* 12
++6 20
++2 24
+cfn=(542) pk_get_pk_alg
+calls=4 -47 
+* 1719
+* 12
++3 24
+cfi=(18)
+cfn=(548) mbedtls_asn1_get_bitstring_null
+calls=4 224 
+* 495
+* 12
++3 24
++4 12
+cfi=(11)
+cfn=(550) mbedtls_pk_info_from_type
+calls=4 79 
+* 52
+* 12
++3 20
+cfi=(11)
+cfn=(552) mbedtls_pk_setup
+calls=4 105 
+* 1591
+* 12
++4 12
++2 18
+cfi=(24) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/include/mbedtls/pk.h
+cfn=(560) mbedtls_pk_rsa
+calls=3 142 
+* 30
+* 18
+cfn=(562) pk_get_rsapubkey
+calls=3 517 
+* 31392
+* 6
++4 6
++2 6
+cfi=(24)
+cfn=(632) mbedtls_pk_ec
+calls=1 155 
+* 10
+* 5
+cfn=(634) pk_use_ecparams
+calls=1 449 
+* 2966
+* 1
++1 2
++1 6
+cfi=(24)
+cfn=(632)
+calls=1 155 
+* 10
+* 6
+cfn=(654) pk_get_ecpubkey
+calls=1 489 
+* 29218
+* 1
+-1 1
++6 24
++4 8
++3 4
++1 20
+
+fn=(654)
+489 6
++4 5
+-1 8
+cfi=(26)
+cfn=(656) mbedtls_ecp_point_read_binary
+calls=1 +12 
+* 3966
+* 3
++3 6
+cfi=(26)
+cfn=(658) mbedtls_ecp_check_pubkey
+calls=1 1866 
+* 25217
+* 1
++6 3
++2 1
++1 2
+
+fn=(696)
+1145 13
++8 3
+cfi=(16) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/library/pem.c
+cfn=(464) mbedtls_pem_init
+calls=1 54 
+* 24
++4 9
++3 14
+cfi=(16)
+cfn=(466) mbedtls_pem_read_buffer
+calls=1 237 
+* 327488
+* 2
++5 2
++2 2
+cfi=(11)
+cfn=(550)
+calls=1 79 
+* 14
+* 1
++1 5
+cfi=(11)
+cfn=(552)
+calls=1 105 
+* 374
+* 3
++1 1
++1 1
+-1 6
+cfi=(24)
+cfn=(560)
+calls=1 142 
+* 10
+-1 4
+cfn=(698) pk_parse_key_pkcs1_der
+calls=1 668 
+* 10470797
+* 3
++7 3
+cfi=(16)
+cfn=(610) mbedtls_pem_free
+calls=1 439 
+* 11144
++1 2
+1341 8
+
+fn=(698)
+668 9
++6 3
+cfi=(25)
+cfn=(570)
+calls=1 88 
+* 14
++2 2
++1 4
++18 6
+cfi=(18)
+cfn=(502)
+calls=1 115 
+* 97
+* 3
++6 4
++2 6
+cfi=(18)
+cfn=(512) mbedtls_asn1_get_int
+calls=1 149 
+* 136
+* 3
++5 3
++6 6
+cfi=(18)
+cfn=(502)
+calls=1 115 
+* 97
+* 3
++2 2
+-1 12
+cfi=(23) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/library/rsa.c
+cfn=(564) mbedtls_rsa_import_raw
+calls=1 120 
+* 7781
+* 4
++4 4
++3 6
+cfi=(18)
+cfn=(502)
+calls=1 115 
+* 72
+* 3
++2 2
+-1 14
+cfi=(23)
+cfn=(564)
+calls=1 120 
+* 530
+* 4
++4 4
++3 6
+cfi=(18)
+cfn=(502)
+calls=1 115 
+* 97
+* 3
++2 2
+-1 14
+cfi=(23)
+cfn=(564)
+calls=1 120 
+* 7692
+* 4
++4 4
++3 6
+cfi=(18)
+cfn=(502)
+calls=1 115 
+* 93
+* 3
++2 2
+-1 14
+cfi=(23)
+cfn=(564)
+calls=1 120 
+* 4094
+* 4
++4 4
++3 6
+cfi=(18)
+cfn=(502)
+calls=1 115 
+* 93
+* 3
++2 2
+-1 14
+cfi=(23)
+cfn=(564)
+calls=1 120 
+* 4094
+* 4
++4 4
++3 3
+cfi=(23)
+cfn=(582) mbedtls_rsa_complete
+calls=1 243 
+* 10432250
+* 3
++4 6
+cfi=(18)
+cfn=(722) mbedtls_asn1_get_mpi
+calls=1 174 
+* 4204
+* 9
+cfi=(18)
+cfn=(722)
+calls=1 174 
+* 4454
+* 3
++1 6
+cfi=(18)
+cfn=(722)
+calls=1 174 
+* 4425
+* 3
++4 3
++6 2
++2 3
+cfi=(25)
+cfn=(568)
+calls=1 101 
+* 319
++2 2
++11 1
++1 5
+
+fn=(634)
+449 8
++4 4
++2 5
+cfi=(20) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/library/oid.c
+cfn=(636) mbedtls_oid_get_ec_grp
+calls=1 +76 
+* 149
+* 2
++16 4
++3 5
+cfi=(27)
+cfn=(640)
+calls=1 694 
+* 2780
+* 3
++3 1
++1 5
+
+fn=(542)
+572 40
++4 20
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=4 0 
+* 44
+* 4
++2 24
+cfi=(18)
+cfn=(518) mbedtls_asn1_get_alg
+calls=4 294 
+* 1148
+* 12
++3 20
+cfi=(20)
+cfn=(544) mbedtls_oid_get_pk_alg
+calls=4 444 
+* 335
+* 8
++6 16
++1 6
+-1 6
++2 6
+-1 6
++6 4
++1 20
+
+fn=(562)
+517 27
++4 18
+cfi=(18)
+cfn=(502)
+calls=3 115 
+* 291
+* 9
++4 18
++5 18
+cfi=(18)
+cfn=(502)
+calls=3 115 
+* 291
+* 9
++3 45
+cfi=(23)
+cfn=(564)
+calls=3 120 
+* 23343
+* 12
++4 18
++3 18
+cfi=(18)
+cfn=(502)
+calls=3 115 
+* 216
+* 9
++3 51
+cfi=(23)
+cfn=(564)
+calls=3 120 
+* 1590
+* 12
++4 18
++2 9
+cfi=(23)
+cfn=(582)
+calls=3 243 
+* 2451
+* 6
++1 9
+cfi=(23)
+cfn=(592) mbedtls_rsa_check_pubkey
+calls=3 +39 
+* 2868
+-1 6
++6 12
++4 3
++1 15
+
+fl=(27)
+fn=(652) ecp_mpi_set1
+567 6
++2 4
++1 4
++1 6
++1 6
+
+fn=(672) add32
+906 880
++1 1056
++1 1936
++1 528
+
+fn=(640)
+694 10
++1 6
+cfi=(26)
+cfn=(642) mbedtls_ecp_group_free
+calls=2 327 
+* 4882
++2 6
++2 20
++22 3
++1 19
+cfn=(648) ecp_group_load
+calls=1 584 
+* 292
+* 2
++5 3
++1 19
+cfn=(648)
+calls=1 584 
+* 1172
+* 2
++46 4
+
+fn=(650) ecp_mpi_load
+557 50
++1 20
++1 50
++1 30
++1 30
+
+fn=(670) ecp_mod_p384
+1044 21
++1 39
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=3 0 
+* 33
+* 3
+* 12
+cfi=(25)
+cfn=(572)
+calls=3 120 
+* 42
+* 45
++2 30
+cfn=(672)
+calls=3 906 
+* 75
+* 33
+cfn=(672)
+calls=3 906 
+* 75
+* 30
+cfn=(672)
+calls=3 906 
+* 75
++1 33
+cfn=(674) sub32
+calls=3 912 
+* 78
+* 180
+cfn=(672)
+calls=3 906 
+* 75
++2 33
+cfn=(672)
+calls=3 906 
+* 75
+* 30
+cfn=(672)
+calls=3 906 
+* 75
+* 33
+cfn=(672)
+calls=3 906 
+* 75
++1 30
+cfn=(674)
+calls=3 912 
+* 78
+* 30
+cfn=(674)
+calls=3 912 
+* 78
+* 180
+cfn=(672)
+calls=3 906 
+* 75
++2 30
+cfn=(672)
+calls=3 906 
+* 75
+* 33
+cfn=(672)
+calls=3 906 
+* 75
++1 33
+cfn=(674)
+calls=3 912 
+* 78
+* 33
+cfn=(674)
+calls=3 912 
+* 78
+* 170
+cfn=(674)
+calls=1 912 
+* 26
+* 13
+cfn=(672)
+calls=2 906 
+* 50
++2 33
+cfn=(672)
+calls=3 906 
+* 75
+* 30
+cfn=(672)
+calls=3 906 
+* 75
+* 30
+cfn=(672)
+calls=3 906 
+* 75
+* 33
+cfn=(672)
+calls=3 906 
+* 75
++1 30
+cfn=(674)
+calls=3 912 
+* 78
+* 30
+cfn=(674)
+calls=3 912 
+* 78
+* 33
+cfn=(674)
+calls=3 912 
+* 78
+* 180
+cfn=(672)
+calls=3 906 
+* 75
++2 33
+cfn=(672)
+calls=3 906 
+* 75
+* 33
+cfn=(672)
+calls=3 906 
+* 75
+* 30
+cfn=(672)
+calls=3 906 
+* 75
+* 33
+cfn=(672)
+calls=3 906 
+* 75
+* 30
+cfn=(672)
+calls=3 906 
+* 75
+* 30
+cfn=(672)
+calls=3 906 
+* 75
+* 30
+cfn=(672)
+calls=3 906 
+* 75
++1 33
+cfn=(674)
+calls=3 912 
+* 78
+* 33
+cfn=(674)
+calls=3 912 
+* 78
+* 33
+cfn=(674)
+calls=3 912 
+* 78
+* 180
+cfn=(672)
+calls=3 906 
+* 75
++2 30
+cfn=(672)
+calls=3 906 
+* 75
+* 30
+cfn=(672)
+calls=3 906 
+* 75
+* 33
+cfn=(672)
+calls=3 906 
+* 75
+* 30
+cfn=(672)
+calls=3 906 
+* 75
+* 33
+cfn=(672)
+calls=3 906 
+* 75
+* 33
+cfn=(672)
+calls=3 906 
+* 75
+* 33
+cfn=(672)
+calls=3 906 
+* 75
++1 30
+cfn=(674)
+calls=3 912 
+* 78
+* 180
+cfn=(672)
+calls=3 906 
+* 75
++2 33
+cfn=(672)
+calls=3 906 
+* 75
+* 33
+cfn=(672)
+calls=3 906 
+* 75
+* 30
+cfn=(672)
+calls=3 906 
+* 75
+* 33
+cfn=(672)
+calls=3 906 
+* 75
+* 30
+cfn=(672)
+calls=3 906 
+* 75
+* 30
+cfn=(672)
+calls=3 906 
+* 75
++1 33
+cfn=(674)
+calls=3 912 
+* 78
+* 180
+cfn=(672)
+calls=3 906 
+* 75
++2 33
+cfn=(672)
+calls=3 906 
+* 75
+* 30
+cfn=(672)
+calls=3 906 
+* 75
+* 33
+cfn=(672)
+calls=3 906 
+* 75
+* 33
+cfn=(672)
+calls=3 906 
+* 75
++1 30
+cfn=(674)
+calls=3 912 
+* 78
+* 180
+cfn=(672)
+calls=3 906 
+* 75
++2 30
+cfn=(672)
+calls=3 906 
+* 75
+* 33
+cfn=(672)
+calls=3 906 
+* 75
+* 30
+cfn=(672)
+calls=3 906 
+* 75
++1 33
+cfn=(674)
+calls=3 912 
+* 78
+* 180
+cfn=(672)
+calls=3 906 
+* 75
++2 33
+cfn=(672)
+calls=3 906 
+* 75
+* 30
+cfn=(672)
+calls=3 906 
+* 75
+* 33
+cfn=(672)
+calls=3 906 
+* 75
++1 30
+cfn=(674)
+calls=3 912 
+* 78
+* 180
+cfn=(672)
+calls=3 906 
+* 75
++2 30
+cfn=(672)
+calls=3 906 
+* 75
+* 33
+cfn=(672)
+calls=3 906 
+* 75
+* 30
+cfn=(672)
+calls=3 906 
+* 75
++1 33
+cfn=(674)
+calls=3 912 
+* 78
+* 180
+cfn=(672)
+calls=3 906 
+* 75
++2 33
+cfn=(672)
+calls=3 906 
+* 75
+* 30
+cfn=(672)
+calls=3 906 
+* 75
+* 33
+cfn=(672)
+calls=3 906 
+* 75
++1 30
+cfn=(674)
+calls=3 912 
+* 78
+* 1627
+cfn=(676) fix_negative
+calls=1 959 
+* 1202
+* 1
++2 2
++1 2
++1 6
+-1 1
++1 9
+
+fn=(1234) ecp_mod_p521
+1117 79758
++9 45576
++1 40
++3 11374
++1 45496
++1 34122
++2 22748
++1 102366
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=11374 0 
+* 238495
+* 11374
++1 45496
+cfi=(25)
+cfn=(708)
+calls=11374 775 
+* 6390683
+* 34122
++3 102366
++1 22748
++1 612738
+-1 556111
++4 68244
+cfi=(25)
+cfn=(694)
+calls=11374 897 
+* 4309395
+* 22748
++2 11374
++1 11374
++1 56970
+
+fn=(648)
+584 18
++1 14
+cfn=(650)
+calls=2 -28 
+* 36
++1 4
++2 14
+cfn=(650)
+calls=2 -31 
+* 36
++1 14
+cfn=(650)
+calls=2 -32 
+* 36
++2 14
+cfn=(650)
+calls=2 -34 
+* 36
++1 14
+cfn=(650)
+calls=2 -35 
+* 36
++1 8
+cfn=(652)
+calls=2 -26 
+* 26
++2 8
+cfi=(25)
+cfn=(578)
+calls=2 386 
+* 560
+* 6
++1 8
+cfi=(25)
+cfn=(578)
+calls=2 386 
+* 560
+* 6
++2 4
++2 2
++1 4
+
+fn=(676)
+959 8
++7 2
++4 12
++3 6
+cfi=(25)
+cfn=(678)
+calls=1 +1 
+* 1165
+* 3
++1 3
++4 1
++1 2
+
+fn=(674)
+912 275
++1 660
++1 330
++1 165
+
+fl=(22) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/library/pk_wrap.c
+fn=(1152) rsa_can_do
+64 3
++1 4
++2 2
+
+fn=(554) rsa_alloc_wrap
+156 12
++1 12
+cob=(2)
+cfi=(2)
+cfn=(496)
+calls=4 0 
+* 1039
+* 4
+* 4
++2 8
++1 20
+cfi=(23)
+cfn=(556) mbedtls_rsa_init
+calls=4 463 
+* 283
++2 4
++1 8
+
+fn=(1518) rsa_free_wrap
+166 16
++1 12
+cfi=(23)
+cfn=(1520) mbedtls_rsa_free
+calls=4 2098 
+* 8204
++1 12
+cob=(2)
+cfi=(2)
+cfn=(618)
+calls=4 0 
+* 320
+* 4
++1 12
+
+fn=(1526) eckey_free_wrap
+282 4
++1 3
+cfi=(26)
+cfn=(1528) mbedtls_ecp_keypair_free
+calls=1 +73 
+* 2879
++1 3
+cob=(2)
+cfi=(2)
+cfn=(618)
+calls=1 0 
+* 80
+* 1
++1 3
+
+fn=(624) eckey_alloc_wrap
+272 3
++1 3
+cob=(2)
+cfi=(2)
+cfn=(496)
+calls=1 0 
+* 265
+* 1
+* 1
++2 2
++1 3
+cfi=(26)
+cfn=(626) mbedtls_ecp_keypair_init
+calls=1 +25 
+* 145
++2 1
++1 2
+
+fn=(1312) rsa_sign_wrap
+106 9
++1 2
++3 2
++4 3
+cfi=(23)
+cfn=(1314) mbedtls_rsa_get_len
+calls=1 487 
+* 7
+* 3
++2 13
+cfi=(23)
+cfn=(1316) mbedtls_rsa_pkcs1_sign
+calls=1 1762 
+* 74233534
+* 1
++2 2
+
+fl=(26)
+fn=(626)
+301 4
++1 2
++3 3
+cfn=(628) mbedtls_ecp_group_init
+calls=1 -15 
+* 49
++1 4
+cfi=(25)
+cfn=(570)
+calls=1 88 
+* 14
++1 4
+cfn=(630) mbedtls_ecp_point_init
+calls=1 -30 
+* 62
+* 1
++1 2
+
+fn=(1232) mbedtls_ecp_check_privkey
+1886 10
++2 6
+cfn=(660) ecp_get_type
+calls=2 263 
+* 28
+* 4
++13 6
+cfn=(660)
+calls=2 263 
+* 28
+* 4
++3 8
+cfi=(25)
+cfn=(584)
+calls=2 881 
+* 154
+* 4
++1 12
+cfi=(25)
+cfn=(586)
+calls=2 848 
+* 200
+-1 4
++4 4
++5 4
+
+fn=(628)
+290 4
++1 2
++3 5
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=1 0 
+* 34
+* 1
+* 1
++1 2
+
+fn=(642)
+327 20
++3 10
++3 20
++2 12
+cfi=(25)
+cfn=(568)
+calls=3 101 
+* 57
++1 12
+cfi=(25)
+cfn=(568)
+calls=3 101 
+* 57
++1 12
+cfi=(25)
+cfn=(568)
+calls=3 101 
+* 57
++1 12
+cfn=(644) mbedtls_ecp_point_free
+calls=3 -24 
+* 231
++1 12
+cfi=(25)
+cfn=(568)
+calls=3 101 
+* 57
++3 20
++2 2
++1 320
+cfn=(644)
+calls=32 -31 
+* 15847
+-1 164
++2 4
+cob=(2)
+cfi=(2)
+cfn=(618)
+calls=1 0 
+* 127
+* 1
++3 20
+cfn=(646) mbedtls_zeroize
+calls=5 76 
+* 11235
+* 5
++1 10
+
+fn=(656)
+504 14
++4 4
++3 8
++8 8
+cfi=(25)
+cfn=(576)
+calls=2 405 
+* 582
+* 2
++2 8
++3 10
++3 14
+cfi=(25)
+cfn=(566)
+calls=2 678 
+* 3938
+* 6
++1 20
+cfi=(25)
+cfn=(566)
+calls=2 678 
+* 3938
+* 6
++1 10
+cfi=(25)
+cfn=(574)
+calls=2 296 
+* 527
+* 4
++2 2
++1 2
++1 4
+
+fn=(658)
+1866 20
++2 20
+cfi=(25)
+cfn=(584)
+calls=4 881 
+* 524
+* 8
++4 12
+cfn=(660)
+calls=4 263 
+* 56
+* 8
++4 12
+cfn=(660)
+calls=4 263 
+* 56
+* 8
++1 20
+cfn=(662) ecp_check_pubkey_sw
+calls=4 1727 
+* 72073
+* 4
++3 8
+
+fn=(1252) ecp_comb_fixed
+1193 16
++4 12
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=2 0 
+* 34
+* 2
++3 4
++1 384
++1 9423
+cfi=(25)
+cfn=(590)
+calls=1047 314 
+* 25128
+* 18846
+-1 4764
+-1 774
++5 2
++1 4
++3 1152
++1 1728
++1 384
++3 1728
++1 3072
++1 3264
++1 3072
+-11 774
++13 6
+
+fn=(1270) mbedtls_ecp_point_write_binary
+449 9
++1 1
++3 2
++7 5
+cfi=(25)
+cfn=(584)
+calls=1 881 
+* 188
+* 2
++11 4
+cfi=(25)
+cfn=(576)
+calls=1 -66 
+* 511
+* 1
++2 2
++2 5
++2 4
++3 2
++1 7
+cfi=(25)
+cfn=(1272)
+calls=1 705 
+* 2108
+* 3
++1 10
+cfi=(25)
+cfn=(1272)
+calls=1 705 
+* 2108
+* 3
++14 1
++1 2
+
+fn=(1528)
+356 4
++1 2
++3 3
+cfn=(642)
+calls=1 -33 
+* 2268
++1 4
+cfi=(25)
+cfn=(568)
+calls=1 101 
+* 19
++1 4
+cfn=(644)
+calls=1 -48 
+* 572
+* 1
++1 2
+
+fn=(1240) mbedtls_ecp_copy
+369 55
++3 55
+cfi=(25)
+cfn=(682)
+calls=11 186 
+* 3624
+* 33
++1 77
+cfi=(25)
+cfn=(682)
+calls=11 186 
+* 3610
+* 33
++1 77
+cfi=(25)
+cfn=(682)
+calls=11 186 
+* 3156
+* 22
++2 11
++1 11
++1 22
+
+fn=(644)
+314 252
++1 126
++3 189
+cfi=(25)
+cfn=(568)
+calls=63 101 
+* 12570
++1 252
+cfi=(25)
+cfn=(568)
+calls=63 101 
+* 12570
++1 252
+cfi=(25)
+cfn=(568)
+calls=63 101 
+* 2169
+* 63
++1 126
+
+fn=(1126)
+227 55
++3 11
+cfn=(956) mbedtls_ecp_curve_list
+calls=11 -55 
+* 55
+* 22
++4 264
++1 22
+-3 55
+-1 110
+-1 110
++1 22
+-1 22
++9 22
+
+fn=(1222) mbedtls_ecp_gen_keypair
+2002 8
++1 11
+cfn=(1224) mbedtls_ecp_gen_keypair_base
+calls=1 -80 
+* 52224237
++1 2
+
+fn=(1264) mbedtls_ecp_tls_write_group
+635 7
++3 4
+cfn=(1266) mbedtls_ecp_curve_info_from_grp_id
+calls=1 209 
+* 24
+* 3
++6 2
++1 4
++6 4
++5 6
++1 5
++2 1
++1 2
+
+fn=(668) ecp_modp
+669 56985
++3 45588
++4 45588
++1 34191
+cfi=(25)
+cfn=(578)
+calls=11397 386 
+* 5218643
+* 45588
+-1 22794
++6 56985
+cfi=(27)
+cfn=(1234)
+calls=11394 1117 
+* 12835718
+cfi=(27)
+cfn=(670)
+calls=3 1044 
+* 12943
+* 34191
++3 11397
++1 7
+cfi=(25)
+cfn=(688)
+calls=1 1017 
+* 1363
+* 3
+-1 45596
+cfi=(25)
+cfn=(584)
+calls=1 881 
+* 152
+* 2
++5 22323
+cfi=(25)
+cfn=(678)
+calls=3189 974 
+* 1919466
+* 9567
+-2 87516
+cfi=(25)
+cfn=(586)
+calls=14586 848 
+* 2973346
+* 29172
++4 11397
++1 11397
++1 22794
+
+fn=(1238) ecp_precompute_comb
+1234 24
++10 10
+cfn=(1240)
+calls=2 369 
+* 2139
+* 6
++2 2
++1 4
++2 81
++1 126
+cfn=(1240)
+calls=9 369 
+* 8647
+* 27
++1 18
++1 5130
+cfn=(1242) ecp_double_jac
+calls=855 925 
+* 50441385
+* 2565
+-1 3447
++3 63
+-7 97
++10 12
+cfn=(1244) ecp_normalize_jac_many
+calls=2 802 
+* 7278025
+* 6
++6 2
++1 4
++2 18
++1 9
++2 1380
+cfn=(1248) ecp_add_mixed
+calls=46 1023 
+* 3004423
+* 138
++1 736
+-3 275
+-3 97
++10 12
+cfn=(1244)
+calls=2 802 
+* 7739771
+* 4
++2 2
++2 2
++1 10
+
+fn=(1242)
+925 9423
++5 3141
++10 3141
+cfi=(25)
+cfn=(570)
+calls=1047 88 
+* 14658
+* 3141
+cfi=(25)
+cfn=(570)
+calls=1047 88 
+* 14658
+* 3141
+cfi=(25)
+cfn=(570)
+calls=1047 88 
+* 14658
+* 3141
+cfi=(25)
+cfn=(570)
+calls=1047 88 
+* 14658
++3 4188
++3 8376
+cfi=(25)
+cfn=(664)
+calls=1047 1183 
+* 2219488
+* 8376
+cfn=(668)
+calls=1047 669 
+* 2211715
+* 6282
++1 6282
+cfi=(25)
+cfn=(688)
+calls=1047 +70 
+* 865264
+* 7765
+cfi=(25)
+cfn=(678)
+calls=511 +27 
+* 252434
+* 10881
+cfi=(25)
+cfn=(586)
+calls=1558 -99 
+* 147075
+* 3116
++1 6282
+cfi=(25)
+cfn=(692)
+calls=1047 1048 
+* 1345737
+* 7912
+cfi=(25)
+cfn=(688)
+calls=532 +69 
+* 664232
+* 8461
+cfi=(25)
+cfn=(584)
+calls=532 -67 
+* 42584
+* 1064
++1 6282
+cfi=(25)
+cfn=(664)
+calls=1047 1183 
+* 1962601
+* 8376
+cfn=(668)
+calls=1047 669 
+* 2133600
+* 6282
++1 6282
+cfi=(25)
+cfn=(714)
+calls=1047 1220 
+* 785760
+* 11608
+cfi=(25)
+cfn=(678)
+calls=1060 +24 
+* 536360
+* 15822
+cfi=(25)
+cfn=(586)
+calls=2107 848 
+* 217910
+* 5261
++20 8376
+cfi=(25)
+cfn=(664)
+calls=1047 1183 
+* 2527329
+* 8376
+cfn=(668)
+calls=1047 669 
+* 2210242
+* 6282
++1 4188
+cfi=(25)
+cfn=(706)
+calls=1047 725 
+* 1619859
+* 7793
+cfi=(25)
+cfn=(678)
+calls=515 +3 
+* 309982
+* 10917
+cfi=(25)
+cfn=(586)
+calls=1562 848 
+* 316115
+* 3124
++1 6282
+cfi=(25)
+cfn=(664)
+calls=1047 1183 
+* 2094666
+* 8376
+cfn=(668)
+calls=1047 669 
+* 2138489
+* 6282
++1 4188
+cfi=(25)
+cfn=(706)
+calls=1047 725 
+* 1619213
+* 7793
+cfi=(25)
+cfn=(678)
+calls=515 +1 
+* 310030
+* 10917
+cfi=(25)
+cfn=(586)
+calls=1562 848 
+* 316138
+* 3124
++3 6282
+cfi=(25)
+cfn=(664)
+calls=1047 1183 
+* 2748005
+* 8376
+cfn=(668)
+calls=1047 669 
+* 2208294
+* 6282
++1 4188
+cfi=(25)
+cfn=(706)
+calls=1047 725 
+* 1619258
+* 7947
+cfi=(25)
+cfn=(678)
+calls=537 -3 
+* 323274
+* 11115
+cfi=(25)
+cfn=(586)
+calls=1584 848 
+* 320302
+* 3168
++3 6282
+cfi=(25)
+cfn=(664)
+calls=1047 1183 
+* 1987373
+* 8376
+cfn=(668)
+calls=1047 669 
+* 2196555
+* 6282
++1 6282
+cfi=(25)
+cfn=(692)
+calls=1047 +67 
+* 1578114
+* 7849
+cfi=(25)
+cfn=(688)
+calls=523 +36 
+* 816716
+* 8371
+cfi=(25)
+cfn=(584)
+calls=523 881 
+* 98336
+* 1046
++1 6282
+cfi=(25)
+cfn=(692)
+calls=1047 +66 
+* 1564245
+* 7716
+cfi=(25)
+cfn=(688)
+calls=504 +35 
+* 787031
+* 8181
+cfi=(25)
+cfn=(584)
+calls=504 881 
+* 94752
+* 1008
++3 6282
+cfi=(25)
+cfn=(692)
+calls=1047 +63 
+* 1563896
+* 7716
+cfi=(25)
+cfn=(688)
+calls=504 +32 
+* 786744
+* 8181
+cfi=(25)
+cfn=(584)
+calls=504 881 
+* 94752
+* 1008
++1 6282
+cfi=(25)
+cfn=(664)
+calls=1047 1183 
+* 2595022
+* 8376
+cfn=(668)
+calls=1047 669 
+* 2151210
+* 6282
++1 6282
+cfi=(25)
+cfn=(692)
+calls=1047 +61 
+* 1585463
+* 7919
+cfi=(25)
+cfn=(688)
+calls=533 +30 
+* 831931
+* 8471
+cfi=(25)
+cfn=(584)
+calls=533 881 
+* 100216
+* 1066
++3 8376
+cfi=(25)
+cfn=(664)
+calls=1047 1183 
+* 1981078
+* 8376
+cfn=(668)
+calls=1047 669 
+* 2148312
+* 6282
++1 4188
+cfi=(25)
+cfn=(706)
+calls=1047 725 
+* 1620306
+* 7800
+cfi=(25)
+cfn=(678)
+calls=516 -17 
+* 310632
+* 10926
+cfi=(25)
+cfn=(586)
+calls=1563 848 
+* 316294
+* 3126
++2 5235
+cfi=(25)
+cfn=(682)
+calls=1047 186 
+* 227026
+* 3141
++1 6282
+cfi=(25)
+cfn=(682)
+calls=1047 186 
+* 227027
+* 3141
++1 6282
+cfi=(25)
+cfn=(682)
+calls=1047 186 
+* 225742
+* 2094
++2 1047
++1 3141
+cfi=(25)
+cfn=(568)
+calls=1047 101 
+* 244203
+* 3141
+cfi=(25)
+cfn=(568)
+calls=1047 101 
+* 352790
+* 3141
+cfi=(25)
+cfn=(568)
+calls=1047 101 
+* 352818
+* 3141
+cfi=(25)
+cfn=(568)
+calls=1047 101 
+* 405682
++2 1047
++1 5235
+
+fn=(1244)
+802 36
++5 8
++10 16
+cob=(2)
+cfi=(2)
+cfn=(496)
+calls=4 0 
+* 1641
+* 4
+* 12
++3 12
+cfi=(25)
+cfn=(570)
+calls=4 88 
+* 56
+* 12
+cfi=(25)
+cfn=(570)
+calls=4 88 
+* 56
+* 12
+cfi=(25)
+cfn=(570)
+calls=4 88 
+* 56
++5 28
+cfi=(25)
+cfn=(682)
+calls=4 186 
+* 1112
+* 12
++1 8
++2 1326
+cfi=(25)
+cfn=(664)
+calls=51 1183 
+* 113881
+* 153
++1 612
+cfn=(668)
+calls=51 669 
+* 103882
+* 306
+-3 216
++9 60
+cfi=(25)
+cfn=(716)
+calls=4 1902 
+* 13196795
+* 12
++2 12
++6 110
++1 20
+cfi=(25)
+cfn=(682)
+calls=4 186 
+* 900
+* 12
++4 663
+cfi=(25)
+cfn=(664)
+calls=51 1183 
+* 106842
+* 408
+cfn=(668)
+calls=51 669 
+* 103116
+* 306
++1 561
+cfi=(25)
+cfn=(664)
+calls=51 1183 
+* 127655
+* 408
+cfn=(668)
+calls=51 669 
+* 103012
+* 306
++6 306
+cfi=(25)
+cfn=(664)
+calls=51 1183 
+* 107732
+* 24
+cfi=(25)
+cfn=(664)
+calls=4 1183 
+* 8363
+* 440
+cfn=(668)
+calls=55 669 
+* 113506
+* 330
++1 880
+cfi=(25)
+cfn=(664)
+calls=55 1183 
+* 164579
+* 715
+cfn=(668)
+calls=55 669 
+* 112648
+* 330
++1 880
+cfi=(25)
+cfn=(664)
+calls=55 1183 
+* 164569
+* 715
+cfn=(668)
+calls=55 669 
+* 112676
+* 330
++1 880
+cfi=(25)
+cfn=(664)
+calls=55 1183 
+* 141625
+* 715
+cfn=(668)
+calls=55 669 
+* 111074
+* 330
++8 550
+cfi=(25)
+cfn=(1246)
+calls=55 150 
+* 35311
+* 165
++1 605
+cfi=(25)
+cfn=(1246)
+calls=55 150 
+* 35515
+* 165
++1 440
+cfi=(25)
+cfn=(568)
+calls=55 101 
+* 12430
++2 110
+-33 51
++6 51
++28 4
++5 12
+cfi=(25)
+cfn=(568)
+calls=4 101 
+* 1362
+* 12
+cfi=(25)
+cfn=(568)
+calls=4 101 
+* 1404
+* 12
+cfi=(25)
+cfn=(568)
+calls=4 101 
+* 1374
++1 8
++1 550
+cfi=(25)
+cfn=(568)
+calls=55 101 
+* 18771
+-1 232
++2 12
+cob=(2)
+cfi=(2)
+cfn=(618)
+calls=4 0 
+* 320
+* 4
++2 4
++1 20
+
+fn=(1248)
+1023 2380
++5 714
++13 1190
+cfi=(25)
+cfn=(584)
+calls=238 881 
+* 21344
+* 476
++3 952
++6 952
++3 714
+cfi=(25)
+cfn=(570)
+calls=238 88 
+* 3332
+* 714
+cfi=(25)
+cfn=(570)
+calls=238 88 
+* 3332
+* 714
+cfi=(25)
+cfn=(570)
+calls=238 88 
+* 3332
+* 714
+cfi=(25)
+cfn=(570)
+calls=238 88 
+* 3332
++1 714
+cfi=(25)
+cfn=(570)
+calls=238 88 
+* 3332
+* 714
+cfi=(25)
+cfn=(570)
+calls=238 88 
+* 3332
+* 714
+cfi=(25)
+cfn=(570)
+calls=238 88 
+* 3332
++2 1904
+cfi=(25)
+cfn=(664)
+calls=238 1183 
+* 493053
+* 1904
+cfn=(668)
+calls=238 669 
+* 476251
+* 1428
++1 1666
+cfi=(25)
+cfn=(664)
+calls=238 1183 
+* 525634
+* 1904
+cfn=(668)
+calls=238 669 
+* 474913
+* 1428
++1 1428
+cfi=(25)
+cfn=(664)
+calls=238 1183 
+* 580628
+* 1904
+cfn=(668)
+calls=238 669 
+* 476707
+* 1428
++1 1666
+cfi=(25)
+cfn=(664)
+calls=238 1183 
+* 580847
+* 1904
+cfn=(668)
+calls=238 669 
+* 473475
+* 1428
++1 1428
+cfi=(25)
+cfn=(692)
+calls=238 -12 
+* 343503
+* 1799
+cfi=(25)
+cfn=(688)
+calls=121 -43 
+* 187605
+* 1924
+cfi=(25)
+cfn=(584)
+calls=121 881 
+* 22376
+* 242
++1 1666
+cfi=(25)
+cfn=(692)
+calls=238 -13 
+* 341261
+* 1778
+cfi=(25)
+cfn=(688)
+calls=118 -44 
+* 183296
+* 1894
+cfi=(25)
+cfn=(584)
+calls=118 881 
+* 21896
+* 236
++3 952
+cfi=(25)
+cfn=(584)
+calls=238 881 
+* 43880
+* 476
++14 1666
+cfi=(25)
+cfn=(664)
+calls=238 1183 
+* 525581
+* 1904
+cfn=(668)
+calls=238 669 
+* 474457
+* 1428
++1 1428
+cfi=(25)
+cfn=(664)
+calls=238 1183 
+* 576434
+* 1904
+cfn=(668)
+calls=238 669 
+* 504934
+* 1428
++1 1428
+cfi=(25)
+cfn=(664)
+calls=238 1183 
+* 557426
+* 1904
+cfn=(668)
+calls=238 669 
+* 483093
+* 1428
++1 1428
+cfi=(25)
+cfn=(664)
+calls=238 1183 
+* 607240
+* 1904
+cfn=(668)
+calls=238 669 
+* 484199
+* 1428
++1 1428
+cfi=(25)
+cfn=(714)
+calls=238 1220 
+* 134856
+* 1799
+cfi=(25)
+cfn=(678)
+calls=121 974 
+* 72554
+* 2517
+cfi=(25)
+cfn=(586)
+calls=359 848 
+* 71498
+* 718
++1 1428
+cfi=(25)
+cfn=(664)
+calls=238 1183 
+* 555788
+* 1904
+cfn=(668)
+calls=238 669 
+* 505302
+* 1428
++1 1428
+cfi=(25)
+cfn=(692)
+calls=238 -36 
+* 367269
+* 1890
+cfi=(25)
+cfn=(688)
+calls=134 -67 
+* 209099
+* 2054
+cfi=(25)
+cfn=(584)
+calls=134 881 
+* 25204
+* 268
++1 1428
+cfi=(25)
+cfn=(692)
+calls=238 -37 
+* 363824
+* 1834
+cfi=(25)
+cfn=(688)
+calls=126 -68 
+* 196673
+* 1974
+cfi=(25)
+cfn=(584)
+calls=126 881 
+* 23688
+* 252
++1 1428
+cfi=(25)
+cfn=(692)
+calls=238 -38 
+* 358017
+* 1778
+cfi=(25)
+cfn=(688)
+calls=118 -69 
+* 184167
+* 1894
+cfi=(25)
+cfn=(584)
+calls=118 881 
+* 22184
+* 236
++1 1428
+cfi=(25)
+cfn=(664)
+calls=238 +96 
+* 611929
+* 1904
+cfn=(668)
+calls=238 669 
+* 487359
+* 1428
++1 1666
+cfi=(25)
+cfn=(664)
+calls=238 +95 
+* 610338
+* 1904
+cfn=(668)
+calls=238 669 
+* 486545
+* 1428
++1 1428
+cfi=(25)
+cfn=(692)
+calls=238 -41 
+* 364579
+* 1736
+cfi=(25)
+cfn=(688)
+calls=112 -72 
+* 140871
+* 1834
+cfi=(25)
+cfn=(584)
+calls=112 881 
+* 8960
+* 224
++2 1190
+cfi=(25)
+cfn=(682)
+calls=238 186 
+* 61694
+* 714
++1 1428
+cfi=(25)
+cfn=(682)
+calls=238 186 
+* 38182
+* 714
++1 1428
+cfi=(25)
+cfn=(682)
+calls=238 186 
+* 61480
+* 476
++2 238
++2 714
+cfi=(25)
+cfn=(568)
+calls=238 101 
+* 79270
+* 714
+cfi=(25)
+cfn=(568)
+calls=238 101 
+* 79542
+* 714
+cfi=(25)
+cfn=(568)
+calls=238 101 
+* 80304
+* 714
+cfi=(25)
+cfn=(568)
+calls=238 101 
+* 84046
++1 714
+cfi=(25)
+cfn=(568)
+calls=238 101 
+* 87417
+* 714
+cfi=(25)
+cfn=(568)
+calls=238 101 
+* 53720
+* 714
+cfi=(25)
+cfn=(568)
+calls=238 101 
+* 81110
++2 238
++1 1190
+
+fn=(1262) ecp_normalize_jac
+749 16
++4 10
+cfi=(25)
+cfn=(584)
+calls=2 881 
+* 184
+* 4
++9 6
+cfi=(25)
+cfn=(570)
+calls=2 88 
+* 28
+* 6
+cfi=(25)
+cfn=(570)
+calls=2 88 
+* 28
++5 16
+cfi=(25)
+cfn=(716)
+calls=2 1902 
+* 6975391
+* 6
++1 12
+cfi=(25)
+cfn=(664)
+calls=2 1183 
+* 4208
+* 16
+cfn=(668)
+calls=2 -99 
+* 4477
+* 12
++1 12
+cfi=(25)
+cfn=(664)
+calls=2 1183 
+* 5150
+* 16
+cfn=(668)
+calls=2 669 
+* 3682
+* 12
++5 16
+cfi=(25)
+cfn=(664)
+calls=2 1183 
+* 5150
+* 18
+cfn=(668)
+calls=2 669 
+* 3674
+* 12
++1 16
+cfi=(25)
+cfn=(664)
+calls=2 1183 
+* 4934
+* 18
+cfn=(668)
+calls=2 669 
+* 3666
+* 12
++5 10
+cfi=(25)
+cfn=(574)
+calls=2 296 
+* 138
+* 4
++2 2
++2 6
+cfi=(25)
+cfn=(568)
+calls=2 101 
+* 452
+* 6
+cfi=(25)
+cfn=(568)
+calls=2 101 
+* 674
++2 2
++1 10
+
+fn=(646)
+76 20
++1 11200
++1 15
+
+fn=(662)
+1727 32
++5 16
+cfi=(25)
+cfn=(584)
+calls=4 881 
+* 320
+* 8
++1 20
+cfi=(25)
+cfn=(584)
+calls=4 881 
+* 320
+-1 8
++2 24
+cfi=(25)
+cfn=(586)
+calls=4 848 
+* 400
+-1 8
++2 28
+cfi=(25)
+cfn=(586)
+calls=4 848 
+* 400
+-1 8
++4 12
+cfi=(25)
+cfn=(570)
+calls=4 88 
+* 56
+* 12
+cfi=(25)
+cfn=(570)
+calls=4 88 
+* 56
++6 32
+cfi=(25)
+cfn=(664)
+calls=4 1183 
+* 8187
+* 32
+cfn=(668)
+calls=4 669 
+* 12456
+* 24
++1 24
+cfi=(25)
+cfn=(664)
+calls=4 1183 
+* 8043
+* 32
+cfn=(668)
+calls=4 669 
+* 10836
+* 24
++3 16
++2 24
+cfi=(25)
+cfn=(690)
+calls=4 1095 
+* 2032
+* 28
++7 24
+cfi=(25)
+cfn=(664)
+calls=4 1183 
+* 9527
+* 32
+cfn=(668)
+calls=4 669 
+* 11306
+* 24
++1 28
+cfi=(25)
+cfn=(688)
+calls=4 1017 
+* 1521
+* 23
+cfi=(25)
+cfn=(678)
+calls=1 974 
+* 446
+* 33
+cfi=(25)
+cfn=(586)
+calls=5 848 
+* 902
+* 10
++2 20
+cfi=(25)
+cfn=(586)
+calls=4 848 
+* 2207
+* 8
++3 4
++2 12
+cfi=(25)
+cfn=(568)
+calls=4 101 
+* 1196
+* 12
+cfi=(25)
+cfn=(568)
+calls=4 101 
+* 1196
++2 4
++1 20
+
+fn=(956)
+175 26
++1 13
++1 26
+
+fn=(1224)
+1923 9
++2 5
++3 3
+cfn=(660)
+calls=1 263 
+* 14
+* 2
++24 3
+cfn=(660)
+calls=1 263 
+* 14
+* 2
++3 1
++11 6
+cfi=(25)
+cfn=(1226)
+calls=1 -83 
+* 14101
+* 3
++1 9
+cfi=(25)
+cfn=(708)
+calls=1 775 
+* 510
+* 3
++11 3
++3 4
+cfi=(25)
+cfn=(584)
+calls=1 881 
+* 77
++1 8
+cfi=(25)
+cfn=(586)
+calls=1 848 
+* 100
+-1 3
++8 2
++3 10
+cfn=(1230) mbedtls_ecp_mul
+calls=1 1678 
+* 52209343
++1 2
+
+fn=(1236) ecp_mul_comb
+1355 24
++8 6
+cfi=(25)
+cfn=(570)
+calls=2 88 
+* 28
++1 6
+cfi=(25)
+cfn=(570)
+calls=2 88 
+* 28
++3 10
+cfi=(25)
+cfn=(590)
+calls=2 314 
+* 48
+* 4
++8 14
++8 14
+cfi=(25)
+cfn=(586)
+calls=2 848 
+* 480
+* 4
++1 6
+cfi=(25)
+cfn=(586)
+calls=1 848 
+* 380
+-1 6
++2 2
+-2 1
++2 2
++1 3
++9 4
++2 10
++4 14
++1 18
++6 9
++2 2
+-2 1
++2 2
++2 8
+cob=(2)
+cfi=(2)
+cfn=(496)
+calls=2 0 
+* 6214
+* 2
+* 2
++1 4
++6 16
+cfn=(1238)
+calls=2 1234 
+* 68488697
+* 6
++2 4
++2 3
++1 3
++8 4
+cfi=(25)
+cfn=(590)
+calls=1 314 
+* 24
+* 4
+cfi=(25)
+cfn=(590)
+calls=1 314 
+* 24
+* 6
++1 10
+cfi=(25)
+cfn=(682)
+calls=2 186 
+* 556
+* 6
++1 14
+cfi=(25)
+cfn=(692)
+calls=2 1048 
+* 1770
+* 6
++1 16
+cfi=(25)
+cfn=(1250)
+calls=2 234 
+* 724
+* 6
++5 12
+cfn=(1252)
+calls=2 1193 
+* 74573
++1 24
+cfn=(1254) ecp_mul_comb_core
+calls=2 1319 
+* 28462340
+* 8
++5 16
+cfn=(1258) ecp_safe_invert_jac
+calls=2 891 
+* 4536
+* 6
++1 10
+cfn=(1262)
+calls=2 749 
+* 7012112
+* 4
++2 2
++2 8
++2 2
++1 160
+cfn=(644)
+calls=16 314 
+* 7991
+-1 99
++2 3
+cob=(2)
+cfi=(2)
+cfn=(618)
+calls=1 0 
+* 144
+* 1
++3 6
+cfi=(25)
+cfn=(568)
+calls=2 101 
+* 452
++1 6
+cfi=(25)
+cfn=(568)
+calls=2 101 
+* 452
++2 4
++3 2
++1 10
+
+fn=(1266)
+209 4
++3 1
+cfn=(956)
+calls=1 -37 
+* 5
+* 2
++4 4
++1 2
+-4 2
+-1 2
++9 2
+
+fn=(1258)
+891 1960
++5 588
+cfi=(25)
+cfn=(570)
+calls=196 88 
+* 2744
++3 1568
+cfi=(25)
+cfn=(692)
+calls=196 1048 
+* 174108
+* 588
++1 980
+cfi=(25)
+cfn=(584)
+calls=196 -19 
+* 15896
+* 588
++1 1764
+cfi=(25)
+cfn=(1250)
+calls=196 234 
+* 71384
+* 392
++2 196
++1 588
+cfi=(25)
+cfn=(568)
+calls=196 101 
+* 44296
++2 196
++1 980
+
+fn=(1370) mbedtls_ecp_is_zero
+407 4
++1 5
+cfi=(25)
+cfn=(584)
+calls=1 881 
+* 188
+* 3
++1 2
+
+fn=(660)
+263 54
++1 72
++3 72
++3 18
++1 36
+
+fn=(954) mbedtls_ecp_grp_id_list
+183 3
++3 3
++2 1
++3 1
+cfn=(956)
+calls=1 -16 
+* 5
+* 2
++4 88
+-2 11
+-1 22
+-1 22
++1 2
+-1 2
++6 4
++2 1
++3 1
++1 2
+
+fn=(1260) ecp_randomize_jac
+1112 20
++4 2
++9 10
++1 6
+cfi=(25)
+cfn=(570)
+calls=2 88 
+* 28
+* 6
+cfi=(25)
+cfn=(570)
+calls=2 88 
+* 28
++5 12
+cfi=(25)
+cfn=(1226)
+calls=2 1883 
+* 28056
+* 6
++2 2
++1 56
+cfi=(25)
+cfn=(708)
+calls=14 775 
+* 7140
+* 42
+-1 96
+cfi=(25)
+cfn=(586)
+calls=16 848 
+* 1362
+* 32
++3 10
++3 8
+cfi=(25)
+cfn=(584)
+calls=2 881 
+* 154
+* 4
++3 16
+cfi=(25)
+cfn=(664)
+calls=2 +41 
+* 3462
+* 18
+cfn=(668)
+calls=2 669 
+* 1968
+* 12
++3 12
+cfi=(25)
+cfn=(664)
+calls=2 +38 
+* 4208
+* 16
+cfn=(668)
+calls=2 669 
+* 3658
+* 12
++1 12
+cfi=(25)
+cfn=(664)
+calls=2 +37 
+* 5890
+* 16
+cfn=(668)
+calls=2 669 
+* 5296
+* 12
++3 12
+cfi=(25)
+cfn=(664)
+calls=2 +34 
+* 4934
+* 16
+cfn=(668)
+calls=2 669 
+* 3658
+* 12
++1 16
+cfi=(25)
+cfn=(664)
+calls=2 +33 
+* 5890
+* 18
+cfn=(668)
+calls=2 669 
+* 4469
+* 14
++3 6
+cfi=(25)
+cfn=(568)
+calls=2 101 
+* 452
+* 6
+cfi=(25)
+cfn=(568)
+calls=2 101 
+* 674
++2 2
++1 10
+
+fn=(1268) mbedtls_ecp_tls_write_point
+575 9
++6 2
++3 12
+cfn=(1270)
+calls=1 449 
+* 4978
+* 3
++7 5
++1 5
++2 1
++1 2
+
+fn=(1364) mbedtls_ecp_tls_read_point
+543 7
++7 2
++3 7
++1 7
++6 3
++1 6
++2 6
+cfn=(656)
+calls=1 -59 
+* 5141
++1 2
+
+fn=(630)
+277 16
++1 8
++3 12
+cfi=(25)
+cfn=(570)
+calls=4 88 
+* 56
++1 16
+cfi=(25)
+cfn=(570)
+calls=4 88 
+* 56
++1 16
+cfi=(25)
+cfn=(570)
+calls=4 88 
+* 56
+* 4
++1 8
+
+fn=(1230)
+1678 18
++1 2
++6 10
+cfi=(25)
+cfn=(584)
+calls=2 881 
+* 262
+* 4
++3 10
+cfn=(1232)
+calls=2 1886 
+* 476
+* 16
+cfn=(658)
+calls=2 1866 
+* 31572
+* 6
++12 6
+cfn=(660)
+calls=2 263 
+* 28
+* 4
++5 6
+cfn=(660)
+calls=2 263 
+* 28
+* 4
++1 20
+cfn=(1236)
+calls=2 1355 
+* 104062238
+* 2
++12 2
++1 4
+
+fn=(1254)
+1319 34
++5 6
+cfn=(630)
+calls=2 277 
+* 124
++3 4
++1 24
+cfn=(1256) ecp_select_comb
+calls=2 -41 
+* 40964
+* 6
++1 10
+cfi=(25)
+cfn=(574)
+calls=2 296 
+* 430
+* 6
++1 4
++1 12
+cfn=(1260)
+calls=2 1112 
+* 81877
+* 6
++2 2
++2 1152
+cfn=(1242)
+calls=192 925 
+* 11465553
+* 576
++1 2304
+cfn=(1256)
+calls=192 -49 
+* 3759960
+* 576
++1 1152
+cfn=(1248)
+calls=192 1023 
+* 13105010
+* 576
+-4 970
++7 2
++2 6
+cfn=(644)
+calls=2 314 
+* 982
++2 2
++1 10
+
+fn=(1256)
+1287 2134
++5 776
++3 388
++2 76704
+cfi=(25)
+cfn=(1250)
+calls=4512 234 
+* 1633992
+* 13536
++1 81216
+cfi=(25)
+cfn=(1250)
+calls=4512 234 
+* 1633992
+* 13536
+-3 27654
++7 1552
+cfn=(1258)
+calls=194 891 
+* 314280
+* 388
++2 194
++1 194
++1 388
+
+fl=(8)
+fn=(970) ssl_append_key_cert
+5992 6
++3 3
+cob=(2)
+cfi=(2)
+cfn=(496)
+calls=1 0 
+* 148
+* 1
+* 1
++1 2
++3 3
++1 3
++1 2
++3 4
++2 4
++10 1
++1 2
+
+fn=(986) ssl_handshake_params_init
+5484 8
++1 10
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=2 0 
+* 5344
+* 2
++4 8
+cfi=(36) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/library/md5.c
+cfn=(988) mbedtls_md5_init
+calls=2 79 
+* 60
++1 8
+cfi=(37) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/library/sha1.c
+cfn=(990) mbedtls_sha1_init
+calls=2 79 
+* 60
++1 8
+cfi=(36)
+cfn=(992) mbedtls_md5_starts_ret
+calls=2 101 
+* 36
++1 8
+cfi=(37)
+cfn=(994) mbedtls_sha1_starts_ret
+calls=2 101 
+* 40
++4 8
+cfi=(38) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/library/sha256.c
+cfn=(996) mbedtls_sha256_init
+calls=2 82 
+* 60
++1 10
+cfi=(38)
+cfn=(998) mbedtls_sha256_starts_ret
+calls=2 104 
+* 66
++3 8
+cfi=(13) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/library/sha512.c
+cfn=(310) mbedtls_sha512_init
+calls=2 96 
+* 94
++1 10
+cfi=(13)
+cfn=(910) mbedtls_sha512_starts_ret
+calls=2 118 
+* 80
++4 6
++4 6
+cfi=(39)
+cfn=(1000) mbedtls_ssl_sig_hash_set_init
+calls=2 391 
+* 48
++4 8
+cfi=(40) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/library/dhm.c
+cfn=(1004) mbedtls_dhm_init
+calls=2 126 
+* 94
++3 8
+cfi=(41)
+cfn=(1006) mbedtls_ecdh_init
+calls=2 93 
+* 136
++11 4
++2 6
+
+fn=(1018) mbedtls_ssl_transform_free
+7309 8
++1 4
++8 8
+cfi=(34)
+cfn=(1020) mbedtls_cipher_free
+calls=2 137 
+* 9069
++1 8
+cfi=(34)
+cfn=(1020)
+calls=2 137 
+* 9069
++2 8
+cfi=(35)
+cfn=(1024) mbedtls_md_free
+calls=2 187 
+* 26
++1 8
+cfi=(35)
+cfn=(1024)
+calls=2 187 
+* 26
++2 8
+cfn=(1026) mbedtls_zeroize
+calls=2 57 
+* 5502
+* 2
++1 4
+
+fn=(1050) ssl_flight_free
+2550 8
++1 4
++3 6
++9 6
+
+fn=(1082) ssl_check_timer
+90 5760
++1 5760
++1 2880
++9 2880
+
+fn=(1164)
+8057 12954
++2 4318
++13 8636
++1 8636
++2 6477
+
+fn=(1348)
+3769 2876
++3 5752
+cfi=(15)
+cfn=(1070)
+calls=719 84 
+* 24446
++2 2876
++4 2157
+cfn=(1350) mbedtls_ssl_read_record_layer
+calls=719 +33 
+* 1202473859
+* 2157
++6 2157
+cfn=(1356) mbedtls_ssl_handle_message_type
+calls=719 4087 
+* 11065
+* 719
++2 1438
++2 1438
++6 2876
++2 6
+cfn=(1360) mbedtls_ssl_update_handshake_status
+calls=2 3203 
+* 42670
+* 2
++9 5752
+cfi=(15)
+cfn=(1070)
+calls=719 84 
+* 24446
++2 719
++1 1438
+
+fn=(1354) ssl_prepare_record_content
+3697 2876
++1 719
++2 2157
+cfi=(39)
+cfn=(1092)
+calls=719 588 
+* 8628
+* 11504
+cfi=(15)
+cfn=(1094)
+calls=719 144 
+* 22289
+* 719
++19 4314
++2 2151
+cfn=(1430) ssl_decrypt_buf
+calls=717 1596 
+* 1201627021
+* 2151
++6 10038
+cfi=(15)
+cfn=(1094)
+calls=717 144 
+* 22227
+* 717
++3 2868
++20 4314
++6 719
++1 1438
+
+fn=(1374)
+496 7
++1 1
++11 3
++1 3
++1 3
++2 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 5
+cfi=(34)
+cfn=(1184)
+calls=1 92 
+* 145
+* 1
++1 2
++7 5
+cfi=(35)
+cfn=(1280)
+calls=1 141 
+* 19
+* 1
++1 2
++20 4
++10 4
++1 3
+-1 2
++3 3
++1 3
++1 4
++29 4
++2 14
+cfi=(15)
+cfn=(1094)
+calls=1 144 
+* 31
+* 1
++4 5
++5 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 8
+cfn=(1376) ssl_calc_verify_tls_sha384
+calls=1 1073 
+* 11885
++3 4
++3 6
++3 2
++10 11
+cfi=(15)
+cfn=(1094)
+calls=1 144 
+* 31
+* 1
++2 2
++3 2
+-3 13
+cfn=(1380) tls_prf_sha384
+calls=1 457 
+* 134590
+* 2
++4 2
++13 2
++6 5
+cfn=(1026)
+calls=1 57 
+* 9231
+* 1
++8 18
++1 8
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=1 0 
+* 11
+* 1
++1 8
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=1 0 
+* 11
+* 1
++1 4
+cfn=(1026)
+calls=1 57 
+* 591
++14 2
++1 2
+-1 11
+cfn=(1380)
+calls=1 457 
+* 562903
+* 2
++2 2
++6 4
+cfi=(33)
+cfn=(1174)
+calls=1 1775 
+* 230
+* 10
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 12
+cfi=(15)
+cfn=(1094)
+calls=1 144 
+* 31
+* 1
++1 12
+cfi=(15)
+cfn=(1094)
+calls=1 144 
+* 31
+* 1
++1 11
+cfi=(15)
+cfn=(1094)
+calls=1 144 
+* 31
+* 1
++2 5
+cfn=(1026)
+calls=1 57 
+* 591
++6 6
++2 4
++3 2
++2 2
++1 2
++3 5
++1 5
++1 3
+-1 1
+-1 3
++76 21
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
+* 1
++8 6
++20 6
++2 10
++1 6
++2 5
++1 2
++5 2
++1 5
+-1 1
++2 11
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=1 0 
+* 14
+* 1
++1 13
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=1 0 
+* 14
+* 1
+* 1
++26 4
++2 8
+cfi=(35)
+cfn=(1384) mbedtls_md_hmac_starts
+calls=1 323 
+* 22
++1 8
+cfi=(35)
+cfn=(1384)
+calls=1 323 
+* 22
++29 5
++9 6
+cfi=(34)
+cfn=(1394) mbedtls_cipher_setup
+calls=1 156 
+* 578
+* 3
++7 6
+cfi=(34)
+cfn=(1394)
+calls=1 156 
+* 381
+* 3
++8 2
+-1 7
+cfi=(34)
+cfn=(1402) mbedtls_cipher_setkey
+calls=1 183 
+* 2053
+* 3
++9 2
+-1 7
+cfi=(34)
+cfn=(1402)
+calls=1 183 
+* 2051
+* 3
++9 4
++18 4
+cfn=(1026)
+calls=1 57 
+* 2319
++34 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 1
++1 5
+
+fn=(1424)
+4771 4
++3 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 3
+cfn=(1348)
+calls=1 3769 
+* 1244
+* 3
++6 4
++8 9
++12 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++1 4
++1 4
++3 6
++17 6
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=1 0 
+* 14
+* 1
++5 4
++2 5
++1 3
+-1 6
++19 5
++2 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 1
++1 2
+
+fn=(1454)
+5281 4
++3 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++5 4
++2 5
++1 3
+-1 6
++6 14
+cfn=(1428) ssl_calc_finished_tls_sha384
+calls=1 5146 
+* 136634
++8 6
++3 4
++1 10
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=1 0 
+* 12
+* 1
++3 5
++1 2
++1 3
++6 5
++12 5
++6 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++3 6
++25 6
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=1 0 
+* 14
+* 1
++2 4
++1 4
++14 6
++4 3
+cfn=(1194)
+calls=1 2732 
+* 6072
+* 3
++6 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 1
++1 2
+
+fn=(1456) ssl_encrypt_buf
+1268 5026
++2 718
++2 5744
+cfi=(15)
+cfn=(1070)
+calls=718 84 
+* 24412
++2 5744
++6 3590
+cfi=(47)
+cfn=(1432)
+calls=718 392 
+* 10052
+* 718
++2 10052
+cfi=(15)
+cfn=(1094)
+calls=718 144 
+* 22258
+* 718
++3 2872
++12 2872
++58 1436
++28 1436
++7 7180
++3 2872
++1 2154
++1 1436
++1 3590
+-1 5026
+cfn=(1164)
+calls=718 8057 
+* 13642
++2 2872
++1 2154
++2 7898
+cfi=(15)
+cfn=(1094)
+calls=718 144 
+* 22258
+* 718
++6 7180
++8 1436
+-1 6462
++2 4308
++2 14360
+cfi=(15)
+cfn=(1094)
+calls=718 144 
+* 22258
+* 718
++6 2154
++1 2154
++1 3590
++1 2154
+-1 3590
++3 9334
+cfi=(15)
+cfn=(1070)
+calls=718 84 
+* 24412
+* 718
++7 2872
++2 1436
+-2 718
++1 2154
+-1 12206
+cfi=(34)
+cfn=(1458) mbedtls_cipher_auth_encrypt
+calls=718 847 
+* 1201028625
+* 2872
++12 2154
++6 4308
++1 718
++2 10052
+cfi=(15)
+cfn=(1094)
+calls=718 144 
+* 22258
+* 718
+-71 718
+1584 1436
++6 5744
+cfi=(15)
+cfn=(1070)
+calls=718 84 
+* 24412
++2 718
++1 3590
+
+fn=(968)
+6022 6
++1 7
+cfn=(970)
+calls=1 -31 
+* 180
++1 2
+
+fn=(972)
+5658 5
++2 1
++2 3
++5 4
+cob=(2)
+cfi=(2)
+cfn=(496)
+calls=1 0 
+* 16969
+* 1
+* 7
++1 4
+cob=(2)
+cfi=(2)
+cfn=(496)
+calls=1 0 
+* 16969
+* 1
+* 5
+-1 2
++10 5
++17 4
++1 5
++1 5
++1 5
++1 5
++2 4
++1 5
++1 5
++1 5
++1 5
++3 3
+cfn=(976) ssl_handshake_init
+calls=1 5548 
+* 6997
+* 3
++3 1
++1 2
+
+fn=(978)
+5543 12
++1 15
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=3 0 
+* 81
+* 3
++1 9
+
+fn=(1012) ssl_session_reset_int
+5721 5
++3 2
++3 4
+cfn=(1014) ssl_set_timer
+calls=1 78 
+* 12
++3 2
++1 2
++2 2
++1 6
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=1 0 
+* 14
+* 1
++1 6
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=1 0 
+* 14
+* 1
++2 2
++2 2
++2 5
++1 2
++1 2
++1 2
++1 2
++2 2
++1 2
++3 3
+cfn=(1016) ssl_dtls_replay_reset
+calls=1 3233 
+* 10
++3 2
++1 2
++2 2
++2 5
++1 2
++1 2
++1 2
++2 4
++4 2
++1 2
++2 6
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=1 0 
+* 16733
+* 1
++1 2
++1 6
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=1 0 
+* 16733
+* 1
++14 4
++7 4
++8 2
++4 2
++2 4
+cob=(2)
+cfi=(2)
+cfn=(618)
+calls=1 0 
+* 11
+* 1
++1 2
++1 2
++4 3
+cfn=(976)
+calls=1 5548 
+* 43289
+* 3
++3 1
++1 2
+
+fn=(1080)
+2230 7200
++4 11520
+cfi=(15)
+cfn=(1070)
+calls=1440 84 
+* 48960
++2 5760
++7 17280
++7 8640
+2391 18720
+cfi=(15)
+cfn=(1070)
+calls=1440 84 
+* 48960
+* 1440
++3 1440
++2 8640
++2 4320
+cfn=(1082)
+calls=1440 90 
+* 17280
+* 2880
++4 5760
++8 2880
++1 5760
+-1 8640
+cfi=(7)
+cfn=(1084)
+calls=1440 465 
+* 48402
+* 1440
++5 18720
+cfi=(15)
+cfn=(1070)
+calls=1440 84 
+* 48960
+* 1440
++2 12960
+cfi=(15)
+cfn=(1090) mbedtls_debug_print_ret
+calls=1440 121 
+* 44640
++2 2880
++3 2880
++3 10080
+-31 11520
++35 11520
+cfi=(15)
+cfn=(1070)
+calls=1440 84 
+* 48960
++2 1440
++1 2880
+
+fn=(1202) ssl_ep_len
+63 12948
++2 25896
++5 4316
++1 8632
+
+fn=(1382) tls_prf_generic
+383 56
++9 12
+cfi=(35)
+cfn=(984) mbedtls_md_init
+calls=4 182 
+* 96
++2 12
+cfi=(35)
+cfn=(1280)
+calls=4 141 
+* 76
+* 12
++3 12
+cfi=(35)
+cfn=(1302)
+calls=4 +58 
+* 36
+* 8
++2 12
+cob=(2)
+cfi=(2)
+cfn=(484)
+calls=4 0 
+* 68
+* 4
+* 28
++3 12
+cob=(2)
+cfi=(2)
+cfn=(484)
+calls=4 0 
+* 68
+* 4
+* 4
++1 32
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=4 0 
+* 46
+* 4
++1 40
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=4 0 
+* 44
+* 4
++1 8
++5 24
+cfi=(35)
+cfn=(1282) mbedtls_md_setup
+calls=4 226 
+* 3386
+* 12
++3 24
+cfi=(35)
+cfn=(1384)
+calls=4 -90 
+* 46400
++1 32
+cfi=(35)
+cfn=(1388) mbedtls_md_hmac_update
+calls=4 -44 
+* 408
++1 20
+cfi=(35)
+cfn=(1390) mbedtls_md_hmac_finish
+calls=4 -37 
+* 114740
++2 8
++2 27
+cfi=(35)
+cfn=(1392) mbedtls_md_hmac_reset
+calls=9 -17 
+* 83178
++1 72
+cfi=(35)
+cfn=(1388)
+calls=9 -50 
+* 963
++1 45
+cfi=(35)
+cfn=(1390)
+calls=9 -43 
+* 322149
++2 27
+cfi=(35)
+cfn=(1392)
+calls=9 -21 
+* 83178
++1 54
+cfi=(35)
+cfn=(1388)
+calls=9 -54 
+* 873
++1 45
+cfi=(35)
+cfn=(1390)
+calls=9 -47 
+* 258165
++2 72
++2 12
+-2 3
++2 6
++1 3280
+-1 1339
+-12 57
++16 12
+cfi=(35)
+cfn=(1024)
+calls=4 187 
+* 19206
++2 16
+cfn=(1026)
+calls=4 57 
+* 4668
++1 16
+cfn=(1026)
+calls=4 57 
+* 2364
++2 4
++1 20
+
+fn=(1428)
+5146 18
++1 2
++5 6
++1 4
++3 6
+cfi=(13)
+cfn=(310)
+calls=2 96 
+* 94
++2 16
+cfi=(15)
+cfn=(1070)
+calls=2 84 
+* 68
++2 14
+cfi=(13)
+cfn=(1378) mbedtls_sha512_clone
+calls=2 110 
+* 130
++9 24
+cfi=(15)
+cfn=(1094)
+calls=2 144 
+* 62
+* 2
++6 7
+-2 1
++4 5
+cfi=(13)
+cfn=(916) mbedtls_sha512_finish_ret
+calls=1 340 
+* 9649
+-4 1
++4 5
+cfi=(13)
+cfn=(916)
+calls=1 340 
+* 9649
++2 32
+cfn=(1380)
+calls=2 457 
+* 248206
+* 2
++3 26
+cfi=(15)
+cfn=(1094)
+calls=2 144 
+* 62
+* 2
++2 6
+cfi=(13)
+cfn=(918) mbedtls_sha512_free
+calls=2 101 
+* 3944
++2 8
+cfn=(1026)
+calls=2 57 
+* 894
++2 16
+cfi=(15)
+cfn=(1070)
+calls=2 84 
+* 68
++1 12
+
+fn=(1452)
+4748 4
++3 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 2
++1 2
++1 3
++2 5
++2 3
+cfn=(1194)
+calls=1 2732 
+* 677
+* 3
++6 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 1
++1 2
+
+fn=(1486)
+7241 4296
++3 5728
+cfi=(15)
+cfn=(1070)
+calls=716 84 
+* 24344
++2 4296
++4 2148
+cfn=(1470) ssl_check_ctr_renegotiate
+calls=716 6804 
+* 27208
+* 2148
++7 2864
++10 4296
+cfn=(1488) ssl_write_split
+calls=716 -58 
+* 1213703590
+* 716
++5 5728
+cfi=(15)
+cfn=(1070)
+calls=716 84 
+* 24344
++2 716
++1 1432
+
+fn=(944) mbedtls_ssl_conf_endpoint
+5833 4
++1 9
++1 3
+
+fn=(962)
+5890 5
++1 3
++1 3
++1 3
+
+fn=(1026)
+57 100
++1 385850
++1 75
+
+fn=(1066)
+5900 7
++1 3
++1 3
++1 3
++1 3
++1 3
+
+fn=(1068)
+6650 4
++1 1
++2 6
++3 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 1
++2 48
+cfn=(1072) mbedtls_ssl_handshake_step
+calls=16 -32 
+* 180468274
+* 16
++2 32
+-4 69
++8 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 1
++1 2
+
+fn=(1154)
+7960 7
++1 1
++2 1
++15 2
++3 12
++10 1
++1 1
++22 5
+cfi=(10)
+cfn=(1156) mbedtls_x509_crt_check_key_usage
+calls=1 1554 
+* 14
+* 2
++10 2
++2 2
++1 2
++8 6
+cfi=(10)
+cfn=(1158) mbedtls_x509_crt_check_extended_key_usage
+calls=1 1580 
+* 15
+* 2
++7 1
++1 2
+
+fn=(1358) mbedtls_ssl_prepare_handshake_record
+3118 10
++1 10
+cfi=(39)
+cfn=(1112)
+calls=2 599 
+* 24
+* 4
++7 6
+cfi=(39)
+cfn=(1112)
+calls=2 599 
+* 24
+* 2
++1 14
++1 12
+-1 2
++2 10
+-1 4
+-2 6
++5 38
+cfi=(15)
+cfn=(1070)
+calls=2 84 
+* 68
+* 2
++5 12
++57 12
++6 2
++1 6
+
+fn=(1430)
+1596 5019
++3 717
++2 1434
++3 5736
+cfi=(15)
+cfn=(1070)
+calls=717 84 
+* 24378
++2 5736
++6 3585
+cfi=(47)
+cfn=(1432)
+calls=717 392 
+* 10038
+* 717
++2 5019
++8 1434
++26 1434
++8 7170
++2 2151
++1 2151
+-1 2151
++3 5019
++7 5736
++2 2151
++1 2151
++1 2151
++2 2868
++1 2151
++1 1434
++1 3585
+-1 5019
+cfn=(1164)
+calls=717 8057 
+* 13623
++2 2868
++1 2151
++2 7887
+cfi=(15)
+cfn=(1094)
+calls=717 144 
+* 22227
+* 717
++5 4302
+-2 1434
++1 1434
+-1 7887
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=717 0 
+* 8604
+* 717
++4 11472
+cfi=(15)
+cfn=(1094)
+calls=717 144 
+* 22227
+* 717
++2 10038
+cfi=(15)
+cfn=(1094)
+calls=717 144 
+* 22227
+* 717
++5 717
++6 2151
+-4 1434
+-2 717
++1 2151
+-1 12189
+cfi=(34)
+cfn=(1434) mbedtls_cipher_auth_decrypt
+calls=717 879 
+* 1201235481
+* 2868
++15 717
++2 2151
+-62 717
+1939 10038
+cfi=(15)
+cfn=(1094)
+calls=717 144 
+* 22227
+* 717
++8 1434
++86 1434
++6 2868
++16 1434
++3 4302
++7 1434
++1 7909
+-1 8
+cfn=(1202)
+calls=2 63 
+* 24
+* 2151
+cfn=(1202)
+calls=717 63 
+* 8604
+* 1438
++2 717
++3 2151
+cfn=(1202)
+calls=717 63 
+* 8604
+* 1434
++7 5736
+cfi=(15)
+cfn=(1070)
+calls=717 84 
+* 24378
++2 717
++1 3585
+
+fn=(1542) ssl_key_cert_free
+7329 4
++1 2
++2 1
++2 3
++1 3
+cob=(2)
+cfi=(2)
+cfn=(618)
+calls=1 0 
+* 99
+* 1
++1 2
+-4 4
++6 3
+
+fn=(948) mbedtls_ssl_conf_dh_param_bin
+6194 8
++3 7
+cfi=(25)
+cfn=(566)
+calls=1 678 
+* 7615
+* 3
++1 2
+-1 5
+cfi=(25)
+cfn=(566)
+calls=1 678 
+* 356
+* 3
++8 1
++1 2
+
+fn=(1072)
+6628 64
++1 16
++2 96
++4 96
++4 96
++1 48
+cfi=(42)
+cfn=(1074)
+calls=16 3974 
+* 180467794
+* 16
++3 16
++1 32
+
+fn=(1076)
+2438 3695
++4 5912
+cfi=(15)
+cfn=(1070)
+calls=739 84 
+* 25126
++2 2956
++8 2956
++2 128
+cfi=(15)
+cfn=(1070)
+calls=16 84 
+* 544
++1 32
++5 3615
+cfi=(39)
+cfn=(1092)
+calls=723 588 
+* 8676
+* 10845
+cfi=(15)
+cfn=(1070)
+calls=723 84 
+* 24582
+* 723
++12 3615
+cfi=(39)
+cfn=(1092)
+calls=723 588 
+* 8676
+* 723
++1 1446
+-1 723
++1 2892
+-1 1446
++2 6507
+cfi=(7)
+cfn=(1196)
+calls=723 545 
+* 24715
+* 723
++2 6507
+cfi=(15)
+cfn=(1090)
+calls=723 121 
+* 22413
++2 1446
++3 5061
+-23 5784
++26 1446
++1 7975
+-1 14
+cfn=(1202)
+calls=2 63 
+* 24
+* 2892
+cfn=(1202)
+calls=723 63 
+* 8676
+* 1450
++2 723
++3 2892
+cfn=(1202)
+calls=723 63 
+* 8676
+* 1446
++6 5784
+cfi=(15)
+cfn=(1070)
+calls=723 84 
+* 24582
++2 723
++1 2217
+
+fn=(1098)
+4905 48
++3 64
+cfi=(36)
+cfn=(1100) mbedtls_md5_update_ret
+calls=8 247 
+* 95200
++1 64
+cfi=(37)
+cfn=(1104) mbedtls_sha1_update_ret
+calls=8 281 
+* 142387
++4 64
+cfi=(38)
+cfn=(1108) mbedtls_sha256_update_ret
+calls=8 249 
+* 451591
++3 64
+cfi=(13)
+cfn=(912) mbedtls_sha512_update_ret
+calls=8 280 
+* 282734
++3 24
+
+fn=(1116)
+7782 40
++1 40
++4 10
++4 10
++5 20
+
+fn=(1120)
+7941 40
++3 50
++3 50
++1 150
++1 20
+-2 140
++5 20
+
+fn=(1142)
+7805 12
++1 9
++3 9
++6 6
+
+fn=(286)
+5649 4
++1 5
+cob=(1)
+cfi=(1)
+cfn=(294)
+calls=1 0 
+* 890
+* 5
++1 3
+
+fn=(1278)
+8233 11
++1 1
++2 3
+cfi=(35)
+cfn=(1280)
+calls=1 141 
+* 19
+* 1
++2 3
+cfi=(35)
+cfn=(984)
+calls=1 182 
+* 24
++9 6
+cfi=(35)
+cfn=(1282)
+calls=1 226 
+* 518
+* 3
++5 3
+cfi=(35)
+cfn=(1286) mbedtls_md_starts
+calls=1 249 
+* 70
+* 3
++5 8
+cfi=(35)
+cfn=(1290) mbedtls_md_update
+calls=1 257 
+* 93
+* 3
++5 6
+cfi=(35)
+cfn=(1290)
+calls=1 257 
+* 9232
+* 3
++5 5
+cfi=(35)
+cfn=(1294) mbedtls_md_finish
+calls=1 265 
+* 9791
+* 3
++6 1
++1 3
+cfi=(35)
+cfn=(1024)
+calls=1 187 
+* 2329
++2 2
++4 1
++1 5
+
+fn=(1344)
+4364 5
++1 1
++2 4
++1 7
++3 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 4
++1 2
+-1 2
++2 2
+-1 2
++2 2
+-1 2
++9 6
++1 2
+-1 2
++9 5
++4 8
++3 3
++1 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++1 5
++1 2
+4738 3
+
+fn=(1380)
+457 36
++1 48
+cfn=(1382)
+calls=4 -75 
+* 945603
+* 4
++2 8
+
+fn=(1464) ssl_handshake_wrapup_free_hs_transform
+5194 4
++1 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++5 4
+cfn=(1030) mbedtls_ssl_handshake_free
+calls=1 7342 
+* 52182
++1 4
+cob=(2)
+cfi=(2)
+cfn=(618)
+calls=1 0 
+* 144
+* 1
++1 2
++5 4
++5 4
++1 2
++2 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++1 3
+
+fn=(1470)
+6804 5728
++1 4296
+cfn=(1202)
+calls=1432 63 
+* 17184
+* 1432
++4 5728
++1 2864
+-1 2864
++2 5728
+-1 2864
++3 2864
++15 2864
+
+fn=(1492) mbedtls_ssl_get_max_frag_len
+6578 2148
++6 8592
++5 2864
++1 6444
+-1 1432
++6 716
++1 1432
+
+fn=(942)
+7568 10
++7 5
+cfn=(944)
+calls=1 5833 
+* 16
++1 5
+cfn=(946) mbedtls_ssl_conf_transport
+calls=1 5838 
+* 16
++6 2
++10 4
++4 4
++4 4
++4 4
++4 3
++1 3
++4 4
++4 4
++4 2
++1 2
++4 2
++1 6
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=1 0 
+* 18
+* 1
++1 7
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=1 0 
+* 16
+* 1
++4 2
++2 256
++2 1
++3 8
+cfn=(948)
+calls=1 6194 
+* 8002
+* 3
++12 3
++34 2
++1 2
++1 2
++1 2
++3 2
++8 1
+cfi=(33)
+cfn=(950) mbedtls_ssl_list_ciphersuites
+calls=1 1708 
+* 104625
+* 1
+-1 4
+-1 4
+-1 4
+-1 2
++7 3
++4 3
++4 1
+cfi=(26)
+cfn=(954)
+calls=1 183 
+* 170
+* 3
++4 2
++4 1
++1 5
+
+fn=(980) ssl_transform_init
+5532 8
++1 10
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=2 0 
+* 82
+* 2
++2 8
+cfi=(34)
+cfn=(982) mbedtls_cipher_init
+calls=2 132 
+* 60
++1 8
+cfi=(34)
+cfn=(982)
+calls=2 132 
+* 60
++2 8
+cfi=(35)
+cfn=(984)
+calls=2 182 
+* 48
++1 8
+cfi=(35)
+cfn=(984)
+calls=2 182 
+* 48
++1 6
+
+fn=(1014)
+78 3585
++1 2868
++1 717
++4 1434
+
+fn=(1016)
+3233 3
++1 2
++1 2
++1 3
+
+fn=(1028) mbedtls_ssl_session_free
+7418 12
++1 6
++4 12
++8 12
+cob=(2)
+cfi=(2)
+cfn=(618)
+calls=3 0 
+* 33
+* 3
++3 12
+cfn=(1026)
+calls=3 57 
+* 4149
+* 3
++1 6
+
+fn=(1306)
+7769 3
++1 7
++2 2
++7 2
+
+fn=(1350)
+3811 3595
++33 2876
++5 8
++27 12
++11 4
++3 6
++3 2868
++7 1434
++10 2876
++9 719
++5 2157
+cfi=(39)
+cfn=(1092)
+calls=719 588 
+* 8628
+* 3595
+cfn=(1080)
+calls=719 2230 
+* 246617
+* 2157
++6 2157
+cfn=(1352) ssl_parse_record_header
+calls=719 3519 
+* 182576
+* 2157
++36 2157
+cfi=(39)
+cfn=(1092)
+calls=719 588 
+* 8628
+* 2157
+-1 3595
+cfn=(1080)
+calls=719 2230 
+* 246617
+* 2157
++9 4314
++4 1438
++2 2157
+cfn=(1354)
+calls=719 3697 
+* 1201726850
+* 2157
++79 4314
++24 719
++1 2157
+
+fn=(1352)
+3519 5033
++3 2157
+cfi=(39)
+cfn=(1092)
+calls=719 588 
+* 8628
+* 9347
+cfi=(15)
+cfn=(1094)
+calls=719 144 
+* 22289
+* 719
++2 4314
++1 10785
++1 9347
+cfn=(1096)
+calls=719 8079 
+* 15818
++2 13661
+cfi=(15)
+cfn=(1070)
+calls=719 84 
+* 24446
+* 719
++6 2876
++1 1434
+-1 1434
++2 1434
+-1 1434
++2 1432
+-1 1432
++17 3595
++6 5033
++7 1438
++1 7190
+-1 1438
++8 2876
++2 8
++1 4
+-1 4
++9 5019
++19 2868
++1 3585
++1 717
+-2 1434
++17 4314
++69 719
++1 3595
+
+fn=(1356)
+4087 2876
++6 2876
++2 6
+cfn=(1358)
+calls=2 3118 
+* 268
+* 6
++6 2876
++48 719
++1 1438
+
+fn=(1360)
+3203 8
++2 8
++1 4
+-1 4
++3 20
+cfn=(1098)
+calls=2 4905 
+* 42608
++5 12
++6 6
+
+fn=(1494)
+7281 4
++3 6
++3 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 4
++3 4
++2 5
+cfn=(1496) mbedtls_ssl_send_alert_message
+calls=1 4169 
+* 5328
+* 3
++9 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 1
++1 2
+
+fn=(1540)
+7725 4
++2 4
+cfi=(25)
+cfn=(568)
+calls=1 101 
+* 481
++1 4
+cfi=(25)
+cfn=(568)
+calls=1 101 
+* 154
++16 4
+cfn=(1542)
+calls=1 7329 
+* 122
++3 4
+cfn=(1026)
+calls=1 57 
+* 2967
++1 3
+
+fn=(964)
+5930 6
++1 3
++1 3
++1 3
++1 3
+
+fn=(1530)
+7441 4
++1 2
++3 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 4
++2 5
+cfn=(1026)
+calls=1 57 
+* 150468
++1 4
+cob=(2)
+cfi=(2)
+cfn=(618)
+calls=1 0 
+* 144
+* 1
++3 4
++2 5
+cfn=(1026)
+calls=1 57 
+* 150468
++1 4
+cob=(2)
+cfi=(2)
+cfn=(618)
+calls=1 0 
+* 144
+* 1
++11 4
++2 4
+cfn=(1018)
+calls=1 7309 
+* 19296
++1 4
+cob=(2)
+cfi=(2)
+cfn=(618)
+calls=1 0 
+* 80
+* 1
++3 4
++11 4
++2 4
+cfn=(1028)
+calls=1 -68 
+* 1416
++1 4
+cob=(2)
+cfi=(2)
+cfn=(618)
+calls=1 0 
+* 129
+* 1
++4 4
++16 4
+cob=(2)
+cfi=(2)
+cfn=(618)
+calls=1 0 
+* 11
+* 1
++3 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++3 4
+cfn=(1026)
+calls=1 57 
+* 3975
+* 1
++1 2
+
+fn=(1030)
+7342 8
++1 4
++5 8
+cfi=(36)
+cfn=(1032) mbedtls_md5_free
+calls=2 84 
+* 1640
++1 8
+cfi=(37)
+cfn=(1036) mbedtls_sha1_free
+calls=2 84 
+* 1712
++4 8
+cfi=(38)
+cfn=(1040) mbedtls_sha256_free
+calls=2 87 
+* 2000
++3 8
+cfi=(13)
+cfn=(918)
+calls=2 101 
+* 3944
++5 8
+cfi=(40)
+cfn=(1044) mbedtls_dhm_free
+calls=2 433 
+* 4976
++3 8
+cfi=(41)
+cfn=(1048) mbedtls_ecdh_free
+calls=2 101 
+* 23799
++14 8
+cob=(2)
+cfi=(2)
+cfn=(618)
+calls=2 0 
+* 91
+* 2
++17 8
++14 8
+cob=(2)
+cfi=(2)
+cfn=(618)
+calls=2 0 
+* 22
+* 2
++1 8
+cob=(2)
+cfi=(2)
+cfn=(618)
+calls=2 0 
+* 22
+* 2
++1 8
+cfn=(1050)
+calls=2 2550 
+* 24
++3 8
+cfn=(1026)
+calls=2 57 
+* 47838
+* 2
++1 4
+
+fn=(1122)
+7821 50
++1 40
++3 20
++1 3
++1 1
++3 20
++1 3
++1 1
+-5 10
++5 5
++5 30
+
+fn=(1204)
+4248 4
++1 1
++3 4
++2 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 4
++1 2
+-1 2
++2 2
+-1 2
++2 2
+-1 2
++9 6
++29 6
++2 3
+cfi=(39)
+cfn=(1206) mbedtls_ssl_own_cert
+calls=1 556 
+* 24
+* 2
++8 3
+cfi=(39)
+cfn=(1206)
+calls=1 556 
+* 24
+* 9
+cfi=(15)
+cfn=(1148)
+calls=1 344 
+* 33
++11 1
++1 3
+cfi=(39)
+cfn=(1206)
+calls=1 556 
+* 24
+* 1
++2 1
++2 12
++1 16
++7 36
++1 40
++1 28
++2 44
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=4 0 
+* 418
+* 4
++1 20
+-15 10
++18 8
++1 8
++1 7
++2 3
++1 2
++1 3
++6 5
++2 3
+cfn=(1194)
+calls=1 2732 
+* 794123
+* 3
++6 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 1
++1 2
+
+fn=(1488)
+7209 4296
++3 4296
++1 1432
++2 1432
+-1 1432
++5 4296
+cfn=(1490) ssl_write_real
+calls=716 -66 
+* 1213684258
+* 716
++15 1432
+
+fn=(300)
+7520 4
++1 5
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=1 0 
+* 34
+* 1
++1 3
+
+fn=(966)
+6029 5
++1 3
++1 3
++1 3
+
+fn=(1096)
+8079 4326
++2 1442
++13 3605
++1 4326
++2 2163
+
+fn=(1194)
+2732 2892
++1 723
++1 2169
++2 5784
+cfi=(15)
+cfn=(1070)
+calls=723 84 
+* 24582
++3 4338
++8 2892
++2 25
++2 10
++1 10
+-1 10
++7 40
++1 40
++1 35
++10 30
++35 10
++1 45
+cfn=(1098)
+calls=5 4905 
+* 898428
++5 4338
++44 1446
++2 3615
++2 1446
+-1 723
++1 3615
+-1 5061
+cfn=(1164)
+calls=723 8057 
+* 13737
++3 4338
++1 3615
++2 2892
++2 2154
+cfn=(1456)
+calls=718 1268 
+* 1201401985
+* 2154
++6 2154
++1 4308
++1 3590
++3 2154
+cfi=(39)
+cfn=(1092)
+calls=718 588 
+* 8616
+* 15
+cfi=(39)
+cfn=(1092)
+calls=5 588 
+* 60
+* 4338
++2 28920
+cfi=(15)
+cfn=(1070)
+calls=723 84 
+* 24582
+* 723
++5 2169
+cfi=(39)
+cfn=(1092)
+calls=723 588 
+* 8676
+* 11568
+cfi=(15)
+cfn=(1094)
+calls=723 144 
+* 22413
+* 723
++4 2169
+cfn=(1076)
+calls=723 2438 
+* 250355
+* 2169
++6 5784
+cfi=(15)
+cfn=(1070)
+calls=723 84 
+* 24582
++2 723
++1 1446
+
+fn=(1376)
+1073 8
++3 3
+cfi=(13)
+cfn=(310)
+calls=1 96 
+* 40
++2 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 7
+cfi=(13)
+cfn=(1378)
+calls=1 110 
+* 65
++1 5
+cfi=(13)
+cfn=(916)
+calls=1 340 
+* 9649
++2 11
+cfi=(15)
+cfn=(1094)
+calls=1 144 
+* 31
+* 1
++1 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 3
+cfi=(13)
+cfn=(918)
+calls=1 101 
+* 1972
++2 1
++1 5
+
+fn=(1490)
+7153 4296
++3 2148
+cfn=(1492)
+calls=716 6578 
+* 23628
+* 716
++4 2148
++3 4290
++9 1430
++3 2864
++10 2148
++1 1432
++1 5012
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=716 0 
+* 11735383
+* 716
++2 2148
+cfn=(1194)
+calls=716 2732 
+* 1201891603
+* 2148
++7 716
++1 1432
+
+fn=(946)
+5838 4
++1 9
++1 3
+
+fn=(958)
+5961 4
++1 3
++1 3
++1 3
++1 3
++1 3
+
+fn=(960)
+5882 5
++1 3
++1 3
++1 3
+
+fn=(976)
+5548 8
++2 8
++1 4
+cfn=(1018)
+calls=1 7309 
+* 4454
++1 8
++1 4
+cfn=(1028)
+calls=1 7418 
+* 1416
++1 8
++1 4
+cfn=(1030)
+calls=1 7342 
+* 34006
++6 8
++2 3
+cob=(2)
+cfi=(2)
+cfn=(496)
+calls=1 0 
+* 401
+* 1
+* 3
++3 8
++2 3
+cob=(2)
+cfi=(2)
+cfn=(496)
+calls=1 0 
+* 227
+* 1
+* 3
++3 8
++2 3
+cob=(2)
+cfi=(2)
+cfn=(496)
+calls=1 0 
+* 2947
+* 1
+* 3
++4 8
++1 4
+-1 4
++2 4
+-1 4
++17 8
+cfn=(978)
+calls=2 -52 
+* 80
++1 8
+cfn=(980)
+calls=2 -64 
+* 356
++1 8
+cfn=(986)
+calls=2 5484 
+* 6244
++3 12
++13 2
++1 4
+
+fn=(1002) mbedtls_ssl_sig_hash_set_const_hash
+7842 8
++1 6
++1 6
++1 6
+
+fn=(1010)
+5825 4
++1 4
+cfn=(1012)
+calls=1 5721 
+* 76942
++1 2
+
+fn=(1118)
+7854 40
++1 110
++8 4
++4 4
++2 4
++4 4
++2 4
++5 20
+
+fn=(1160)
+7886 6
++1 24
++20 4
++5 4
+
+fn=(1426)
+5405 9
++5 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 13
+cfn=(1428)
+calls=1 5146 
+* 136407
++2 3
+cfn=(1348)
+calls=1 3769 
+* 18112
+* 3
++6 4
++14 1
++2 5
++1 5
+cfi=(39)
+cfn=(1112)
+calls=1 599 
+* 12
+* 3
+-1 2
++9 6
+cfi=(39)
+cfn=(1112)
+calls=1 599 
+* 12
+* 6
+cfi=(39)
+cfn=(1450) mbedtls_ssl_safer_memcmp
+calls=1 623 
+* 235
+* 2
++10 3
++1 7
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=1 0 
+* 12
+* 1
++3 5
++12 5
++3 6
++4 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 1
++1 8
+
+fn=(1460)
+5219 4
++1 4
++2 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++3 4
++10 4
++11 4
++1 2
++5 5
++1 3
+-1 2
++1 2
++3 11
+cfi=(9)
+cfn=(1462) mbedtls_ssl_cache_set
+calls=1 138 
+* 355
+* 2
++5 6
++12 3
+cfn=(1464)
+calls=1 -79 
+* 52438
++2 5
++2 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++1 3
+
+fn=(1466)
+6497 4
++1 6
++3 5
+cfi=(33)
+cfn=(1174)
+calls=1 1775 
+* 230
++1 2
+
+fn=(1468)
+6835 5012
++4 4296
++3 5728
+cfi=(15)
+cfn=(1070)
+calls=716 84 
+* 24344
++3 4296
++27 2148
+cfn=(1470)
+calls=716 -68 
+* 27208
+* 716
++1 2864
++8 2864
++46 2864
++3 2864
++6 2148
+cfn=(1348)
+calls=716 3769 
+* 1202556770
+* 2148
++9 2864
++16 2864
+7072 2864
++15 2864
++6 2864
++6 2864
++4 2864
++1 2864
+cfn=(1014)
+calls=716 78 
+* 8592
++7 4296
++1 1432
+-1 1432
++13 3580
++3 5012
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=716 0 
+* 11738247
+* 716
++1 4296
++2 2864
++3 1432
++1 2148
++8 5728
+cfi=(15)
+cfn=(1070)
+calls=716 84 
+* 24344
++2 716
++1 2864
+
+fn=(1496)
+4169 9
++3 6
++3 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++1 13
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
+* 1
++2 2
++1 2
++1 4
++1 5
++2 3
+cfn=(1194)
+calls=1 2732 
+* 5159
+* 3
++5 8
+cfi=(15)
+cfn=(1070)
+calls=1 84 
+* 34
++2 1
++1 2
+
+fl=(28) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/library/rsa_internal.c
+fn=(700) mbedtls_rsa_deduce_crt
+456 12
++1 1
++2 3
+cfi=(25)
+cfn=(570)
+calls=1 88 
+* 14
++3 2
++2 6
+cfi=(25)
+cfn=(690)
+calls=1 1095 
+* 746
+* 3
++1 6
+cfi=(25)
+cfn=(702)
+calls=1 1463 
+* 100877
+* 3
++4 2
++2 6
+cfi=(25)
+cfn=(690)
+calls=1 1095 
+* 477
+* 3
++1 6
+cfi=(25)
+cfn=(702)
+calls=1 1463 
+* 130268
+* 3
++4 2
++2 6
+cfi=(25)
+cfn=(716)
+calls=1 1902 
+* 10198051
+* 2
++3 2
++1 3
+cfi=(25)
+cfn=(568)
+calls=1 101 
+* 319
++2 1
++1 5
+
+fl=(20)
+fn=(546) oid_pk_alg_from_asn1
+443 114
+cob=(2)
+cfi=(2)
+cfn=(474) __memcmp_avx2_movbe
+calls=4 0 
+* 98
+* 4
+* 47
+
+fn=(638) oid_grp_id_from_asn1
+530 54
+cob=(2)
+cfi=(2)
+cfn=(474)
+calls=2 0 
+* 42
+* 2
+* 33
+
+fn=(1322) mbedtls_oid_get_oid_by_md
+627 73
+
+fn=(544)
+444 32
+cfn=(546)
+calls=4 -1 
+* 263
+* 40
+
+fn=(604) oid_x509_ext_from_asn1
+287 732
+cob=(2)
+cfi=(2)
+cfn=(474)
+calls=36 0 
+* 612
+* 36
+* 440
+
+fn=(636)
+531 8
+cfn=(638)
+calls=1 -1 
+* 131
+* 10
+
+fn=(524) oid_sig_alg_from_asn1
+409 246
+cob=(2)
+cfi=(2)
+cfn=(474)
+calls=10 0 
+* 282
+* 10
+* 150
+
+fn=(602) mbedtls_oid_get_x509_ext_type
+288 96
+cfn=(604)
+calls=12 -1 
+* 1820
+* 96
+
+fn=(522) mbedtls_oid_get_sig_alg
+411 36
+cfn=(524)
+calls=4 -2 
+* 688
+* 56
+
+fl=(38)
+fn=(998)
+104 8
++1 4
++1 4
++2 4
++3 4
++1 4
++1 4
++1 4
++1 4
++1 4
++1 4
++1 6
++15 6
++2 2
++1 4
+
+fn=(1108)
+249 48
++5 16
++3 32
++1 32
++2 48
++1 32
++2 40
++3 37
++2 45
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=5 0 
+* 59
+* 5
++2 30
+cfn=(1110) mbedtls_internal_sha256_process
+calls=5 -84 
+* 35730
+* 15
++3 10
++1 10
++1 5
++3 5
++2 290
+cfn=(1110)
+calls=58 -94 
+* 414468
+* 174
++3 58
++1 58
+-6 132
++9 16
++1 72
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=8 0 
+* 92
+* 8
++2 8
++1 16
+
+fn=(1110)
+186 504
++5 126
++1 2520
+-1 1638
++17 126
++1 40320
+-1 3150
++3 126
++2 7308
++1 7812
++1 7812
++1 7812
++1 7812
++1 7812
++1 7812
++1 7812
+-9 504
++12 126
++2 40446
++1 41958
++1 39690
++1 41958
++1 41958
++1 41958
++1 41958
++1 41202
+-9 1260
++13 126
++1 4536
+-1 1638
++3 63
++1 315
+
+fn=(1042) mbedtls_zeroize
+54 8
++1 1960
++1 6
+
+fn=(996)
+82 8
++1 10
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=2 -83 
+* 34
+* 2
++1 6
+
+fn=(1040)
+87 8
++1 4
++3 8
+cfn=(1042)
+calls=2 -37 
+* 1974
+* 2
++1 4
+
+fl=(18)
+fn=(600) mbedtls_asn1_get_bool
+130 135
++4 90
+cfn=(502)
+calls=15 -19 
+* 504
+* 45
++1 24
++2 9
++3 24
++1 15
++2 3
++1 75
+
+fn=(512)
+149 45
++4 30
+cfn=(502)
+calls=5 -38 
+* 360
+* 15
++3 55
++3 10
++2 5
++2 55
++1 25
+-3 50
++6 5
++1 25
+
+fn=(504) mbedtls_asn1_get_len
+57 1260
++1 1764
++3 1260
++1 2150
++3 303
++3 77
++3 77
++1 55
++1 11
++3 182
++3 390
++1 130
++1 26
++25 2268
++3 252
++1 504
+
+fn=(548)
+224 48
++3 48
+cfn=(502)
+calls=8 115 
+* 726
+* 24
++3 120
++3 8
++1 16
+
+fn=(622) mbedtls_zeroize
+47 8
++1 448
++1 6
+
+fn=(502)
+115 1582
++1 1582
++3 1356
++1 40
++2 1030
++2 1236
+cfn=(504)
+calls=206 -67 
+* 8915
++1 452
+
+fn=(518)
+294 120
++4 72
+cfn=(502)
+calls=12 115 
+* 864
+* 36
++4 84
++3 72
++1 60
++2 84
+cfn=(502)
+calls=12 115 
+* 864
+* 36
++3 48
++1 84
++2 48
++2 8
+cfn=(622)
+calls=2 47 
+* 462
++1 4
++3 60
++1 50
++2 70
+cfn=(504)
+calls=10 57 
+* 390
+* 30
++3 40
++1 70
++2 40
++3 10
++1 60
+
+fn=(722)
+174 27
++4 18
+cfn=(502)
+calls=3 -63 
+* 279
+* 9
++3 21
+cfi=(25)
+cfn=(566)
+calls=3 678 
+* 12690
+* 3
++2 18
++2 3
++1 15
+
+fl=(30)
+fn=(876)
+49 11743024
++4 8807268
++2 3
++5 1
++3 5
++1 3
+-1 14678775
++1 8807265
+
+fn=(932)
+99 8803182
++31 5868788
+-30 115908563
++34 1467197
++1 2934394
+
+fn=(1444) mbedtls_aesni_gcm_mult
+144 13216887
++5 2937086
++2 234966880
++1 234966880
+-3 73427150
++6 91049666
++88 2937086
++1 164476816
+-1 73427150
++3 1468543
++1 7342715
+
+fn=(878)
+450 84
++1 70
++4 70
+cfn=(880) aesni_setkey_enc_256
+calls=14 -72 
+* 2562
+* 14
++4 14
++1 28
+
+fn=(880)
+383 56
++1 140
+cfn=(881) aesni_setkey_enc_256'2
+calls=14 * 
+* 308
+* 28
+cfn=(881)
+calls=14 * 
+* 308
+* 28
+cfn=(881)
+calls=14 * 
+* 308
+* 28
+cfn=(881)
+calls=14 * 
+* 308
+* 28
+cfn=(881)
+calls=14 * 
+* 308
+* 28
+cfn=(881)
+calls=14 * 
+* 308
+* 28
+cfn=(881)
+calls=14 * 
+* 308
++58 42
+
+fn=(881)
+384 2156
+
+fl=(37)
+fn=(1038) mbedtls_zeroize
+51 8
++1 1672
++1 6
+
+fn=(990)
+79 8
++1 10
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=2 -80 
+* 34
+* 2
++1 6
+
+fn=(1104)
+281 48
++5 16
++3 32
++1 32
++2 48
++1 32
++2 40
++3 37
++2 45
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=5 0 
+* 59
+* 5
++2 30
+cfn=(1106) mbedtls_internal_sha1_process
+calls=5 117 
+* 11190
+* 15
++3 10
++1 10
++1 5
++3 5
++2 290
+cfn=(1106)
+calls=58 117 
+* 129804
+* 174
++3 58
++1 58
+-6 132
++9 16
++1 72
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=8 0 
+* 92
+* 8
++2 8
++1 16
+
+fn=(1106)
+117 504
++3 1449
++1 1512
++1 1512
++1 1512
++1 1512
++1 1512
++1 1512
++1 1512
++1 1512
++1 1512
++1 1512
++1 1512
++1 1512
++1 1512
++1 1512
++1 1512
++16 189
++1 189
++1 189
++1 189
++1 189
++5 945
++1 945
++1 945
++1 945
++1 945
++1 945
++1 945
++1 945
++1 945
++1 945
++1 945
++1 945
++1 945
++1 945
++1 945
++1 945
++1 1512
++1 1512
++1 1512
++1 1512
++8 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++8 1701
++1 1701
++1 1701
++1 1701
++1 1701
++1 1701
++1 1701
++1 1701
++1 1701
++1 1701
++1 1701
++1 1701
++1 1701
++1 1701
++1 1701
++1 1701
++1 1701
++1 1701
++1 1701
++1 1701
++8 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++5 378
++1 378
++1 378
++1 378
++1 378
++2 63
++1 315
+
+fn=(994)
+101 6
++1 4
++1 4
++2 4
++1 4
++1 4
++1 4
++1 4
++2 2
++1 4
+
+fn=(1036)
+84 8
++1 4
++3 8
+cfn=(1038)
+calls=2 -37 
+* 1686
+* 2
++1 4
+
+fl=(39)
+fn=(1206)
+556 9
++3 27
++1 15
++4 15
++1 6
+
+fn=(1304)
+544 6
++3 18
++1 10
++4 10
++1 4
+
+fn=(1450)
+623 5
++2 2
++1 2
++1 1
++2 2
++1 168
+-1 51
++3 2
++1 2
+
+fn=(1112)
+599 18
++2 36
++5 6
++1 12
+-8 15
++2 30
++5 5
++1 10
+
+fn=(1092)
+588 17304
++2 34608
++5 5768
++1 11536
+-8 6
++2 12
++5 2
++1 4
+
+fn=(1000)
+391 8
++1 8
+cfi=(8)
+cfn=(1002)
+calls=2 7842 
+* 26
++1 6
+
+fl=(33)
+fn=(1140)
+1822 6
++1 12
++5 4
++8 4
+
+fn=(950)
+1708 3
++5 3
++5 5
++6 648
+cfn=(952)
+calls=162 +36 
+* 101240
+* 486
++1 194
+-1 194
++5 546
+-9 91
+-1 182
+-1 182
++2 71
+-1 142
+-1 142
++1 2
+-1 2
++1 486
++12 2
++2 1
++3 1
++1 2
+
+fn=(1146)
+1800 6
++1 24
++6 4
++12 4
+
+fn=(952)
+1760 501
++1 334
++2 167
++2 44692
++1 204
++2 11071
+-5 44952
++8 65
++1 334
+
+fn=(1138)
+1842 3
++1 6
++7 2
++5 2
+
+fn=(1174)
+1775 12
++3 9
+cfn=(952)
+calls=3 -18 
+* 648
+* 3
++2 6
++3 6
++1 6
+
+fl=(36)
+fn=(988)
+79 8
++1 10
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=2 -80 
+* 34
+* 2
++1 6
+
+fn=(1032)
+84 8
++1 4
++3 8
+cfn=(1034) mbedtls_zeroize
+calls=2 -37 
+* 1614
+* 2
++1 4
+
+fn=(1100)
+247 48
++5 16
++3 32
++1 32
++2 48
++1 32
++2 40
++3 37
++2 45
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=5 0 
+* 59
+* 5
++1 30
+cfn=(1102) mbedtls_internal_md5_process
+calls=5 116 
+* 7445
+* 15
++3 10
++1 10
++1 5
++3 5
++2 290
+cfn=(1102)
+calls=58 116 
+* 86362
+* 174
++3 58
++1 58
+-6 132
++9 16
++2 72
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=8 0 
+* 92
+* 8
++3 8
++1 16
+
+fn=(1034)
+51 8
++1 1600
++1 6
+
+fn=(1102)
+116 504
++3 1386
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++1 1449
++9 189
++1 189
++1 189
++1 189
++4 1071
++1 1071
++1 1071
++1 1071
++1 1071
++1 1071
++1 1071
++1 1071
++1 1071
++1 1071
++1 1071
++1 1071
++1 1071
++1 1071
++1 1071
++1 1071
++6 1071
++1 1071
++1 1071
++1 1071
++1 1071
++1 1071
++1 1071
++1 1071
++1 1071
++1 1071
++1 1071
++1 1071
++1 1071
++1 1071
++1 1071
++1 1071
++6 1008
++1 1008
++1 1008
++1 1008
++1 1008
++1 1008
++1 1008
++1 1008
++1 1008
++1 1008
++1 1008
++1 1008
++1 1008
++1 1008
++1 1008
++1 1008
++6 1071
++1 1071
++1 1071
++1 1071
++1 1071
++1 1071
++1 1071
++1 1071
++1 1071
++1 1071
++1 1071
++1 1071
++1 1071
++1 1071
++1 1071
++1 1071
++4 378
++1 378
++1 378
++1 378
++2 63
++1 315
+
+fn=(992)
+101 6
++1 4
++1 4
++2 4
++1 4
++1 4
++1 4
++2 2
++1 4
+
+fl=(15)
+fn=(1094)
+144 103680
++3 8640
++2 103680
++1 8640
++43 43200
+
+fn=(1148)
+344 36
++2 3
++2 42
++1 3
++16 15
+
+fn=(1090)
+121 25956
++3 25956
++1 4326
++14 10815
+
+fn=(1274)
+199 24
++3 24
++1 2
++7 10
+
+fn=(316)
+56 3
++1 2
++1 3
+
+fn=(1070)
+84 263900
++5 263900
++1 18850
++26 94250
+
+fn=(1372)
+217 12
++2 1
++1 1
++2 14
++1 1
++51 5
+
+fl=(35)
+fn=(1300) mbedtls_zeroize
+52 52
++1 12704
++1 39
+
+fn=(1392)
+402 72
++4 180
++3 54
++2 126
+cfi=(44) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/library/md_wrap.c
+cfn=(1386) sha384_starts_wrap
+calls=18 +81 
+* 900
+* 54
++2 54
++1 54
+-1 108
+cfi=(44)
+cfn=(1292) sha384_update_wrap
+calls=18 +85 
+* 164718
++2 36
+
+fn=(1302)
+455 21
++1 14
++3 14
++1 14
+
+fn=(984)
+182 36
++1 45
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=9 0 
+* 99
+* 9
++1 27
+
+fn=(1290)
+257 12
++1 12
++3 18
+cfi=(44)
+cfn=(1292)
+calls=2 498 
+* 9279
++1 4
+
+fn=(1388)
+370 132
++1 220
++3 198
+cfi=(44)
+cfn=(1292)
+calls=22 498 
+* 1650
++1 44
+
+fn=(1024)
+187 36
++1 54
++3 20
++1 35
+cfi=(44)
+cfn=(1298) sha384_ctx_free
+calls=5 526 
+* 10330
++2 20
++2 40
+cfn=(1300)
+calls=4 52 
+* 9276
++1 16
+cob=(2)
+cfi=(2)
+cfn=(618)
+calls=4 0 
+* 554
+* 4
++3 20
+cfn=(1300)
+calls=5 52 
+* 1155
+* 5
+-11 4
++12 18
+
+fn=(1286)
+249 4
++1 6
++3 7
+cfi=(44)
+cfn=(1288) sha512_starts_wrap
+calls=1 559 
+* 51
++1 2
+
+fn=(1294)
+265 5
++1 6
++3 9
+cfi=(44)
+cfn=(1296) sha384_finish_wrap
+calls=1 504 
+* 9769
++1 2
+
+fn=(1280)
+141 27
++1 108
++30 10
++2 8
++5 18
+
+fn=(1390)
+378 176
++5 220
++3 176
++2 198
+cfi=(44)
+cfn=(1296)
+calls=22 504 
+* 276526
+* 66
++2 154
+cfi=(44)
+cfn=(1386)
+calls=22 492 
+* 1100
+* 66
++2 66
++1 66
+-1 132
+cfi=(44)
+cfn=(1292)
+calls=22 498 
+* 201322
+* 66
++3 66
++1 66
+-1 132
+cfi=(44)
+cfn=(1292)
+calls=22 498 
+* 1540
+* 66
++3 198
+cfi=(44)
+cfn=(1296)
+calls=22 504 
+* 212542
++1 110
+
+fn=(1282)
+226 30
++1 20
++3 15
+cfi=(44)
+cfn=(1284) sha384_ctx_alloc
+calls=5 516 
+* 2431
+* 35
++3 10
++2 24
+cob=(2)
+cfi=(2)
+cfn=(496)
+calls=4 0 
+* 1277
+* 4
+* 12
++1 16
++7 15
++2 5
++1 10
+
+fn=(1384)
+323 54
++6 52
++1 4
++2 24
++13 12
++1 32
++2 32
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=4 0 
+* 68
+* 4
++1 32
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=4 0 
+* 68
+* 4
++2 8
++2 2940
++1 2940
+-3 852
++6 28
+cfi=(44)
+cfn=(1386)
+calls=4 492 
+* 200
+* 12
++2 12
++1 12
+-1 24
+cfi=(44)
+cfn=(1292)
+calls=4 498 
+* 36604
+* 8
++4 4
++1 16
+cfn=(1300)
+calls=4 52 
+* 2364
++2 4
++1 30
+
+fl=(41)
+fn=(1368) mbedtls_ecdh_compute_shared
+61 12
++4 3
+cfi=(26)
+cfn=(630)
+calls=1 277 
+* 62
++5 5
+cfi=(26)
+cfn=(658)
+calls=1 1866 
+* 16040
+* 3
++2 10
+cfi=(26)
+cfn=(1230)
+calls=1 1678 
+* 51885375
+* 3
++2 3
+cfi=(26)
+cfn=(1370)
+calls=1 407 
+* 202
+* 2
++6 5
+cfi=(25)
+cfn=(682)
+calls=1 186 
+* 377
+* 2
++2 1
++1 3
+cfi=(26)
+cfn=(644)
+calls=1 314 
+* 929
++2 1
++1 5
+
+fn=(1048)
+101 8
++1 4
++3 6
+cfi=(26)
+cfn=(642)
+calls=2 327 
+* 21174
++1 8
+cfi=(26)
+cfn=(644)
+calls=2 314 
+* 1006
++1 8
+cfi=(26)
+cfn=(644)
+calls=2 314 
+* 703
++1 8
+cfi=(26)
+cfn=(644)
+calls=2 314 
+* 154
++1 8
+cfi=(26)
+cfn=(644)
+calls=2 314 
+* 154
++1 8
+cfi=(25)
+cfn=(568)
+calls=2 -9 
+* 245
++1 8
+cfi=(25)
+cfn=(568)
+calls=2 -10 
+* 245
++1 8
+cfi=(25)
+cfn=(568)
+calls=2 -11 
+* 38
+* 2
++1 4
+
+fn=(1220) mbedtls_ecdh_gen_public
+48 8
++1 8
+cfi=(26)
+cfn=(1222)
+calls=1 2002 
+* 52224258
++1 2
+
+fn=(1362)
+226 9
++2 2
++2 2
++3 7
+cfi=(26)
+cfn=(1364)
+calls=1 543 
+* 5181
+* 3
++3 7
++3 1
++1 5
+
+fn=(1006)
+93 8
++1 10
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=2 -94 
+* 110
+* 2
++1 6
+
+fn=(1218)
+126 12
++4 6
++3 12
+cfn=(1220)
+calls=1 -85 
+* 52224276
+* 3
++4 6
+cfi=(26)
+cfn=(1264)
+calls=1 635 
+* 62
+* 3
++4 2
++1 2
++2 12
+cfi=(26)
+cfn=(1268)
+calls=1 575 
+* 5017
+* 3
++4 5
++1 1
++1 5
+
+fn=(1366)
+249 9
++3 2
++3 13
+cfn=(1368)
+calls=1 61 
+* 51903043
+* 3
++6 4
+cfi=(25)
+cfn=(576)
+calls=1 405 
+* 519
+* 2
++3 13
++1 8
+cfi=(25)
+cfn=(1272)
+calls=1 705 
+* 1995
++1 2
+
+fl=(34)
+fn=(1400) mbedtls_cipher_set_padding_mode
+707 16
++1 8
++1 12
+-1 8
++3 8
++39 8
+
+fn=(1416) mbedtls_cipher_update
+272 11736880
++2 1467110
++2 11736880
++5 2934220
++1 4401330
+cfi=(47)
+cfn=(1418)
+calls=1467110 +93 
+* 20539540
+* 2934220
++2 7335550
++2 4401330
++3 4401330
++2 16138210
+cfi=(45)
+cfn=(1420)
+calls=1467110 118 
+* 208329620
+* 4401330
++6 2934220
+452 2934220
+
+fn=(1020)
+137 24
++1 12
++11 24
++1 16
+cfi=(45)
+cfn=(1532)
+calls=2 -61 
+* 14826
++2 24
+cfn=(1022) mbedtls_zeroize
+calls=6 -88 
+* 4842
+* 6
++1 12
+
+fn=(1021) mbedtls_cipher_free'2
+137 8
++1 4
++11 8
++1 16
+cfi=(45)
+cfn=(1536)
+calls=2 +26 
+* 5428
++2 8
+cfn=(1022)
+calls=2 -88 
+* 1614
+* 2
++1 4
+
+fn=(1402)
+183 14
++1 12
++3 12
++1 6
+-1 4
++6 6
++1 6
++5 4
++1 3
+-1 2
++2 3
+-1 2
++3 4
++1 2
+-1 7
+cfi=(45)
+cfn=(1404)
+calls=1 343 
+* 2005
+* 1
++4 2
++1 4
++1 2
+-1 7
+cfi=(45)
+cfn=(1404)
+calls=1 343 
+* 1991
+* 1
++4 4
+
+fn=(1403) mbedtls_cipher_setkey'2
+183 14
++1 12
++3 12
++1 6
+-1 4
++6 6
++1 6
++5 4
++4 8
++1 4
+-1 14
+cfi=(45)
+cfn=(1412)
+calls=2 -44 
+* 538
+* 2
++9 4
+
+fn=(982)
+132 16
++1 20
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=4 0 
+* 68
+* 4
++1 12
+
+fn=(1458)
+847 6462
++2 3590
++2 2154
++1 12924
+cfi=(46)
+cfn=(1438) mbedtls_gcm_crypt_and_tag
+calls=718 457 
+* 1201000623
+* 1436
++16 1436
+
+fn=(1394)
+156 20
++1 16
++3 20
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=4 0 
+* 68
+* 4
++2 16
+cfi=(45)
+cfn=(1410)
+calls=2 +2 
+* 608
+cfi=(45)
+cfn=(1396)
+calls=2 -83 
+* 823
+* 28
++3 12
++7 16
+cfn=(1400)
+calls=4 707 
+* 60
++6 4
++1 8
+
+fn=(1408) mbedtls_cipher_info_from_values
+119 10
++3 6
++1 36
++1 24
+-1 12
++2 6
+-1 4
++2 6
+-4 28
++7 4
+
+fn=(1022)
+64 32
++1 6400
++1 24
+
+fn=(1184)
+92 6
++3 6
++1 120
++1 6
+-2 148
++5 4
+
+fn=(1434)
+879 6453
++2 3585
++4 2151
++1 10755
+cfi=(46)
+cfn=(1436) mbedtls_gcm_auth_decrypt
+calls=717 482 
+* 1201206801
+* 1434
++4 1434
++3 1434
++21 1434
+
+fl=(31) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/library/entropy_poll.c
+fn=(890) check_version_3_17_plus
+111 6
++6 3
+cob=(1)
+cfi=(1)
+cfn=(294)
+calls=1 0 
+* 849
+* 5
++1 3
++3 13
++3 6
++1 2
++18 5
+
+fn=(898) getrandom_wrapper
+97 6
++8 7
+cob=(1)
+cfi=(1)
+cfn=(294)
+calls=1 0 
+* 848
+* 5
++1 2
+
+fn=(924) mbedtls_hardclock_poll
+214 10
++1 1
+cfi=(32)
+cfn=(926)
+calls=1 112 
+* 10
+* 1
++2 2
++2 2
++3 3
++1 2
++2 1
++1 5
+
+fn=(888) mbedtls_platform_entropy_poll
+152 7
++6 3
++1 1
+cfn=(890)
+calls=1 -48 
+* 892
+* 4
++2 3
++4 6
+cfn=(898)
+calls=1 -68 
+* 868
+* 3
++3 4
++1 2
++21 2
+
+fl=(46)
+fn=(1436)
+482 12906
++6 12189
+cfn=(1438)
+calls=717 -31 
+* 1200996720
+* 2868
++8 2151
++1 126192
+-1 48039
++3 1434
++6 717
++1 3585
+
+fn=(1438)
+457 12915
++3 12915
+cfn=(1440) mbedtls_gcm_starts
+calls=1435 275 
+* 1887025
+* 4305
++3 8610
+cfn=(1446) mbedtls_gcm_update
+calls=1435 356 
+* 2397989388
+* 4305
++3 8610
+cfn=(1448) mbedtls_gcm_finish
+calls=1435 -52 
+* 2060660
+* 4305
++3 1435
++1 2870
+
+fn=(1534)
+509 8
++1 6
+cfi=(34)
+cfn=(1021)
+calls=2 137 
+* 7092
++1 8
+cfn=(1538) mbedtls_zeroize
+calls=2 84 
+* 7518
++1 6
+
+fn=(1448)
+414 12915
++3 5740
++1 5740
++2 5740
++3 10045
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=1435 0 
+* 14350
+* 1435
++2 2870
++2 7175
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=1435 0 
+* 15785
+* 1435
++2 17220
++1 15785
++1 17220
++1 15785
++2 2870
++1 344400
+-1 71750
++3 11480
+cfn=(1442) gcm_mult
+calls=1435 215 
+* 1028895
++2 2870
++1 344400
+-1 96145
++4 1435
++1 7175
+
+fn=(1440)
+275 17220
++5 1435
++4 2870
++1 2870
+-1 2870
++2 2870
+-1 2870
++6 8610
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=1435 0 
+* 15785
+* 1435
++1 8610
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=1435 0 
+* 15785
+* 1435
++2 4305
++1 2870
++1 2870
++2 2870
++2 10045
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=1435 0 
+* 17220
+* 1435
++1 4305
++27 15785
+cfi=(34)
+cfn=(1416)
+calls=1435 -56 
+* 299915
+* 4305
++6 4305
++1 2870
++1 1435
++2 5740
++2 2870
++1 279825
+-1 78925
++3 11480
+cfn=(1442)
+calls=1435 215 
+* 1028895
++2 2870
++1 2870
+-10 5740
++13 1435
++1 7175
+
+fn=(1538)
+84 8
++1 7504
++1 6
+
+fn=(1414) gcm_gen_table
+105 14
++5 2
++2 10
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=2 0 
+* 22
+* 2
++1 18
+cfi=(34)
+cfn=(1416)
+calls=2 272 
+* 418
+* 6
++4 34
++1 34
++1 8
++2 34
++1 34
++1 8
++3 6
++1 6
++4 4
+cfi=(30)
+cfn=(876)
+calls=2 -82 
+* 30
+* 4
++1 4
++30 10
+
+fn=(1398)
+92 8
++1 10
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=2 -93 
+* 82
+* 2
++1 6
+
+fn=(1406)
+168 14
++4 12
+cfi=(34)
+cfn=(1408)
+calls=2 -53 
+* 136
+* 2
++1 4
++3 8
++3 6
+cfi=(34)
+cfn=(1020)
+calls=2 -42 
+* 1648
++2 10
+cfi=(34)
+cfn=(1394)
+calls=2 -25 
+* 744
+* 6
++3 12
+cfi=(34)
+cfn=(1403)
+calls=2 -1 
+* 634
+* 6
++6 6
+cfn=(1414)
+calls=2 -85 
+* 708
+* 6
++3 2
++1 4
+
+fn=(1446)
+356 14350
++5 2870
++1 1435
++2 4305
++5 11480
++1 5740
+-1 4305
++6 8610
++2 2870
++1 1435
++2 5862692
++2 2931346
++1 16185367
+-1 2948518
++2 1465673
++2 14656730
+cfi=(34)
+cfn=(1416)
+calls=1465673 272 
+* 306325657
+* 4397019
++6 2931346
++2 93803008
++1 175880625
++1 164155250
++1 46901500
+-1 164155278
++1 46901508
++1 175880655
+-6 98200027
++9 11725384
+cfn=(1442)
+calls=1465673 215 
+* 1050887541
++2 2931346
++1 2931346
++1 2931346
+-27 2934216
++30 1435
++1 7175
+
+fn=(1442)
+215 13216887
++1 1468543
++5 2937086
+cfi=(30)
+cfn=(876)
+calls=1468543 49 
+* 22028145
+* 2937086
++3 23496688
++1 22028145
++1 23496688
++1 22028145
++2 8811258
+cfi=(30)
+cfn=(1444)
+calls=1468543 -85 
+* 900216859
++1 2937086
++37 7342715
+
+fl=(10)
+fn=(498) mbedtls_x509_crt_parse_der
+923 24
++2 12
++5 16
++5 6
++1 9
+-3 52
++9 28
++2 9
+cob=(2)
+cfi=(2)
+cfn=(496)
+calls=3 0 
+* 795
+* 3
+* 9
++2 12
++3 6
++1 12
+cfn=(304)
+calls=3 2339 
+* 183
++1 9
++3 18
+cfn=(500) x509_crt_parse_der_core
+calls=3 666 
+* 86757
+* 6
+cfn=(500)
+calls=1 666 
+* 22212
+* 12
++11 4
++1 8
+
+fn=(500)
+666 36
++6 20
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=4 0 
+* 44
+* 4
++1 20
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=4 0 
+* 44
+* 4
++1 20
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=4 0 
+* 44
+* 4
++5 16
++4 8
++1 8
++1 16
++8 24
+cfi=(18)
+cfn=(502)
+calls=4 115 
+* 388
+* 12
++7 28
++6 16
++3 28
++1 20
+cob=(2)
+cfi=(2)
+cfn=(496)
+calls=4 0 
+* 1130
+* 4
+* 16
++1 12
++3 28
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=3 0 
+* 307
+cob=(1)
+cfi=(1)
+cfn=(294)
+calls=1 0 
+* 956
+* 8
++3 32
++1 24
++5 12
++2 24
+cfi=(18)
+cfn=(502)
+calls=4 115 
+* 388
+* 12
++7 16
++1 32
++9 28
+cfn=(510) x509_get_version
+calls=4 214 
+* 1000
+* 12
++1 8
+-1 20
+cfi=(19) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/library/x509.c
+cfn=(514) mbedtls_x509_get_serial
+calls=4 90 
+* 380
+* 12
++2 8
+-1 28
+cfi=(19)
+cfn=(516) mbedtls_x509_get_alg
+calls=4 135 
+* 1385
+* 12
++8 32
++6 20
++2 48
+cfi=(19)
+cfn=(520) mbedtls_x509_get_sig_alg
+calls=4 -98 
+* 928
+* 12
++11 12
++2 24
+cfi=(18)
+cfn=(502)
+calls=4 115 
+* 288
+* 12
++7 36
+cfi=(19)
+cfn=(526) mbedtls_x509_get_name
+calls=4 432 
+* 7000
+* 12
++6 36
++8 32
+cfn=(530) x509_get_dates
+calls=4 251 
+* 6656
+* 12
++10 12
++2 24
+cfi=(18)
+cfn=(502)
+calls=4 115 
+* 288
+* 12
++7 48
+cfi=(19)
+cfn=(526)
+calls=4 432 
+* 7000
+* 12
++6 36
++5 28
+cfi=(21)
+cfn=(540)
+calls=4 604 
+* 68238
+* 12
++14 32
++2 28
+cfn=(594) x509_get_uid
+calls=4 280 
+* 236
+* 4
++1 8
++7 32
++2 28
+cfn=(594)
+calls=4 280 
+* 236
+* 4
++1 8
++8 16
++3 24
+cfn=(596) x509_get_crt_ext
+calls=4 525 
+* 8317
+* 4
++1 8
++7 12
++7 8
++9 24
+cfi=(19)
+cfn=(516)
+calls=4 135 
+* 1385
+* 12
++6 20
++1 32
+cob=(2)
+cfi=(2)
+cfn=(474)
+calls=4 0 
+* 104
+* 4
+-1 8
++2 8
+-1 8
++2 4
+-1 8
++8 28
+cfi=(19)
+cfn=(608) mbedtls_x509_get_sig
+calls=4 632 
+* 703
+* 12
++6 12
++7 4
++1 20
+
+fn=(530)
+251 40
++4 24
+cfi=(18)
+cfn=(502)
+calls=4 115 
+* 288
+* 12
++4 20
++2 24
+cfi=(19)
+cfn=(532) mbedtls_x509_get_time
+calls=4 603 
+* 3080
+* 12
++3 24
+cfi=(19)
+cfn=(532)
+calls=4 603 
+* 3080
+* 12
++3 16
++4 4
++1 20
+
+fn=(304)
+2339 16
++1 20
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=4 0 
+* 199
+* 4
++1 12
+
+fn=(510)
+214 36
++4 24
+cfi=(18)
+cfn=(502)
+calls=4 115 
+* 288
+* 12
++12 20
++2 24
+cfi=(18)
+cfn=(512)
+calls=4 -83 
+* 544
+* 12
++3 16
++4 4
++1 20
+
+fn=(596)
+525 36
++5 28
+cfi=(19)
+cfn=(598) mbedtls_x509_get_ext
+calls=4 709 
+* 954
+* 12
++16 36
++1 12
++1 12
++2 72
+cfi=(18)
+cfn=(502)
+calls=12 115 
+* 864
+* 36
++4 60
++3 60
++2 84
+cfi=(18)
+cfn=(502)
+calls=12 115 
+* 864
+* 36
++3 36
++1 72
++2 84
++5 72
+cfi=(18)
+cfn=(600)
+calls=12 130 
+* 588
+* 60
+
+ob=(1)
+fl=(1)
+fn=(12) get_common_indeces.constprop.1
+0 85
+
+fn=(80) strdup
+0 10
+cfn=(16) strlen
+calls=2 0 
+0 68
+0 6
+cfn=(30) malloc
+calls=2 0 
+0 36
+0 18
+cfn=(32) memcpy
+calls=2 0 
+0 28
+
+fn=(86) read
+0 12
+
+fn=(106) _dl_load_cache_lookup
+0 29
+cfn=(40) strcmp
+calls=1 0 
+0 24
+0 6
+cfn=(14) __tunable_get_val
+calls=1 0 
+0 18
+0 152
+cfn=(110) _dl_cache_libcmp
+calls=10 0 
+0 691
+0 69
+cfn=(110)
+calls=1 0 
+0 70
+0 6
+cfn=(110)
+calls=1 0 
+0 145
+0 55
+cfn=(16)
+calls=1 0 
+0 34
+0 9
+cfn=(32)
+calls=1 0 
+0 10
+0 2
+cfn=(80)
+calls=1 0 
+0 79
+0 12
+cfn=(108) _dl_sysdep_read_whole_file
+calls=1 0 
+0 107
+0 34
+
+fn=(116) version_check_doit
+0 6
+cfn=(118) _dl_check_all_versions
+calls=1 0 
+0 2958
+0 4
+
+fn=(46) _dl_init_paths
+0 14
+cfn=(48) _dl_important_hwcaps
+calls=1 0 
+0 699
+0 3
+cfn=(30)
+calls=1 0 
+0 18
+0 13
+cfn=(30)
+calls=1 0 
+0 18
+0 78
+
+fn=(52) _dl_debug_initialize
+0 41
+
+fn=(90) _fxstat
+0 27
+
+fn=(98) close
+0 18
+
+fn=(120) _dl_check_map_versions
+0 160
+cfn=(74) _dl_name_match_p
+calls=7 0 
+0 638
+0 121
+cfn=(122) match_symbol
+calls=3 0 
+0 532
+0 8
+cfn=(122)
+calls=2 0 
+0 227
+0 390
+cfn=(28) calloc
+calls=3 0 
+0 78
+0 733
+
+fn=(122)
+0 413
+cfn=(40)
+calls=5 0 
+0 286
+0 60
+
+fn=(0) 0x0000000000000f30
+0 2
+cfn=(2) _dl_start
+calls=1 0 
+0 128170
+0 14
+cfn=(224) _dl_init
+calls=1 0 
+0 2177
+0 3
+cob=(5)
+cfi=(5)
+cfn=(256) _start
+calls=1 0 
+0 2627155865
+
+fn=(32)
+0 157
+
+fn=(34) _dl_add_to_namespace_list
+0 24
+cfn=(36) rtld_lock_default_lock_recursive
+calls=3 0 
+0 6
+0 65
+cfn=(38) rtld_lock_default_unlock_recursive
+calls=2 0 
+0 4
+0 12
+cfn=(38)
+calls=1 0 
+0 2
+0 2
+
+fn=(54) _dl_count_modids
+0 4
+
+fn=(76) index
+0 163
+
+fn=(134) _dl_lookup_symbol_x
+0 19788
+cfn=(136) do_lookup_x
+calls=128 0 
+0 57076
+0 4386
+
+fn=(18) sbrk
+0 17
+
+fn=(42) _dl_discover_osversion
+0 15
+cfn=(44) uname
+calls=1 0 
+0 5
+0 75
+
+fn=(124) init_tls
+0 9
+cfn=(28)
+calls=1 0 
+0 26
+0 46
+cfn=(126) _dl_determine_tlsoffset
+calls=1 0 
+0 66
+0 1
+cfn=(128) _dl_allocate_tls_storage
+calls=1 0 
+0 386
+0 17
+
+fn=(58) handle_ld_preload
+0 15
+cfn=(60) strcspn
+calls=1 0 
+0 218
+0 9
+cfn=(62) dso_name_valid_for_suid
+calls=1 0 
+0 14
+0 6
+cfn=(64) do_preload
+calls=1 0 
+0 2226
+0 15
+cfn=(32)
+calls=1 0 
+0 18
+0 2
+
+fn=(64)
+0 17
+cfn=(66) _dl_catch_error
+calls=1 0 
+0 2198
+0 11
+
+fn=(72) _dl_map_object
+0 157
+cfn=(74)
+calls=7 0 
+0 789
+0 58
+cfn=(40)
+calls=2 0 
+0 48
+0 59
+cfn=(76)
+calls=2 0 
+0 46
+0 10
+cfn=(78) expand_dynamic_string_token
+calls=1 0 
+0 158
+0 13
+cfn=(82) open_verify.constprop.7
+calls=1 0 
+0 200
+0 23
+cfn=(88) _dl_map_object_from_fd
+calls=1 0 
+0 1363
+0 14
+cfn=(88)
+calls=1 0 
+0 1771
+0 9
+cfn=(16)
+calls=1 0 
+0 16
+0 29
+cfn=(106)
+calls=1 0 
+0 1552
+0 18
+cfn=(82)
+calls=1 0 
+0 210
+0 46
+
+fn=(22) _dl_next_ld_env_entry
+0 322
+
+fn=(36)
+0 10
+
+fn=(50) mempcpy
+0 118
+
+fn=(66)
+0 57
+cfn=(68) __sigsetjmp
+calls=3 0 
+0 57
+0 18
+cfn=(104) openaux
+calls=2 0 
+0 4495
+cfn=(70) map_doit
+calls=1 0 
+0 2142
+0 36
+
+fn=(70)
+0 11
+cfn=(72)
+calls=1 0 
+0 2128
+0 3
+
+fn=(218) _dl_unload_cache
+0 7
+cfn=(220) munmap
+calls=1 0 
+0 5
+0 3
+
+fn=(2)
+0 245
+cfn=(4) _dl_setup_hash
+calls=1 0 
+0 23
+0 17
+cfn=(6) _dl_sysdep_start
+calls=1 0 
+0 127280
+0 605
+
+fn=(20) dl_main
+0 34
+cfn=(22)
+calls=1 0 
+0 316
+0 2
+cfn=(22)
+calls=1 0 
+0 6
+0 69
+cfn=(24) bcmp
+calls=1 0 
+0 36
+0 21
+cfn=(26) _dl_new_object
+calls=1 0 
+0 228
+0 11
+cfn=(34)
+calls=1 0 
+0 33
+0 138
+cfn=(40)
+calls=1 0 
+0 44
+0 302
+cfn=(4)
+calls=1 0 
+0 23
+0 5
+cfn=(42)
+calls=1 0 
+0 95
+0 89
+cfn=(46)
+calls=1 0 
+0 843
+0 3
+cfn=(52)
+calls=1 0 
+0 17
+0 58
+cfn=(54)
+calls=1 0 
+0 4
+0 12
+cfn=(56) _dl_debug_state
+calls=1 0 
+0 1
+0 16
+cfn=(58)
+calls=1 0 
+0 2523
+0 10
+cfn=(100) access
+calls=1 0 
+0 9
+0 20
+cfn=(102) _dl_map_object_deps
+calls=1 0 
+0 5930
+0 74
+cfn=(114) _dl_receive_error
+calls=1 0 
+0 2983
+0 5
+cfn=(124)
+calls=1 0 
+0 551
+0 104
+cfn=(132) _dl_relocate_object
+calls=3 0 
+0 90384
+0 12
+cfn=(212) _dl_add_to_slotinfo
+calls=1 0 
+0 20
+0 13
+cfn=(214) _dl_allocate_tls_init
+calls=1 0 
+0 145
+0 29
+cfn=(132)
+calls=1 0 
+0 5057
+0 7
+cfn=(216) _dl_sysdep_start_cleanup
+calls=1 0 
+0 1
+0 5
+cfn=(52)
+calls=1 0 
+0 8
+0 2
+cfn=(56)
+calls=1 0 
+0 1
+0 1
+cfn=(218)
+calls=1 0 
+0 15
+0 57
+
+fn=(62)
+0 14
+
+fn=(68)
+0 57
+
+fn=(88)
+0 36
+cfn=(52)
+calls=2 0 
+0 16
+0 10
+cfn=(90)
+calls=2 0 
+0 18
+0 124
+cfn=(26)
+calls=2 0 
+0 752
+0 544
+cfn=(112) _dl_next_tls_modid
+calls=1 0 
+0 6
+0 70
+cfn=(92) mmap
+calls=2 0 
+0 74
+0 120
+cfn=(92)
+calls=2 0 
+0 66
+0 54
+cfn=(96) memset
+calls=2 0 
+0 291
+0 19
+cfn=(92)
+calls=1 0 
+0 33
+0 21
+cfn=(94) mprotect
+calls=2 0 
+0 10
+0 631
+cfn=(98)
+calls=1 0 
+0 6
+0 2
+cfn=(98)
+calls=1 0 
+0 6
+0 24
+cfn=(4)
+calls=2 0 
+0 46
+0 33
+cfn=(34)
+calls=2 0 
+0 82
+0 40
+
+fn=(96)
+0 414
+
+fn=(126)
+0 66
+
+fn=(132)
+0 7392
+cfn=(134)
+calls=89 0 
+0 53798
+0 1508
+cfn=(210) _dl_protect_relro
+calls=4 0 
+0 104
+0 1685
+cob=(2)
+cfi=(2)
+cfn=(208) gettimeofday
+calls=1 0 
+0 77
+cob=(2)
+cfi=(2)
+cfn=(206) strncasecmp_l
+calls=1 0 
+0 6
+cob=(2)
+cfi=(2)
+cfn=(204) stpcpy
+calls=1 0 
+0 9
+cob=(2)
+cfi=(2)
+cfn=(202) stpncpy
+calls=1 0 
+0 9
+cob=(2)
+cfi=(2)
+cfn=(200) strspn
+calls=1 0 
+0 6
+cob=(2)
+cfi=(2)
+cfn=(198) memchr
+calls=1 0 
+0 8
+cob=(2)
+cfi=(2)
+cfn=(196) strcasecmp_l
+calls=1 0 
+0 6
+cob=(2)
+cfi=(2)
+cfn=(194) strlen
+calls=1 0 
+0 8
+cob=(2)
+cfi=(2)
+cfn=(192) index
+calls=1 0 
+0 8
+cob=(2)
+cfi=(2)
+cfn=(190) strpbrk
+calls=1 0 
+0 6
+cob=(2)
+cfi=(2)
+cfn=(188) wmemset
+calls=2 0 
+0 26
+cob=(2)
+cfi=(2)
+cfn=(186) strcpy
+calls=1 0 
+0 9
+cob=(2)
+cfi=(2)
+cfn=(184) strcspn
+calls=1 0 
+0 6
+cob=(2)
+cfi=(2)
+cfn=(182) strnlen
+calls=2 0 
+0 16
+cob=(2)
+cfi=(2)
+cfn=(180) wcschr
+calls=2 0 
+0 16
+cob=(2)
+cfi=(2)
+cfn=(178) memset
+calls=1 0 
+0 18
+cob=(2)
+cfi=(2)
+cfn=(176) strcmp
+calls=1 0 
+0 9
+cob=(2)
+cfi=(2)
+cfn=(174) strncmp
+calls=1 0 
+0 8
+cob=(2)
+cfi=(2)
+cfn=(172) bcmp
+calls=1 0 
+0 13
+cob=(2)
+cfi=(2)
+cfn=(170) mempcpy
+calls=1 0 
+0 16
+cob=(2)
+cfi=(2)
+cfn=(168) wmemchr
+calls=2 0 
+0 16
+cob=(2)
+cfi=(2)
+cfn=(166) rawmemchr
+calls=1 0 
+0 8
+cob=(2)
+cfi=(2)
+cfn=(162) time
+calls=1 0 
+0 77
+cob=(2)
+cfi=(2)
+cfn=(160) rindex
+calls=1 0 
+0 8
+cob=(2)
+cfi=(2)
+cfn=(158) strcat
+calls=1 0 
+0 9
+cob=(2)
+cfi=(2)
+cfn=(156) strcasecmp
+calls=1 0 
+0 6
+cob=(2)
+cfi=(2)
+cfn=(154) strncpy
+calls=1 0 
+0 9
+cob=(2)
+cfi=(2)
+cfn=(152) memmove
+calls=2 0 
+0 32
+cob=(2)
+cfi=(2)
+cfn=(150) strncasecmp
+calls=1 0 
+0 6
+cob=(2)
+cfi=(2)
+cfn=(148) memcpy@@GLIBC_2.14
+calls=1 0 
+0 16
+cob=(2)
+cfi=(2)
+cfn=(146) wcsnlen
+calls=1 0 
+0 7
+cob=(2)
+cfi=(2)
+cfn=(144) memrchr
+calls=1 0 
+0 8
+cob=(2)
+cfi=(2)
+cfn=(142) wcslen
+calls=1 0 
+0 8
+cob=(2)
+cfi=(2)
+cfn=(140) strchrnul
+calls=1 0 
+0 8
+0 396
+cfn=(32)
+calls=1 0 
+0 10
+0 26781
+cfn=(134)
+calls=6 0 
+0 3022
+0 247
+
+fn=(100)
+0 9
+
+fn=(114)
+0 9
+cfn=(116)
+calls=1 0 
+0 2968
+0 6
+
+fn=(38)
+0 10
+
+fn=(48)
+0 19
+cfn=(14)
+calls=1 0 
+0 18
+0 58
+cfn=(16)
+calls=1 0 
+0 16
+0 63
+cfn=(30)
+calls=1 0 
+0 18
+0 39
+cfn=(50)
+calls=1 0 
+0 16
+0 4
+cfn=(50)
+calls=1 0 
+0 16
+0 29
+cfn=(50)
+calls=1 0 
+0 14
+0 10
+cfn=(50)
+calls=2 0 
+0 28
+0 351
+
+fn=(112)
+0 6
+
+fn=(334) _dl_find_dso_for_object
+0 43
+
+fn=(14)
+0 307
+
+fn=(16)
+0 284
+
+fn=(44)
+0 5
+
+fn=(74)
+0 756
+cfn=(40)
+calls=108 0 
+0 2682
+0 1941
+cfn=(40)
+calls=112 0 
+0 2856
+0 242
+
+fn=(102)
+0 155
+cfn=(76)
+calls=2 0 
+0 70
+0 18
+cfn=(66)
+calls=2 0 
+0 4607
+0 516
+cfn=(30)
+calls=2 0 
+0 36
+0 20
+cfn=(32)
+calls=2 0 
+0 20
+0 10
+cfn=(32)
+calls=2 0 
+0 20
+0 38
+
+ob=(5)
+fl=(10)
+fn=(596)
+575 72
+cfi=(18)
+cfn=(502)
+calls=12 115 
+* 864
+* 36
++4 60
++2 36
++7 60
+cfi=(20)
+cfn=(602)
+calls=12 288 
+* 2012
+* 12
++2 24
++3 24
++3 24
++11 24
++3 24
++2 12
++4 32
+cfn=(606) x509_get_basic_constraints
+calls=4 307 
+* 799
+* 12
++3 8
+-81 64
+654 16
++4 4
++1 20
+
+fn=(1514)
+2347 4
++1 2
++7 2
++5 16
+cfi=(11)
+cfn=(1516)
+calls=4 66 
+* 6669
++3 16
+cob=(2)
+cfi=(2)
+cfn=(618)
+calls=4 0 
+* 44
+* 4
++3 12
++1 4
++2 16
++1 24
++1 32
+cfn=(1524) mbedtls_zeroize
+calls=8 79 
+* 4728
++1 24
+cob=(2)
+cfi=(2)
+cfn=(618)
+calls=8 0 
+* 792
+* 8
+-5 24
++8 12
++1 4
++2 16
++1 24
++1 32
+cfn=(1524)
+calls=8 79 
+* 4728
++1 24
+cob=(2)
+cfi=(2)
+cfn=(618)
+calls=8 0 
+* 792
+* 8
+-5 24
++8 12
++1 12
++8 12
++1 12
++8 16
++2 28
+cfn=(1524)
+calls=4 79 
+* 29211
++1 16
+cob=(2)
+cfi=(2)
+cfn=(618)
+calls=4 0 
+* 320
+* 4
++3 12
++2 8
++2 2
++3 2
++1 3
++2 4
+cfn=(1524)
+calls=1 79 
+* 4983
+-3 6
++1 9
++2 12
+cfn=(1524)
+calls=3 79 
+* 14949
++1 12
++1 9
+cob=(2)
+cfi=(2)
+cfn=(618)
+calls=3 0 
+* 289
+* 3
++2 9
++1 2
+
+fn=(456)
+973 18
++2 6
++1 2
++6 8
++8 18
++1 8
+cob=(2)
+cfi=(2)
+cfn=(366) __GI_strstr
+calls=1 0 
+* 335
+cob=(1)
+cfi=(1)
+cfn=(294)
+calls=1 0 
+* 1180
+* 6
+-1 4
++3 2
++3 4
++7 4
++6 2
++3 12
+cfi=(16)
+cfn=(464)
+calls=4 54 
+* 96
++3 48
+cfi=(16)
+cfn=(466)
+calls=4 237 
+* 896175
+* 8
++5 8
++5 8
++1 8
++25 24
+cfn=(498)
+calls=4 923 
+* 110202
+* 4
++2 12
+cfi=(16)
+cfn=(610)
+calls=4 439 
+* 31472
++2 8
++15 4
+-61 14
++65 4
++1 4
++6 10
+
+fn=(606)
+307 40
++9 8
++1 8
++2 24
+cfi=(18)
+cfn=(502)
+calls=4 115 
+* 288
+* 12
++4 16
++1 2
++2 18
+cfi=(18)
+cfn=(600)
+calls=3 130 
+* 336
+* 9
++12 12
++1 6
++12 20
+
+fn=(1156)
+1554 4
++2 1
++3 5
++1 2
++13 2
+
+fn=(1158)
+1580 6
++4 5
++1 2
++20 2
+
+fn=(594)
+280 56
++3 32
++3 48
++2 72
+cfi=(18)
+cfn=(502)
+calls=8 115 
+* 192
+* 24
++3 16
++1 16
++9 16
+
+fn=(1524)
+79 96
++1 58431
++1 72
+
+fl=(23)
+fn=(1316)
+1762 9
++1 4
++4 12
+cfn=(1318) mbedtls_rsa_rsassa_pkcs1_v15_sign
+calls=1 -77 
+* 74233505
+* 2
++13 2
+
+fn=(1520)
+2098 16
++1 16
+cfi=(25)
+cfn=(568)
+calls=4 101 
+* 538
+* 16
+cfi=(25)
+cfn=(568)
+calls=4 101 
+* 538
++1 16
+cfi=(25)
+cfn=(568)
+calls=4 101 
+* 835
+* 16
+cfi=(25)
+cfn=(568)
+calls=4 101 
+* 529
++1 16
+cfi=(25)
+cfn=(568)
+calls=4 101 
+* 385
+* 16
+cfi=(25)
+cfn=(568)
+calls=4 101 
+* 417
++1 16
+cfi=(25)
+cfn=(568)
+calls=4 101 
+* 616
+* 16
+cfi=(25)
+cfn=(568)
+calls=4 101 
+* 1888
++3 16
+cfi=(25)
+cfn=(568)
+calls=4 101 
+* 547
+* 16
+cfi=(25)
+cfn=(568)
+calls=4 101 
+* 547
++1 16
+cfi=(25)
+cfn=(568)
+calls=4 101 
+* 376
+* 16
+cfi=(25)
+cfn=(568)
+calls=4 101 
+* 376
++1 16
+cfi=(25)
+cfn=(568)
+calls=4 101 
+* 376
++6 12
+
+fn=(558) mbedtls_rsa_set_padding
+477 20
++1 12
++1 12
++1 12
+
+fn=(592)
+589 12
++1 15
+cfn=(588) rsa_check_context
+calls=3 156 
+* 987
+* 6
++3 12
+cfi=(25)
+cfn=(578)
+calls=3 386 
+* 213
+* 6
++5 15
+cfi=(25)
+cfn=(590)
+calls=3 314 
+* 72
+* 6
++1 12
+cfi=(25)
+cfn=(578)
+calls=3 386 
+* 1284
+-1 6
++2 21
+cfi=(25)
+cfn=(586)
+calls=3 848 
+* 186
+-1 6
++6 3
++1 6
+
+fn=(1318)
+1690 9
++2 2
++2 6
++7 10
+cfn=(1320) rsa_rsassa_pkcs1_v15_encode
+calls=1 1572 
+* 334
+* 3
++8 2
++12 5
+cob=(2)
+cfi=(2)
+cfn=(496)
+calls=1 0 
+* 394
+* 1
+* 1
++1 2
++3 5
+cob=(2)
+cfi=(2)
+cfn=(496)
+calls=1 0 
+* 236
+* 1
+* 1
++1 2
++6 8
+cfn=(1324) mbedtls_rsa_private
+calls=1 773 
+* 73566588
+* 3
++1 6
+cfn=(1336) mbedtls_rsa_public
+calls=1 663 
+* 661947
+* 3
++2 7
+cfn=(1338) mbedtls_safer_memcmp
+calls=1 80 
+* 3602
+* 2
++6 7
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=1 0 
+* 29
+* 1
+* 1
++3 3
+cob=(2)
+cfi=(2)
+cfn=(618)
+calls=1 0 
+* 129
+* 1
++1 3
+cob=(2)
+cfi=(2)
+cfn=(618)
+calls=1 0 
+* 147
+* 1
++2 1
++1 2
+
+fn=(1326) rsa_prepare_blinding
+712 6
++1 1
++2 4
++13 5
++3 10
+cfi=(25)
+cfn=(1226)
+calls=1 1883 
+* 21449
+* 3
++1 9
+cfi=(25)
+cfn=(718)
+calls=1 1825 
+* 6963043
+* 3
++1 5
+cfi=(25)
+cfn=(584)
+calls=1 881 
+* 131
+* 2
++3 9
+cfi=(25)
+cfn=(716)
+calls=1 1902 
+* 35637963
+* 3
++1 13
+cfi=(25)
+cfn=(1328)
+calls=1 1617 
+* 1042406
+* 2
++3 1
++1 1
++1 2
+
+fn=(556)
+463 24
++1 20
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=4 0 
+* 143
+* 4
++2 24
+cfn=(558)
+calls=4 +11 
+* 56
++5 12
+
+fn=(582)
+243 16
++1 4
++2 20
+cfi=(25)
+cfn=(584)
+calls=4 881 
+* 368
+* 16
++1 20
+cfi=(25)
+cfn=(584)
+calls=4 881 
+* 299
+* 16
++1 20
+cfi=(25)
+cfn=(584)
+calls=4 881 
+* 299
+* 16
++1 20
+cfi=(25)
+cfn=(584)
+calls=4 881 
+* 299
+* 16
++1 20
+cfi=(25)
+cfn=(584)
+calls=4 881 
+* 320
+* 16
++12 22
++1 6
+-1 1
++1 30
++1 20
++1 42
++3 2
+-3 3
++3 26
++2 6
+-2 1
++2 8
++7 8
++15 8
++8 8
++17 8
++2 16
+cfi=(28)
+cfn=(700)
+calls=1 456 
+* 10430829
+* 1
++2 2
++9 24
+cfn=(588)
+calls=4 156 
+* 1837
++1 8
+
+fn=(588)
+156 63
++7 54
+cfi=(25)
+cfn=(576)
+calls=9 405 
+* 738
+* 18
++1 18
+-1 18
++12 45
+cfi=(25)
+cfn=(584)
+calls=9 881 
+* 828
+* 18
++1 45
+cfi=(25)
+cfn=(590)
+calls=9 314 
+* 216
+-1 18
++10 18
++1 10
+cfi=(25)
+cfn=(584)
+calls=2 881 
+* 184
+-1 4
++2 10
+cfi=(25)
+cfn=(590)
+calls=2 314 
+* 48
+-1 4
++2 10
+cfi=(25)
+cfn=(584)
+calls=2 881 
+* 184
+-1 4
++2 10
+cfi=(25)
+cfn=(590)
+calls=2 314 
+* 48
+-1 4
++12 45
+cfi=(25)
+cfn=(584)
+calls=9 881 
+* 720
+* 18
++9 18
++1 10
+cfi=(25)
+cfn=(584)
+calls=2 881 
+* 160
+-1 4
++2 10
+cfi=(25)
+cfn=(584)
+calls=2 881 
+* 160
+-1 4
++22 18
++1 10
+cfi=(25)
+cfn=(584)
+calls=2 881 
+* 160
+-1 4
++7 9
++1 36
+
+fn=(1320)
+1572 11
++1 1
++1 2
++1 2
++1 1
++3 2
++2 3
+cfi=(35)
+cfn=(1280)
+calls=1 141 
+* 19
+* 1
++1 2
++3 6
+cfi=(20)
+cfn=(1322)
+calls=1 627 
+* 73
+* 2
++3 3
+cfi=(35)
+cfn=(1302)
+calls=1 455 
+* 9
+* 2
++4 9
++2 8
+-1 2
++12 7
++2 7
++12 2
++2 1
++6 4
++1 4
++1 5
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=1 0 
+* 34
+* 1
++1 2
++1 4
++3 2
++19 4
++1 9
++1 4
++1 7
++1 4
++1 6
++1 6
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=1 0 
+* 12
+* 1
++1 2
++1 4
++1 4
++1 4
++1 5
++1 6
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=1 0 
+* 11
+* 1
++1 2
++4 5
++6 1
++1 5
+
+fn=(1324)
+773 11
++10 3
++1 3
++3 7
+cfn=(588)
+calls=1 156 
+* 850
+* 2
++6 3
+cfi=(25)
+cfn=(570)
+calls=1 88 
+* 14
+* 3
+cfi=(25)
+cfn=(570)
+calls=1 88 
+* 14
+* 3
+cfi=(25)
+cfn=(570)
+calls=1 88 
+* 14
++1 3
+cfi=(25)
+cfn=(570)
+calls=1 88 
+* 14
+* 3
+cfi=(25)
+cfn=(570)
+calls=1 88 
+* 14
+* 3
+cfi=(25)
+cfn=(570)
+calls=1 88 
+* 14
++2 2
++5 3
+cfi=(25)
+cfn=(570)
+calls=1 88 
+* 14
++1 3
+cfi=(25)
+cfn=(570)
+calls=1 88 
+* 14
++10 7
+cfi=(25)
+cfn=(566)
+calls=1 678 
+* 7606
+* 3
++1 6
+cfi=(25)
+cfn=(586)
+calls=1 +35 
+* 112
+* 2
++6 2
++6 6
+cfn=(1326)
+calls=1 712 
+* 43665071
+* 3
++1 7
+cfi=(25)
+cfn=(664)
+calls=1 1183 
+* 14973
+* 3
++1 7
+cfi=(25)
+cfn=(702)
+calls=1 1463 
+* 344521
+* 3
++5 7
+cfi=(25)
+cfn=(690)
+calls=1 1095 
+* 664
+* 3
++1 7
+cfi=(25)
+cfn=(690)
+calls=1 1095 
+* 733
+* 3
++17 6
+cfi=(25)
+cfn=(1226)
+calls=1 1883 
+* 12412
+* 3
++2 6
+cfi=(25)
+cfn=(664)
+calls=1 1183 
+* 1511
+* 3
++1 7
+cfi=(25)
+cfn=(688)
+calls=1 1017 
+* 631
+* 3
++3 2
++5 6
+cfi=(25)
+cfn=(1226)
+calls=1 1883 
+* 12179
+* 3
++2 6
+cfi=(25)
+cfn=(664)
+calls=1 1183 
+* 1562
+* 3
++1 7
+cfi=(25)
+cfn=(688)
+calls=1 1017 
+* 651
+* 3
++3 2
++13 10
+cfi=(25)
+cfn=(1328)
+calls=1 1617 
+* 14497317
+* 3
++1 10
+cfi=(25)
+cfn=(1328)
+calls=1 1617 
+* 14523555
+* 3
++5 6
+cfi=(25)
+cfn=(692)
+calls=1 1048 
+* 1149
+* 3
++1 7
+cfi=(25)
+cfn=(664)
+calls=1 1183 
+* 5268
+* 3
++1 7
+cfi=(25)
+cfn=(702)
+calls=1 1463 
+* 104083
+* 3
++5 7
+cfi=(25)
+cfn=(664)
+calls=1 1183 
+* 4699
+* 3
++1 6
+cfi=(25)
+cfn=(688)
+calls=1 1017 
+* 1344
+* 3
++3 2
++6 7
+cfi=(25)
+cfn=(664)
+calls=1 1183 
+* 14579
+* 3
++1 7
+cfi=(25)
+cfn=(702)
+calls=1 1463 
+* 341594
+* 3
++3 3
++1 6
+cfi=(25)
+cfn=(1272)
+calls=1 705 
+* 6126
+* 2
++2 1
++6 3
+cfi=(25)
+cfn=(568)
+calls=1 101 
+* 751
+* 3
+cfi=(25)
+cfn=(568)
+calls=1 101 
+* 463
+* 3
+cfi=(25)
+cfn=(568)
+calls=1 101 
+* 337
++1 3
+cfi=(25)
+cfn=(568)
+calls=1 101 
+* 319
+* 3
+cfi=(25)
+cfn=(568)
+calls=1 101 
+* 319
+* 3
+cfi=(25)
+cfn=(568)
+calls=1 101 
+* 162
++2 2
++5 3
+cfi=(25)
+cfn=(568)
+calls=1 101 
+* 306
++1 3
+cfi=(25)
+cfn=(568)
+calls=1 101 
+* 306
++4 2
++3 1
++1 5
+
+fn=(1338)
+80 5
++2 2
++1 2
++1 1
++2 2
++1 2560
+-1 1027
++3 1
++1 2
+
+fn=(564)
+120 99
++1 11
++2 22
++2 28
+cfi=(25)
+cfn=(566)
+calls=4 678 
+* 30624
+* 12
++1 16
+cfi=(25)
+cfn=(576)
+calls=4 405 
+* 328
+* 12
++3 22
++1 7
+cfi=(25)
+cfn=(566)
+calls=1 678 
+* 4058
+* 3
++2 22
++1 7
+cfi=(25)
+cfn=(566)
+calls=1 678 
+* 4058
+* 3
++2 22
++1 7
+cfi=(25)
+cfn=(566)
+calls=1 678 
+* 7656
+* 3
++2 22
++1 28
+cfi=(25)
+cfn=(566)
+calls=4 678 
+* 1976
+* 8
++2 15
++2 22
++3 11
++1 22
+
+fn=(1314)
+487 3
++1 2
++1 2
+
+fn=(1336)
+663 9
++5 5
+cfn=(588)
+calls=1 156 
+* 329
+* 2
++3 3
+cfi=(25)
+cfn=(570)
+calls=1 88 
+* 14
++7 7
+cfi=(25)
+cfn=(566)
+calls=1 * 
+* 7546
+* 3
++2 6
+cfi=(25)
+cfn=(586)
+calls=1 848 
+* 112
+* 2
++6 3
++1 11
+cfi=(25)
+cfn=(1328)
+calls=1 1617 
+* 647505
+* 3
++1 6
+cfi=(25)
+cfn=(1272)
+calls=1 +17 
+* 5886
+* 2
++2 1
++6 3
+cfi=(25)
+cfn=(568)
+calls=1 101 
+* 481
++2 2
++3 1
++1 5
+
+fl=(40)
+fn=(1046) mbedtls_zeroize
+62 8
++1 4480
++1 6
+
+fn=(1004)
+126 8
++1 10
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=2 0 
+* 68
+* 2
++1 6
+
+fn=(1044)
+433 8
++1 8
+cfi=(25)
+cfn=(568)
+calls=2 101 
+* 38
+* 8
+cfi=(25)
+cfn=(568)
+calls=2 101 
+* 38
++1 8
+cfi=(25)
+cfn=(568)
+calls=2 101 
+* 38
+* 8
+cfi=(25)
+cfn=(568)
+calls=2 101 
+* 38
++1 8
+cfi=(25)
+cfn=(568)
+calls=2 101 
+* 38
+* 8
+cfi=(25)
+cfn=(568)
+calls=2 101 
+* 38
++1 8
+cfi=(25)
+cfn=(568)
+calls=2 101 
+* 38
+* 8
+cfi=(25)
+cfn=(568)
+calls=2 101 
+* 38
++1 8
+cfi=(25)
+cfn=(568)
+calls=2 101 
+* 38
+* 8
+cfi=(25)
+cfn=(568)
+calls=2 101 
+* 38
++2 8
+cfn=(1046)
+calls=2 62 
+* 4494
++1 6
+
+fl=(44)
+fn=(1296)
+504 225
++1 225
+cfi=(13)
+cfn=(916)
+calls=45 340 
+* 498297
++2 90
+
+fn=(1284)
+516 15
++1 15
+cob=(2)
+cfi=(2)
+cfn=(496)
+calls=5 0 
+* 2137
+* 5
+* 5
++2 10
++1 15
+cfi=(13)
+cfn=(310)
+calls=5 96 
+* 214
++2 5
++1 10
+
+fn=(1298)
+526 20
++1 15
+cfi=(13)
+cfn=(918)
+calls=5 101 
+* 9860
++1 15
+cob=(2)
+cfi=(2)
+cfn=(618)
+calls=5 0 
+* 400
+* 5
++1 15
+
+fn=(1292)
+498 540
++1 540
+cfi=(13)
+cfn=(912)
+calls=90 280 
+* 413853
++2 180
+
+fn=(1288)
+559 4
++1 4
+cfi=(13)
+cfn=(910)
+calls=1 118 
+* 41
++1 2
+
+fn=(1386)
+492 176
++1 176
+cfi=(13)
+cfn=(910)
+calls=44 118 
+* 1760
++1 88
+
+fl=(16)
+fn=(464)
+54 20
++1 25
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=5 -55 
+* 55
+* 5
++1 15
+
+fn=(610)
+439 20
++1 20
++1 35
+cfn=(612) mbedtls_zeroize
+calls=5 49 
+* 39954
++1 20
+cob=(2)
+cfi=(2)
+cfn=(618)
+calls=4 0 
+* 367
+cob=(1)
+cfi=(1)
+cfn=(294)
+calls=1 0 
+* 921
+* 9
++1 20
+cob=(2)
+cfi=(2)
+cfn=(618)
+calls=5 0 
+* 55
+* 5
++2 20
+cfn=(612)
+calls=5 49 
+* 1155
++1 15
+
+fn=(466)
+237 70
++13 5
++7 10
++3 25
+cob=(2)
+cfi=(2)
+cfn=(366)
+calls=5 0 
+* 1719
+* 5
+* 5
++2 10
++3 25
+cob=(2)
+cfi=(2)
+cfn=(366)
+calls=5 0 
+* 56812
+* 5
+* 5
++2 25
++3 15
+cob=(2)
+cfi=(2)
+cfn=(484)
+calls=4 0 
+* 60
+cob=(1)
+cfi=(1)
+cfn=(294)
+calls=1 0 
+* 854
+* 9
+* 5
++1 20
++1 25
++1 25
++3 10
++1 15
+cob=(2)
+cfi=(2)
+cfn=(484)
+calls=5 0 
+* 115
+* 5
+* 5
++1 20
++1 25
++1 25
++1 35
++2 5
++4 55
+cob=(2)
+cfi=(2)
+cfn=(474)
+calls=4 0 
+* 88
+cob=(1)
+cfi=(1)
+cfn=(294)
+calls=1 0 
+* 866
+* 9
+* 10
++69 15
++3 65
+cfi=(17) /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/library/base64.c
+cfn=(490) mbedtls_base64_decode
+calls=5 146 
+* 433227
+* 5
++2 10
++3 20
+cob=(2)
+cfi=(2)
+cfn=(496)
+calls=4 0 
+* 1152
+cob=(1)
+cfi=(1)
+cfn=(294)
+calls=1 0 
+* 1115
+* 9
+* 15
++4 60
+cfi=(17)
+cfn=(490)
+calls=5 146 
+* 726863
+* 15
++8 10
++56 15
++1 15
++2 5
++1 25
+
+fn=(612)
+49 40
++1 41039
++1 30
+
+fl=(24)
+fn=(632)
+155 14
++1 2
++1 4
+
+fn=(560)
+142 28
++1 4
++1 8
+
+fl=(17)
+fn=(490)
+146 70
++6 50
++3 12216
++1 122160
++7 36648
++3 48864
++1 48824
+-1 24412
++1 1316
++3 72168
++4 23680
++3 71094
++3 189440
++3 142044
++3 23680
+-18 376
++3 188
+-19 48904
++37 20
++10 190
++1 20
++2 35
++2 15
++1 10
++3 30
++2 72168
++3 59200
++1 76960
++2 17760
++2 1480
++1 14800
++1 14768
++1 11810
+-10 188
+-3 24442
++17 35
++2 5
++1 20
+
+fl=(43)
+fn=(1212)
+387 3
++1 12
+
+ob=(1)
+fl=(1)
+fn=(102)
+0 8
+cfn=(30)
+calls=1 0 
+0 18
+0 84
+cfn=(96)
+calls=1 0 
+0 13
+0 82
+cfn=(96)
+calls=2 0 
+0 32
+0 163
+cfn=(32)
+calls=1 0 
+0 10
+0 10
+
+fn=(118)
+0 36
+cfn=(120)
+calls=4 0 
+0 2887
+0 35
+
+fn=(294)
+0 825
+cfn=(296) _dl_fixup
+calls=33 0 
+0 27121
+0 495
+
+fn=(6)
+0 438
+cfn=(8) __GI___tunables_init
+calls=1 0 
+0 16143
+0 2
+cfn=(10) brk
+calls=1 0 
+0 11
+0 25
+cfn=(14)
+calls=1 0 
+0 16
+0 4
+cfn=(14)
+calls=1 0 
+0 18
+0 6
+cfn=(14)
+calls=1 0 
+0 18
+0 6
+cfn=(14)
+calls=1 0 
+0 18
+0 6
+cfn=(16)
+calls=1 0 
+0 16
+0 3
+cfn=(18)
+calls=1 0 
+0 17
+0 11
+cfn=(20)
+calls=1 0 
+0 110372
+0 33
+cfn=(12)
+calls=1 0 
+0 85
+0 32
+
+fn=(8)
+0 16143
+
+fn=(26)
+0 48
+cfn=(16)
+calls=3 0 
+0 66
+0 45
+cfn=(28)
+calls=3 0 
+0 144
+0 45
+cfn=(32)
+calls=3 0 
+0 41
+0 199
+cfn=(16)
+calls=2 0 
+0 68
+0 63
+cfn=(50)
+calls=2 0 
+0 32
+0 185
+cfn=(30)
+calls=2 0 
+0 36
+0 8
+
+fn=(60)
+0 218
+
+fn=(24)
+0 36
+
+fn=(28)
+0 64
+cfn=(30)
+calls=8 0 
+0 210
+
+fn=(30)
+0 279
+cfn=(92)
+calls=1 0 
+0 35
+0 94
+
+fn=(226) call_init.part.0
+0 80
+cob=(2)
+cfi=(2)
+cfn=(238) _init
+calls=1 0 
+0 201
+cob=(3)
+cfi=(3)
+cfn=(228)
+calls=1 0 
+0 6
+0 34
+cob=(2)
+cfi=(2)
+cfn=(248) init_cacheinfo
+calls=1 0 
+0 1729
+cob=(4)
+cfi=(4)
+cfn=(232)
+calls=1 0 
+0 17
+0 30
+
+fn=(296)
+0 1716
+cfn=(134)
+calls=33 0 
+0 24430
+0 831
+cob=(2)
+cfi=(2)
+cfn=(162)
+calls=1 0 
+0 77
+cob=(2)
+cfi=(2)
+cfn=(148)
+calls=1 0 
+0 16
+cob=(2)
+cfi=(2)
+cfn=(172)
+calls=1 0 
+0 13
+cob=(2)
+cfi=(2)
+cfn=(194)
+calls=1 0 
+0 8
+cob=(2)
+cfi=(2)
+cfn=(462) strstr
+calls=1 0 
+0 6
+cob=(2)
+cfi=(2)
+cfn=(178)
+calls=1 0 
+0 18
+0 6
+
+fn=(1556) _dl_fini
+0 23
+cfn=(36)
+calls=1 0 
+0 2
+0 81
+cfn=(1558) _dl_sort_fini
+calls=1 0 
+0 235
+0 2
+cfn=(38)
+calls=1 0 
+0 2
+0 74
+cob=(4)
+cfi=(4)
+cfn=(1580)
+calls=1 0 
+0 83
+cob=(5)
+cfi=(5)
+cfn=(1560) 0x000000000000f1b0
+calls=1 0 
+0 83
+0 18
+cob=(3)
+cfi=(3)
+cfn=(1594)
+calls=1 0 
+0 3
+cob=(3)
+cfi=(3)
+cfn=(1578)
+calls=1 0 
+0 3
+0 64
+
+fn=(94)
+0 30
+
+fn=(104)
+0 28
+cfn=(72)
+calls=2 0 
+0 4461
+0 6
+
+fn=(130) allocate_dtv
+0 9
+cfn=(28)
+calls=1 0 
+0 26
+0 10
+
+fn=(138) check_match
+0 3159
+cfn=(40)
+calls=53 0 
+0 2140
+0 3100
+cfn=(40)
+calls=118 0 
+0 6684
+0 354
+
+fn=(212)
+0 20
+
+fn=(40)
+0 14764
+
+fn=(56)
+0 2
+
+fn=(82)
+0 42
+cfn=(84) open
+calls=2 0 
+0 32
+0 26
+cfn=(86)
+calls=2 0 
+0 12
+0 298
+
+fn=(136)
+0 17050
+cfn=(74)
+calls=94 0 
+0 7050
+0 14578
+cfn=(138)
+calls=120 0 
+0 15437
+0 2961
+
+fn=(216)
+0 1
+
+fn=(220)
+0 5
+
+fn=(1558)
+0 29
+cfn=(96)
+calls=1 0 
+0 13
+0 42
+cfn=(96)
+calls=2 0 
+0 32
+0 119
+
+fn=(4)
+0 92
+
+fn=(92)
+0 243
+
+fn=(110)
+0 872
+cfn=(111) _dl_cache_libcmp'2
+calls=2 0 
+0 14
+0 20
+
+fn=(111)
+0 14
+
+fn=(210)
+0 68
+cfn=(94)
+calls=4 0 
+0 20
+0 16
+
+fn=(10)
+0 11
+
+fn=(108)
+0 11
+cfn=(84)
+calls=1 0 
+0 16
+0 7
+cfn=(90)
+calls=1 0 
+0 9
+0 8
+cfn=(98)
+calls=1 0 
+0 6
+0 13
+cfn=(92)
+calls=1 0 
+0 35
+0 2
+
+fn=(214)
+0 76
+cfn=(50)
+calls=1 0 
+0 12
+0 4
+cfn=(96)
+calls=1 0 
+0 33
+0 20
+
+fn=(224)
+0 22
+
+ob=(5)
+fl=(43)
+fn=(1212)
+398 1
++2 2
+
+fn=(1214)
+437 3
++1 6
++7 1
++2 2
+
+fn=(1216)
+452 3
++1 6
++5 2
++5 2
+
+fn=(1210)
+405 3
++1 5
++7 1
++2 2
+
+fn=(1276)
+468 3
++1 5
++5 2
++5 2
+
+fl=(12)
+fn=(906) entropy_update
+186 22
++3 4
++1 4
++1 2
++2 4
++3 6
+cfi=(13)
+cfn=(908) mbedtls_sha512_ret
+calls=1 387 
+* 21008
+* 3
++6 2
++1 1
++3 2
++1 2
++8 4
+-9 2
++1 2
++8 4
++1 2
+-1 3
+cfi=(13)
+cfn=(910)
+calls=1 -97 
+* 41
+* 3
++4 4
++1 14
+cfi=(13)
+cfn=(912)
+calls=2 +60 
+* 125
+* 6
++2 14
+cfi=(13)
+cfn=(912)
+calls=2 +58 
+* 119
+* 4
++13 8
+cfn=(922) mbedtls_zeroize
+calls=2 63 
+* 1182
++2 2
++1 10
+
+fn=(886) entropy_gather_internal
+264 7
++1 1
++4 4
++6 2
++2 24
++1 1
++2 1
++1 26
+cfi=(31)
+cfn=(888)
+calls=1 152 
+* 1795
+-1 1
++1 26
+cfi=(31)
+cfn=(924)
+calls=1 -67 
+* 37
+* 6
++9 6
++2 14
+cfn=(906)
+calls=2 186 
+* 22609
+* 6
++3 44
+-20 14
++24 2
++3 1
++1 4
+cfn=(922)
+calls=1 63 
+* 1167
++2 1
++1 5
+
+fn=(1548)
+127 4
++8 4
+cfi=(13)
+cfn=(918)
+calls=1 -34 
+* 1972
++7 2
++1 5
+cfn=(922)
+calls=1 -80 
+* 7215
++1 2
++1 3
+
+fn=(884)
+331 9
++1 1
++1 2
++3 2
++25 5
++6 3
+cfn=(886)
+calls=1 264 
+* 25804
+* 3
++3 1
++1 2
++1 44
+-1 14
++4 2
++2 5
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=1 0 
+* 11
+* 1
++8 6
+cfi=(13)
+cfn=(916)
+calls=1 -45 
+* 9757
+* 3
++6 4
+cfi=(13)
+cfn=(918)
+calls=1 101 
+* 1972
++1 4
+cfi=(13)
+cfn=(310)
+calls=1 96 
+* 40
++1 5
+cfi=(13)
+cfn=(910)
+calls=1 118 
+* 41
+* 3
++2 7
+cfi=(13)
+cfn=(912)
+calls=1 280 
+* 56
+* 3
++7 6
+cfi=(13)
+cfn=(908)
+calls=1 -15 
+* 11920
+* 3
++26 2
++1 20
+-1 14
++3 6
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=1 0 
+* 11
+* 1
++2 2
++3 4
+cfn=(922)
+calls=1 63 
+* 591
++7 1
++1 5
+
+fn=(308)
+70 4
++1 2
++1 6
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=1 -72 
+* 69
+* 1
++6 2
++2 4
+cfi=(13)
+cfn=(310)
+calls=1 +16 
+* 40
++18 7
+cfn=(312) mbedtls_entropy_add_source
+calls=1 +52 
+* 65
++5 7
+cfn=(312)
+calls=1 +47 
+* 65
++21 3
+
+fn=(922)
+63 20
++1 10120
++1 15
+
+fn=(312)
+150 14
++1 2
++7 6
++1 4
++6 22
++1 22
++1 22
++1 22
++2 10
++8 2
++1 4
+
+fl=(13)
+fn=(912)
+280 1242
++5 414
++3 828
++1 828
++2 1242
++2 828
++3 750
++2 558
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=62 0 
+* 681
+* 62
++2 372
+cfn=(914) mbedtls_internal_sha512_process
+calls=62 -97 
+* 563580
+* 186
++3 124
++1 124
++1 62
++3 62
++2 365
+cfn=(914)
+calls=73 203 
+* 663570
+* 219
++3 73
++1 73
+-6 560
++9 414
++1 999
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=111 0 
+* 1452
+* 111
++2 207
++1 414
+
+fn=(920) mbedtls_zeroize
+60 56
++1 27328
++1 42
+
+fn=(1378)
+110 15
++1 168
++1 12
+
+fn=(914)
+203 1080
++24 270
++2 174960
+-2 6750
++5 135
++2 198720
++1 155520
+-1 8640
++1 43200
+-1 25920
+-2 26190
++6 405
++1 405
++1 405
++1 405
++1 405
++1 405
++1 405
++1 405
++1 135
++4 69120
++1 8505
+-1 2430
++1 61560
++1 17010
+-1 1485
++1 54000
++1 25515
+-1 540
++1 7155
++1 405
+-1 38880
++1 40770
++1 1350
+-1 30375
++1 48330
++1 2295
+-1 21870
++1 55890
++1 3240
+-1 13365
++1 63450
++2 270
+-2 4860
++2 2430
++2 810
++1 810
++1 810
++1 810
++1 810
++1 810
++1 810
++1 810
++2 135
++1 675
+
+fn=(310)
+96 56
++1 70
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=14 -97 
+* 434
+* 14
++1 42
+
+fn=(908)
+387 20
++4 6
+cfn=(310)
+calls=2 96 
+* 94
++2 10
+cfn=(910)
+calls=2 118 
+* 82
+* 6
++3 12
+cfn=(912)
+calls=2 280 
+* 9193
+* 6
++3 10
+cfn=(916)
+calls=2 -59 
+* 19521
+* 4
++3 2
++1 6
+cfn=(918)
+calls=2 101 
+* 3944
++2 2
++1 10
+
+fn=(916)
+340 408
++6 204
++1 153
+-1 102
++2 204
++2 1173
++1 1173
++2 204
++1 255
++2 35
+cfn=(912)
+calls=7 -76 
+* 64396
+-2 44
++2 220
+cfn=(912)
+calls=44 -76 
+* 2611
+* 153
++3 306
+cfn=(912)
+calls=51 -79 
+* 467313
+* 153
++3 2703
++1 2754
++1 2754
++1 2754
++1 2754
++1 2754
++2 204
++2 216
++1 216
++3 4
++1 12
+-1 47
++1 243
+
+fn=(918)
+101 56
++1 28
++3 56
+cfn=(920)
+calls=14 -45 
+* 27426
+* 14
++1 28
+
+fn=(910)
+118 204
++1 102
++1 102
++2 102
++3 15
++1 15
++1 15
++1 15
++1 15
++1 15
++1 15
++1 20
++5 138
++1 138
++1 138
++1 138
++1 138
++1 138
++1 138
++1 138
++3 138
++2 46
++1 92
+-3 15
++2 5
++1 10
+
+fl=(19)
+fn=(514)
+90 24
++3 28
++4 20
++1 12
+-1 8
++5 36
++2 28
+cfi=(18)
+cfn=(504)
+calls=4 -47 
+* 156
+* 12
++3 16
++1 28
++2 4
++1 8
+
+fn=(608)
+632 36
++5 28
++4 20
++2 24
+cfi=(18)
+cfn=(548)
+calls=4 224 
+* 495
+* 12
++3 12
++1 12
++1 16
++2 24
++2 4
++1 20
+
+fn=(520)
+661 32
++3 16
++3 24
+cfi=(20)
+cfn=(522)
+calls=4 411 
+* 780
+* 12
++4 16
++24 20
++1 8
+-1 8
++5 4
++1 8
+
+fn=(528) x509_get_attr_type_value
+359 216
++6 144
+cfi=(18)
+cfn=(502)
+calls=24 115 
+* 1728
+* 72
++4 168
++4 48
++1 144
++2 168
+cfi=(18)
+cfn=(502)
+calls=24 115 
+* 1728
+* 72
++3 96
++1 168
++2 168
++4 240
++1 60
+-1 40
++1 100
++6 72
++1 216
++2 168
+cfi=(18)
+cfn=(504)
+calls=24 57 
+* 936
+* 72
++3 96
++1 168
++2 48
++2 24
++1 120
+
+fn=(516)
+135 56
++3 48
+cfi=(18)
+cfn=(518)
+calls=8 294 
+* 2618
+* 24
++3 8
++1 16
+
+fn=(526)
+432 72
++11 48
+cfi=(18)
+cfn=(502)
+calls=8 115 
+* 576
+* 96
+cfi=(18)
+cfn=(502)
+calls=16 115 
+* 1152
+* 72
++4 120
++4 144
+cfn=(528)
+calls=24 -92 
+* 7280
+* 72
++3 96
++1 24
++16 96
++1 16
++2 48
+cob=(2)
+cfi=(2)
+cfn=(496)
+calls=16 0 
+* 3856
+* 16
+* 48
++2 64
++3 48
+-36 16
++38 40
+
+fn=(532)
+603 72
++5 56
++4 32
++2 16
++1 16
++7 40
++1 48
+cfi=(18)
+cfn=(504)
+calls=8 57 
+* 312
+* 8
++2 16
++3 48
+cfn=(534) x509_parse_time
+calls=8 -90 
+* 5456
++1 40
+
+fn=(538) x509_date_is_valid
+500 24
++1 8
++3 64
++1 64
++1 64
++1 64
++2 96
++3 2
++1 2
++2 2
++1 2
++2 20
++1 52
+-1 8
++4 4
++1 4
++4 64
++2 8
++1 16
+
+fn=(536) x509_parse_int
+484 240
++1 96
++2 48
++2 960
++3 864
++1 1248
+-6 384
++9 48
++1 96
+
+fn=(534)
+538 56
++6 32
++2 32
++5 48
+cfn=(536)
+calls=8 -67 
+* 664
+* 24
++1 16
++2 32
++1 40
++2 40
++3 48
+cfn=(536)
+calls=8 -76 
+* 664
+* 24
++1 48
+cfn=(536)
+calls=8 -77 
+* 664
+* 24
++1 48
+cfn=(536)
+calls=8 -78 
+* 664
+* 24
++1 48
+cfn=(536)
+calls=8 -79 
+* 664
+* 24
++5 16
++2 48
+cfn=(536)
+calls=8 -86 
+* 664
+* 24
++1 8
++8 64
++2 40
++1 8
++6 16
++3 24
+cfn=(538)
+calls=8 -91 
+* 568
+* 24
++2 8
++1 16
+
+fn=(598)
+709 40
++4 16
++3 24
++2 36
+cfi=(18)
+cfn=(502)
+calls=4 115 
+* 351
+* 12
++4 16
++1 24
++10 24
+cfi=(18)
+cfn=(502)
+calls=4 115 
+* 351
+* 12
++4 24
++4 4
++1 20
+
+fl=(5)
+fn=(1572) 0x000000000000f120
+0 8
+
+fn=(270) 0x000000000000f1f0
+0 17
+
+fn=(1560)
+0 8
+cob=(2)
+cfi=(2)
+cfn=(1566)
+calls=1 0 
+0 63
+0 1
+cfn=(1572)
+calls=1 0 
+0 8
+0 3
+
+fn=(712)
+0 2354
+
+fn=(264) __libc_csu_init
+0 15
+cob=(3)
+cfi=(3)
+cfn=(266)
+calls=1 0 
+0 6
+0 8
+cfn=(270)
+calls=1 0 
+0 17
+0 11
+
+fn=(256)
+0 11
+cob=(2)
+cfi=(2)
+cfn=(258) (below main)
+calls=1 0 
+0 2627155854
+
+fl=(11)
+fn=(550)
+79 15
++1 31
++3 8
++4 2
++12 10
+
+fn=(552)
+105 25
++1 40
++3 15
+cfi=(22)
+cfn=(624)
+calls=1 272 
+* 426
+cfi=(22)
+cfn=(554)
+calls=4 +47 
+* 1394
+* 35
++3 15
++2 5
++1 10
+
+fn=(1308)
+260 9
++1 6
++1 5
+cfn=(1310) pk_hashlen_helper
+calls=1 -98 
+* 52
+-1 2
++4 5
++3 13
+cfi=(22)
+cfn=(1312)
+calls=1 106 
+* 74233576
+* 1
++2 2
+
+fn=(1310)
+164 5
++3 4
++3 3
+cfi=(35)
+cfn=(1280)
+calls=1 -29 
+* 19
+* 3
++3 3
+cfi=(35)
+cfn=(1302)
+calls=1 455 
+* 9
+* 3
++1 1
++1 2
+
+fn=(1150)
+152 5
++2 6
++3 6
+cfi=(22)
+cfn=(1152)
+calls=1 -93 
+* 9
++1 2
+
+fn=(1522) mbedtls_zeroize
+46 20
++1 760
++1 15
+
+fn=(306)
+54 3
++1 2
++3 2
++1 3
++1 2
+
+fn=(1516)
+66 20
++1 30
++3 35
+cfi=(22)
+cfn=(1526)
+calls=1 282 
+* 2973
+cfi=(22)
+cfn=(1518)
+calls=4 +96 
+* 8580
++2 20
+cfn=(1522)
+calls=5 -26 
+* 795
+* 5
++1 10
+
+fl=(9)
+fn=(1462)
+138 5
++1 1
++2 2
+cob=(2)
+cfi=(2)
+cfn=(802)
+calls=1 0 
+* 3
+* 1
+* 2
++1 1
++2 2
++2 1
++7 3
++1 1
++2 4
++28 2
++6 4
++34 3
+cob=(2)
+cfi=(2)
+cfn=(496)
+calls=1 0 
+* 258
+* 1
+* 1
++1 2
++6 2
++1 4
++6 3
++4 7
+cob=(2)
+cfi=(2)
+cfn=(426)
+calls=1 0 
+* 29
+* 1
+
+ob=(1)
+fl=(1)
+fn=(224)
+0 38
+cfn=(226)
+calls=3 0 
+0 2021
+0 19
+cfn=(226)
+calls=1 0 
+0 76
+0 1
+
+ob=(5)
+fl=(9)
+fn=(1462)
+248 4
++9 4
++17 1
++8 1
++1 2
+
+fn=(302)
+47 4
++1 5
+cob=(2)
+cfi=(2)
+cfn=(298)
+calls=1 -48 
+* 11
+* 1
++2 2
++1 2
++5 3
+
+fn=(1544)
+302 4
++3 3
++2 1
+
+ob=(1)
+fl=(1)
+fn=(78)
+0 13
+cfn=(76)
+calls=1 0 
+0 47
+0 11
+cfn=(80)
+calls=1 0 
+0 87
+
+fn=(128)
+0 8
+cfn=(30)
+calls=1 0 
+0 18
+0 308
+cfn=(130)
+calls=1 0 
+0 45
+0 2
+
+ob=(5)
+fl=(9)
+fn=(1544)
+309 2
++1 3
++2 4
+cfi=(8)
+cfn=(1028)
+calls=1 7418 
+* 1416
++3 4
+cob=(2)
+cfi=(2)
+cfn=(618)
+calls=1 0 
+* 11
+* 1
++3 3
+cob=(2)
+cfi=(2)
+cfn=(618)
+calls=1 0 
+* 80
+* 1
+-11 4
++17 2
++1 3
+
+ob=(1)
+fl=(1)
+fn=(128)
+0 5
+
+fn=(84)
+0 48
+
+ob=(2)
+fl=(2)
+fn=(322) fopen@@GLIBC_2.2.5
+0 4
+cfn=(324) __fopen_internal
+calls=2 0 
+0 61201
+
+fn=(402) ftell
+0 22
+cfn=(376) _IO_seekoff_unlocked
+calls=1 0 
+0 63
+0 21
+
+fn=(422) _itoa_word
+0 641104
+
+fn=(484)
+0 541
+
+fn=(728)
+0 70
+cfn=(484)
+calls=10 0 
+0 158
+0 10
+0 330
+cfn=(414) _IO_file_xsputn@@GLIBC_2.2.5
+calls=10 0 
+0 983
+0 310
+cfn=(732) __overflow
+calls=10 0 
+0 1690
+0 20
+
+fn=(776) fclose@@GLIBC_2.2.5
+0 46
+cfn=(788) _IO_file_finish@@GLIBC_2.2.5
+calls=2 0 
+0 54
+0 26
+cfn=(618)
+calls=2 0 
+0 160
+0 12
+cfn=(778) _IO_un_link
+calls=2 0 
+0 165
+0 32
+cfn=(782) _IO_file_close_it@@GLIBC_2.2.5
+calls=2 0 
+0 443
+0 14
+
+fn=(788)
+0 24
+cfn=(790) _IO_default_finish
+calls=2 0 
+0 30
+
+fn=(824) qsort_r
+0 110
+cfn=(826) msort_with_tmp.part.0
+calls=2 0 
+0 2344
+0 4
+cfn=(618)
+calls=2 0 
+0 22
+0 18
+
+fn=(864) freeaddrinfo
+0 10
+cfn=(618)
+calls=1 0 
+0 11
+0 3
+cfn=(618)
+calls=1 0 
+0 11
+0 4
+cfn=(618)
+calls=2 0 
+0 160
+0 10
+
+fn=(160)
+0 8
+
+fn=(172)
+0 26
+
+fn=(186)
+0 9
+
+fn=(244) __strrchr_avx2
+0 27
+
+fn=(278) __sigsetjmp
+0 18
+cfn=(280) __sigjmp_save
+calls=1 0 
+0 8
+
+fn=(176)
+0 9
+
+fn=(200)
+0 6
+
+fn=(358) _IO_link_in
+0 208
+
+fn=(374)
+0 44
+cfn=(376)
+calls=2 0 
+0 634
+0 34
+
+fn=(410) vfprintf
+0 180865
+cfn=(412) __strchrnul_avx2
+calls=5024 0 
+0 112009
+0 190912
+cfn=(414)
+calls=5024 0 
+0 582880
+0 551190
+cfn=(412)
+calls=7163 0 
+0 151149
+0 100282
+cfn=(414)
+calls=7163 0 
+0 1227132
+0 169777
+cfn=(422)
+calls=7162 0 
+0 641104
+0 428324
+cfn=(414)
+calls=7162 0 
+0 698892
+0 71642
+cfn=(414)
+calls=1 0 
+0 247
+0 222024
+cfn=(484)
+calls=1 0 
+0 23
+0 1
+0 71625
+
+fn=(760) gaih_inet.constprop.7
+0 126
+cfn=(326) malloc
+calls=2 0 
+0 618
+0 94
+cfn=(618)
+calls=1 0 
+0 11
+0 2
+cfn=(618)
+calls=1 0 
+0 11
+0 43
+
+fn=(772) _IO_file_underflow@@GLIBC_2.2.5
+0 63
+cfn=(774) _IO_switch_to_get_mode
+calls=3 0 
+0 72
+0 48
+cfn=(394) _IO_file_read
+calls=3 0 
+0 32
+0 52
+cfn=(380) _IO_doallocbuf
+calls=1 0 
+0 518
+0 2
+
+fn=(778)
+0 10
+cfn=(780) __GI__IO_un_link.part.1
+calls=2 0 
+0 159
+0 2
+
+fn=(780)
+0 159
+
+fn=(802)
+0 12
+
+fn=(826)
+0 109
+cfn=(426)
+calls=2 0 
+0 31
+0 38
+cfn=(828) in6aicmp
+calls=3 0 
+0 81
+0 88
+cfn=(426)
+calls=1 0 
+0 12
+0 5
+cfn=(827) msort_with_tmp.part.0'2
+calls=1 0 
+0 275
+0 3
+cfn=(827)
+calls=1 0 
+0 135
+0 17
+cfn=(832) rfc3484_sort
+calls=1 0 
+0 1548
+0 2
+
+fn=(827)
+0 168
+cfn=(426)
+calls=3 0 
+0 30
+0 42
+cfn=(828)
+calls=3 0 
+0 81
+0 88
+cfn=(827)
+calls=1 0 
+0 135
+0 1
+
+fn=(828)
+0 24
+cfn=(474)
+calls=6 0 
+0 132
+0 6
+
+fn=(150)
+0 6
+
+fn=(152)
+0 32
+
+fn=(202)
+0 9
+
+fn=(248)
+0 59
+cfn=(250) handle_intel.constprop.1
+calls=1 0 
+0 456
+0 3
+cfn=(250)
+calls=1 0 
+0 500
+0 3
+cfn=(250)
+calls=1 0 
+0 526
+0 182
+
+fn=(192)
+0 8
+
+fn=(194)
+0 16
+
+fn=(342) _int_malloc
+0 1923834
+cfn=(336) malloc_consolidate
+calls=2 0 
+0 1842
+0 327491
+cfn=(344) sysmalloc
+calls=2 0 
+0 341
+0 30532
+
+fn=(378) _IO_file_seekoff@@GLIBC_2.2.5
+0 73
+cfn=(384) _IO_file_stat
+calls=1 0 
+0 13
+0 52
+cfn=(380)
+calls=1 0 
+0 301
+0 63
+cfn=(390) _IO_file_seek
+calls=2 0 
+0 18
+0 23
+cfn=(394)
+calls=1 0 
+0 14
+0 66
+
+fn=(382) _IO_file_doallocate
+0 66
+cfn=(384)
+calls=3 0 
+0 39
+0 36
+cfn=(326)
+calls=3 0 
+0 807
+0 24
+cfn=(388) _IO_setb
+calls=3 0 
+0 54
+0 39
+
+fn=(392) lseek
+0 14
+
+fn=(432) mmap
+0 35
+
+fn=(438) strtol
+0 4
+cfn=(440) ____strtol_l_internal
+calls=1 0 
+0 173
+
+fn=(618)
+0 534536
+cfn=(620) _int_free
+calls=24286 0 
+0 2165983
+0 17
+cfn=(1498) munmap_chunk
+calls=1 0 
+0 31
+0 89
+
+fn=(746) sigaction
+0 4
+cfn=(748) __libc_sigaction
+calls=1 0 
+0 75
+
+fn=(754) getaddrinfo
+0 53
+cfn=(760)
+calls=1 0 
+0 905
+0 57
+cfn=(822) qsort
+calls=1 0 
+0 776
+0 27
+cfn=(820) connect
+calls=1 0 
+0 10
+0 5
+cfn=(820)
+calls=1 0 
+0 10
+0 4
+cfn=(820)
+calls=1 0 
+0 10
+0 55
+cfn=(794) socket
+calls=1 0 
+0 5
+0 15
+cfn=(756) strtoul
+calls=1 0 
+0 162
+0 14
+cfn=(798) getsockname
+calls=2 0 
+0 10
+0 94
+cfn=(474)
+calls=5 0 
+0 114
+0 5
+0 54
+cfn=(838) __free_in6ai
+calls=1 0 
+0 9
+0 37
+cfn=(824)
+calls=1 0 
+0 1724
+0 28
+cfn=(762) gaiconf_init
+calls=1 0 
+0 14965
+0 7
+cfn=(792) __check_pf
+calls=1 0 
+0 1287
+0 31
+
+fn=(768) getdelim
+0 2311
+cfn=(326)
+calls=1 0 
+0 284
+0 1178
+cfn=(426)
+calls=65 0 
+0 1009
+0 520
+cfn=(478) __memchr_avx2
+calls=65 0 
+0 1836
+0 65
+0 1049
+cfn=(770) __underflow
+calls=2 0 
+0 763
+0 8
+
+fn=(770)
+0 92
+cfn=(772)
+calls=3 0 
+0 787
+0 8
+
+fn=(784) _IO_unsave_markers
+0 10
+
+fn=(792)
+0 29
+cfn=(794)
+calls=1 0 
+0 5
+0 14
+cfn=(796) bind
+calls=1 0 
+0 5
+0 39
+cfn=(798)
+calls=1 0 
+0 5
+0 12
+cfn=(802)
+calls=1 0 
+0 3
+0 1
+0 23
+cfn=(804) sendto
+calls=1 0 
+0 11
+0 57
+cfn=(806) recvmsg
+calls=3 0 
+0 30
+0 18
+cfn=(808) __netlink_assert_response
+calls=3 0 
+0 69
+0 454
+cfn=(814) __nscd_get_nl_timestamp
+calls=1 0 
+0 174
+0 49
+cfn=(810) realloc
+calls=1 0 
+0 252
+0 37
+
+fn=(794)
+0 20
+
+fn=(818) open_socket
+0 18
+cfn=(794)
+calls=1 0 
+0 5
+0 19
+cfn=(820)
+calls=1 0 
+0 14
+0 22
+
+fn=(974) __memset_avx2_erms
+0 89550
+
+fn=(1058) getsockopt
+0 6
+
+fn=(190)
+0 6
+
+fn=(252) intel_check_word.isra.0
+0 1305
+
+fn=(1512)
+0 18
+
+fn=(144)
+0 8
+
+fn=(180)
+0 16
+
+fn=(184)
+0 6
+
+fn=(328) malloc_hook_ini
+0 8
+cfn=(330) ptmalloc_init.part.2
+calls=1 0 
+0 59401
+0 3
+cfn=(327) malloc'2
+calls=1 0 
+0 689
+
+fn=(330)
+0 20
+cfn=(336)
+calls=1 0 
+0 650
+0 4
+cob=(1)
+cfi=(1)
+cfn=(14)
+calls=1 0 
+0 19
+0 4
+cob=(1)
+cfi=(1)
+cfn=(14)
+calls=1 0 
+0 18
+0 4
+cob=(1)
+cfi=(1)
+cfn=(14)
+calls=1 0 
+0 19
+0 4
+cob=(1)
+cfi=(1)
+cfn=(14)
+calls=1 0 
+0 18
+0 4
+cob=(1)
+cfi=(1)
+cfn=(14)
+calls=1 0 
+0 18
+0 4
+cob=(1)
+cfi=(1)
+cfn=(14)
+calls=1 0 
+0 19
+0 4
+cob=(1)
+cfi=(1)
+cfn=(14)
+calls=1 0 
+0 18
+0 4
+cob=(1)
+cfi=(1)
+cfn=(14)
+calls=1 0 
+0 18
+0 4
+cob=(1)
+cfi=(1)
+cfn=(14)
+calls=1 0 
+0 18
+0 4
+cob=(1)
+cfi=(1)
+cfn=(14)
+calls=1 0 
+0 18
+0 4
+cob=(1)
+cfi=(1)
+cfn=(14)
+calls=1 0 
+0 18
+0 20
+cfn=(332) _dl_addr
+calls=1 0 
+0 58460
+0 6
+
+fn=(340) tcache_init.part.6
+0 14
+cfn=(342)
+calls=1 0 
+0 380
+0 93
+
+fn=(346) __default_morecore
+0 4
+cfn=(348) sbrk
+calls=2 0 
+0 72
+0 10
+
+fn=(360) _IO_file_fopen@@GLIBC_2.2.5
+0 118
+cfn=(362) _IO_file_open
+calls=2 0 
+0 125
+0 12
+cfn=(366)
+calls=2 0 
+0 91
+0 27
+
+fn=(364) open
+0 27
+
+fn=(366)
+0 3925
+cfn=(470) __strchr_avx2
+calls=5 0 
+0 117
+0 5
+0 285
+cfn=(472) critical_factorization
+calls=5 0 
+0 3004
+0 30
+cfn=(474)
+calls=5 0 
+0 114
+0 46545
+cfn=(478)
+calls=121 0 
+0 3554
+0 121
+0 45
+cfn=(478)
+calls=5 0 
+0 136
+0 5
+0 1406
+
+fn=(426)
+0 24646729
+
+fn=(442) new_do_write
+0 103608
+cfn=(444) _IO_file_write@@GLIBC_2.2.5
+calls=4317 0 
+0 198582
+0 133827
+
+fn=(472)
+0 3004
+
+fn=(478)
+0 5526
+
+fn=(756)
+0 4
+cfn=(758) ____strtoul_l_internal
+calls=1 0 
+0 158
+
+fn=(766) getline
+0 198
+cfn=(768)
+calls=66 0 
+0 9023
+
+fn=(796)
+0 10
+
+fn=(806)
+0 30
+
+fn=(810)
+0 20
+cfn=(812) realloc_hook_ini
+calls=1 0 
+0 232
+
+fn=(811) realloc'2
+0 26
+cfn=(326)
+calls=1 0 
+0 198
+
+fn=(1064) accept
+0 9
+
+fn=(156)
+0 6
+
+fn=(158)
+0 9
+
+fn=(182)
+0 16
+
+fn=(276) _setjmp
+0 2
+cfn=(278)
+calls=1 0 
+0 26
+
+fn=(280)
+0 8
+
+fn=(1480) _IO_file_xsgetn
+0 65
+cfn=(394)
+calls=1 0 
+0 14
+0 38
+cfn=(770)
+calls=1 0 
+0 124
+0 5
+cfn=(426)
+calls=1 0 
+0 293
+0 2
+
+fn=(1500) munmap
+0 5
+
+fn=(1506)
+0 10
+
+fn=(1596) _IO_cleanup
+0 9
+cfn=(1598) _IO_flush_all_lockp
+calls=1 0 
+0 103
+0 59
+cfn=(1600) _IO_file_setbuf@@GLIBC_2.2.5
+calls=1 0 
+0 83
+0 40
+
+fn=(388)
+0 102
+cfn=(618)
+calls=2 0 
+0 249
+0 10
+
+fn=(394)
+0 23
+cfn=(396)
+calls=3 0 
+0 27
+0 10
+
+fn=(396)
+0 12987
+
+fn=(418) _IO_do_write@@GLIBC_2.2.5
+0 21589
+cfn=(442)
+calls=4317 0 
+0 436017
+0 25902
+
+fn=(744) __bsd_signal.part.0
+0 86
+cfn=(746)
+calls=1 0 
+0 79
+0 10
+
+fn=(748)
+0 75
+
+fn=(798)
+0 15
+
+fn=(834) get_scope
+0 96
+
+fn=(838)
+0 9
+
+fn=(848) setsockopt
+0 6
+
+fn=(166)
+0 8
+
+fn=(170)
+0 16
+
+fn=(196)
+0 6
+
+fn=(198)
+0 8
+
+fn=(206)
+0 6
+
+fn=(208)
+0 55
+cfn=(164) _dl_vdso_vsym
+calls=1 0 
+0 17
+0 5
+
+fn=(240) __init_misc
+0 12
+cfn=(244)
+calls=1 0 
+0 27
+0 1
+0 12
+
+fn=(260) __cxa_atexit
+0 8
+cfn=(262) __new_exitfn
+calls=1 0 
+0 38
+0 14
+
+fn=(262)
+0 38
+
+fn=(1550) exit
+0 5
+cfn=(1552) __run_exit_handlers
+calls=1 0 
+0 1047
+
+fn=(1554) __call_tls_dtors
+0 11
+
+fn=(1602) _IO_default_setbuf
+0 18
+cfn=(454) _IO_file_sync@@GLIBC_2.2.5
+calls=1 0 
+0 17
+0 33
+
+fn=(1604) _Exit
+0 5
+
+fn=(168)
+0 16
+
+fn=(332)
+0 15
+cob=(1)
+cfi=(1)
+cfn=(36)
+calls=1 0 
+0 2
+0 2
+cob=(1)
+cfi=(1)
+cfn=(334)
+calls=1 0 
+0 43
+0 58383
+cob=(1)
+cfi=(1)
+cfn=(38)
+calls=1 0 
+0 2
+0 13
+
+fn=(354) _IO_old_init
+0 54
+
+fn=(384)
+0 16
+cfn=(386) _fxstat
+calls=4 0 
+0 36
+
+fn=(386)
+0 45
+
+fn=(408)
+0 110528
+cfn=(410)
+calls=5024 0 
+0 5400078
+0 25120
+
+fn=(416) _IO_file_overflow@@GLIBC_2.2.5
+0 100899
+cfn=(418)
+calls=4300 0 
+0 481492
+0 50
+cfn=(418)
+calls=10 0 
+0 1120
+0 22
+cfn=(380)
+calls=1 0 
+0 321
+0 6
+
+fn=(452)
+0 279
+cfn=(454)
+calls=9 0 
+0 1129
+0 171
+
+fn=(742) signal
+0 6
+cfn=(744)
+calls=1 0 
+0 175
+
+fn=(764) fileno
+0 6
+
+fn=(782)
+0 30
+cfn=(784)
+calls=2 0 
+0 10
+0 24
+cfn=(786) _IO_file_close
+calls=2 0 
+0 12
+0 18
+cfn=(388)
+calls=2 0 
+0 307
+0 16
+cfn=(778)
+calls=2 0 
+0 6
+0 20
+
+fn=(786)
+0 12
+
+fn=(814)
+0 27
+cfn=(816) __nscd_get_mapping
+calls=1 0 
+0 145
+0 2
+
+fn=(816)
+0 16
+cfn=(484)
+calls=1 0 
+0 15
+0 1
+0 14
+cfn=(818)
+calls=1 0 
+0 78
+0 21
+
+fn=(820)
+0 44
+
+fn=(896) uname
+0 5
+
+fn=(904) syscall
+0 11
+
+fn=(142)
+0 8
+
+fn=(146)
+0 7
+
+fn=(148)
+0 32
+
+fn=(174)
+0 8
+
+fn=(250)
+0 111
+cfn=(252)
+calls=3 0 
+0 990
+0 27
+cfn=(252)
+calls=3 0 
+0 315
+0 39
+
+fn=(1476) fread
+0 20
+cfn=(1478) _IO_sgetn
+calls=1 0 
+0 555
+0 34
+
+fn=(1566)
+0 94
+cfn=(1568) __unregister_atfork
+calls=2 0 
+0 32
+
+fn=(344)
+0 139
+cfn=(346)
+calls=1 0 
+0 61
+0 49
+cfn=(346)
+calls=1 0 
+0 25
+0 30
+cfn=(432)
+calls=1 0 
+0 35
+0 2
+
+fn=(376)
+0 74
+cfn=(378)
+calls=3 0 
+0 623
+
+fn=(412)
+0 263158
+
+fn=(444)
+0 60438
+cfn=(446)
+calls=4317 0 
+0 38853
+0 99291
+
+fn=(496)
+0 704091
+cfn=(342)
+calls=24279 0 
+0 2281411
+0 1053968
+cfn=(298)
+calls=9030 0 
+0 288837
+0 72240
+
+fn=(620)
+0 2123236
+cfn=(336)
+calls=174 0 
+0 41673
+0 1074
+
+fn=(762)
+0 19
+cfn=(322)
+calls=1 0 
+0 706
+0 5
+cfn=(764)
+calls=1 0 
+0 6
+0 4
+cfn=(386)
+calls=1 0 
+0 9
+0 279
+cfn=(766)
+calls=66 0 
+0 9221
+0 392
+cfn=(470)
+calls=65 0 
+0 1625
+0 65
+0 1707
+cfn=(618)
+calls=1 0 
+0 80
+0 2
+cfn=(776)
+calls=1 0 
+0 450
+0 347
+cfn=(618)
+calls=1 0 
+0 11
+0 5
+cfn=(618)
+calls=1 0 
+0 11
+0 5
+cfn=(618)
+calls=1 0 
+0 11
+0 5
+
+fn=(804)
+0 11
+
+fn=(858) listen
+0 5
+
+fn=(154)
+0 9
+
+fn=(188)
+0 26
+
+fn=(258)
+0 21
+cfn=(260)
+calls=1 0 
+0 60
+0 11
+cob=(5)
+cfi=(5)
+cfn=(264)
+calls=1 0 
+0 57
+0 8
+cfn=(276)
+calls=1 0 
+0 28
+0 14
+cob=(5)
+cfi=(6)
+cfn=(282)
+calls=1 70 
+0 2627154601
+0 2
+cfn=(1550)
+calls=1 0 
+0 1052
+
+fn=(298)
+0 567172
+cfn=(974)
+calls=12 0 
+0 89550
+0 943263
+
+fn=(1600)
+0 3
+cfn=(1602)
+calls=1 0 
+0 68
+0 12
+
+fn=(162)
+0 110
+cfn=(164)
+calls=2 0 
+0 34
+0 10
+
+fn=(178)
+0 36
+
+fn=(324)
+0 20
+cfn=(326)
+calls=2 0 
+0 60420
+0 22
+cfn=(352) _IO_no_init
+calls=2 0 
+0 120
+0 8
+cfn=(356) _IO_new_file_init_internal
+calls=2 0 
+0 202
+0 10
+cfn=(360)
+calls=2 0 
+0 373
+0 18
+cfn=(368) __fopen_maybe_mmap
+calls=2 0 
+0 8
+
+fn=(326)
+0 241
+cfn=(342)
+calls=9 0 
+0 2102
+0 176
+cfn=(328)
+calls=1 0 
+0 60101
+
+fn=(327)
+0 24
+cfn=(342)
+calls=1 0 
+0 147
+0 16
+cfn=(340)
+calls=1 0 
+0 487
+0 15
+
+fn=(348)
+0 21
+cfn=(350) brk
+calls=1 0 
+0 12
+0 20
+cfn=(350)
+calls=1 0 
+0 12
+0 7
+
+fn=(350)
+0 24
+
+fn=(356)
+0 16
+cfn=(358)
+calls=2 0 
+0 176
+0 10
+
+fn=(362)
+0 21
+cfn=(364)
+calls=1 0 
+0 27
+0 30
+cfn=(358)
+calls=2 0 
+0 32
+0 15
+
+fn=(368)
+0 8
+
+fn=(380)
+0 69
+cfn=(382)
+calls=3 0 
+0 1065
+0 6
+
+fn=(414)
+0 471851
+cfn=(424) __mempcpy_avx_unaligned_erms
+calls=14344 0 
+0 217671
+0 34392
+cfn=(424)
+calls=4299 0 
+0 67355
+0 306158
+cfn=(416)
+calls=4300 0 
+0 580740
+0 68808
+cfn=(420) _IO_default_xsputn
+calls=2 0 
+0 2664
+0 760495
+
+fn=(440)
+0 173
+
+fn=(446)
+0 45360
+
+fn=(474)
+0 1608
+
+fn=(732)
+0 170
+cfn=(416)
+calls=10 0 
+0 1520
+
+fn=(774)
+0 72
+
+fn=(822)
+0 2
+cfn=(824)
+calls=1 0 
+0 774
+
+fn=(832)
+0 30
+cfn=(834)
+calls=1 0 
+0 23
+0 5
+cfn=(834)
+calls=1 0 
+0 28
+0 4
+cfn=(834)
+calls=1 0 
+0 23
+0 5
+cfn=(834)
+calls=1 0 
+0 22
+0 36
+cfn=(836) match_prefix
+calls=1 0 
+0 331
+0 5
+cfn=(836)
+calls=1 0 
+0 201
+0 6
+cfn=(836)
+calls=1 0 
+0 407
+0 5
+cfn=(836)
+calls=1 0 
+0 407
+0 10
+
+fn=(836)
+0 1346
+
+fn=(140)
+0 8
+
+fn=(204)
+0 9
+
+fn=(238)
+0 70
+cfn=(164)
+calls=1 0 
+0 17
+0 9
+cfn=(164)
+calls=1 0 
+0 17
+0 7
+cfn=(240)
+calls=1 0 
+0 52
+0 1
+cfn=(246) __ctype_init
+calls=1 0 
+0 16
+0 12
+
+fn=(246)
+0 16
+
+fn=(1478)
+0 14
+cfn=(1480)
+calls=1 0 
+0 541
+
+fn=(1498)
+0 26
+cfn=(1500)
+calls=1 0 
+0 5
+
+fn=(1552)
+0 11
+cfn=(1554)
+calls=1 0 
+0 11
+0 39
+cfn=(1596)
+calls=1 0 
+0 294
+0 5
+cfn=(1604)
+calls=1 0 
+0 5
+0 8
+cob=(1)
+cfi=(1)
+cfn=(1556)
+calls=1 0 
+0 673
+0 1
+
+fn=(1568)
+0 32
+
+fn=(164)
+0 85
+
+fn=(336)
+0 43518
+cfn=(338) malloc_init_state
+calls=1 0 
+0 647
+
+fn=(338)
+0 647
+
+fn=(352)
+0 20
+cfn=(354)
+calls=2 0 
+0 54
+0 46
+
+fn=(390)
+0 4
+cfn=(392)
+calls=2 0 
+0 14
+
+fn=(420)
+0 588
+cfn=(416)
+calls=50 0 
+0 1650
+0 426
+
+fn=(424)
+0 285026
+
+fn=(454)
+0 226
+cfn=(418)
+calls=8 0 
+0 896
+0 24
+
+fn=(462)
+0 6
+
+fn=(470)
+0 1742
+
+fn=(758)
+0 158
+
+fn=(790)
+0 30
+
+fn=(808)
+0 69
+
+fn=(812)
+0 8
+cfn=(811)
+calls=1 0 
+0 224
+
+fn=(1598)
+0 103
+
+totals: 2627286231

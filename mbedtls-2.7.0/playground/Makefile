@@ -56,6 +56,30 @@ CMAKE_BINARY_DIR = /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/opt/clion/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/opt/clion/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/opt/clion/bin/cmake/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/opt/clion/bin/cmake/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -66,28 +90,6 @@ test:
 test/fast: test
 
 .PHONY : test/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/opt/clion/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/opt/clion/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -111,29 +113,27 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/opt/clion/bin/cmake/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/opt/clion/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/opt/clion/bin/cmake/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/opt/clion/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
+.PHONY : edit_cache/fast
 
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/opt/clion/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/opt/clion/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -183,6 +183,36 @@ client/fast:
 .PHONY : client/fast
 
 # Convenience name for target.
+playground/CMakeFiles/server_cc.dir/rule:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f CMakeFiles/Makefile2 playground/CMakeFiles/server_cc.dir/rule
+.PHONY : playground/CMakeFiles/server_cc.dir/rule
+
+# Convenience name for target.
+server_cc: playground/CMakeFiles/server_cc.dir/rule
+
+.PHONY : server_cc
+
+# fast build rule for target.
+server_cc/fast:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f playground/CMakeFiles/server_cc.dir/build.make playground/CMakeFiles/server_cc.dir/build
+.PHONY : server_cc/fast
+
+# Convenience name for target.
+playground/CMakeFiles/ciphersuites_list.dir/rule:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f CMakeFiles/Makefile2 playground/CMakeFiles/ciphersuites_list.dir/rule
+.PHONY : playground/CMakeFiles/ciphersuites_list.dir/rule
+
+# Convenience name for target.
+ciphersuites_list: playground/CMakeFiles/ciphersuites_list.dir/rule
+
+.PHONY : ciphersuites_list
+
+# fast build rule for target.
+ciphersuites_list/fast:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f playground/CMakeFiles/ciphersuites_list.dir/build.make playground/CMakeFiles/ciphersuites_list.dir/build
+.PHONY : ciphersuites_list/fast
+
+# Convenience name for target.
 playground/CMakeFiles/server.dir/rule:
 	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f CMakeFiles/Makefile2 playground/CMakeFiles/server.dir/rule
 .PHONY : playground/CMakeFiles/server.dir/rule
@@ -196,6 +226,21 @@ server: playground/CMakeFiles/server.dir/rule
 server/fast:
 	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f playground/CMakeFiles/server.dir/build.make playground/CMakeFiles/server.dir/build
 .PHONY : server/fast
+
+# Convenience name for target.
+playground/CMakeFiles/client_cc_lf.dir/rule:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f CMakeFiles/Makefile2 playground/CMakeFiles/client_cc_lf.dir/rule
+.PHONY : playground/CMakeFiles/client_cc_lf.dir/rule
+
+# Convenience name for target.
+client_cc_lf: playground/CMakeFiles/client_cc_lf.dir/rule
+
+.PHONY : client_cc_lf
+
+# fast build rule for target.
+client_cc_lf/fast:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f playground/CMakeFiles/client_cc_lf.dir/build.make playground/CMakeFiles/client_cc_lf.dir/build
+.PHONY : client_cc_lf/fast
 
 # Convenience name for target.
 playground/CMakeFiles/client_cc.dir/rule:
@@ -213,19 +258,46 @@ client_cc/fast:
 .PHONY : client_cc/fast
 
 # Convenience name for target.
-playground/CMakeFiles/server_cc.dir/rule:
-	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f CMakeFiles/Makefile2 playground/CMakeFiles/server_cc.dir/rule
-.PHONY : playground/CMakeFiles/server_cc.dir/rule
+playground/CMakeFiles/server_cc_lf.dir/rule:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f CMakeFiles/Makefile2 playground/CMakeFiles/server_cc_lf.dir/rule
+.PHONY : playground/CMakeFiles/server_cc_lf.dir/rule
 
 # Convenience name for target.
-server_cc: playground/CMakeFiles/server_cc.dir/rule
+server_cc_lf: playground/CMakeFiles/server_cc_lf.dir/rule
 
-.PHONY : server_cc
+.PHONY : server_cc_lf
 
 # fast build rule for target.
-server_cc/fast:
-	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f playground/CMakeFiles/server_cc.dir/build.make playground/CMakeFiles/server_cc.dir/build
-.PHONY : server_cc/fast
+server_cc_lf/fast:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f playground/CMakeFiles/server_cc_lf.dir/build.make playground/CMakeFiles/server_cc_lf.dir/build
+.PHONY : server_cc_lf/fast
+
+ciphersuites_list.o: ciphersuites_list.c.o
+
+.PHONY : ciphersuites_list.o
+
+# target to build an object file
+ciphersuites_list.c.o:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f playground/CMakeFiles/ciphersuites_list.dir/build.make playground/CMakeFiles/ciphersuites_list.dir/ciphersuites_list.c.o
+.PHONY : ciphersuites_list.c.o
+
+ciphersuites_list.i: ciphersuites_list.c.i
+
+.PHONY : ciphersuites_list.i
+
+# target to preprocess a source file
+ciphersuites_list.c.i:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f playground/CMakeFiles/ciphersuites_list.dir/build.make playground/CMakeFiles/ciphersuites_list.dir/ciphersuites_list.c.i
+.PHONY : ciphersuites_list.c.i
+
+ciphersuites_list.s: ciphersuites_list.c.s
+
+.PHONY : ciphersuites_list.s
+
+# target to generate assembly for a file
+ciphersuites_list.c.s:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f playground/CMakeFiles/ciphersuites_list.dir/build.make playground/CMakeFiles/ciphersuites_list.dir/ciphersuites_list.c.s
+.PHONY : ciphersuites_list.c.s
 
 client.o: client.c.o
 
@@ -253,6 +325,33 @@ client.s: client.c.s
 client.c.s:
 	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f playground/CMakeFiles/client.dir/build.make playground/CMakeFiles/client.dir/client.c.s
 .PHONY : client.c.s
+
+client_cc_large_file.o: client_cc_large_file.c.o
+
+.PHONY : client_cc_large_file.o
+
+# target to build an object file
+client_cc_large_file.c.o:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f playground/CMakeFiles/client_cc_lf.dir/build.make playground/CMakeFiles/client_cc_lf.dir/client_cc_large_file.c.o
+.PHONY : client_cc_large_file.c.o
+
+client_cc_large_file.i: client_cc_large_file.c.i
+
+.PHONY : client_cc_large_file.i
+
+# target to preprocess a source file
+client_cc_large_file.c.i:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f playground/CMakeFiles/client_cc_lf.dir/build.make playground/CMakeFiles/client_cc_lf.dir/client_cc_large_file.c.i
+.PHONY : client_cc_large_file.c.i
+
+client_cc_large_file.s: client_cc_large_file.c.s
+
+.PHONY : client_cc_large_file.s
+
+# target to generate assembly for a file
+client_cc_large_file.c.s:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f playground/CMakeFiles/client_cc_lf.dir/build.make playground/CMakeFiles/client_cc_lf.dir/client_cc_large_file.c.s
+.PHONY : client_cc_large_file.c.s
 
 client_cust_cipher.o: client_cust_cipher.c.o
 
@@ -308,6 +407,33 @@ server.c.s:
 	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f playground/CMakeFiles/server.dir/build.make playground/CMakeFiles/server.dir/server.c.s
 .PHONY : server.c.s
 
+server_cc_large_file.o: server_cc_large_file.c.o
+
+.PHONY : server_cc_large_file.o
+
+# target to build an object file
+server_cc_large_file.c.o:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f playground/CMakeFiles/server_cc_lf.dir/build.make playground/CMakeFiles/server_cc_lf.dir/server_cc_large_file.c.o
+.PHONY : server_cc_large_file.c.o
+
+server_cc_large_file.i: server_cc_large_file.c.i
+
+.PHONY : server_cc_large_file.i
+
+# target to preprocess a source file
+server_cc_large_file.c.i:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f playground/CMakeFiles/server_cc_lf.dir/build.make playground/CMakeFiles/server_cc_lf.dir/server_cc_large_file.c.i
+.PHONY : server_cc_large_file.c.i
+
+server_cc_large_file.s: server_cc_large_file.c.s
+
+.PHONY : server_cc_large_file.s
+
+# target to generate assembly for a file
+server_cc_large_file.c.s:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0 && $(MAKE) -f playground/CMakeFiles/server_cc_lf.dir/build.make playground/CMakeFiles/server_cc_lf.dir/server_cc_large_file.c.s
+.PHONY : server_cc_large_file.c.s
+
 server_cust_cipher.o: server_cust_cipher.c.o
 
 .PHONY : server_cust_cipher.o
@@ -341,26 +467,38 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... client"
-	@echo "... server"
-	@echo "... client_cc"
-	@echo "... test"
-	@echo "... edit_cache"
-	@echo "... rebuild_cache"
-	@echo "... install/strip"
-	@echo "... server_cc"
-	@echo "... list_install_components"
-	@echo "... install"
 	@echo "... install/local"
+	@echo "... install"
+	@echo "... client"
+	@echo "... test"
+	@echo "... install/strip"
+	@echo "... list_install_components"
+	@echo "... server_cc"
+	@echo "... ciphersuites_list"
+	@echo "... edit_cache"
+	@echo "... server"
+	@echo "... client_cc_lf"
+	@echo "... client_cc"
+	@echo "... server_cc_lf"
+	@echo "... rebuild_cache"
+	@echo "... ciphersuites_list.o"
+	@echo "... ciphersuites_list.i"
+	@echo "... ciphersuites_list.s"
 	@echo "... client.o"
 	@echo "... client.i"
 	@echo "... client.s"
+	@echo "... client_cc_large_file.o"
+	@echo "... client_cc_large_file.i"
+	@echo "... client_cc_large_file.s"
 	@echo "... client_cust_cipher.o"
 	@echo "... client_cust_cipher.i"
 	@echo "... client_cust_cipher.s"
 	@echo "... server.o"
 	@echo "... server.i"
 	@echo "... server.s"
+	@echo "... server_cc_large_file.o"
+	@echo "... server_cc_large_file.i"
+	@echo "... server_cc_large_file.s"
 	@echo "... server_cust_cipher.o"
 	@echo "... server_cust_cipher.i"
 	@echo "... server_cust_cipher.s"

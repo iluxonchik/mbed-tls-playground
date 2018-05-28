@@ -1689,6 +1689,32 @@ client/fast:
 .PHONY : client/fast
 
 #=============================================================================
+# Target rules for targets named server_cc
+
+# Build rule for target.
+server_cc: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 server_cc
+.PHONY : server_cc
+
+# fast build rule for target.
+server_cc/fast:
+	$(MAKE) -f playground/CMakeFiles/server_cc.dir/build.make playground/CMakeFiles/server_cc.dir/build
+.PHONY : server_cc/fast
+
+#=============================================================================
+# Target rules for targets named ciphersuites_list
+
+# Build rule for target.
+ciphersuites_list: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ciphersuites_list
+.PHONY : ciphersuites_list
+
+# fast build rule for target.
+ciphersuites_list/fast:
+	$(MAKE) -f playground/CMakeFiles/ciphersuites_list.dir/build.make playground/CMakeFiles/ciphersuites_list.dir/build
+.PHONY : ciphersuites_list/fast
+
+#=============================================================================
 # Target rules for targets named server
 
 # Build rule for target.
@@ -1700,6 +1726,19 @@ server: cmake_check_build_system
 server/fast:
 	$(MAKE) -f playground/CMakeFiles/server.dir/build.make playground/CMakeFiles/server.dir/build
 .PHONY : server/fast
+
+#=============================================================================
+# Target rules for targets named client_cc_lf
+
+# Build rule for target.
+client_cc_lf: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 client_cc_lf
+.PHONY : client_cc_lf
+
+# fast build rule for target.
+client_cc_lf/fast:
+	$(MAKE) -f playground/CMakeFiles/client_cc_lf.dir/build.make playground/CMakeFiles/client_cc_lf.dir/build
+.PHONY : client_cc_lf/fast
 
 #=============================================================================
 # Target rules for targets named client_cc
@@ -1715,17 +1754,17 @@ client_cc/fast:
 .PHONY : client_cc/fast
 
 #=============================================================================
-# Target rules for targets named server_cc
+# Target rules for targets named server_cc_lf
 
 # Build rule for target.
-server_cc: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 server_cc
-.PHONY : server_cc
+server_cc_lf: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 server_cc_lf
+.PHONY : server_cc_lf
 
 # fast build rule for target.
-server_cc/fast:
-	$(MAKE) -f playground/CMakeFiles/server_cc.dir/build.make playground/CMakeFiles/server_cc.dir/build
-.PHONY : server_cc/fast
+server_cc_lf/fast:
+	$(MAKE) -f playground/CMakeFiles/server_cc_lf.dir/build.make playground/CMakeFiles/server_cc_lf.dir/build
+.PHONY : server_cc_lf/fast
 
 # Help Target
 help:
@@ -1857,9 +1896,12 @@ help:
 	@echo "... test_suite_md"
 	@echo "... test_suite_pem"
 	@echo "... client"
-	@echo "... server"
-	@echo "... client_cc"
 	@echo "... server_cc"
+	@echo "... ciphersuites_list"
+	@echo "... server"
+	@echo "... client_cc_lf"
+	@echo "... client_cc"
+	@echo "... server_cc_lf"
 .PHONY : help
 
 
