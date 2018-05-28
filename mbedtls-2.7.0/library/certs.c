@@ -27,6 +27,15 @@
 
 #include "mbedtls/certs.h"
 
+
+/* [!!!] IMPORTANT: configuration NOTE !!!
+ *
+ * Go to certs.h file and configure the desired security level by uncommening the appropriate #define USE_RSA_XXXX.
+ * Only one of the USE_RSA_XXXX can be defined! The security level of the remaining algorithms (e.g. ECC) will be
+ * adjusted accordingly.
+ */
+
+
 /*
 * Here, you have a lot of options for the PSK key sizes. Set the PSK_VALUE to the one
 * that you want to use.
@@ -36,16 +45,139 @@
 *
 */
 
-#define PSK_112_BIT "52126f1e258dba64e31d1572174b"
-#define PSK_127_BIT "2b88bcc7caec33b6cf61cdf06887d683"
-#define PSK_256_BIT "71bc53a3beeaa416a4050653cec13d288e3eb692959cd0828499b702739e482c"
+#define PSK_112_BIT_RSA_2048 "52126f1e258dba64e31d1572174b"
+#define PSK_127_BIT_RSA_3072 "2b88bcc7caec33b6cf61cdf06887d683"
+#define PSK_256_BIT_RSA_15360 "71bc53a3beeaa416a4050653cec13d288e3eb692959cd0828499b702739e482c"
 
-#define PSK_VALUE PSK_256_BIT
+#define MBEDTLS_TEST_SRV_CRT_RSA_RSA_2048                              \
+"-----BEGIN CERTIFICATE-----\r\n"                                      \
+"MIIDPzCCAiegAwIBAgIJANBEZkZxdopmMA0GCSqGSIb3DQEBCwUAMDsxCzAJBgNV\r\n" \
+"BAYTAk5MMREwDwYDVQQKDAhQb2xhclNTTDEZMBcGA1UEAwwQUG9sYXJTU0wgVGVz\r\n" \
+"dCBDQTAeFw0xODAzMjcxNDEzMjFaFw0yNzA1MDQxNDEzMjFaMDQxCzAJBgNVBAYT\r\n" \
+"Ak5MMREwDwYDVQQKEwhQb2xhclNTTDESMBAGA1UEAxMJbG9jYWxob3N0MIIBIjAN\r\n" \
+"BgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwU2j3efNHdEE10lyuJmsDnjkOjxK\r\n" \
+"zzoTFtBa5M2jAIin7h5rlqdStJDvLXJ6PiSa/LY0rCT1d+AmZIycsCh9odrqjObJ\r\n" \
+"HJa8/sEEUrM21KP64bF22JDBYbRmUjaiJlOqq3ReB30Zgtsq2B+g2Q0cLUlm91sl\r\n" \
+"c0boC4pPaQy1AJDh2oIQZn2uVCuLZXmRoeJhw81ASQjuaAzxi4bSRr/QuKoRAx5/\r\n" \
+"VqgaHkQYDw+Fi9qLRF7iGMZiL8dmjfpd2H3zJ4kpAcWQDj8n8TDISg7v1t7Hxydr\r\n" \
+"xwU9esQCPJodPg/oNJhby3NLUpbYEaIsgIhpOVrTD7DeWS8Rx/fqEgEwlwIDAQAB\r\n" \
+"o00wSzAdBgNVHQ4EFgQUpQXoZLjc32APUBJNYKhkr02LQ5MwCQYDVR0TBAIwADAf\r\n" \
+"BgNVHSMEGDAWgBS0WuSls97SUva51aaVD+s+vMf9/zANBgkqhkiG9w0BAQsFAAOC\r\n" \
+"AQEAcvY0HeIT7zmweE5/xk20kvFc0Qbc9dLzdxDlGLv7kDx/9brxjCRTa0/YejuT\r\n" \
+"Pm8diFs1U6OvlzdROkbZpncW9c62mkg5zRrCo3T2E0SZx9GP8JNlo7MhiESjDsFO\r\n" \
+"hcCGCKRnjOlyX4w25hA9JkwnkayeeTWnLwXS0BoFI2liWZNOLlxaSudffD4P1Hls\r\n" \
+"vYOE0cU99bIkaZa9/aNygcjB08dUrD5AFvQO7S7gPCrpDrnuHEXi8EFlbGZfTAHy\r\n" \
+"u+ozycErFLhYhZjtKUs2d1YsK4QKlI1PVjlucfrRXaEnLbi37cKqT68EceHh6ztd\r\n" \
+"lPlhwRx+VicKsW8NHZ3k/wl3Yg==\r\n"                                     \
+"-----END CERTIFICATE-----\r\n";
+
+#define MBEDTLS_TEST_SRV_CRT_EC_RSA_2048                                \
+"-----BEGIN CERTIFICATE-----\r\n"                                       \
+"MIICHzCCAaWgAwIBAgIBCTAKBggqhkjOPQQDAjA+MQswCQYDVQQGEwJOTDERMA8G\r\n"  \
+"A1UEChMIUG9sYXJTU0wxHDAaBgNVBAMTE1BvbGFyc3NsIFRlc3QgRUMgQ0EwHhcN\r\n"  \
+"MTMwOTI0MTU1MjA0WhcNMjMwOTIyMTU1MjA0WjA0MQswCQYDVQQGEwJOTDERMA8G\r\n"  \
+"A1UEChMIUG9sYXJTU0wxEjAQBgNVBAMTCWxvY2FsaG9zdDBZMBMGByqGSM49AgEG\r\n"  \
+"CCqGSM49AwEHA0IABDfMVtl2CR5acj7HWS3/IG7ufPkGkXTQrRS192giWWKSTuUA\r\n"  \
+"2CMR/+ov0jRdXRa9iojCa3cNVc2KKg76Aci07f+jgZ0wgZowCQYDVR0TBAIwADAd\r\n"  \
+"BgNVHQ4EFgQUUGGlj9QH2deCAQzlZX+MY0anE74wbgYDVR0jBGcwZYAUnW0gJEkB\r\n"  \
+"PyvLeLUZvH4kydv7NnyhQqRAMD4xCzAJBgNVBAYTAk5MMREwDwYDVQQKEwhQb2xh\r\n"  \
+"clNTTDEcMBoGA1UEAxMTUG9sYXJzc2wgVGVzdCBFQyBDQYIJAMFD4n5iQ8zoMAoG\r\n"  \
+"CCqGSM49BAMCA2gAMGUCMQCaLFzXptui5WQN8LlO3ddh1hMxx6tzgLvT03MTVK2S\r\n"  \
+"C12r0Lz3ri/moSEpNZWqPjkCMCE2f53GXcYLqyfyJR078c/xNSUU5+Xxl7VZ414V\r\n"  \
+"fGa5kHvHARBPc8YAIVIqDvHH1Q==\r\n"  \
+"-----END CERTIFICATE-----\r\n"
+
+#define MBEDTLS_TEST_SRV_CRT_ECDH_RSA_RSA_2048                         \
+"-----BEGIN CERTIFICATE-----\r\n"                                      \
+"MIICczCCAVugAwIBAgIJAL8pIYrgtDAkMA0GCSqGSIb3DQEBCwUAMDsxCzAJBgNV\r\n" \
+"BAYTAk5MMREwDwYDVQQKDAhQb2xhclNTTDEZMBcGA1UEAwwQUG9sYXJTU0wgVGVz\r\n" \
+"dCBDQTAeFw0xODA1MDYxNDUxMTlaFw0xODA2MDUxNDUxMTlaMDMxCzAJBgNVBAYT\r\n" \
+"Ak5MMRAwDgYDVQQKDAdtYmVkVExTMRIwEAYDVQQDDAlsb2NhbGhvc3QwWTATBgcq\r\n" \
+"hkjOPQIBBggqhkjOPQMBBwNCAAQ3zFbZdgkeWnI+x1kt/yBu7nz5BpF00K0Utfdo\r\n" \
+"Illikk7lANgjEf/qL9I0XV0WvYqIwmt3DVXNiioO+gHItO3/o00wSzAdBgNVHQ4E\r\n" \
+"FgQUUGGlj9QH2deCAQzlZX+MY0anE74wCQYDVR0TBAIwADAfBgNVHSMEGDAWgBS0\r\n" \
+"WuSls97SUva51aaVD+s+vMf9/zANBgkqhkiG9w0BAQsFAAOCAQEAbROjJvA+6sts\r\n" \
+"cTGV71oHOObWBYfJSTK3mFt+qN5LUDRUvRJXBG+0tVEAW9PGyS2jh4+SMCPk+Kgx\r\n" \
+"xBbNLWBAJoW5KF22PjrCV3KkCcWX8hqzLKq1M5vLrOvYAqroGCS2rCxJJP05tGNm\r\n" \
+"yK5Spc6X/M0Y79vCzVNSrKsBA2lOJ/TpPNpILkcJf6DUjNE43RxgcblW8lJgW3AL\r\n" \
+"MVMb4aEgbEmZRh850DHvrs8WRBjdRKG4yDJMD7xHMgGwlJo+ULuqw6ICt0noqUdJ\r\n" \
+"uaIZ8LnS9faLtbHskd8rtFoUFW/mzqierRpmCLslxswdARRP0LjjQhJzbxUmlOpE\r\n" \
+"OLARMYNTSA==\r\n"                                                     \
+"-----END CERTIFICATE-----\r\n"
+
+#define MBEDTLS_TEST_SRV_KEY_EC_RSA_2048                               \
+"-----BEGIN EC PRIVATE KEY-----\r\n"                                   \
+"MHcCAQEEIPEqEyB2AnCoPL/9U/YDHvdqXYbIogTywwyp6/UfDw6noAoGCCqGSM49\r\n" \
+"AwEHoUQDQgAEN8xW2XYJHlpyPsdZLf8gbu58+QaRdNCtFLX3aCJZYpJO5QDYIxH/\r\n" \
+"6i/SNF1dFr2KiMJrdw1VzYoqDvoByLTt/w==\r\n"                             \
+"-----END EC PRIVATE KEY-----\r\n"
+
+#define MBEDTLS_TEST_SRV_KEY_RSA_RSA_2048                               \
+"-----BEGIN RSA PRIVATE KEY-----\r\n"                                   \
+"MIIEpAIBAAKCAQEAwU2j3efNHdEE10lyuJmsDnjkOjxKzzoTFtBa5M2jAIin7h5r\r\n"  \
+"lqdStJDvLXJ6PiSa/LY0rCT1d+AmZIycsCh9odrqjObJHJa8/sEEUrM21KP64bF2\r\n"  \
+"2JDBYbRmUjaiJlOqq3ReB30Zgtsq2B+g2Q0cLUlm91slc0boC4pPaQy1AJDh2oIQ\r\n"  \
+"Zn2uVCuLZXmRoeJhw81ASQjuaAzxi4bSRr/QuKoRAx5/VqgaHkQYDw+Fi9qLRF7i\r\n"  \
+"GMZiL8dmjfpd2H3zJ4kpAcWQDj8n8TDISg7v1t7HxydrxwU9esQCPJodPg/oNJhb\r\n"  \
+"y3NLUpbYEaIsgIhpOVrTD7DeWS8Rx/fqEgEwlwIDAQABAoIBAQCXR0S8EIHFGORZ\r\n"  \
+"++AtOg6eENxD+xVs0f1IeGz57Tjo3QnXX7VBZNdj+p1ECvhCE/G7XnkgU5hLZX+G\r\n"  \
+"Z0jkz/tqJOI0vRSdLBbipHnWouyBQ4e/A1yIJdlBtqXxJ1KE/ituHRbNc4j4kL8Z\r\n"  \
+"/r6pvwnTI0PSx2Eqs048YdS92LT6qAv4flbNDxMn2uY7s4ycS4Q8w1JXnCeaAnYm\r\n"  \
+"WYI5wxO+bvRELR2Mcz5DmVnL8jRyml6l6582bSv5oufReFIbyPZbQWlXgYnpu6He\r\n"  \
+"GTc7E1zKYQGG/9+DQUl/1vQuCPqQwny0tQoX2w5tdYpdMdVm+zkLtbajzdTviJJa\r\n"  \
+"TWzL6lt5AoGBAN86+SVeJDcmQJcv4Eq6UhtRr4QGMiQMz0Sod6ettYxYzMgxtw28\r\n"  \
+"CIrgpozCc+UaZJLo7UxvC6an85r1b2nKPCLQFaggJ0H4Q0J/sZOhBIXaoBzWxveK\r\n"  \
+"nupceKdVxGsFi8CDy86DBfiyFivfBj+47BbaQzPBj7C4rK7UlLjab2rDAoGBAN2u\r\n"  \
+"AM2gchoFiu4v1HFL8D7lweEpi6ZnMJjnEu/dEgGQJFjwdpLnPbsj4c75odQ4Gz8g\r\n"  \
+"sw9lao9VVzbusoRE/JGI4aTdO0pATXyG7eG1Qu+5Yc1YGXcCrliA2xM9xx+d7f+s\r\n"  \
+"mPzN+WIEg5GJDYZDjAzHG5BNvi/FfM1C9dOtjv2dAoGAF0t5KmwbjWHBhcVqO4Ic\r\n"  \
+"BVvN3BIlc1ue2YRXEDlxY5b0r8N4XceMgKmW18OHApZxfl8uPDauWZLXOgl4uepv\r\n"  \
+"whZC3EuWrSyyICNhLY21Ah7hbIEBPF3L3ZsOwC+UErL+dXWLdB56Jgy3gZaBeW7b\r\n"  \
+"vDrEnocJbqCm7IukhXHOBK8CgYEAwqdHB0hqyNSzIOGY7v9abzB6pUdA3BZiQvEs\r\n"  \
+"3LjHVd4HPJ2x0N8CgrBIWOE0q8+0hSMmeE96WW/7jD3fPWwCR5zlXknxBQsfv0gP\r\n"  \
+"3BC5PR0Qdypz+d+9zfMf625kyit4T/hzwhDveZUzHnk1Cf+IG7Q+TOEnLnWAWBED\r\n"  \
+"ISOWmrUCgYAFEmRxgwAc/u+D6t0syCwAYh6POtscq9Y0i9GyWk89NzgC4NdwwbBH\r\n"  \
+"4AgahOxIxXx2gxJnq3yfkJfIjwf0s2DyP0kY2y6Ua1OeomPeY9mrIS4tCuDQ6LrE\r\n"  \
+"TB6l9VGoxJL4fyHnZb8L5gGvnB1bbD8cL6YPaDiOhcRseC9vBiEuVg==\r\n"  \
+"-----END RSA PRIVATE KEY-----\r\n"
 
 
+#ifdef USE_RSA_2048
+// using RSA 2048 and equivalent key sizes
 
-const char* psk_value = PSK_VALUE;
+/* RSA */
+const char mbedtls_test_srv_crt_rsa[] = MBEDTLS_TEST_SRV_CRT_RSA_RSA_2048;
+const size_t mbedtls_test_srv_crt_rsa_len = sizeof( mbedtls_test_srv_crt_rsa );
+
+const char mbedtls_test_srv_key_rsa[] = MBEDTLS_TEST_SRV_KEY_RSA_RSA_2048;
+const size_t mbedtls_test_srv_key_rsa_len = sizeof( mbedtls_test_srv_key_rsa );
+
+
+/* ECDH_ECDSA */
+const char mbedtls_test_srv_crt_ec[] = MBEDTLS_TEST_SRV_CRT_EC_RSA_2048;
+const size_t mbedtls_test_srv_crt_ec_len = sizeof( mbedtls_test_srv_crt_ec );
+
+/*ECDH_RSA*/
+
+/*
+ * WARNING: this certificate will expire on July 5th, 2018
+ *
+ * To generate a new one, follow the steps in ~/Documents/tmp/certs/commands.txt
+ */
+const char mbedtls_test_srv_crt_ecdh_rsa[] = MBEDTLS_TEST_SRV_CRT_ECDH_RSA_RSA_2048;
+const size_t mbedtls_test_srv_crt_ecdh_rsa_len = sizeof(mbedtls_test_srv_crt_ecdh_rsa);
+
+
+const char mbedtls_test_srv_key_ec[] = MBEDTLS_TEST_SRV_KEY_EC_RSA_2048;
+const size_t mbedtls_test_srv_key_ec_len = sizeof(mbedtls_test_srv_key_ec);
+
+const char* psk_value = PSK_112_BIT_RSA_2048;
 const size_t psk_value_len = sizeof(psk_value);
+
+
+#endif // ifdef RSA_2048
+
+
 const char* psk_identity = "The_Game";
 
 #if defined(MBEDTLS_CERTS_C)
@@ -85,55 +217,6 @@ const size_t mbedtls_test_ca_key_ec_len = sizeof( mbedtls_test_ca_key_ec );
 const char mbedtls_test_ca_pwd_ec[] = "PolarSSLTest";
 const size_t mbedtls_test_ca_pwd_ec_len = sizeof( mbedtls_test_ca_pwd_ec ) - 1;
 
-const char mbedtls_test_srv_crt_ec[] =
-"-----BEGIN CERTIFICATE-----\r\n"
-"MIICHzCCAaWgAwIBAgIBCTAKBggqhkjOPQQDAjA+MQswCQYDVQQGEwJOTDERMA8G\r\n"
-"A1UEChMIUG9sYXJTU0wxHDAaBgNVBAMTE1BvbGFyc3NsIFRlc3QgRUMgQ0EwHhcN\r\n"
-"MTMwOTI0MTU1MjA0WhcNMjMwOTIyMTU1MjA0WjA0MQswCQYDVQQGEwJOTDERMA8G\r\n"
-"A1UEChMIUG9sYXJTU0wxEjAQBgNVBAMTCWxvY2FsaG9zdDBZMBMGByqGSM49AgEG\r\n"
-"CCqGSM49AwEHA0IABDfMVtl2CR5acj7HWS3/IG7ufPkGkXTQrRS192giWWKSTuUA\r\n"
-"2CMR/+ov0jRdXRa9iojCa3cNVc2KKg76Aci07f+jgZ0wgZowCQYDVR0TBAIwADAd\r\n"
-"BgNVHQ4EFgQUUGGlj9QH2deCAQzlZX+MY0anE74wbgYDVR0jBGcwZYAUnW0gJEkB\r\n"
-"PyvLeLUZvH4kydv7NnyhQqRAMD4xCzAJBgNVBAYTAk5MMREwDwYDVQQKEwhQb2xh\r\n"
-"clNTTDEcMBoGA1UEAxMTUG9sYXJzc2wgVGVzdCBFQyBDQYIJAMFD4n5iQ8zoMAoG\r\n"
-"CCqGSM49BAMCA2gAMGUCMQCaLFzXptui5WQN8LlO3ddh1hMxx6tzgLvT03MTVK2S\r\n"
-"C12r0Lz3ri/moSEpNZWqPjkCMCE2f53GXcYLqyfyJR078c/xNSUU5+Xxl7VZ414V\r\n"
-"fGa5kHvHARBPc8YAIVIqDvHH1Q==\r\n"
-"-----END CERTIFICATE-----\r\n";
-const size_t mbedtls_test_srv_crt_ec_len = sizeof( mbedtls_test_srv_crt_ec );
-
-/*
- * WARNING: this certificate will expire on July 5th, 2018
- *
- * To generate a new one, follow the steps in ~/Documents/tmp/certs/commands.txt
- */
-const char mbedtls_test_srv_crt_ecdh_rsa[] =
-"-----BEGIN CERTIFICATE-----\r\n"
-"MIICczCCAVugAwIBAgIJAL8pIYrgtDAkMA0GCSqGSIb3DQEBCwUAMDsxCzAJBgNV\r\n"
-"BAYTAk5MMREwDwYDVQQKDAhQb2xhclNTTDEZMBcGA1UEAwwQUG9sYXJTU0wgVGVz\r\n"
-"dCBDQTAeFw0xODA1MDYxNDUxMTlaFw0xODA2MDUxNDUxMTlaMDMxCzAJBgNVBAYT\r\n"
-"Ak5MMRAwDgYDVQQKDAdtYmVkVExTMRIwEAYDVQQDDAlsb2NhbGhvc3QwWTATBgcq\r\n"
-"hkjOPQIBBggqhkjOPQMBBwNCAAQ3zFbZdgkeWnI+x1kt/yBu7nz5BpF00K0Utfdo\r\n"
-"Illikk7lANgjEf/qL9I0XV0WvYqIwmt3DVXNiioO+gHItO3/o00wSzAdBgNVHQ4E\r\n"
-"FgQUUGGlj9QH2deCAQzlZX+MY0anE74wCQYDVR0TBAIwADAfBgNVHSMEGDAWgBS0\r\n"
-"WuSls97SUva51aaVD+s+vMf9/zANBgkqhkiG9w0BAQsFAAOCAQEAbROjJvA+6sts\r\n"
-"cTGV71oHOObWBYfJSTK3mFt+qN5LUDRUvRJXBG+0tVEAW9PGyS2jh4+SMCPk+Kgx\r\n"
-"xBbNLWBAJoW5KF22PjrCV3KkCcWX8hqzLKq1M5vLrOvYAqroGCS2rCxJJP05tGNm\r\n"
-"yK5Spc6X/M0Y79vCzVNSrKsBA2lOJ/TpPNpILkcJf6DUjNE43RxgcblW8lJgW3AL\r\n"
-"MVMb4aEgbEmZRh850DHvrs8WRBjdRKG4yDJMD7xHMgGwlJo+ULuqw6ICt0noqUdJ\r\n"
-"uaIZ8LnS9faLtbHskd8rtFoUFW/mzqierRpmCLslxswdARRP0LjjQhJzbxUmlOpE\r\n"
-"OLARMYNTSA==\r\n"
-"-----END CERTIFICATE-----\r\n";
-const size_t mbedtls_test_srv_crt_ecdh_rsa_len = sizeof(mbedtls_test_srv_crt_ecdh_rsa);
-
-
-const char mbedtls_test_srv_key_ec[] =
-"-----BEGIN EC PRIVATE KEY-----\r\n"
-"MHcCAQEEIPEqEyB2AnCoPL/9U/YDHvdqXYbIogTywwyp6/UfDw6noAoGCCqGSM49\r\n"
-"AwEHoUQDQgAEN8xW2XYJHlpyPsdZLf8gbu58+QaRdNCtFLX3aCJZYpJO5QDYIxH/\r\n"
-"6i/SNF1dFr2KiMJrdw1VzYoqDvoByLTt/w==\r\n"
-"-----END EC PRIVATE KEY-----\r\n";
-const size_t mbedtls_test_srv_key_ec_len = sizeof(mbedtls_test_srv_key_ec);
 
 const char mbedtls_test_cli_crt_ec[] =
 "-----BEGIN CERTIFICATE-----\r\n"
@@ -263,60 +346,6 @@ const size_t mbedtls_test_ca_key_rsa_len = sizeof( mbedtls_test_ca_key_rsa );
 
 const char mbedtls_test_ca_pwd_rsa[] = "PolarSSLTest";
 const size_t mbedtls_test_ca_pwd_rsa_len = sizeof( mbedtls_test_ca_pwd_rsa ) - 1;
-
-const char mbedtls_test_srv_crt_rsa[] =
-        "-----BEGIN CERTIFICATE-----\r\n"
-                "MIIDPzCCAiegAwIBAgIJANBEZkZxdopmMA0GCSqGSIb3DQEBCwUAMDsxCzAJBgNV\r\n"
-                "BAYTAk5MMREwDwYDVQQKDAhQb2xhclNTTDEZMBcGA1UEAwwQUG9sYXJTU0wgVGVz\r\n"
-                "dCBDQTAeFw0xODAzMjcxNDEzMjFaFw0yNzA1MDQxNDEzMjFaMDQxCzAJBgNVBAYT\r\n"
-                "Ak5MMREwDwYDVQQKEwhQb2xhclNTTDESMBAGA1UEAxMJbG9jYWxob3N0MIIBIjAN\r\n"
-                "BgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwU2j3efNHdEE10lyuJmsDnjkOjxK\r\n"
-                "zzoTFtBa5M2jAIin7h5rlqdStJDvLXJ6PiSa/LY0rCT1d+AmZIycsCh9odrqjObJ\r\n"
-                "HJa8/sEEUrM21KP64bF22JDBYbRmUjaiJlOqq3ReB30Zgtsq2B+g2Q0cLUlm91sl\r\n"
-                "c0boC4pPaQy1AJDh2oIQZn2uVCuLZXmRoeJhw81ASQjuaAzxi4bSRr/QuKoRAx5/\r\n"
-                "VqgaHkQYDw+Fi9qLRF7iGMZiL8dmjfpd2H3zJ4kpAcWQDj8n8TDISg7v1t7Hxydr\r\n"
-                "xwU9esQCPJodPg/oNJhby3NLUpbYEaIsgIhpOVrTD7DeWS8Rx/fqEgEwlwIDAQAB\r\n"
-                "o00wSzAdBgNVHQ4EFgQUpQXoZLjc32APUBJNYKhkr02LQ5MwCQYDVR0TBAIwADAf\r\n"
-                "BgNVHSMEGDAWgBS0WuSls97SUva51aaVD+s+vMf9/zANBgkqhkiG9w0BAQsFAAOC\r\n"
-                "AQEAcvY0HeIT7zmweE5/xk20kvFc0Qbc9dLzdxDlGLv7kDx/9brxjCRTa0/YejuT\r\n"
-                "Pm8diFs1U6OvlzdROkbZpncW9c62mkg5zRrCo3T2E0SZx9GP8JNlo7MhiESjDsFO\r\n"
-                "hcCGCKRnjOlyX4w25hA9JkwnkayeeTWnLwXS0BoFI2liWZNOLlxaSudffD4P1Hls\r\n"
-                "vYOE0cU99bIkaZa9/aNygcjB08dUrD5AFvQO7S7gPCrpDrnuHEXi8EFlbGZfTAHy\r\n"
-                "u+ozycErFLhYhZjtKUs2d1YsK4QKlI1PVjlucfrRXaEnLbi37cKqT68EceHh6ztd\r\n"
-                "lPlhwRx+VicKsW8NHZ3k/wl3Yg==\r\n"
-                "-----END CERTIFICATE-----\r\n";
-
-const size_t mbedtls_test_srv_crt_rsa_len = sizeof( mbedtls_test_srv_crt_rsa );
-
-const char mbedtls_test_srv_key_rsa[] =
-"-----BEGIN RSA PRIVATE KEY-----\r\n"
-"MIIEpAIBAAKCAQEAwU2j3efNHdEE10lyuJmsDnjkOjxKzzoTFtBa5M2jAIin7h5r\r\n"
-"lqdStJDvLXJ6PiSa/LY0rCT1d+AmZIycsCh9odrqjObJHJa8/sEEUrM21KP64bF2\r\n"
-"2JDBYbRmUjaiJlOqq3ReB30Zgtsq2B+g2Q0cLUlm91slc0boC4pPaQy1AJDh2oIQ\r\n"
-"Zn2uVCuLZXmRoeJhw81ASQjuaAzxi4bSRr/QuKoRAx5/VqgaHkQYDw+Fi9qLRF7i\r\n"
-"GMZiL8dmjfpd2H3zJ4kpAcWQDj8n8TDISg7v1t7HxydrxwU9esQCPJodPg/oNJhb\r\n"
-"y3NLUpbYEaIsgIhpOVrTD7DeWS8Rx/fqEgEwlwIDAQABAoIBAQCXR0S8EIHFGORZ\r\n"
-"++AtOg6eENxD+xVs0f1IeGz57Tjo3QnXX7VBZNdj+p1ECvhCE/G7XnkgU5hLZX+G\r\n"
-"Z0jkz/tqJOI0vRSdLBbipHnWouyBQ4e/A1yIJdlBtqXxJ1KE/ituHRbNc4j4kL8Z\r\n"
-"/r6pvwnTI0PSx2Eqs048YdS92LT6qAv4flbNDxMn2uY7s4ycS4Q8w1JXnCeaAnYm\r\n"
-"WYI5wxO+bvRELR2Mcz5DmVnL8jRyml6l6582bSv5oufReFIbyPZbQWlXgYnpu6He\r\n"
-"GTc7E1zKYQGG/9+DQUl/1vQuCPqQwny0tQoX2w5tdYpdMdVm+zkLtbajzdTviJJa\r\n"
-"TWzL6lt5AoGBAN86+SVeJDcmQJcv4Eq6UhtRr4QGMiQMz0Sod6ettYxYzMgxtw28\r\n"
-"CIrgpozCc+UaZJLo7UxvC6an85r1b2nKPCLQFaggJ0H4Q0J/sZOhBIXaoBzWxveK\r\n"
-"nupceKdVxGsFi8CDy86DBfiyFivfBj+47BbaQzPBj7C4rK7UlLjab2rDAoGBAN2u\r\n"
-"AM2gchoFiu4v1HFL8D7lweEpi6ZnMJjnEu/dEgGQJFjwdpLnPbsj4c75odQ4Gz8g\r\n"
-"sw9lao9VVzbusoRE/JGI4aTdO0pATXyG7eG1Qu+5Yc1YGXcCrliA2xM9xx+d7f+s\r\n"
-"mPzN+WIEg5GJDYZDjAzHG5BNvi/FfM1C9dOtjv2dAoGAF0t5KmwbjWHBhcVqO4Ic\r\n"
-"BVvN3BIlc1ue2YRXEDlxY5b0r8N4XceMgKmW18OHApZxfl8uPDauWZLXOgl4uepv\r\n"
-"whZC3EuWrSyyICNhLY21Ah7hbIEBPF3L3ZsOwC+UErL+dXWLdB56Jgy3gZaBeW7b\r\n"
-"vDrEnocJbqCm7IukhXHOBK8CgYEAwqdHB0hqyNSzIOGY7v9abzB6pUdA3BZiQvEs\r\n"
-"3LjHVd4HPJ2x0N8CgrBIWOE0q8+0hSMmeE96WW/7jD3fPWwCR5zlXknxBQsfv0gP\r\n"
-"3BC5PR0Qdypz+d+9zfMf625kyit4T/hzwhDveZUzHnk1Cf+IG7Q+TOEnLnWAWBED\r\n"
-"ISOWmrUCgYAFEmRxgwAc/u+D6t0syCwAYh6POtscq9Y0i9GyWk89NzgC4NdwwbBH\r\n"
-"4AgahOxIxXx2gxJnq3yfkJfIjwf0s2DyP0kY2y6Ua1OeomPeY9mrIS4tCuDQ6LrE\r\n"
-"TB6l9VGoxJL4fyHnZb8L5gGvnB1bbD8cL6YPaDiOhcRseC9vBiEuVg==\r\n"
-"-----END RSA PRIVATE KEY-----\r\n";
-const size_t mbedtls_test_srv_key_rsa_len = sizeof( mbedtls_test_srv_key_rsa );
 
 const char mbedtls_test_cli_crt_rsa[] =
 "-----BEGIN CERTIFICATE-----\r\n"

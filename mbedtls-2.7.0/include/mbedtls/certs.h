@@ -30,6 +30,13 @@
 extern "C" {
 #endif
 
+#define USE_RSA_2048
+// #define USE_RSA_3072
+// #define USE_RSA_7680
+// #define USE_RSA_15360
+
+
+
 extern const char* psk_value;
 extern const size_t psk_value_len;
 extern const char* psk_identity;

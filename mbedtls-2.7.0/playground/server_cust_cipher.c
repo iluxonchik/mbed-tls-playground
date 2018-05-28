@@ -186,6 +186,10 @@ int main( int argc, char** argv )
         return ( -1 );
     }
 
+#ifdef USE_RSA_2048
+    mbedtls_printf("Using RSA 2048 security\n");
+#endif
+
     ciphersuite_str_id = argv[1];
 
     ciphersuite_id = strtol(ciphersuite_str_id, NULL, 10);
