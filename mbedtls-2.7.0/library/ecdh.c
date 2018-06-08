@@ -65,12 +65,12 @@ int mbedtls_ecdh_compute_shared( mbedtls_ecp_group *grp, mbedtls_mpi *z,
     mbedtls_ecp_point P;
 
     // debug prints
-   /*
+
     mbedtls_printf("\n\n\n\n\nGroup info:\n");
     mbedtls_printf("\tid: %d\n", grp->id);
     mbedtls_printf("\td (number of limbs): %d\n", d->n);
     mbedtls_printf("\n\n\n\n\n");
-  */
+
 
 
     mbedtls_ecp_point_init( &P );

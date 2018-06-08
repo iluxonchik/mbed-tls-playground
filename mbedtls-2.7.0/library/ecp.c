@@ -67,6 +67,8 @@
 
 #include "mbedtls/ecp_internal.h"
 
+#include "mbedtls/security_level.h"
+
 #if ( defined(__ARMCC_VERSION) || defined(_MSC_VER) ) && \
     !defined(inline) && !defined(__cplusplus)
 #define inline __inline
@@ -129,45 +131,51 @@ static const mbedtls_ecp_curve_info ecp_supported_curves[] =
 {
 
 /*
-* NOTE: the order of this was modified to force the usage of the
-* 256-bit NIST curve
+* NOTE: only activate the curve for the activated security level.
 */
-#if defined(MBEDTLS_ECP_DP_SECP521R1_ENABLED)
-    { MBEDTLS_ECP_DP_SECP521R1,    25,     521,    "secp521r1"         },
+
+#ifdef USE_RSA_15360
+    #if defined(MBEDTLS_ECP_DP_SECP521R1_ENABLED)
+        { MBEDTLS_ECP_DP_SECP521R1,    25,     521,    "secp521r1"         },
+    #endif
 #endif
 
-#if defined(MBEDTLS_ECP_DP_SECP256R1_ENABLED)
-    { MBEDTLS_ECP_DP_SECP256R1,    23,     256,    "secp256r1"         },
+#ifdef USE_RSA_2048
+    #if defined(MBEDTLS_ECP_DP_SECP256R1_ENABLED)
+        { MBEDTLS_ECP_DP_SECP256R1,    23,     256,    "secp256r1"         },
+    #endif
 #endif
 
-#if defined(MBEDTLS_ECP_DP_BP512R1_ENABLED)
-    { MBEDTLS_ECP_DP_BP512R1,      28,     512,    "brainpoolP512r1"   },
+#ifdef USE_OTHER_CURVES
+    #if defined(MBEDTLS_ECP_DP_BP512R1_ENABLED)
+        { MBEDTLS_ECP_DP_BP512R1,      28,     512,    "brainpoolP512r1"   },
+    #endif
+    #if defined(MBEDTLS_ECP_DP_SECP384R1_ENABLED)
+        { MBEDTLS_ECP_DP_SECP384R1,    24,     384,    "secp384r1"         },
+    #endif
+    #if defined(MBEDTLS_ECP_DP_BP384R1_ENABLED)
+        { MBEDTLS_ECP_DP_BP384R1,      27,     384,    "brainpoolP384r1"   },
+    #endif
+    #if defined(MBEDTLS_ECP_DP_SECP256K1_ENABLED)
+        { MBEDTLS_ECP_DP_SECP256K1,    22,     256,    "secp256k1"         },
+    #endif
+    #if defined(MBEDTLS_ECP_DP_BP256R1_ENABLED)
+        { MBEDTLS_ECP_DP_BP256R1,      26,     256,    "brainpoolP256r1"   },
+    #endif
+    #if defined(MBEDTLS_ECP_DP_SECP224R1_ENABLED)
+        { MBEDTLS_ECP_DP_SECP224R1,    21,     224,    "secp224r1"         },
+    #endif
+    #if defined(MBEDTLS_ECP_DP_SECP224K1_ENABLED)
+        { MBEDTLS_ECP_DP_SECP224K1,    20,     224,    "secp224k1"         },
+    #endif
+    #if defined(MBEDTLS_ECP_DP_SECP192R1_ENABLED)
+        { MBEDTLS_ECP_DP_SECP192R1,    19,     192,    "secp192r1"         },
+    #endif
+    #if defined(MBEDTLS_ECP_DP_SECP192K1_ENABLED)
+        { MBEDTLS_ECP_DP_SECP192K1,    18,     192,    "secp192k1"         },
+    #endif
 #endif
-#if defined(MBEDTLS_ECP_DP_SECP384R1_ENABLED)
-    { MBEDTLS_ECP_DP_SECP384R1,    24,     384,    "secp384r1"         },
-#endif
-#if defined(MBEDTLS_ECP_DP_BP384R1_ENABLED)
-    { MBEDTLS_ECP_DP_BP384R1,      27,     384,    "brainpoolP384r1"   },
-#endif
-#if defined(MBEDTLS_ECP_DP_SECP256K1_ENABLED)
-    { MBEDTLS_ECP_DP_SECP256K1,    22,     256,    "secp256k1"         },
-#endif
-#if defined(MBEDTLS_ECP_DP_BP256R1_ENABLED)
-    { MBEDTLS_ECP_DP_BP256R1,      26,     256,    "brainpoolP256r1"   },
-#endif
-#if defined(MBEDTLS_ECP_DP_SECP224R1_ENABLED)
-    { MBEDTLS_ECP_DP_SECP224R1,    21,     224,    "secp224r1"         },
-#endif
-#if defined(MBEDTLS_ECP_DP_SECP224K1_ENABLED)
-    { MBEDTLS_ECP_DP_SECP224K1,    20,     224,    "secp224k1"         },
-#endif
-#if defined(MBEDTLS_ECP_DP_SECP192R1_ENABLED)
-    { MBEDTLS_ECP_DP_SECP192R1,    19,     192,    "secp192r1"         },
-#endif
-#if defined(MBEDTLS_ECP_DP_SECP192K1_ENABLED)
-    { MBEDTLS_ECP_DP_SECP192K1,    18,     192,    "secp192k1"         },
-#endif
-    { MBEDTLS_ECP_DP_NONE,          0,     0,      NULL                },
+        { MBEDTLS_ECP_DP_NONE,          0,     0,      NULL                },
 };
 
 #define ECP_NB_CURVES   sizeof( ecp_supported_curves ) /    \

@@ -57,7 +57,7 @@ set(src_crypto
     version.c
     version_features.c
     xtea.c
-)
+        ../include/mbedtls/security_level.h security_level.c)
 
 set(src_x509
     certs.c
