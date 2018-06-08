@@ -1,0 +1,20 @@
+openssl x509 -in srv_cert.pem -signkey srv_key.pem -x509toreq -out out.csr
+openssl x509 -req -in out.csr -CA ca_cert.pem -CAkey ca_key_clear.pem -out out.pem -extfile v3.ext -days 3325
+
+
+# Generating ECDH-RSA Certificates
+(based on https://mta.openssl.org/pipermail/openssl-users/2016-October/004733.html):
+
+cd ec
+openssl pkey -in srv_key_clear.pem -pubout -out ecpubkeyserver.pem
+openssl req -new -key srv_key_clear.pem -days 700 -out srv_out.csr
+openssl x509 -req -in srv_out.csr -CAkey ../ca_key_clear.pem -CA ../ca_cert.pem -force_pubkey ecpubkeyserver.pem -out srv_echd_rsa_cert_365.pem -CAcreateserial -extfile ../v3.ext -days 3325
+
+
+# Generate 3072 bit RSA Key 
+mkdir rsa_3072
+cd rsa_3072
+openssl genrsa -out 3072_private.pem 3072
+openssl rsa -in 3072_private.pem -outform PEM -pubout -out 3072_public.pem
+openssl req -new -key 3072_private.pem -out out.csr
+openssl x509 -req -in out.csr -CA ../ca_cert.pem -CAkey ../ca_key_clear.pem -CAcreateserial -out out.pem -days 3325

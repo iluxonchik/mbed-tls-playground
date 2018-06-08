@@ -1,0 +1,26 @@
+Sources: 
+* https://mta.openssl.org/pipermail/openssl-users/2016-October/004733.html
+* https://stackoverflow.com/questions/35155239/can-ecdsa-certificates-have-rsa-signature
+
+-- Generating an ECHD-RSA Cert With The Same ECDH Pub Key As In mbedTLS ---
+
+openssl req -new -key srv_key_clear.pem -out srv_out.csr -days 365
+openssl pkey -in srv_key_clear.pem -pubout -out srv_public_ec_key.pem
+openssl x509 -req -in srv_out.csr -CAkey ../ca_key_clear.pem -CA ../ca_cert.pem -force_pubkey srv_public_ec_key.pem -out srv_echd_rsa_cert.pem -extfile ../v3.ext -CAcreateserial
+
+
+-- Generating an ECHD-RSA cert ---
+
+#ECDH params
+openssl ecparam -out ecparam.pem -name prime256v1
+openssl genpkey -paramfile ecparam.pem -out eckey.pem
+
+openssl pkey -in eckey.pem -pubout -out ec_pubk_srv.pem
+openssl req -new -key ../srv_key.pem -out srv_out.csr -days 365
+
+openssl x509 -req -in srv_out.csr -CAkey ../ca_key_clear.pem -CA ../ca_cert.pem -force_pubkey ec_pubk_srv.pem -out srv_echd_rsa_cert.pem -extfile ../v3.ext -CAcreateserial
+
+-- Generating an ECDH-ECDSA cert --
+Same as above, except for the last command:
+
+openssl x509 -req -in srv_out.csr -CAkey ca_key_clear.pem -CA ca_cert.pem -force_pubkey ec_pubk_srv.pem -out srv_echd_ecds_cert_rm.pem -extfile ../v3.ext -CAcreateserial

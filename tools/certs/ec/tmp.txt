@@ -1,0 +1,999 @@
+   59  python thechronic.py
+   60  python thechronic.py
+   61  python thechronic.py
+   62  python thechronic.py words.txt -n 3 --min 7
+   63  git status
+   64  git diff thechronic.py
+   65  git add thechronic.py
+   66  git commit
+   67  clear
+   68  chmod +x thechronic
+   69  chmod +x thechronic.py
+   70  ./thechronic.py --help
+   71  git status
+   72  git add thechronic.py
+   73  git commit
+   74  ls
+   75  git status
+   76  git pull origin master
+   77  git status
+   78  git push origin master
+   79  cd ..
+   80  ls
+   81  cd callgrind_cpu_cycle_counter
+   82  python run.py ../mbed-tls-playground/mbedtls-2.7.0/playground/client_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/server_cc ciphers.txt --sf mbedtls_ssl_handshake --cf mbedtls_ssl_handshake -k
+   83  python run.py ../mbed-tls-playground/mbedtls-2.7.0/playground/client_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/server_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --sf mbedtls_ssl_handshake --cf mbedtls_ssl_handshake -k
+   84  ls
+   85  kcachegrind callgrind.out.server.49166
+   86  z /home/iluxonchik/Documents/GitHub/
+   87  ls
+   88  cd mbed-tls-playground
+   89  ls
+   90  cd mbedtls-2.7.0
+   91  ls
+   92  cd programs
+   93  ls
+   94  cd ..
+   95  cd playground
+   96  ls
+   97  vim cipers.txt
+   98  git status
+   99  git add *.c
+  100  git add *.txt
+  101  git status
+  102  git commit
+  103  git mv cipers.txt ciphers.txt
+  104  git status
+  105  git commit --amend
+  106  sort -k 3,3 ciphers.txt
+  107  sort -k 2,2 ciphers.txt
+  108  sort -k 2,2 ciphers.txt > ciphers_sorted.txt
+  109  atom ciphers_sorted.txt
+  110  atom ciphers_sorted.txt
+  111  z /home/iluxonchik/Documents/GitHub/msc_notes
+  112  ls
+  113  atom .
+  114  netstat
+  115  netstat -plntnetstat -plnt
+  116  netstat -plnt
+  117  z /home/iluxonchik/Documents/GitHub/callgrind_cpu_cycle_counter
+  118  tmux
+  119  pacman -Ss lolcat
+  120  sudo pacman -S lolcat
+  121  lolcat
+  122  cat .tmux.conf | lolcat
+  123  z /home/iluxonchik/Documents/tmp/certs
+  124  ls
+  125  cd tmp
+  126  vim out.txt
+  127  openssl x509 -in certificate.crt -text -noout\n\n
+  128  openssl x509 -in out.txt -text -noout\n\n
+  129  exit
+  130  tmux
+  131  htop
+  132  z /home/iluxonchik/Documents/tmp/certs/ec
+  133  ls -lah ~/.bash_history
+  134  ls -lah ~/.bash_history*
+  135  ls
+  136  ls
+  137  openssl req -new -key ../srv_key.pem -out srv_out_rm.csr -days 365
+  138  openssl x509 -req -in srv_out_rm.csr -CAkey ../ca_key_clear.pem -CA ../ca_cert.pem -force_pubkey ec_pubk_srv.pem -out srv_echd_rsa_cert_rm.pem -CAcreateserial\n
+  139  openssl x509 -nouut -text -in srv_cert.pem
+  140  openssl x509 -nouut -text -in srv_echd_rsa_cert_rm.pem
+  141  openssl x509 -noout -text -in srv_echd_rsa_cert_rm.pem
+  142  ls
+  143  openssl x509 -req -in srv_out_rm.csr -CAkey ca_key_clear.pem -CA ca_cert.pem -force_pubkey ec_pubk_srv.pem -out srv_echd_rsa_cert_rm.pem -CAcreateserial\n
+  144  openssl x509 -noout -text -in srv_echd_rsa_cert_rm.pem
+  145  cat commands.txt
+  146  ls
+  147  cat srv_key_clear.pem
+  148  cat ec_pubk_srv.pem
+  149  ls
+  150  openssl pkey -in srv_key_clear.pem -out srv_public_ec_key.pem
+  151  openssl pkey -in srv_key_clear.pem -pubout -out srv_public_ec_key.pem
+  152  openssl pkey -in srv_key_clear.pem
+  153  cat srv_key_clear.pem
+  154  ls
+  155  cat eckey.pem
+  156  openssl ec -in eckey.pem
+  157  openssl ec -in eckey.pem -check
+  158  openssl ec -in srv_key_clear.pem -check
+  159  openssl ec -in eckey.pem -check
+  160  openssl ec -in eckey.pem -check
+  161  vim eckey_1.pem
+  162  openssl ec -in eckey_1.pem -check
+  163  openssl ec -in srv_key_clear.pem -check
+  164  vim srv_key.pem
+  165  vim srv_key_clear.pem
+  166  openssl ec -in srv_key_clear.pem -check
+  167  openssl pkey -in srv_key_clear.pem -pubout -out srv_public_ec_key.pem
+  168  cat commands.txt
+  169  openssl x509 -req -in srv_out.csr -CAkey ../ca_key_clear.pem -CA ../ca_cert.pem -force_pubkey srv_public_ec_key.pem -out srv_echd_rsa_cert.pem -CAcreateserial\n
+  170  openssl x509 -nouut -text -in srv_echd_rsa_cert_rm.pem
+  171  openssl x509 -noout -text -in srv_echd_rsa_cert_rm.pem
+  172  python ../certify.py srv_echd_rsa_cert.pem
+  173  openssl x509 -noout -text -in srv_echd_rsa_cert.pem
+  174  openssl req -new -key srv_key_clear.pem -out srv_out.csr -days 365
+  175  openssl x509 -req -in srv_out.csr -CAkey ../ca_key_clear.pem -CA ../ca_cert.pem -force_pubkey ec_pubk_srv.pem -out srv_echd_rsa_cert.pem -CAcreateserial\n
+  176  openssl x509 -noout -text -in srv_echd_rsa_cert.pem
+  177  man openssl genrsa
+  178  z /home/iluxonchik/Documents/tmp/certs/ec
+  179  vim commands.txt
+  180  vim commands.txt
+  181  ls
+  182  ls -lah
+  183  vim commands.txt
+  184  cd ..
+  185  python certify.py ec/srv_echd_rsa_cert.pem
+  186  vim commands.txt
+  187  cd ec
+  188  vim commands.txt
+  189  cat commands.txt
+  190  vim commands.txt
+  191  python ../certify.py ./srv_echd_rsa_cert.pem
+  192  z /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground
+  193  make clean
+  194  make
+  195  ls
+  196  clear
+  197  cd ..
+  198  make clean
+  199  make
+  200  tmux
+  201  tmux
+  202  z /home/iluxonchik/Documents/GitHub/callgrind_cpu_cycle_counter/
+  203  vim email
+  204  cat email
+  205  rm email
+  206  z /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground
+  207  ./server_cc 49201
+  208  z /home/iluxonchik/Documents/GitHub/callgrind_cpu_cycle_counter/
+  209  lc
+  210  ls
+  211  rm callgrind.out.*
+  212  python run.py ../mbed-tls-playground/mbedtls-2.7.0/playground/client_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/server_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --sf mbedtls_ssl_handshake --cf mbedtls_ssl_handshake -k
+  213  source venv/bin/activate
+  214  python run.py ../mbed-tls-playground/mbedtls-2.7.0/playground/client_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/server_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --sf mbedtls_ssl_handshake --cf mbedtls_ssl_handshake -k
+  215  vim email
+  216  ls
+  217  rm callgrind.out.*
+  218  python run.py ../mbed-tls-playground/mbedtls-2.7.0/playground/client_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/server_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --sf mbedtls_ssl_handshake --cf mbedtls_ssl_handshake -k
+  219  z /home/iluxonchik/Documents/GitHub/mbed-tls-playground
+  220  ls
+  221  cd mbedtls-2.7.0/playground
+  222  ls
+  223  cd ..
+  224  git status
+  225  git checkout -- playground/server_cust_cipher.c
+  226  git diff playground/client_cust_cipher.c
+  227  git status
+  228  git diff *.c
+  229  git diff *c
+  230  make clean
+  231  make
+  232  z /home/iluxonchik/Documents/GitHub/mbed-tls-playgroundg
+  233  z /home/iluxonchik/Documents/GitHub/mbed-tls-playground
+  234  clear
+  235  tmux
+  236  z /home/iluxonchik/Documents/GitHub/callgrind_cpu_cycle_counter
+  237  clear
+  238  ls
+  239  vim ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt
+  240  cat ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt
+  241  cat ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt | grep NULL
+  242  cat ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt | grep NULL > ciphers_local.txt
+  243  python run.py ../mbed-tls-playground/mbedtls-2.7.0/playground/client_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/server_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --sf mbedtls_ssl_handshake --cf mbedtls_ssl_handshake -k
+  244  python run.py ../mbed-tls-playground/mbedtls-2.7.0/playground/client_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/server_cc ./ciphers_local.txt --sf mbedtls_ssl_handshake --cf mbedtls_ssl_handshake -k
+  245  source venv/bin/activate
+  246  python run.py ../mbed-tls-playground/mbedtls-2.7.0/playground/client_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/server_cc ./ciphers_local.txt --sf mbedtls_ssl_handshake --cf mbedtls_ssl_handshake -k
+  247  cat ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt | grep NULL > ciphers_local.txt
+  248  cat ciphers_local.txt
+  249  python run.py ../mbed-tls-playground/mbedtls-2.7.0/playground/client_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/server_cc ./ciphers_local.txt --sf mbedtls_ssl_handshake --cf mbedtls_ssl_handshake -k
+  250  python run.py ../mbed-tls-playground/mbedtls-2.7.0/playground/client_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/server_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --sf mbedtls_ssl_handshake --cf mbedtls_ssl_handshake -k
+  251  python run.py ../mbed-tls-playground/mbedtls-2.7.0/playground/client_lf ../mbed-tls-playground/mbedtls-2.7.0/playground/server_lf ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --sf mbedtls_ssl_handshake --cf mbedtls_ssl_handshake -k
+  252  rm -rf callgrind.out.*
+  253  python run.py ../mbed-tls-playground/mbedtls-2.7.0/playground/client_cc_lf ../mbed-tls-playground/mbedtls-2.7.0/playground/server_cc_lf ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --sf mbedtls_ssl_handshake --cf mbedtls_ssl_handshake -k
+  254  rm -rf callgrind.out.
+  255  python run.py ../mbed-tls-playground/mbedtls-2.7.0/playground/client_cc_lf ../mbed-tls-playground/mbedtls-2.7.0/playground/server_cc_lf ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --sf mbedtls_ssl_read mbedtls_ssl_write ssl_encrypt_buf ssl_decrypt_buf --cf mbedtls_ssl_read mbedtls_ssl_write ssl_encrypt_buf ssl_decrypt_buf -k
+  256  z /home/iluxonchik/Documents/GitHub/callgrind_cpu_cycle_counter
+  257  clear
+  258  clear
+  259  nmap -A itsaboutfashionnow.com
+  260  nmap -vvv -A itsaboutfashionnow.com
+  261  openssl rand -hex 32
+  262  clear
+  263  hollywood
+  264  pacman -Ss hollywood
+  265  clear
+  266  openssl rand -hex 1231243135235
+  267  openssl rand -hex 1231243
+  268  clear
+  269  openssl rand -hex 128
+  270  openssl rand -hex 32
+  271  ssh platov@iluxonchik.me
+  272  ssh platov@iluxonchik.me -p 2432
+  273  clear
+  274  clear
+  275  z /home/iluxonchik/Documents/GitHub/callgrind_cpu_cycle_counter
+  276  ls
+  277  source venv/bin/activate
+  278  clear
+  279  rm callgrind.out.*
+  280  ls
+  281  python run.py ../mbed-tls-playground/mbedtls-2.7.0/playground/client_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/server_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --sf mbedtls_ssl_handshake --cf mbedtls_ssl_handshake -k
+  282  python run.py ../mbed-tls-playground/mbedtls-2.7.0/playground/client_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/server_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted_psk_only.txt --sf mbedtls_ssl_handshake --cf mbedtls_ssl_handshake -k
+  283  python run.py ../mbed-tls-playground/mbedtls-2.7.0/playground/client_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/server_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_psk_only.txt --sf mbedtls_ssl_handshake --cf mbedtls_ssl_handshake -k
+  284  python run.py ../mbed-tls-playground/mbedtls-2.7.0/playground/client_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/server_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_psk_only.txt --sf mbedtls_ssl_handshake --cf mbedtls_ssl_handshake -k
+  285  python run.py ../mbed-tls-playground/mbedtls-2.7.0/playground/client_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/server_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_psk_only.txt --sf mbedtls_ssl_handshake --cf mbedtls_ssl_handshake -k
+  286  python run.py ../mbed-tls-playground/mbedtls-2.7.0/playground/client_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/server_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --sf mbedtls_ssl_handshake --cf mbedtls_ssl_handshake -k
+  287  z iluxonchik.me
+  288  z /home/iluxonchik/Documents/GitHub/iluxonchik.me
+  289  git push origin master
+  290  ls
+  291  vim index.html
+  292  git log
+  293  git status
+  294  git diff
+  295  git diff index.html
+  296  git diff HEAD~ index.html
+  297  git add index.html
+  298  git commit
+  299  git push origin master
+  300  z /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground
+  301  cd ..
+  302  make
+  303  cd playground
+  304  tmux
+  305  ./client_cc 5
+  306  make
+  307  ./client_cc 5
+  308  ./client 5
+  309  ./client_cc 5
+  310  make
+  311  make
+  312  ./client_cc 5
+  313  ./client_cc 5
+  314  make
+  315  ./client_cc 5
+  316  make
+  317  make
+  318  ./client_cc 5
+  319  ./client_cc 5
+  320  ./client_cc 4
+  321  ./client_cc 1
+  322  ./client_cc 1
+  323  ./client_cc 142
+  324  cd ..
+  325  make clean
+  326  make
+  327  cd playground
+  328  ./client_cc 142
+  329  ./client_cc 142
+  330  git status
+  331  git diff server_cust_cipher.c
+  332  git diff client_cust_cipher.c
+  333  git add server_cust_cipher.c client_cust_cipher.c
+  334  git commit
+  335  git push origin master
+  336  ./client_cc 142
+  337  make
+  338  make
+  339  ./client_cc 142
+  340  cd ..
+  341  cd ..
+  342  cd ..
+  343  cd msc_notes
+  344  ls
+  345  vim mbedtls_notes.md
+  346  clear
+  347  cd ..
+  348  ls
+  349  exit()\nexit
+  350  ./server_cc 5
+  351  ./server_cc 5
+  352  ./server_cc 5
+  353  ./server_cc 5
+  354  make
+  355  make
+  356  ./server_cc 5
+  357  ./server_cc 5
+  358  ./server_cc 5
+  359  make
+  360  ./server_cc 5
+  361  ./server_cc 4
+  362  ./server_cc 1
+  363  ./server_cc 3
+  364  ./server_cc 4
+  365  ./server_cc 141
+  366  ./server_cc 142
+  367  ./server_cc 142
+  368  make
+  369  ./server_cc 142
+  370  ./server_cc 142
+  371  ./server_cc 142
+  372  z /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0/playground
+  373  ls
+  374  make
+  375  clear
+  376  ls
+  377  ./ciphersuites_list > ciphers.txt
+  378  vim ciphers.txt
+  379  sort -k 2,2 ciphers.txt > ciphers_sorted.txt
+  380  vim ciphers_sorted.txt
+  381  tmux
+  382  exit
+  383  z /home/iluxonchik/Documents/tmp/certs
+  384  ls
+  385  cd ec
+  386  ls
+  387  openssl x509 -nouut -text -in srv_echd_rsa_cert_rm.pem
+  388  openssl x509 -nouut -text -in srv_crt.pem
+  389  openssl x509 -noout -text -in srv_crt.pem
+  390  ls ../
+  391  openssl x509 -noout -text -in ../out_sha1.pem
+  392  uname -a
+  393  z /home/iluxonchik/Documents/GitHub/callgrind_cpu_cycle_counter
+  394  ls
+  395  ./gengraph.py
+  396  chmod +x ./gengraph.py
+  397  ./gengraph.py
+  398  ./gengraph.py
+  399  ./gengraph.py
+  400  ./gengraph.py
+  401  ./gengraph.py
+  402  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt
+  403  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt
+  404  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt
+  405  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt
+  406  ls
+  407  vim ciphers_local.txt
+  408  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt
+  409  ./gengraph.py ./ciphers_local.txt
+  410  ./gengraph.py ./ciphers_local.txt
+  411  ./gengraph.py ./ciphers_local.txt
+  412  ./gengraph.py ./ciphers_local.txt
+  413  cat ciphers_local.txt
+  414  cat ciphers_local.txt
+  415  ./gengraph.py ./ciphers_local.txt
+  416  ./gengraph.py ./ciphers_local.txt
+  417  ./gengraph.py ./ciphers_local.txt
+  418  ./gengraph.py ./ciphers_local.txt
+  419  clear
+  420  python
+  421  python
+  422  python
+  423  ./gengraph.py ./ciphers_local.txt
+  424  ./gengraph.py ./ciphers_local.txt
+  425  ./gengraph.py ./ciphers_local.txt
+  426  source venv/bin/activate
+  427  ./gengraph.py ./ciphers_local.txt
+  428  ./gengraph.py ./ciphers_local.txt
+  429  ./gengraph.py ./ciphers_local.txt
+  430  ./gengraph.py ./ciphers_local.txt
+  431  ./gengraph.py ./ciphers_local.txt
+  432  clear
+  433  ./gengraph.py ./ciphers_local.txt
+  434  ./gengraph.py ./ciphers_local.txt
+  435  ./gengraph.py ./ciphers_local.txt --cf mbedtls_handshake
+  436  ./gengraph.py ./ciphers_local.txt --cf mbedtls_ssl_handshake
+  437  python
+  438  ./gengraph.py ./ciphers_local.txt --cf mbedtls_ssl_handshake
+  439  ./gengraph.py ./ciphers_local.txt --cf mbedtls_ssl_handshake
+  440  ./gengraph.py ./ciphers_local.txt --cf mbedtls_ssl_handshake
+  441  ./gengraph.py ./ciphers_local.txt --cf mbedtls_ssl_handshake
+  442  ./gengraph.py ./ciphers_local.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake
+  443  git status
+  444  git add gengraph.py
+  445  git commit
+  446  ./gengraph.py ./ciphers_local.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake --json-ids ola.json
+  447  ./gengraph.py ./ciphers_local.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake --json-ids ola.json
+  448  ./gengraph.py ./ciphers_local.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake --json-ids ola.json
+  449  vim ola.json
+  450  rm ola.json
+  451  git status
+  452  git add gengraph.py
+  453  git commit
+  454  ./gengraph.py ./ciphers_local.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake
+  455  python
+  456  ./gengraph.py ./ciphers_local.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake
+  457  ./gengraph.py ./ciphers_local.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake
+  458  ./gengraph.py ./ciphers_local.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake
+  459  ./gengraph.py ./ciphers_local.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake
+  460  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake
+  461  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake --json-ids ola.json
+  462  vim ola.json
+  463  cat ola.json
+  464  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake --json-ids ola.json
+  465  python run.py ../mbed-tls-playground/mbedtls-2.7.0/playground/client_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/server_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --sf mbedtls_ssl_handshake --cf mbedtls_ssl_handshake -k
+  466  git status
+  467  git add gengraph.py
+  468  git commit
+  469  git push origin master
+  470  git pull origin master
+  471  git push origin master
+  472  rm callgrind.out.*
+  473  python run.py ../mbed-tls-playground/mbedtls-2.7.0/playground/client_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/server_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --sf mbedtls_ssl_handshake --cf mbedtls_ssl_handshake -k
+  474  ./gengraph.py -h
+  475  git status
+  476  git add README.md
+  477  git commit
+  478  ./gengraph.py -h
+  479  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake --json-ids ola.json
+  480  git add gengraph.py
+  481  git commit
+  482  git push origin master
+  483  git push origin master
+  484  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake --json-ids ola.json
+  485  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake --json-ids ola.json
+  486  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake --json-ids ola.json
+  487  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  488  python
+  489  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  490  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  491  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  492  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  493  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  494  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  495  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  496  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  497  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  498  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  499  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  500  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  501  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  502  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  503  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  504  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  505  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  506  python
+  507  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  508  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  509  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  510  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  511  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  512  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  513  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  514  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  515  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  516  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  517  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  518  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  519  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  520  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  521  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  522  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  523  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  524  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  525  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  526  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  527  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  528  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  529  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  530  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  531  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  532  z /home/iluxonchik/Documents/GitHub
+  533  cd master-thesis
+  534  ls
+  535  ls
+  536  ls -lah
+  537  cd cryptacus.eu_paper
+  538  ls
+  539  atom .
+  540  git status
+  541  git add conference_071817.tex
+  542  git add tls_for_iot.bib
+  543  git status
+  544  git add conference_071817.pdf
+  545  git commit
+  546  git add .
+  547  git status
+  548  git commit
+  549  git push origin master
+  550  atom .
+  551  cp conference_071817.pdf ../illya-gerasymchuk-tls-for-iot.pdf
+  552  cat ../../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt
+  553  z /home/iluxonchik/Documents/GitHub/callgrind_cpu_cycle_counter
+  554  ls
+  555  clear
+  556  clear
+  557  ls
+  558  cd ..
+  559  ls
+  560  atom autenticacao-gov-pt-bruteforcer-pof
+  561  cd callgrind_cpu_cycle_counter
+  562  ls
+  563  source venv/bin/activate
+  564  clear
+  565  atom .
+  566  python run.py ../mbed-tls-playground/mbedtls-2.7.0/playground/client_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/server_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --sf mbedtls_ssl_handshake --cf mbedtls_ssl_handshake -k
+  567  python run.py ../mbed-tls-playground/mbedtls-2.7.0/playground/client_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/server_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --sf mbedtls_ssl_handshake --cf mbedtls_ssl_handshake -k
+  568  python run.py ../mbed-tls-playground/mbedtls-2.7.0/playground/client_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/server_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --sf mbedtls_ssl_handshake --cf mbedtls_ssl_handshake -k
+  569  git status
+  570  clear
+  571  python run.py ../mbed-tls-playground/mbedtls-2.7.0/playground/client_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/server_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --sf mbedtls_ssl_handshake --cf mbedtls_ssl_handshake -k
+  572  git push origin master
+  573  z /home/iluxonchik/Documents/GitHub/callgrind_cpu_cycle_counter
+  574  ls
+  575  source venv/bin/activate
+  576  clear
+  577  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  578  z /home/iluxonchik/Documents/GitHub/master-thesis
+  579  ls
+  580  atom cryptacus.eu_paper/
+  581  git status
+  582  git pull origin master
+  583  git status
+  584  git add cryptacus.eu_paper/
+  585  git commit
+  586  git pull origin master
+  587  git status
+  588  git push origin master
+  589  npm start
+  590  npm start
+  591  z /home/iluxonchik/Documents/GitHub/
+  592  ls
+  593  cd building-progressive-web-apps-book
+  594  ls
+  595  git log
+  596  git status
+  597  ls
+  598  atom .
+  599  nautilus .&
+  600  git pull origin master
+  601  atom .
+  602  git status
+  603  git add public/
+  604  git commit
+  605  git push origin master
+  606  htop
+  607  exit
+  608  vim /usr/share/z/z.sh
+  609  vim /usr/share/z/z.sh
+  610  vim /usr/share/z/z.sh
+  611  cd /usr/share
+  612  ls
+  613  cs z
+  614  cd z
+  615  ls
+  616  ls
+  617  vim z.sh
+  618  rm z.sh
+  619  pacman -S z
+  620  pacman -Ss z
+  621  pacman -Ss jump around
+  622  yaourt -Ss jump around
+  623  yaourt -R aur/z-dir-jump-git
+  624  yaourt -R z-dir-jump-git
+  625  yaourt -S z-dir-jump-git
+  626  clear
+  627  ls
+  628  cd ..
+  629  c d..
+  630  cd ..
+  631  ls
+  632  cd ..
+  633  yaourt -S z-dir-jump-git
+  634  exit
+  635  ls
+  636  z /home/iluxonchik/Documents/GitHub/mbed-tls-playground
+  637  ls
+  638  ls
+  639  cd mbedtls-2.7.0
+  640  ls
+  641  ls
+  642  cd playground
+  643  ls
+  644  make 
+  645  clera
+  646  clear
+  647  ls
+  648  ls
+  649  cat ciphers_sorted.txt | grep PSK > ciphers_psk_only.txt
+  650  cat ciphers_psk_only.txt
+  651  tmux
+  652  vim ~/.tmux.conf
+  653  vim ~/.tmux.conf
+  654  tmux
+  655  exit
+  656  yaourt -R z-dir-jump-git
+  657  yaourt -S z-dir-jump-git
+  658  vim ~/.zshrc
+  659  yaourt -R z-dir-jump-git
+  660  cd /usr
+  661  cd share
+  662  ls
+  663  mkdir z
+  664  cd ..
+  665  cd share
+  666  ls -lha
+  667  cd zsh
+  668  ls -lah
+  669  cd ..
+  670  c d..
+  671  cd ..
+  672  ls
+  673  cd ..
+  674  l
+  675  cd ~
+  676  ls
+  677  ls -lah
+  678  cd .z
+  679  ls
+  680  vim .z
+  681  mkdir .tools
+  682  cd .tools
+  683  mkdir z
+  684  cd z
+  685  wget -O z.sh https://github.com/rupa/z/blob/master/z.sh
+  686  lls
+  687  ls
+  688  vim ~/.zshrc
+  689  pwd
+  690  vim ~/.zshrc
+  691  exit
+  692  tmux
+  693  exit
+  694  clear
+  695  rm -rf .tools
+  696  ls
+  697  yaourt -R z-dir-jump-git
+  698  yaourt -S z-dir-jump-git
+  699  vim ~/.zshrc
+  700  z
+  701  which z
+  702  cd /usr/share/z/
+  703  ls
+  704  cd ..
+  705  cd ..
+  706  man z
+  707  cd ..
+  708  yaourt -R z-dir-jump-git
+  709  cd º 
+  710  cd ~
+  711  mdkr -p .tools/z
+  712  mkdir -p .tools/z
+  713  cd .tools/z
+  714  ls
+  715  git clone git@github.com:rupa/z.git .
+  716  ls
+  717  make
+  718  clear
+  719  vim ~/.zshrc
+  720  pwd
+  721  vim ~/.zshrc
+  722  vim ~/.zshrc
+  723  exit
+  724  cd ~/.tools/z
+  725  ls
+  726  ./home/iluxonchik/.tools/z/z.sh
+  727  vim ~/.zshrc
+  728  exit
+  729  vim /home/iluxonchik/.zshrc
+  730  cd .tools/z
+  731  cd ..
+  732  ls
+  733  ls -lah
+  734  cd z
+  735  ls -lha
+  736  chmod +rx *
+  737  ls
+  738  ls -lah
+  739  exit
+  740  exit
+  741  tmux
+  742  cler
+  743  clear
+  744  vim .tools
+  745  cd .tools
+  746  ls
+  747  vim update.sh
+  748  ./update.sh
+  749  chmod +x update.sh
+  750  ls
+  751  ./update.sh
+  752  vim update.sh
+  753  ./update.sh
+  754  cd z
+  755  ls -lah
+  756  exit
+  757  vim ~/.tmux.conf
+  758  exit
+  759  man tmux
+  760  exit
+  761  tmux
+  762  exit
+  763  tmux
+  764  tmux
+  765  z Documents/GitHub/callgrind_cpu_cycle_counter
+  766  ls
+  767  z
+  768  vim ~/.zshrc
+  769  z
+  770  vim ~/.zshrc
+  771  exit
+  772  exit
+  773  z
+  774  z /home/iluxonchik/Documents/GitHub/callgrind_cpu_cycle_counter
+  775  ls
+  776  clera
+  777  tmux
+  778  clear
+  779  ls
+  780  cd callgrind_outs
+  781  ls
+  782  export LS_COLORS='no=00:fi=00:di=34:ow=34;40:ln=35:pi=30;44:so=35;44:do=35;44:bd=33;44:cd=37;44:or=05;37;41:mi=05;37;41:ex=01;31:*.cmd=01;31:*.exe=01;31:*.com=01;31:*.bat=01;31:*.reg=01;31:*.app=01;31:*.txt=32:*.org=32:*.md=32:*.mkd=32:*.h=32:*.c=32:*.C=32:*.cc=32:*.cpp=32:*.cxx=32:*.objc=32:*.sh=32:*.csh=32:*.zsh=32:*.el=32:*.vim=32:*.java=32:*.pl=32:*.pm=32:*.py=32:*.rb=32:*.hs=32:*.php=32:*.htm=32:*.html=32:*.shtml=32:*.erb=32:*.haml=32:*.xml=32:*.rdf=32:*.css=32:*.sass=32:*.scss=32:*.less=32:*.js=32:*.coffee=32:*.man=32:*.0=32:*.1=32:*.2=32:*.3=32:*.4=32:*.5=32:*.6=32:*.7=32:*.8=32:*.9=32:*.l=32:*.n=32:*.p=32:*.pod=32:*.tex=32:*.go=32:*.bmp=33:*.cgm=33:*.dl=33:*.dvi=33:*.emf=33:*.eps=33:*.gif=33:*.jpeg=33:*.jpg=33:*.JPG=33:*.mng=33:*.pbm=33:*.pcx=33:*.pdf=33:*.pgm=33:*.png=33:*.PNG=33:*.ppm=33:*.pps=33:*.ppsx=33:*.ps=33:*.svg=33:*.svgz=33:*.tga=33:*.tif=33:*.tiff=33:*.xbm=33:*.xcf=33:*.xpm=33:*.xwd=33:*.xwd=33:*.yuv=33:*.aac=33:*.au=33:*.flac=33:*.m4a=33:*.mid=33:*.midi=33:*.mka=33:*.mp3=33:*.mpa=33:*.mpeg=33:*.mpg=33:*.ogg=33:*.ra=33:*.wav=33:*.anx=33:*.asf=33:*.avi=33:*.axv=33:*.flc=33:*.fli=33:*.flv=33:*.gl=33:*.m2v=33:*.m4v=33:*.mkv=33:*.mov=33:*.MOV=33:*.mp4=33:*.mp4v=33:*.mpeg=33:*.mpg=33:*.nuv=33:*.ogm=33:*.ogv=33:*.ogx=33:*.qt=33:*.rm=33:*.rmvb=33:*.swf=33:*.vob=33:*.webm=33:*.wmv=33:*.doc=31:*.docx=31:*.rtf=31:*.dot=31:*.dotx=31:*.xls=31:*.xlsx=31:*.ppt=31:*.pptx=31:*.fla=31:*.psd=31:*.7z=1;35:*.apk=1;35:*.arj=1;35:*.bin=1;35:*.bz=1;35:*.bz2=1;35:*.cab=1;35:*.deb=1;35:*.dmg=1;35:*.gem=1;35:*.gz=1;35:*.iso=1;35:*.jar=1;35:*.msi=1;35:*.rar=1;35:*.rpm=1;35:*.tar=1;35:*.tbz=1;35:*.tbz2=1;35:*.tgz=1;35:*.tx=1;35:*.war=1;35:*.xpi=1;35:*.xz=1;35:*.z=1;35:*.Z=1;35:*.zip=1;35:*.ANSI-30-black=30:*.ANSI-01;30-brblack=01;30:*.ANSI-31-red=31:*.ANSI-01;31-brred=01;31:*.ANSI-32-green=32:*.ANSI-01;32-brgreen=01;32:*.ANSI-33-yellow=33:*.ANSI-01;33-bryellow=01;33:*.ANSI-34-blue=34:*.ANSI-01;34-brblue=01;34:*.ANSI-35-magenta=35:*.ANSI-01;35-brmagenta=01;35:*.ANSI-36-cyan=36:*.ANSI-01;36-brcyan=01;36:*.ANSI-37-white=37:*.ANSI-01;37-brwhite=01;37:*.log=01;32:*~=01;32:*#=01;32:*.bak=01;33:*.BAK=01;33:*.old=01;33:*.OLD=01;33:*.org_archive=01;33:*.off=01;33:*.OFF=01;33:*.dist=01;33:*.DIST=01;33:*.orig=01;33:*.ORIG=01;33:*.swp=01;33:*.swo=01;33:*,v=01;33:*.gpg=34:*.gpg=34:*.pgp=34:*.asc=34:*.3des=34:*.aes=34:*.enc=34:*.sqlite=34:'\n
+  783  ls
+  784  clear
+  785  cd ..
+  786  ls
+  787  export $LS_COLORS='no=00:fi=00:di=34:ow=34;40:ln=35:pi=30;44:so=35;44:do=35;44:bd=33;44:cd=37;44:or=05;37;41:mi=05;37;41:ex=01;31:*.cmd=01;31:*.exe=01;31:*.com=01;31:*.bat=01;31:*.reg=01;31:*.app=01;31:*.txt=32:*.org=32:*.md=32:*.mkd=32:*.h=32:*.c=32:*.C=32:*.cc=32:*.cpp=32:*.cxx=32:*.objc=32:*.sh=32:*.csh=32:*.zsh=32:*.el=32:*.vim=32:*.java=32:*.pl=32:*.pm=32:*.py=32:*.rb=32:*.hs=32:*.php=32:*.htm=32:*.html=32:*.shtml=32:*.erb=32:*.haml=32:*.xml=32:*.rdf=32:*.css=32:*.sass=32:*.scss=32:*.less=32:*.js=32:*.coffee=32:*.man=32:*.0=32:*.1=32:*.2=32:*.3=32:*.4=32:*.5=32:*.6=32:*.7=32:*.8=32:*.9=32:*.l=32:*.n=32:*.p=32:*.pod=32:*.tex=32:*.go=32:*.bmp=33:*.cgm=33:*.dl=33:*.dvi=33:*.emf=33:*.eps=33:*.gif=33:*.jpeg=33:*.jpg=33:*.JPG=33:*.mng=33:*.pbm=33:*.pcx=33:*.pdf=33:*.pgm=33:*.png=33:*.PNG=33:*.ppm=33:*.pps=33:*.ppsx=33:*.ps=33:*.svg=33:*.svgz=33:*.tga=33:*.tif=33:*.tiff=33:*.xbm=33:*.xcf=33:*.xpm=33:*.xwd=33:*.xwd=33:*.yuv=33:*.aac=33:*.au=33:*.flac=33:*.m4a=33:*.mid=33:*.midi=33:*.mka=33:*.mp3=33:*.mpa=33:*.mpeg=33:*.mpg=33:*.ogg=33:*.ra=33:*.wav=33:*.anx=33:*.asf=33:*.avi=33:*.axv=33:*.flc=33:*.fli=33:*.flv=33:*.gl=33:*.m2v=33:*.m4v=33:*.mkv=33:*.mov=33:*.MOV=33:*.mp4=33:*.mp4v=33:*.mpeg=33:*.mpg=33:*.nuv=33:*.ogm=33:*.ogv=33:*.ogx=33:*.qt=33:*.rm=33:*.rmvb=33:*.swf=33:*.vob=33:*.webm=33:*.wmv=33:*.doc=31:*.docx=31:*.rtf=31:*.dot=31:*.dotx=31:*.xls=31:*.xlsx=31:*.ppt=31:*.pptx=31:*.fla=31:*.psd=31:*.7z=1;35:*.apk=1;35:*.arj=1;35:*.bin=1;35:*.bz=1;35:*.bz2=1;35:*.cab=1;35:*.deb=1;35:*.dmg=1;35:*.gem=1;35:*.gz=1;35:*.iso=1;35:*.jar=1;35:*.msi=1;35:*.rar=1;35:*.rpm=1;35:*.tar=1;35:*.tbz=1;35:*.tbz2=1;35:*.tgz=1;35:*.tx=1;35:*.war=1;35:*.xpi=1;35:*.xz=1;35:*.z=1;35:*.Z=1;35:*.zip=1;35:*.ANSI-30-black=30:*.ANSI-01;30-brblack=01;30:*.ANSI-31-red=31:*.ANSI-01;31-brred=01;31:*.ANSI-32-green=32:*.ANSI-01;32-brgreen=01;32:*.ANSI-33-yellow=33:*.ANSI-01;33-bryellow=01;33:*.ANSI-34-blue=34:*.ANSI-01;34-brblue=01;34:*.ANSI-35-magenta=35:*.ANSI-01;35-brmagenta=01;35:*.ANSI-36-cyan=36:*.ANSI-01;36-brcyan=01;36:*.ANSI-37-white=37:*.ANSI-01;37-brwhite=01;37:*.log=01;32:*~=01;32:*#=01;32:*.bak=01;33:*.BAK=01;33:*.old=01;33:*.OLD=01;33:*.org_archive=01;33:*.off=01;33:*.OFF=01;33:*.dist=01;33:*.DIST=01;33:*.orig=01;33:*.ORIG=01;33:*.swp=01;33:*.swo=01;33:*,v=01;33:*.gpg=34:*.gpg=34:*.pgp=34:*.asc=34:*.3des=34:*.aes=34:*.enc=34:*.sqlite=34:'\n
+  788  ls
+  789  clear
+  790  wget https://raw.github.com/trapd00r/LS_COLORS/master/LS_COLORS -O $HOME/.dircolors\n
+  791  vim ~/.zshrc
+  792  exit
+  793  wget https://raw.github.com/trapd00r/LS_COLORS/master/LS_COLORS -O $HOME/.dircolors\n
+  794  cd /home/iluxonchik/.dircolors
+  795  vim /home/iluxonchik/.dircolors
+  796  vim ~/.zshrc
+  797  exit
+  798  ls
+  799  vim ~/.zshrc
+  800  ls_color
+  801  ls
+  802  ls -lah
+  803  clear
+  804  source ~/.zshrc
+  805  ls
+  806  echo LS_COLOR
+  807  echo $LS_COLORS
+  808  unset LS_COLORS
+  809  echo $LS_COLORS
+  810  ./.zshrc
+  811  source ./.zshrc
+  812  ls
+  813  ls
+  814  ls
+  815  echo $LS_COLORS
+  816  vim ~/.zshrc
+  817  vim ~/.zshrc
+  818  source ./.zshrc
+  819  ls
+  820  ls
+  821  ls
+  822  export CLICOLOR=1\n
+  823  ls
+  824  vim ~/.zshrc
+  825  export CLICOLOR=1\nzstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+  826  zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+  827  ls
+  828  man zshall
+  829  ls
+  830  vim ~/.zshrc
+  831  source ~/.zshrc
+  832  ls
+  833  ls
+  834  ls
+  835  ls
+  836  ls
+  837  ls
+  838  ls
+  839  ls zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}\n
+  840  zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}\n
+  841  ls
+  842  clear
+  843  ls --color=auto
+  844  which ls
+  845  ls
+  846  vim ~/.zshrc
+  847  source ~/.zshrc
+  848  ls
+  849  vim ~/.zshrc
+  850  source ~/.zshrc
+  851  ls
+  852  vim ~/.zshrc
+  853  ls
+  854  source ~/.zshrc
+  855  ls
+  856  clear
+  857  man ls
+  858  ls --color
+  859  ls
+  860  vim test
+  861  ls
+  862  z /home/iluxonchik/Documents/GitHub/callgrind_cpu_cycle_counter
+  863  clear
+  864  tmux
+  865  sudo pacman -S lolcat
+  866  sudo pacman -S popcorntime
+  867  sudo pacman -S popcorn-time
+  868  z /home/iluxonchik/Documents/GitHub/msc_notes
+  869  ls
+  870  git init
+  871  git remote add orgin git@github.com:iluxonchik/master-thesis-notes.git
+  872  git status
+  873  git add .
+  874  git commit
+  875  git push origin master
+  876  git remote add origin git@github.com:iluxonchik/master-thesis-notes.git
+  877  git push origin master
+  878  git push origin master
+  879  git status
+  880  git add cost_evaluation.md
+  881  git commit
+  882  git push origin master
+  883  cd ~
+  884  vim motivation.txt
+  885  cat motivation.txt
+  886  z /home/iluxonchik/Documents/GitHub/msc_notes
+  887  ls
+  888  aotm cost_evaluation.md
+  889  atom cost_evaluation.md
+  890  ls
+  891  atom .
+  892  clear
+  893  z /home/iluxonchik/Documents/GitHub/mbed-tls-playground
+  894  ls
+  895  cd mbedtls-2.7.0/playground
+  896  ls
+  897  git status
+  898  clear
+  899  openssl rand -hex 32
+  900  openssl rand -hex 14
+  901  openssl rand -hex 16
+  902  make
+  903  make
+  904  z /home/iluxonchik/Documents/GitHub/callgrind_cpu_cycle_counter
+  905  source venv/bin/activate
+  906  atom gengraph_cryptacus.py
+  907  clear
+  908  clear
+  909  ls
+  910  mkdir callgrind_outs
+  911  mkdir callgrind_outs/all_ciphers/
+  912  mv callgrind.out.* callgrind_outs/all_ciphers
+  913  cd callgrind_outs/all_ciphers
+  914  ls
+  915  vim README.md
+  916  cd .
+  917  cd ..
+  918  ls
+  919  cd ..
+  920  ls
+  921  rm ola.json
+  922  ls
+  923  python run.py ../mbed-tls-playground/mbedtls-2.7.0/playground/client_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/server_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --sf mbedtls_ssl_handshake --cf mbedtls_ssl_handshake -k
+  924  python run.py ../mbed-tls-playground/mbedtls-2.7.0/playground/client_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/server_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_psk_only.txt --sf mbedtls_ssl_handshake --cf mbedtls_ssl_handshake -k
+  925  ls
+  926  rm callgrind.o*
+  927  ls
+  928  python run.py ../mbed-tls-playground/mbedtls-2.7.0/playground/client_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/server_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_psk_only.txt --sf mbedtls_ssl_handshake --cf mbedtls_ssl_handshake -k
+  929  python run.py ../mbed-tls-playground/mbedtls-2.7.0/playground/client_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/server_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_psk_only.txt --sf mbedtls_ssl_handshake --cf mbedtls_ssl_handshake -k
+  930  python run.py ../mbed-tls-playground/mbedtls-2.7.0/playground/client_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/server_cc ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_psk_only.txt --sf mbedtls_ssl_handshake --cf mbedtls_ssl_handshake -k
+  931  yaourt -Ss popcorn
+  932  yaourt -S popcorntime
+  933  clear
+  934  z /home/iluxonchik/Documents/GitHub/callgrind_cpu_cycle_counter
+  935  ls
+  936  source venv/bin/activate
+  937  clear
+  938  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  939  ls
+  940  git diff gengraph.py
+  941  cp gengraph.py gengraph_cryptacus.py
+  942  ls
+  943  git status
+  944  git status *.py
+  945  git checkout -- gengraph.py
+  946  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  947  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  948  ./gengraph.py ../mbed-tls-playground/mbedtls-2.7.0/playground/ciphers_sorted.txt --cf mbedtls_ssl_handshake --sf mbedtls_ssl_handshake 
+  949  z /home/iluxonchik/Documents/GitHub/
+  950  ls
+  951  z /home/iluxonchik/Documents/GitHub/msc_notes
+  952  ls
+  953  atom cost_evaluation.md
+  954  $ sudo pacman -S chrome-gnome-shell\n
+  955  sudo pacman -S chrome-gnome-shell\n
+  956  sudo pacman -Syu
+  957  sudo pacman -S chrome-gnome-shell\n
+  958  ls
+  959  clear
+  960  cd ..
+  961  cd ..
+  962  z /home/iluxonchik/Documents/tmp/certs
+  963  ls
+  964  ls
+  965  ls -lah
+  966  cd tmp
+  967  ls
+  968  cd ..
+  969  s
+  970  ls
+  971  cat srv_cert.pem
+  972  openssl x509 -noout -text -in ../out_sha1.pem
+  973  openssl x509 -noout -text -in ./srv_cert.pem
+  974  ls
+  975  cd ec
+  976  ls
+  977  openssl x509 -noout -text -in ./srv_echd_rsa_cert.pem
+  978  ls
+  979  openssl x509 -noout -text -in ./srv_crt.pem
+  980  openssl x509 -noout -text -in ./srv_echd_rsa_cert.pem
+  981  openssl x509 -noout -text -in ./srv_crt.pem
+  982  kcachegrind callgrind.out.client.49202
+  983  kcachegrind callgrind.out.client.49201
+  984  cd callgrind_outs/all_ciphers
+  985  kcachegrind callgrind.out.client.49202
+  986  clear
+  987  ls
+  988  well
+  989  z /home/iluxonchik/Documents/GitHub/master-thesis
+  990  ls
+  991  ls
+  992  vim ~/.zshrc
+  993  clear
+  994  ./install.sh
+  995  ls -lah
+  996  ls
+  997  ls
+  998  wget zsh >/dev/null 2>&1
+  999  wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+ 1000  ls
+ 1001  sudo pacman -S chrome-gnome-shell\n
+ 1002  $ npm install --global pure-prompt\n
+ 1003  npm install --global pure-prompt\n
+ 1004  sudo npm install --global pure-prompt\n
+ 1005  npm install --global pure-prompt --allow-root --unsafe-perm=true\n +1 13  \n
+ 1006  npm install --global pure-prompt --allow-root --unsafe-perm=true\n \n
+ 1007  sudo npm install --global pure-prompt --allow-root --unsafe-perm=true\n \n
+ 1008  clear
+ 1009  man npm
+ 1010  pure
+ 1011  ls /usr/lib/node_modules/pure-prompt
+ 1012  cd /usr/lib/node_modules/pure-prompt
+ 1013  ./pure.zsh
+ 1014  vim ~/.zshrc
+ 1015  sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+ 1016  zsh
+ 1017  zsh --version
+ 1018  ls
+ 1019  cd ..
+ 1020  cd ..
+ 1021  cd ~
+ 1022  ls
+ 1023  cd /tmp
+ 1024  wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+ 1025  ls
+ 1026  vim install.sh
+ 1027  zsh >/dev/null 2>&1
+ 1028  z tmp
+ 1029  ls
+ 1030  wget wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+ 1031  ./install.sh
+ 1032  chmod +x install.sh
+ 1033  ./install.sh
+ 1034  vim install.sh
+ 1035  ./install.sh
+ 1036  ls
+ 1037  z /home/iluxonchik/Documents/GitHub/msc_notes
+ 1038  atom cost_evaluation.md
+ 1039  tmux
+ 1040  z /home/iluxonchik/Documents/tmp/certs
+ 1041  ls
+ 1042  cd tmp
+ 1043  ls
+ 1044  vim tmp.pem
+ 1045  openssl x509 -noout -text -in ./srv_crt.pem
+ 1046  openssl x509 -noout -text -in ./tmp.pem
+ 1047  ls
+ 1048  cd ..
+ 1049  ls
+ 1050  vim commands.txt
+ 1051  vim cc.txt
+ 1052  cd ec
+ 1053  ls
+ 1054  ls
+ 1055  vim ~/.bash_history
+ 1056  vim ~/.zsh_history
+ 1057  history 0
