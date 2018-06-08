@@ -132,15 +132,14 @@ static const mbedtls_ecp_curve_info ecp_supported_curves[] =
 * NOTE: the order of this was modified to force the usage of the
 * 256-bit NIST curve
 */
+#if defined(MBEDTLS_ECP_DP_SECP521R1_ENABLED)
+    { MBEDTLS_ECP_DP_SECP521R1,    25,     521,    "secp521r1"         },
+#endif
+
 #if defined(MBEDTLS_ECP_DP_SECP256R1_ENABLED)
     { MBEDTLS_ECP_DP_SECP256R1,    23,     256,    "secp256r1"         },
 #endif
 
-
-
-#if defined(MBEDTLS_ECP_DP_SECP521R1_ENABLED)
-    { MBEDTLS_ECP_DP_SECP521R1,    25,     521,    "secp521r1"         },
-#endif
 #if defined(MBEDTLS_ECP_DP_BP512R1_ENABLED)
     { MBEDTLS_ECP_DP_BP512R1,      28,     512,    "brainpoolP512r1"   },
 #endif

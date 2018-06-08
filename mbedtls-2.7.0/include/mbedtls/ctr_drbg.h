@@ -79,8 +79,9 @@
 /**< The maximum number of additional input Bytes. */
 #endif
 
+// NOTE: changed to use with large certificates (RSA_15360)
 #if !defined(MBEDTLS_CTR_DRBG_MAX_REQUEST)
-#define MBEDTLS_CTR_DRBG_MAX_REQUEST        1024
+#define MBEDTLS_CTR_DRBG_MAX_REQUEST        2048
 /**< The maximum number of requested Bytes per call. */
 #endif
 
