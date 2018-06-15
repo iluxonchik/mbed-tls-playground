@@ -133,6 +133,17 @@ static const mbedtls_ecp_curve_info ecp_supported_curves[] =
 /*
 * NOTE: only activate the curve for the activated security level.
 */
+#ifdef USE_RSA_2048
+    #if defined(MBEDTLS_ECP_DP_SECP256R1_ENABLED)
+        { MBEDTLS_ECP_DP_SECP256R1,    23,     256,    "secp256r1"         },
+    #endif
+#endif
+
+#ifdef USE_RSA_7680
+    #if defined(MBEDTLS_ECP_DP_SECP384R1_ENABLED)
+        { MBEDTLS_ECP_DP_SECP384R1,    24,     384,    "secp384r1"         },
+    #endif
+#endif
 
 #ifdef USE_RSA_15360
     #if defined(MBEDTLS_ECP_DP_SECP521R1_ENABLED)
@@ -140,18 +151,9 @@ static const mbedtls_ecp_curve_info ecp_supported_curves[] =
     #endif
 #endif
 
-#ifdef USE_RSA_2048
-    #if defined(MBEDTLS_ECP_DP_SECP256R1_ENABLED)
-        { MBEDTLS_ECP_DP_SECP256R1,    23,     256,    "secp256r1"         },
-    #endif
-#endif
-
 #ifdef USE_OTHER_CURVES
     #if defined(MBEDTLS_ECP_DP_BP512R1_ENABLED)
         { MBEDTLS_ECP_DP_BP512R1,      28,     512,    "brainpoolP512r1"   },
-    #endif
-    #if defined(MBEDTLS_ECP_DP_SECP384R1_ENABLED)
-        { MBEDTLS_ECP_DP_SECP384R1,    24,     384,    "secp384r1"         },
     #endif
     #if defined(MBEDTLS_ECP_DP_BP384R1_ENABLED)
         { MBEDTLS_ECP_DP_BP384R1,      27,     384,    "brainpoolP384r1"   },

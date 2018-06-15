@@ -62,6 +62,36 @@ const size_t psk_value_len = sizeof(psk_value);
 
 #endif // ifdef RSA_2048
 
+#ifdef USE_RSA_7680
+
+// using RSA 7680 and equivalent key sizes
+
+/* RSA */
+const char mbedtls_test_srv_crt_rsa[] = MBEDTLS_TEST_SRV_CRT_RSA_RSA_7680;
+const size_t mbedtls_test_srv_crt_rsa_len = sizeof( mbedtls_test_srv_crt_rsa );
+
+const char mbedtls_test_srv_key_rsa[] = MBEDTLS_TEST_SRV_KEY_RSA_RSA_7680;
+const size_t mbedtls_test_srv_key_rsa_len = sizeof( mbedtls_test_srv_key_rsa );
+
+
+/* ECDH_ECDSA */
+const char mbedtls_test_srv_crt_ec[] = MBEDTLS_TEST_SRV_CRT_ECDH_ECDSA_RSA_7680;
+const size_t mbedtls_test_srv_crt_ec_len = sizeof( mbedtls_test_srv_crt_ec );
+
+/*ECDH_RSA*/
+
+const char mbedtls_test_srv_crt_ecdh_rsa[] = MBEDTLS_TEST_SRV_CRT_ECDH_RSA_RSA_7680;
+const size_t mbedtls_test_srv_crt_ecdh_rsa_len = sizeof(mbedtls_test_srv_crt_ecdh_rsa);
+
+
+const char mbedtls_test_srv_key_ec[] = MBEDTLS_TEST_SRV_KEY_EC_RSA_7680;
+const size_t mbedtls_test_srv_key_ec_len = sizeof(mbedtls_test_srv_key_ec);
+
+const char* psk_value = PSK_192_BIT_RSA_7680;
+const size_t psk_value_len = sizeof(psk_value);
+
+#endif // USE_RSA_7860
+
 #ifdef USE_RSA_15360
 
 // using RSA 15360 and equivalent key sizes

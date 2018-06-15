@@ -43,6 +43,8 @@ int main( void )
 
 #include <string.h>
 
+#include "mbedtls/security_level.h"
+
 #define SERVER_PORT "4433"
 #define SERVER_NAME "localhost"
 #define CLIENT_MSG "ping"
@@ -115,6 +117,8 @@ int main( int argc, char** argv )
     mbedtls_x509_crt_init( &cacert );
     mbedtls_ctr_drbg_init( &ctr_drbg );
 
+    mbedtls_dhm_context dhm;
+    mbedtls_dhm_init( &dhm );
 
     const char* use_psk = "PSK";
     const char* use_rsa = "RSA"; // for RSA_PSK ciphersuites
@@ -236,6 +240,20 @@ int main( int argc, char** argv )
     }
 
     mbedtls_ssl_set_bio( &ssl, &server_fd, mbedtls_net_send, mbedtls_net_recv, NULL );
+
+    // TODO: mbedtls_dhm_free(&dhm); on exit
+    ret = mbedtls_dhm_parse_dhm(&dhm, MBEDTLS_TEST_DH_PARAM_RSA_7680, sizeof(MBEDTLS_TEST_DH_PARAM_RSA_7680));
+    if (ret != 0) {
+        mbedtls_printf(" ERROR parsing DH parameters.\n");
+        goto exit;
+    }
+    ret = mbedtls_ssl_conf_dh_param_ctx( &conf, &dhm );
+
+    if( ret != 0 )
+    {
+        mbedtls_printf( "  failed\n  mbedtls_ssl_conf_dh_param returned -0x%04X\n\n", - ret );
+        goto exit;
+    }
 
     /*
      * 4. Handshake

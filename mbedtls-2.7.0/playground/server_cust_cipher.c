@@ -34,6 +34,7 @@ int main( void )
 
 #include <stdlib.h>
 #include <string.h>
+#include <mbedtls/dhm.h>
 
 #if defined(_WIN32)
 #include <windows.h>
@@ -52,9 +53,13 @@ int main( void )
 #include "mbedtls/ssl_cache.h"
 #endif
 
+#include "mbedtls/security_level.h"
+//#include "mbedtls/debug.h"
+
+
 #define SERVER_MSG "pong"
 
-#define DEBUG_LEVEL 0
+#define DEBUG_LEVEL 3
 
 static void my_debug( void *ctx, int level,
                       const char *file, int line,
@@ -133,6 +138,26 @@ int unhexify( unsigned char *output, const char *input, size_t *olen )
     return( 0 );
 }
 
+void print_security_level() {
+
+mbedtls_printf("---\n");
+mbedtls_printf("\tUsing security level of ");
+
+#ifdef USE_RSA_2048
+   mbedtls_printf(" RSA 2048 bit and equivalent.");
+#endif
+
+#ifdef USE_RSA_7680
+   mbedtls_printf(" RSA 7680 bit and equivalent.");
+#endif
+
+#ifdef USE_RSA_15360
+   mbedtls_printf(" RSA 15360 bit and equivalent.");
+#endif
+
+mbedtls_printf("\n---\n");
+
+}
 
 int main( int argc, char** argv )
 {
@@ -186,9 +211,7 @@ int main( int argc, char** argv )
         return ( -1 );
     }
 
-#ifdef USE_RSA_2048
-    mbedtls_printf("Using RSA 2048 security\n");
-#endif
+    print_security_level();
 
     ciphersuite_str_id = argv[1];
 
@@ -196,6 +219,13 @@ int main( int argc, char** argv )
     custom_cipher_suite[0] = ciphersuite_id;
     custom_cipher_suite[1] = 0;
     mbedtls_printf("Chosen ciphersuite id: %d\n", custom_cipher_suite[0]);
+
+
+    mbedtls_ssl_conf_dbg(&conf, my_debug, NULL);
+    mbedtls_debug_set_threshold(DEBUG_LEVEL);
+
+    mbedtls_dhm_context dhm;
+    mbedtls_dhm_init( &dhm );
 
     /*
      * 1. Load the certificates and private RSA key
@@ -428,6 +458,22 @@ int main( int argc, char** argv )
     mbedtls_ssl_set_bio( &ssl, &client_fd, mbedtls_net_send, mbedtls_net_recv, NULL );
 
     mbedtls_printf( " ok\n" );
+
+    // NOTE: this *MUST* be here, otherwise the default DH param will be used (order of the handshake set up)
+    // TODO: mbedtls_dhm_free(&dhm); on exit
+    ret = mbedtls_dhm_parse_dhm(&dhm, MBEDTLS_TEST_DH_PARAM_RSA_7680, sizeof(MBEDTLS_TEST_DH_PARAM_RSA_7680));
+    if (ret != 0) {
+        mbedtls_printf(" ERROR parsing DH parameters.\n");
+        goto exit;
+    }
+
+    ret = mbedtls_ssl_conf_dh_param_ctx( &conf, &dhm );
+
+    if( ret != 0 )
+    {
+        mbedtls_printf( "  failed\n  mbedtls_ssl_conf_dh_param returned -0x%04X\n\n", - ret );
+        goto exit;
+    }
 
     /*
      * 5. Handshake
