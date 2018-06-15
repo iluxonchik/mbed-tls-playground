@@ -15,9 +15,9 @@
 //#define USE_RSA_2048
 // #define USE_RSA_3072
 
-#define USE_RSA_7680
+//#define USE_RSA_7680
 
-//#define USE_RSA_15360
+#define USE_RSA_15360
 
 /* You probably don't want this activated. I put it here so that I would not have to comment unused code (for now) out. */
 // #define USE_OTHER_CURVES
@@ -129,6 +129,16 @@
 "4AgahOxIxXx2gxJnq3yfkJfIjwf0s2DyP0kY2y6Ua1OeomPeY9mrIS4tCuDQ6LrE\r\n"  \
 "TB6l9VGoxJL4fyHnZb8L5gGvnB1bbD8cL6YPaDiOhcRseC9vBiEuVg==\r\n"  \
 "-----END RSA PRIVATE KEY-----\r\n"
+
+#define MBEDTLS_TEST_DH_PARAM_RSA_2048                                 \
+"-----BEGIN DH PARAMETERS-----\r\n"                                    \
+"MIIBCAKCAQEAsSBdhajoD+YbDe7jgDZTnjTZWgoIYrA8UIfxpFtiNzcPgwCrbTJI\r\n" \
+"UGgY2TKFfnWJLu2GMjxgX4e/LLquG8kdzqRpsEt1CagyZ/drHX8H/YxOZfXZLj49\r\n" \
+"YCPgS4dBbQCO7v54FqaJveiv8dCpwgIO+OWD3/NFcyWa2Yv1oqM+MsWnPvCW72oX\r\n" \
+"brnJNKMgQdXIONieSGzq0fNuqPYw6Bg4f8ZqhstHgPCAv60FPr1IIuP7wDg7a/Mi\r\n" \
+"IkjLWIy700RBq8bfEezuflB4prF5Hg/zsglg8j4MmPbZFJ4sFYkk8xS89zXPa9eU\r\n" \
+"8mIRECpovUJkkBV6a2VhaML6TdCkOke6MwIBAg==\r\n"                         \
+"-----END DH PARAMETERS-----\r\n"
 
 /* ---- END RSA_2048 ---- */
 

@@ -54,7 +54,7 @@ int main( void )
 #endif
 
 #include "mbedtls/security_level.h"
-//#include "mbedtls/debug.h"
+#include "mbedtls/debug.h"
 
 
 #define SERVER_MSG "pong"
@@ -461,7 +461,7 @@ int main( int argc, char** argv )
 
     // NOTE: this *MUST* be here, otherwise the default DH param will be used (order of the handshake set up)
     // TODO: mbedtls_dhm_free(&dhm); on exit
-    ret = mbedtls_dhm_parse_dhm(&dhm, MBEDTLS_TEST_DH_PARAM_RSA_7680, sizeof(MBEDTLS_TEST_DH_PARAM_RSA_7680));
+    ret = mbedtls_dhm_parse_dhm(&dhm, dhm_params, dhm_params_len);
     if (ret != 0) {
         mbedtls_printf(" ERROR parsing DH parameters.\n");
         goto exit;

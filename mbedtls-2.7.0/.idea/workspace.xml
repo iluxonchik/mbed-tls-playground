@@ -162,19 +162,20 @@
       <file leaf-file-name="server_cust_cipher.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/playground/server_cust_cipher.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-440">
-              <caret line="56" column="2" lean-forward="false" selection-start-line="56" selection-start-column="2" selection-end-line="56" selection-end-column="2" />
+            <state relative-caret-position="440">
+              <caret line="463" column="64" lean-forward="false" selection-start-line="463" selection-start-column="64" selection-end-line="463" selection-end-column="64" />
               <folding>
                 <element signature="e#1113#1132#0" expanded="true" />
-                <element signature="e#3740#3788#0" expanded="true" />
-                <element signature="e#3901#3950#0" expanded="true" />
-                <element signature="e#17701#17792#0" expanded="true" />
+                <element signature="e#1525#1560#0" expanded="true" />
+                <element signature="e#3738#3786#0" expanded="true" />
+                <element signature="e#17655#17746#0" expanded="true" />
+                <marker date="1529076015623" expanded="true" signature="3899:3948" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dhm.c" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dhm.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/library/dhm.c">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="320">
@@ -194,11 +195,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ssl.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/mbedtls/ssl.h">
+      <file leaf-file-name="certs.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/library/certs.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="536" column="30" lean-forward="false" selection-start-line="536" selection-start-column="30" selection-end-line="536" selection-end-column="30" />
+            <state relative-caret-position="260">
+              <caret line="134" column="68" lean-forward="false" selection-start-line="134" selection-start-column="68" selection-end-line="134" selection-end-column="68" />
+              <folding>
+                <element signature="e#953#2207#0" expanded="true" />
+                <marker date="1529076015559" expanded="true" signature="3408:4671" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="security_level.h" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/include/mbedtls/security_level.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -234,11 +248,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="debug.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/mbedtls/debug.h">
+      <file leaf-file-name="certs.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/mbedtls/certs.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="175" column="16" lean-forward="false" selection-start-line="175" selection-start-column="16" selection-end-line="175" selection-end-column="16" />
+            <state relative-caret-position="380">
+              <caret line="37" column="7" lean-forward="false" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -247,22 +261,12 @@
       <file leaf-file-name="client_cust_cipher.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/playground/client_cust_cipher.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="244" column="107" lean-forward="false" selection-start-line="244" selection-start-column="107" selection-end-line="244" selection-end-column="107" />
+            <state relative-caret-position="1552">
+              <caret line="244" column="63" lean-forward="false" selection-start-line="244" selection-start-column="63" selection-end-line="244" selection-end-column="63" />
               <folding>
-                <marker date="1529073710599" expanded="true" signature="2773:2816" ph="..." />
-                <marker date="1529073710599" expanded="true" signature="10483:10940" ph="..." />
+                <marker date="1529076015673" expanded="true" signature="2773:2816" ph="..." />
+                <marker date="1529076015673" expanded="true" signature="10439:10896" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="debug.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/library/debug.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-876">
-              <caret line="213" column="5" lean-forward="false" selection-start-line="213" selection-start-column="5" selection-end-line="213" selection-end-column="5" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -297,18 +301,18 @@
         <option value="$PROJECT_DIR$/library/pkparse.c" />
         <option value="$PROJECT_DIR$/include/mbedtls/ctr_drbg.h" />
         <option value="$PROJECT_DIR$/library/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/include/mbedtls/certs.h" />
         <option value="$PROJECT_DIR$/library/security_level.c" />
         <option value="$PROJECT_DIR$/library/ecdh.c" />
         <option value="$PROJECT_DIR$/library/ecp.c" />
-        <option value="$PROJECT_DIR$/library/certs.c" />
-        <option value="$PROJECT_DIR$/include/mbedtls/security_level.h" />
         <option value="$PROJECT_DIR$/library/ssl_srv.c" />
         <option value="$PROJECT_DIR$/include/mbedtls/bignum.h" />
         <option value="$PROJECT_DIR$/library/ssl_tls.c" />
-        <option value="$PROJECT_DIR$/playground/client_cust_cipher.c" />
-        <option value="$PROJECT_DIR$/playground/server_cust_cipher.c" />
         <option value="$PROJECT_DIR$/library/dhm.c" />
+        <option value="$PROJECT_DIR$/include/mbedtls/certs.h" />
+        <option value="$PROJECT_DIR$/library/certs.c" />
+        <option value="$PROJECT_DIR$/playground/server_cust_cipher.c" />
+        <option value="$PROJECT_DIR$/playground/client_cust_cipher.c" />
+        <option value="$PROJECT_DIR$/include/mbedtls/security_level.h" />
       </list>
     </option>
   </component>
@@ -915,12 +919,12 @@
       <workItem from="1527442191044" duration="9249000" />
       <workItem from="1528123009717" duration="4615000" />
       <workItem from="1528367114834" duration="7672000" />
-      <workItem from="1528903709586" duration="21040000" />
+      <workItem from="1528903709586" duration="23096000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123538000" />
+    <option name="totallyTimeSpent" value="125594000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
@@ -1214,14 +1218,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/mbedtls/certs.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/library/ecp_curves.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
@@ -1251,7 +1247,6 @@
             <element signature="e#2148#2181#0" expanded="false" />
             <element signature="e#2325#2348#0" expanded="false" />
             <element signature="e#4274#4408#0" expanded="false" />
-            <element signature="e#4609#4743#0" expanded="false" />
             <element signature="e#4780#5881#0" expanded="false" />
             <element signature="e#19356#19377#0" expanded="false" />
             <element signature="e#20814#20934#0" expanded="false" />
@@ -1283,33 +1278,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library/certs.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5700">
-          <caret line="285" column="28" lean-forward="false" selection-start-line="285" selection-start-column="28" selection-end-line="285" selection-end-column="28" />
-          <folding>
-            <element signature="e#832#860#0" expanded="false" />
-            <element signature="e#869#895#0" expanded="false" />
-            <element signature="e#953#2079#0" expanded="false" />
-            <element signature="e#3152#4285#0" expanded="false" />
-            <element signature="e#11356#11498#0" expanded="false" />
-            <element signature="e#19339#20281#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/programs/ssl/ssl_server2.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="1983" column="35" lean-forward="false" selection-start-line="1983" selection-start-column="35" selection-end-line="1983" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/mbedtls/security_level.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="623" column="12" lean-forward="false" selection-start-line="623" selection-start-column="12" selection-end-line="623" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -1372,30 +1344,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/playground/client_cust_cipher.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="244" column="107" lean-forward="false" selection-start-line="244" selection-start-column="107" selection-end-line="244" selection-end-column="107" />
-          <folding>
-            <marker date="1529073710599" expanded="true" signature="2773:2816" ph="..." />
-            <marker date="1529073710599" expanded="true" signature="10483:10940" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/playground/server_cust_cipher.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-440">
-          <caret line="56" column="2" lean-forward="false" selection-start-line="56" selection-start-column="2" selection-end-line="56" selection-end-column="2" />
-          <folding>
-            <element signature="e#1113#1132#0" expanded="true" />
-            <element signature="e#3740#3788#0" expanded="true" />
-            <element signature="e#3901#3950#0" expanded="true" />
-            <element signature="e#17701#17792#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/library/ssl_tls.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -1408,6 +1356,58 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="54" column="16" lean-forward="false" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/mbedtls/certs.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="37" column="7" lean-forward="false" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/certs.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="134" column="68" lean-forward="false" selection-start-line="134" selection-start-column="68" selection-end-line="134" selection-end-column="68" />
+          <folding>
+            <element signature="e#953#2207#0" expanded="true" />
+            <marker date="1529076015559" expanded="true" signature="3408:4671" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/playground/server_cust_cipher.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="463" column="64" lean-forward="false" selection-start-line="463" selection-start-column="64" selection-end-line="463" selection-end-column="64" />
+          <folding>
+            <element signature="e#1113#1132#0" expanded="true" />
+            <element signature="e#1525#1560#0" expanded="true" />
+            <element signature="e#3738#3786#0" expanded="true" />
+            <element signature="e#17655#17746#0" expanded="true" />
+            <marker date="1529076015623" expanded="true" signature="3899:3948" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/playground/client_cust_cipher.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1552">
+          <caret line="244" column="63" lean-forward="false" selection-start-line="244" selection-start-column="63" selection-end-line="244" selection-end-column="63" />
+          <folding>
+            <marker date="1529076015673" expanded="true" signature="2773:2816" ph="..." />
+            <marker date="1529076015673" expanded="true" signature="10439:10896" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/mbedtls/security_level.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>

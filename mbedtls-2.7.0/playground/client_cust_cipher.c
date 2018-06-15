@@ -242,7 +242,7 @@ int main( int argc, char** argv )
     mbedtls_ssl_set_bio( &ssl, &server_fd, mbedtls_net_send, mbedtls_net_recv, NULL );
 
     // TODO: mbedtls_dhm_free(&dhm); on exit
-    ret = mbedtls_dhm_parse_dhm(&dhm, MBEDTLS_TEST_DH_PARAM_RSA_7680, sizeof(MBEDTLS_TEST_DH_PARAM_RSA_7680));
+    ret = mbedtls_dhm_parse_dhm(&dhm, dhm_params, dhm_params_len);
     if (ret != 0) {
         mbedtls_printf(" ERROR parsing DH parameters.\n");
         goto exit;

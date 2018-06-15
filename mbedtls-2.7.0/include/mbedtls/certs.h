@@ -34,6 +34,9 @@ extern const char* psk_value;
 extern const size_t psk_value_len;
 extern const char* psk_identity;
 
+extern const char* dhm_params;
+extern const size_t dhm_params_len;
+
 #if defined(MBEDTLS_PEM_PARSE_C)
 /* Concatenation of all CA certificates in PEM format if available */
 extern const char   mbedtls_test_cas_pem[];

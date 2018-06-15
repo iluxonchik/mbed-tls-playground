@@ -60,6 +60,9 @@ const size_t mbedtls_test_srv_key_ec_len = sizeof(mbedtls_test_srv_key_ec);
 const char* psk_value = PSK_112_BIT_RSA_2048;
 const size_t psk_value_len = sizeof(psk_value);
 
+const char* dhm_params = MBEDTLS_TEST_DH_PARAM_RSA_2048;
+const size_t dhm_params_len = sizeof(MBEDTLS_TEST_DH_PARAM_RSA_2048);
+
 #endif // ifdef RSA_2048
 
 #ifdef USE_RSA_7680
@@ -89,6 +92,9 @@ const size_t mbedtls_test_srv_key_ec_len = sizeof(mbedtls_test_srv_key_ec);
 
 const char* psk_value = PSK_192_BIT_RSA_7680;
 const size_t psk_value_len = sizeof(psk_value);
+
+const char* dhm_params = MBEDTLS_TEST_DH_PARAM_RSA_7680;
+const size_t dhm_params_len = sizeof(MBEDTLS_TEST_DH_PARAM_RSA_7680);
 
 #endif // USE_RSA_7860
 
@@ -124,6 +130,9 @@ const size_t mbedtls_test_srv_key_ec_len = sizeof(mbedtls_test_srv_key_ec);
 
 const char* psk_value = PSK_256_BIT_RSA_15360;
 const size_t psk_value_len = sizeof(psk_value);
+
+const char* dhm_params = MBEDTLS_TEST_DH_PARAM_RSA_15360;
+const size_t dhm_params_len = sizeof(MBEDTLS_TEST_DH_PARAM_RSA_15360);
 
 #endif // USE_RSA_15360
 
