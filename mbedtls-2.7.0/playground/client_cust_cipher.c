@@ -84,7 +84,8 @@ int main( int argc, char** argv )
 
     char *ciphersuite_str_id;
     unsigned char *send_buf;
-    int ciphersuite_id, num_bytes_to_send, num_bytes_written = 0;
+    int ciphersuite_id, num_bytes_written = 0;
+    int num_bytes_to_send = 4;
     int custom_cipher_suite[2];
 
     int ret, len, num_bytes_read = 0;
@@ -328,17 +329,14 @@ int main( int argc, char** argv )
     /*
      * 3. Write the GET request
      */
-    mbedtls_printf( "  > Write to server:" );
+    mbedtls_printf( "  > Write to server:\n" );
     fflush( stdout );
 
     len = num_bytes_to_send;
-    mbedtls_printf("len of send_buf = %d\n", len);
     ret = 0;
 
     while( ret = mbedtls_ssl_write( &ssl, send_buf + ret, len) )
     {
-
-        mbedtls_printf("\n\nret=%d\n\n", ret);
 
         num_bytes_written += ret;
 
@@ -349,12 +347,13 @@ int main( int argc, char** argv )
         len += ret ;
     }
 
-    mbedtls_printf( " %d bytes written\n%s\n", num_bytes_written, (char *) send_buf );
+    //mbedtls_printf( " %d bytes written\n%s\n", num_bytes_written, (char *) send_buf );
+    mbedtls_printf( " %d bytes written\n", num_bytes_written);
 
     /*
      * 7. Read the HTTP response
      */
-    mbedtls_printf( "  < Read from server:" );
+    mbedtls_printf( "  < Read from server:\n" );
     fflush( stdout );
 
     do

@@ -162,26 +162,26 @@
       <file leaf-file-name="client_cust_cipher.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/playground/client_cust_cipher.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="363" column="28" lean-forward="false" selection-start-line="363" selection-start-column="28" selection-end-line="363" selection-end-column="28" />
+            <state relative-caret-position="900">
+              <caret line="398" column="43" lean-forward="false" selection-start-line="398" selection-start-column="43" selection-end-line="398" selection-end-column="43" />
               <folding>
-                <element signature="e#3160#3204#0" expanded="true" />
-                <marker date="1532534941532" expanded="true" signature="3585:3628" ph="..." />
-                <marker date="1532534941532" expanded="true" signature="11160:11617" ph="..." />
+                <element signature="e#3172#3216#0" expanded="true" />
+                <marker date="1532628535403" expanded="true" signature="3597:3640" ph="..." />
+                <marker date="1532628535403" expanded="true" signature="11142:11599" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="server_cust_cipher.c" pinned="false" current-in-tab="false">
+      <file leaf-file-name="server_cust_cipher.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/playground/server_cust_cipher.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1606">
-              <caret line="538" column="28" lean-forward="false" selection-start-line="538" selection-start-column="28" selection-end-line="538" selection-end-column="28" />
+            <state relative-caret-position="160">
+              <caret line="575" column="43" lean-forward="false" selection-start-line="575" selection-start-column="43" selection-end-line="575" selection-end-column="43" />
               <folding>
                 <element signature="e#1113#1132#0" expanded="true" />
                 <element signature="e#3789#3837#0" expanded="true" />
-                <element signature="e#18557#18648#0" expanded="true" />
+                <element signature="e#18579#18670#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -197,7 +197,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ssl_tls.c" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ssl_tls.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/library/ssl_tls.c">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="241">
@@ -297,9 +297,9 @@
         <option value="$PROJECT_DIR$/include/mbedtls/certs.h" />
         <option value="$PROJECT_DIR$/library/certs.c" />
         <option value="$PROJECT_DIR$/include/mbedtls/security_level.h" />
-        <option value="$PROJECT_DIR$/playground/server_cust_cipher.c" />
-        <option value="$PROJECT_DIR$/playground/client_cust_cipher.c" />
         <option value="$PROJECT_DIR$/library/ssl_tls.c" />
+        <option value="$PROJECT_DIR$/playground/client_cust_cipher.c" />
+        <option value="$PROJECT_DIR$/playground/server_cust_cipher.c" />
       </list>
     </option>
   </component>
@@ -904,12 +904,12 @@
       <workItem from="1528903709586" duration="25375000" />
       <workItem from="1529341221439" duration="3100000" />
       <workItem from="1530835852315" duration="1675000" />
-      <workItem from="1532429509337" duration="22224000" />
+      <workItem from="1532429509337" duration="23621000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154872000" />
+    <option name="totallyTimeSpent" value="156269000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
@@ -927,7 +927,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25867507" sideWeight="0.49791667" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39957938" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39957938" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1335,30 +1335,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/playground/server_cust_cipher.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1606">
-          <caret line="538" column="28" lean-forward="false" selection-start-line="538" selection-start-column="28" selection-end-line="538" selection-end-column="28" />
-          <folding>
-            <element signature="e#1113#1132#0" expanded="true" />
-            <element signature="e#3789#3837#0" expanded="true" />
-            <element signature="e#18557#18648#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/playground/client_cust_cipher.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="363" column="28" lean-forward="false" selection-start-line="363" selection-start-column="28" selection-end-line="363" selection-end-column="28" />
-          <folding>
-            <element signature="e#3160#3204#0" expanded="true" />
-            <marker date="1532534941532" expanded="true" signature="3585:3628" ph="..." />
-            <marker date="1532534941532" expanded="true" signature="11160:11617" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/mbedtls/ssl_internal.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="301">
@@ -1372,6 +1348,30 @@
         <state relative-caret-position="241">
           <caret line="3849" column="8" lean-forward="false" selection-start-line="3849" selection-start-column="8" selection-end-line="3849" selection-end-column="8" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/playground/client_cust_cipher.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="398" column="43" lean-forward="false" selection-start-line="398" selection-start-column="43" selection-end-line="398" selection-end-column="43" />
+          <folding>
+            <element signature="e#3172#3216#0" expanded="true" />
+            <marker date="1532628535403" expanded="true" signature="3597:3640" ph="..." />
+            <marker date="1532628535403" expanded="true" signature="11142:11599" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/playground/server_cust_cipher.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="575" column="43" lean-forward="false" selection-start-line="575" selection-start-column="43" selection-end-line="575" selection-end-column="43" />
+          <folding>
+            <element signature="e#1113#1132#0" expanded="true" />
+            <element signature="e#3789#3837#0" expanded="true" />
+            <element signature="e#18579#18670#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

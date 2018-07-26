@@ -529,7 +529,7 @@ int main( int argc, char** argv )
     /*
      * 6. Read the HTTP Request
      */
-    mbedtls_printf( "  < Read from client:" );
+    mbedtls_printf( "  < Read from client:\n" );
     fflush( stdout );
 
     do
@@ -537,7 +537,6 @@ int main( int argc, char** argv )
         len = sizeof( read_buf );
         memset( read_buf, 0, sizeof( read_buf ) );
         ret = mbedtls_ssl_read( &ssl, read_buf, len );
-
 
         if( ret == MBEDTLS_ERR_SSL_WANT_READ || ret == MBEDTLS_ERR_SSL_WANT_WRITE )
             continue;
@@ -563,7 +562,8 @@ int main( int argc, char** argv )
         }
 
         len = ret;
-        mbedtls_printf( " %d bytes read:\n%s\n", len, (char *) read_buf );
+        //mbedtls_printf( " %d bytes read:\n%s\n", len, (char *) read_buf );
+        mbedtls_printf( " %d bytes read:\n", len);
 
         if( ret > 0 )
             break;
@@ -573,18 +573,15 @@ int main( int argc, char** argv )
     /*
      * 7. Write the 200 Response
      */
-    mbedtls_printf( "  > Write to client:" );
+    mbedtls_printf( "  > Write to client:\n" );
     fflush( stdout );
 
 
     len = num_bytes_to_send;
-    mbedtls_printf("len of send_buf = %d\n", len);
     ret = 0;
 
     while( ret = mbedtls_ssl_write( &ssl, send_buf + ret, len) )
     {
-
-        mbedtls_printf("\n\nret=%d\n\n", ret);
 
         if( ret == MBEDTLS_ERR_NET_CONN_RESET )
         {
@@ -601,7 +598,8 @@ int main( int argc, char** argv )
         len += ret ;
     }
 
-    mbedtls_printf( " %d bytes written\n%s\n", num_bytes_written, (char *) send_buf );
+    //mbedtls_printf( " %d bytes written\n%s\n", num_bytes_written, (char *) send_buf );
+    mbedtls_printf( " %d bytes written\n", num_bytes_written);
 
     mbedtls_printf( "  . Closing the connection..." );
 
