@@ -15,9 +15,9 @@
 //#define USE_RSA_2048
 // #define USE_RSA_3072
 
-//#define USE_RSA_7680
+#define USE_RSA_7680
 
-#define USE_RSA_15360
+//#define USE_RSA_15360
 
 /* You probably don't want this activated. I put it here so that I would not have to comment unused code (for now) out. */
 // #define USE_OTHER_CURVES

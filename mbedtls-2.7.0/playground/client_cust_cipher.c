@@ -61,15 +61,33 @@ static void my_debug( void *ctx, int level,
     fflush(  (FILE *) ctx  );
 }
 
+unsigned char *generate_random_bytes(int num_bytes) {
+    if (num_bytes < 1) {
+        mbedtls_printf("[!!!] Requested number of random bytes is %d. Returning null...\n", num_bytes);
+        return NULL;
+    } else {
+        mbedtls_printf("Generating %d random bytes...\n", num_bytes);
+    }
+
+    unsigned char* rand_bytes = malloc(num_bytes);
+
+    for (int i = 0; i < num_bytes; i++){
+        rand_bytes[i] = rand();
+    }
+
+    return rand_bytes;
+}
+
 int main( int argc, char** argv )
 {
 
 
     char *ciphersuite_str_id;
-    int ciphersuite_id;
+    unsigned char *send_buf;
+    int ciphersuite_id, num_bytes_to_send, num_bytes_written = 0;
     int custom_cipher_suite[2];
 
-    int ret, len;
+    int ret, len, num_bytes_read = 0;
     mbedtls_net_context server_fd;
     uint32_t flags;
     unsigned char buf[1024];
@@ -90,6 +108,16 @@ int main( int argc, char** argv )
         mbedtls_printf("[!!!] No ciphersuite argument provided\n");
         return ( -1 );
     }
+
+    if (argc > 2) {
+        // num of bytes to send provided
+        num_bytes_to_send = strtol(argv[2], NULL, 10);
+    }
+
+
+    srand((unsigned int) time(NULL));
+    // generate random bytes to send (if needed)
+    send_buf = generate_random_bytes(num_bytes_to_send);
 
 #ifdef USE_RSA_2048
     mbedtls_printf("Using RSA 2048 security\n");
@@ -303,21 +331,25 @@ int main( int argc, char** argv )
     mbedtls_printf( "  > Write to server:" );
     fflush( stdout );
 
-    len = sprintf( (char *) buf, CLIENT_MSG );
+    len = num_bytes_to_send;
+    mbedtls_printf("len of send_buf = %d\n", len);
+    ret = 0;
 
-    while( ( ret = mbedtls_ssl_write( &ssl, buf, len ) ) <= 0 )
+    while( ret = mbedtls_ssl_write( &ssl, send_buf + ret, len) )
     {
-        // INFO: if mbedtls_ssl_write() returns MBEDTLS_ERR_SSL_WANT_READ or MBEDTLS_ERR_SSL_WANT_WRITE, it must
-        //       be called with the same argumetns until it returns a non-negative value [from docs]
-        if( ret != MBEDTLS_ERR_SSL_WANT_READ && ret != MBEDTLS_ERR_SSL_WANT_WRITE )
-        {
-            mbedtls_printf( " failed\n  ! mbedtls_ssl_write returned %d\n\n", ret );
-            goto exit;
+
+        mbedtls_printf("\n\nret=%d\n\n", ret);
+
+        num_bytes_written += ret;
+
+        if (ret == len) {
+            break;
         }
+
+        len += ret ;
     }
 
-    len = ret;
-    mbedtls_printf( " %d bytes written\n%s\n", len, (char *) buf );
+    mbedtls_printf( " %d bytes written\n%s\n", num_bytes_written, (char *) send_buf );
 
     /*
      * 7. Read the HTTP response
@@ -327,15 +359,19 @@ int main( int argc, char** argv )
 
     do
     {
-        len = sizeof( buf ) - 1;
+        len = sizeof( buf );
         memset( buf, 0, sizeof( buf ) );
         ret = mbedtls_ssl_read( &ssl, buf, len );
 
-        if( ret == MBEDTLS_ERR_SSL_WANT_READ || ret == MBEDTLS_ERR_SSL_WANT_WRITE )
+        if( ret == MBEDTLS_ERR_SSL_WANT_READ || ret == MBEDTLS_ERR_SSL_WANT_WRITE ){
+            mbedtls_printf("WANT READ or WANT WRITE\n");
             continue;
+        }
 
-        if( ret == MBEDTLS_ERR_SSL_PEER_CLOSE_NOTIFY )
+        if( ret == MBEDTLS_ERR_SSL_PEER_CLOSE_NOTIFY ){
+            mbedtls_printf("CLOSE NOTIFY \n");
             break;
+        }
 
         if( ret < 0 )
         {
@@ -348,12 +384,11 @@ int main( int argc, char** argv )
             mbedtls_printf( "\n\nEOF\n\n" );
             break;
         }
-
-        len = ret;
-        mbedtls_printf( " %d bytes read\n%s\n", len, (char *) buf );
+        num_bytes_read += ret;
     }
     while( 1 );
 
+    mbedtls_printf( " %d bytes read\n\n", num_bytes_read);
     mbedtls_ssl_close_notify( &ssl );
 
     exit:

@@ -54,7 +54,7 @@ int main( void )
 #endif
 
 #include "mbedtls/security_level.h"
-#include "mbedtls/debug.h"
+//#include "mbedtls/debug.h"
 
 
 #define SERVER_MSG "pong"
@@ -83,6 +83,8 @@ struct _psk_entry
     unsigned char key[MBEDTLS_PSK_MAX_LEN];
     psk_entry *next;
 };
+
+unsigned char *generate_random_bytes(int send);
 
 /*
  * PSK callback. For now, this method completely ignores the
@@ -159,20 +161,38 @@ mbedtls_printf("\n---\n");
 
 }
 
+unsigned char *generate_random_bytes(int num_bytes) {
+    if (num_bytes < 1) {
+        mbedtls_printf("[!!!] Requested number of random bytes is %d. Returning null...\n", num_bytes);
+        return NULL;
+    } else {
+        mbedtls_printf("Generating %d random bytes...\n", num_bytes);
+    }
+
+    unsigned char* rand_bytes = malloc(num_bytes);
+
+    for (int i = 0; i < num_bytes; i++){
+        rand_bytes[i] = rand();
+    }
+
+    return rand_bytes;
+}
+
 int main( int argc, char** argv )
 {
-
-
     char *ciphersuite_str_id;
     int ciphersuite_id;
     int custom_cipher_suite[2];
     char *ciphersuite_name;
 
-    int ret, len;
+    int ret, len, num_bytes_written = 0;
     mbedtls_net_context listen_fd, client_fd;
-    unsigned char buf[1024];
+    unsigned char* send_buf;
+    unsigned char read_buf [1024];
     const char *pers = "ssl_server";
     char *chosen_cipher;
+
+    int num_bytes_to_send = 4;
 
     mbedtls_entropy_context entropy;
     mbedtls_ctr_drbg_context ctr_drbg;
@@ -202,14 +222,20 @@ int main( int argc, char** argv )
     mbedtls_ctr_drbg_init( &ctr_drbg );
 
 #if defined(MBEDTLS_DEBUG_C)
-    mbedtls_debug_set_threshold( DEBUG_LEVEL );
+    //mbedtls_debug_set_threshold( DEBUG_LEVEL );
 #endif
 
-  // parse arg
+    // parse arg
     if (argc < 2) {
         mbedtls_printf("[!!!] No ciphersuite argument provided\n");
         return ( -1 );
     }
+
+    if (argc > 2) {
+        // num of bytes to send provided
+        num_bytes_to_send = strtol(argv[2], NULL, 10);
+    }
+
 
     print_security_level();
 
@@ -221,8 +247,14 @@ int main( int argc, char** argv )
     mbedtls_printf("Chosen ciphersuite id: %d\n", custom_cipher_suite[0]);
 
 
+    srand((unsigned int) time(NULL));
+    // generate random bytes to send (if needed)
+    send_buf = generate_random_bytes(num_bytes_to_send);
+
+    /*
     mbedtls_ssl_conf_dbg(&conf, my_debug, NULL);
     mbedtls_debug_set_threshold(DEBUG_LEVEL);
+    */
 
     mbedtls_dhm_context dhm;
     mbedtls_dhm_init( &dhm );
@@ -502,9 +534,10 @@ int main( int argc, char** argv )
 
     do
     {
-        len = sizeof( buf ) - 1;
-        memset( buf, 0, sizeof( buf ) );
-        ret = mbedtls_ssl_read( &ssl, buf, len );
+        len = sizeof( read_buf );
+        memset( read_buf, 0, sizeof( read_buf ) );
+        ret = mbedtls_ssl_read( &ssl, read_buf, len );
+
 
         if( ret == MBEDTLS_ERR_SSL_WANT_READ || ret == MBEDTLS_ERR_SSL_WANT_WRITE )
             continue;
@@ -530,7 +563,7 @@ int main( int argc, char** argv )
         }
 
         len = ret;
-        mbedtls_printf( " %d bytes read:\n%s\n", len, (char *) buf );
+        mbedtls_printf( " %d bytes read:\n%s\n", len, (char *) read_buf );
 
         if( ret > 0 )
             break;
@@ -543,25 +576,32 @@ int main( int argc, char** argv )
     mbedtls_printf( "  > Write to client:" );
     fflush( stdout );
 
-    len = sprintf( (char *) buf, SERVER_MSG);
 
-    while( ( ret = mbedtls_ssl_write( &ssl, buf, len ) ) <= 0 )
+    len = num_bytes_to_send;
+    mbedtls_printf("len of send_buf = %d\n", len);
+    ret = 0;
+
+    while( ret = mbedtls_ssl_write( &ssl, send_buf + ret, len) )
     {
+
+        mbedtls_printf("\n\nret=%d\n\n", ret);
+
         if( ret == MBEDTLS_ERR_NET_CONN_RESET )
         {
             mbedtls_printf( " failed\n  ! peer closed the connection\n\n" );
             goto reset;
         }
 
-        if( ret != MBEDTLS_ERR_SSL_WANT_READ && ret != MBEDTLS_ERR_SSL_WANT_WRITE )
-        {
-            mbedtls_printf( " failed\n  ! mbedtls_ssl_write returned %d\n\n", ret );
-            goto exit;
+        num_bytes_written += ret;
+
+        if (ret == len) {
+            break;
         }
+
+        len += ret ;
     }
 
-    len = ret;
-    mbedtls_printf( " %d bytes written\n%s\n", len, (char *) buf );
+    mbedtls_printf( " %d bytes written\n%s\n", num_bytes_written, (char *) send_buf );
 
     mbedtls_printf( "  . Closing the connection..." );
 
@@ -614,6 +654,8 @@ int main( int argc, char** argv )
 
     return( ret );
 }
+
+
 #endif /* MBEDTLS_BIGNUM_C && MBEDTLS_CERTS_C && MBEDTLS_ENTROPY_C &&
           MBEDTLS_SSL_TLS_C && MBEDTLS_SSL_SRV_C && MBEDTLS_NET_C &&
           MBEDTLS_RSA_C && MBEDTLS_CTR_DRBG_C && MBEDTLS_X509_CRT_PARSE_C
