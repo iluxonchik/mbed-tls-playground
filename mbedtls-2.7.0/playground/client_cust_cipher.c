@@ -61,7 +61,7 @@ static void my_debug( void *ctx, int level,
     fflush(  (FILE *) ctx  );
 }
 
-unsigned char *generate_random_bytes(int num_bytes) {
+unsigned char *generate_random_bytes(size_t num_bytes) {
     if (num_bytes < 1) {
         mbedtls_printf("[!!!] Requested number of random bytes is %d. Returning null...\n", num_bytes);
         return NULL;
@@ -84,11 +84,13 @@ int main( int argc, char** argv )
 
     char *ciphersuite_str_id;
     unsigned char *send_buf;
-    int ciphersuite_id, num_bytes_written = 0;
-    int num_bytes_to_send = 4;
+    int ciphersuite_id;
+    size_t num_bytes_written = 0;
+    size_t num_bytes_to_send = 4;
     int custom_cipher_suite[2];
 
-    int ret, len, num_bytes_read = 0;
+    int ret;
+    size_t len, num_bytes_read = 0;
     mbedtls_net_context server_fd;
     uint32_t flags;
     unsigned char buf[1024];
@@ -344,7 +346,7 @@ int main( int argc, char** argv )
             break;
         }
 
-        len += ret ;
+        len -= ret ;
     }
 
     //mbedtls_printf( " %d bytes written\n%s\n", num_bytes_written, (char *) send_buf );
@@ -383,6 +385,7 @@ int main( int argc, char** argv )
             mbedtls_printf( "\n\nEOF\n\n" );
             break;
         }
+
         num_bytes_read += ret;
     }
     while( 1 );

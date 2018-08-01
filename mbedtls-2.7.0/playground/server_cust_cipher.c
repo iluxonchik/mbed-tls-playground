@@ -84,7 +84,7 @@ struct _psk_entry
     psk_entry *next;
 };
 
-unsigned char *generate_random_bytes(int send);
+unsigned char *generate_random_bytes(size_t send);
 
 /*
  * PSK callback. For now, this method completely ignores the
@@ -161,7 +161,7 @@ mbedtls_printf("\n---\n");
 
 }
 
-unsigned char *generate_random_bytes(int num_bytes) {
+unsigned char *generate_random_bytes(size_t num_bytes) {
     if (num_bytes < 1) {
         mbedtls_printf("[!!!] Requested number of random bytes is %d. Returning null...\n", num_bytes);
         return NULL;
@@ -185,14 +185,15 @@ int main( int argc, char** argv )
     int custom_cipher_suite[2];
     char *ciphersuite_name;
 
-    int ret, len, num_bytes_written = 0;
+    int ret;
+    size_t len, num_bytes_written = 0;
     mbedtls_net_context listen_fd, client_fd;
     unsigned char* send_buf;
     unsigned char read_buf [1024];
     const char *pers = "ssl_server";
     char *chosen_cipher;
 
-    int num_bytes_to_send = 4;
+    size_t num_bytes_to_send = 4;
 
     mbedtls_entropy_context entropy;
     mbedtls_ctr_drbg_context ctr_drbg;
@@ -595,7 +596,7 @@ int main( int argc, char** argv )
             break;
         }
 
-        len += ret ;
+        len -= ret ;
     }
 
     //mbedtls_printf( " %d bytes written\n%s\n", num_bytes_written, (char *) send_buf );
