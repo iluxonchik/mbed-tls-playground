@@ -161,6 +161,8 @@ mbedtls_printf("\n---\n");
 
 }
 
+#define MAGIC_END_BYTE 192
+
 unsigned char *generate_random_bytes(size_t num_bytes) {
     if (num_bytes < 1) {
         mbedtls_printf("[!!!] Requested number of random bytes is %d. Returning null...\n", num_bytes);
@@ -169,10 +171,11 @@ unsigned char *generate_random_bytes(size_t num_bytes) {
         mbedtls_printf("Generating %d random bytes...\n", num_bytes);
     }
 
-    unsigned char* rand_bytes = malloc(num_bytes);
-
-    for (int i = 0; i < num_bytes; i++){
-        rand_bytes[i] = rand();
+    unsigned char* rand_bytes = (unsigned char*) malloc(num_bytes * sizeof(unsigned char*));
+    int rand_byte;
+    for (size_t i = 0; i < num_bytes-1; i++){
+        rand_byte = rand();
+        rand_bytes[i] = rand_byte;
     }
 
     return rand_bytes;
@@ -186,7 +189,7 @@ int main( int argc, char** argv )
     char *ciphersuite_name;
 
     int ret;
-    size_t len, num_bytes_written = 0;
+    size_t len, num_bytes_written, num_bytes_read = 0;
     mbedtls_net_context listen_fd, client_fd;
     unsigned char* send_buf;
     unsigned char read_buf [1024];
@@ -237,6 +240,10 @@ int main( int argc, char** argv )
         num_bytes_to_send = strtol(argv[2], NULL, 10);
     }
 
+    if (num_bytes_to_send == 0) {
+        mbedtls_printf("[!!!] Cannot send less than 1 byte. Setting number of bytes to send to 1...\n");
+        num_bytes_to_send = 1;
+    }
 
     print_security_level();
 
@@ -250,7 +257,13 @@ int main( int argc, char** argv )
 
     srand((unsigned int) time(NULL));
     // generate random bytes to send (if needed)
-    send_buf = generate_random_bytes(num_bytes_to_send);
+    if (num_bytes_to_send == 4) {
+        // specifically used to profile the handshake
+        mbedtls_printf("Number of bytes to send is 4. Setting to default value \"PONG\"\n");
+        send_buf = "PONG";
+    } else {
+        send_buf = generate_random_bytes(num_bytes_to_send);
+    }
 
     /*
     mbedtls_ssl_conf_dbg(&conf, my_debug, NULL);
@@ -531,46 +544,50 @@ int main( int argc, char** argv )
      * 6. Read the HTTP Request
      */
     mbedtls_printf( "  < Read from client:\n" );
-    fflush( stdout );
+    fflush( stdout ) - 1;
+    len = sizeof( read_buf );
+    memset( read_buf, 0, sizeof( read_buf ) );
+    int terminated = 0;
+    unsigned char last_read_byte;
 
     do
     {
-        len = sizeof( read_buf );
-        memset( read_buf, 0, sizeof( read_buf ) );
+
         ret = mbedtls_ssl_read( &ssl, read_buf, len );
 
-        if( ret == MBEDTLS_ERR_SSL_WANT_READ || ret == MBEDTLS_ERR_SSL_WANT_WRITE )
+        if( ret == MBEDTLS_ERR_SSL_WANT_READ || ret == MBEDTLS_ERR_SSL_WANT_WRITE ){
+            mbedtls_printf("WANT READ or WANT WRITE\n");
             continue;
+        }
 
-        if( ret <= 0 )
-        {
-            switch( ret )
-            {
-                case MBEDTLS_ERR_SSL_PEER_CLOSE_NOTIFY:
-                    mbedtls_printf( " connection was closed gracefully\n" );
-                    break;
-
-                case MBEDTLS_ERR_NET_CONN_RESET:
-                    mbedtls_printf( " connection was reset by peer\n" );
-                    break;
-
-                default:
-                    mbedtls_printf( " mbedtls_ssl_read returned -0x%x\n", -ret );
-                    break;
-            }
-
+        if( ret == MBEDTLS_ERR_SSL_PEER_CLOSE_NOTIFY ){
+            mbedtls_printf("CLOSE NOTIFY \n");
             break;
         }
 
-        len = ret;
-        //mbedtls_printf( " %d bytes read:\n%s\n", len, (char *) read_buf );
-        mbedtls_printf( " %d bytes read:\n", len);
-
-        if( ret > 0 )
+        if( ret < 0 )
+        {
+            mbedtls_printf( "failed\n  ! mbedtls_ssl_read returned %d\n\n", ret );
             break;
-    }
-    while( 1 );
+        }
 
+        if( ret == 0 )
+        {
+            mbedtls_printf( "\n\nEOF\n\n" );
+            break;
+        }
+
+        num_bytes_read += ret;
+        last_read_byte = read_buf[ret - 1];
+
+        if (last_read_byte == (unsigned char) MAGIC_END_BYTE) {
+            terminated = 1;
+        }
+    }
+    while( terminated == 0 );
+
+    mbedtls_printf( " %d bytes read:\n", num_bytes_read);
+    //mbedtls_printf( " %d bytes read:\n%s\n", len, (char *) read_buf );
     /*
      * 7. Write the 200 Response
      */

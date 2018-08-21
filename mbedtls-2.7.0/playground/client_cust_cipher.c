@@ -51,6 +51,8 @@ int main( void )
 
 #define DEBUG_LEVEL 1
 
+#define MAGIC_END_BYTE 192
+
 static void my_debug( void *ctx, int level,
                       const char *file, int line,
                       const char *str )
@@ -69,11 +71,19 @@ unsigned char *generate_random_bytes(size_t num_bytes) {
         mbedtls_printf("Generating %d random bytes...\n", num_bytes);
     }
 
-    unsigned char* rand_bytes = malloc(num_bytes);
+    unsigned char* rand_bytes = (unsigned char*) malloc(num_bytes * sizeof(unsigned char));
+    unsigned char rand_byte;
+    for (size_t i = 0; i < num_bytes-1; i++){
+        rand_byte = rand();
 
-    for (int i = 0; i < num_bytes; i++){
-        rand_bytes[i] = rand();
+        if (rand_byte == MAGIC_END_BYTE) {
+            rand_byte = 193;
+        }
+
+        rand_bytes[i] = rand_byte;
     }
+
+    rand_bytes[num_bytes -1] = MAGIC_END_BYTE;
 
     return rand_bytes;
 }
@@ -117,10 +127,20 @@ int main( int argc, char** argv )
         num_bytes_to_send = strtol(argv[2], NULL, 10);
     }
 
+    if (num_bytes_to_send == 0) {
+        mbedtls_printf("[!!!] Cannot send less than 1 byte. Setting number of bytes to send to 1...\n");
+        num_bytes_to_send = 1;
+    }
 
     srand((unsigned int) time(NULL));
     // generate random bytes to send (if needed)
-    send_buf = generate_random_bytes(num_bytes_to_send);
+    if (num_bytes_to_send == 4) {
+        // specifically used to profile the handshake
+        mbedtls_printf("Number of bytes to send is 4. Setting to default value \"PING\"\n");
+        send_buf = "PING";
+    } else {
+        send_buf = generate_random_bytes(num_bytes_to_send);
+    }
 
 #ifdef USE_RSA_2048
     mbedtls_printf("Using RSA 2048 security\n");
@@ -335,11 +355,9 @@ int main( int argc, char** argv )
     fflush( stdout );
 
     len = num_bytes_to_send;
-    ret = 0;
 
-    while( ret = mbedtls_ssl_write( &ssl, send_buf + ret, len) )
+    while( ret = mbedtls_ssl_write( &ssl, send_buf + num_bytes_written, len) )
     {
-
         num_bytes_written += ret;
 
         if (ret == len) {
@@ -358,10 +376,11 @@ int main( int argc, char** argv )
     mbedtls_printf( "  < Read from server:\n" );
     fflush( stdout );
 
+    len = sizeof( buf );
+    memset( buf, 0, sizeof( buf ) );
     do
     {
-        len = sizeof( buf );
-        memset( buf, 0, sizeof( buf ) );
+
         ret = mbedtls_ssl_read( &ssl, buf, len );
 
         if( ret == MBEDTLS_ERR_SSL_WANT_READ || ret == MBEDTLS_ERR_SSL_WANT_WRITE ){
@@ -389,6 +408,10 @@ int main( int argc, char** argv )
         num_bytes_read += ret;
     }
     while( 1 );
+
+    if (buf[0] == 0) {
+        mbedtls_printf("Is_NULL\n\n\n");
+    }
 
     mbedtls_printf( " %d bytes read\n\n", num_bytes_read);
     mbedtls_ssl_close_notify( &ssl );
