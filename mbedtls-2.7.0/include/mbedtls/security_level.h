@@ -7,9 +7,29 @@
 
 /* [!!!] IMPORTANT: configuration NOTE !!!
  *
- * Go to certs.h file and configure the desired security level by uncommening the appropriate #define USE_RSA_XXXX.
+ * 1. Go to certs.h file and configure the desired security level by uncommening the appropriate #define USE_RSA_XXXX.
  * Only one of the USE_RSA_XXXX can be defined! The security level of the remaining algorithms (e.g. ECC) will be
  * adjusted accordingly.
+ *
+ * 2. Change the order of the preferred curves in `ecp.c` [for `ECDHE-*` ciphersuites]. For example,
+ * if you want 512 bit EC keys to be used in `ECHDE-*` ciphersuites, you should put
+
+    #if defined(MBEDTLS_ECP_DP_SECP521R1_ENABLED)
+        { MBEDTLS_ECP_DP_SECP521R1,    25,     521,    "secp521r1"         },
+    #endif
+
+    before
+
+    #if defined(MBEDTLS_ECP_DP_SECP256R1_ENABLED)
+        { MBEDTLS_ECP_DP_SECP256R1,    23,     256,    "secp256r1"         },
+    #endif
+
+    or vice-versa if you want 256 bit EC keys.
+
+  Here, the first one found in the list will be used.
+
+
+
  */
 
 #define USE_RSA_2048
