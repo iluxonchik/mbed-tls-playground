@@ -8,6 +8,10 @@ RSA_TO_ECC = {
     '7680' : 'secp384r1',
 }
 
+def generate_DH_params(key_size):
+    cwd = f'./rsa_{key_size}'
+    p = Popen(f'openssl dhparam -out {key_size}_dhparam.pem {key_size}'.split(' '), cwd=cwd)
+    p.wait()
 
 def generate_EC_params(key_size):
     cwd = f'./rsa_{key_size}'
@@ -72,3 +76,8 @@ if __name__ == '__main__':
 
     generate_ECDHE_RSA_certificate(key_size)
     generate_ECDHE_ECDSA_certificate(key_size)
+
+    generate_DH_params(key_size)
+
+    print('[!!!] Do not forget to change the order of preferred curves in ecp.c')
+    print('This is important to keep ECHD-* ciphersuites on the same security level')
