@@ -2,7 +2,7 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
-      <config projectName="mbed TLS" targetName="rsa_genkey" />
+      <config projectName="mbed TLS" targetName="dtls_client" />
       <config projectName="mbed TLS" targetName="test_suite_md" />
       <config projectName="mbed TLS" targetName="test_suite_ecp" />
       <config projectName="mbed TLS" targetName="test_suite_cmac" />
@@ -27,23 +27,23 @@
       <config projectName="mbed TLS" targetName="selftest" />
       <config projectName="mbed TLS" targetName="req_app" />
       <config projectName="mbed TLS" targetName="key_app_writer" />
+      <config projectName="mbed TLS" targetName="lib" />
       <config projectName="mbed TLS" targetName="dtls_server" />
       <config projectName="mbed TLS" targetName="pk_decrypt" />
       <config projectName="mbed TLS" targetName="test_suite_pkwrite" />
       <config projectName="mbed TLS" targetName="test_suite_cipher.camellia" />
       <config projectName="mbed TLS" targetName="client_cc_lf" />
       <config projectName="mbed TLS" targetName="aescrypt2" />
-      <config projectName="mbed TLS" targetName="ssl_server2" />
+      <config projectName="mbed TLS" targetName="test_suite_ecjpake" />
       <config projectName="mbed TLS" targetName="rsa_encrypt" />
       <config projectName="mbed TLS" targetName="test_suite_cipher.blowfish" />
       <config projectName="mbed TLS" targetName="test_suite_hmac_drbg.nopr" />
-      <config projectName="mbed TLS" targetName="dh_server" />
       <config projectName="mbed TLS" targetName="ecdh_curve25519" />
-      <config projectName="mbed TLS" targetName="test_suite_ecjpake" />
+      <config projectName="mbed TLS" targetName="rsa_sign" />
       <config projectName="mbed TLS" targetName="rsa_sign_pss" />
       <config projectName="mbed TLS" targetName="test_suite_hmac_drbg.no_reseed" />
       <config projectName="mbed TLS" targetName="test_suite_gcm.aes192_de" />
-      <config projectName="mbed TLS" targetName="ciphersuites_list" />
+      <config projectName="mbed TLS" targetName="rsa_genkey" />
       <config projectName="mbed TLS" targetName="ssl_fork_server" />
       <config projectName="mbed TLS" targetName="pk_sign" />
       <config projectName="mbed TLS" targetName="ssl_pthread_server" />
@@ -57,10 +57,8 @@
       <config projectName="mbed TLS" targetName="covtest" />
       <config projectName="mbed TLS" targetName="test_suite_ssl" />
       <config projectName="mbed TLS" targetName="test_suite_version" />
-      <config projectName="mbed TLS" targetName="udp_proxy" />
       <config projectName="mbed TLS" targetName="test_suite_cipher.gcm" />
       <config projectName="mbed TLS" targetName="gen_entropy" />
-      <config projectName="mbed TLS" targetName="rsa_sign" />
       <config projectName="mbed TLS" targetName="gen_key" />
       <config projectName="mbed TLS" targetName="test_suite_cipher.arc4" />
       <config projectName="mbed TLS" targetName="test_suite_des" />
@@ -69,7 +67,7 @@
       <config projectName="mbed TLS" targetName="server" />
       <config projectName="mbed TLS" targetName="test_suite_aes.rest" />
       <config projectName="mbed TLS" targetName="test_suite_ecdsa" />
-      <config projectName="mbed TLS" targetName="test_suite_x509write" />
+      <config projectName="mbed TLS" targetName="test_suite_blowfish" />
       <config projectName="mbed TLS" targetName="ssl_mail_client" />
       <config projectName="mbed TLS" targetName="crl_app" />
       <config projectName="mbed TLS" targetName="client" />
@@ -79,11 +77,10 @@
       <config projectName="mbed TLS" targetName="generic_sum" />
       <config projectName="mbed TLS" targetName="test_suite_cipher.aes" />
       <config projectName="mbed TLS" targetName="dh_genprime" />
-      <config projectName="mbed TLS" targetName="dtls_client" />
+      <config projectName="mbed TLS" targetName="test_suite_camellia" />
       <config projectName="mbed TLS" targetName="client_cc" />
       <config projectName="mbed TLS" targetName="test_suite_pk" />
       <config projectName="mbed TLS" targetName="test_suite_gcm.aes192_en" />
-      <config projectName="mbed TLS" targetName="test_suite_gcm.aes128_en" />
       <config projectName="mbed TLS" targetName="test_suite_error" />
       <config projectName="mbed TLS" targetName="server_cc_lf" />
       <config projectName="mbed TLS" targetName="mbedcrypto" />
@@ -100,31 +97,34 @@
       <config projectName="mbed TLS" targetName="test_suite_x509parse" />
       <config projectName="mbed TLS" targetName="pk_verify" />
       <config projectName="mbed TLS" targetName="strerror" />
-      <config projectName="mbed TLS" targetName="test_suite_aes.cbc" />
+      <config projectName="mbed TLS" targetName="ciphersuites_list" />
       <config projectName="mbed TLS" targetName="test_suite_pem" />
       <config projectName="mbed TLS" targetName="test_suite_pkparse" />
-      <config projectName="mbed TLS" targetName="lib" />
-      <config projectName="mbed TLS" targetName="test_suite_aes.ecb" />
+      <config projectName="mbed TLS" targetName="udp_proxy" />
+      <config projectName="mbed TLS" targetName="test_suite_aes.cbc" />
       <config projectName="mbed TLS" targetName="test_suite_ccm" />
       <config projectName="mbed TLS" targetName="cert_req" />
       <config projectName="mbed TLS" targetName="test_suite_ecdh" />
-      <config projectName="mbed TLS" targetName="test_suite_blowfish" />
+      <config projectName="mbed TLS" targetName="server_cc" />
+      <config projectName="mbed TLS" targetName="ssl_server2" />
       <config projectName="mbed TLS" targetName="test_suite_xtea" />
+      <config projectName="mbed TLS" targetName="mbedtls" />
       <config projectName="mbed TLS" targetName="mbedx509" />
       <config projectName="mbed TLS" targetName="test_suite_timing" />
+      <config projectName="mbed TLS" targetName="test_suite_x509write" />
       <config projectName="mbed TLS" targetName="test_suite_memory_buffer_alloc" />
-      <config projectName="mbed TLS" targetName="test_suite_ctr_drbg" />
+      <config projectName="mbed TLS" targetName="test_suite_gcm.aes128_en" />
       <config projectName="mbed TLS" targetName="rsa_verify" />
-      <config projectName="mbed TLS" targetName="mbedtls" />
+      <config projectName="mbed TLS" targetName="test_suite_ctr_drbg" />
       <config projectName="mbed TLS" targetName="ecdsa" />
       <config projectName="mbed TLS" targetName="test_suite_hmac_drbg.misc" />
       <config projectName="mbed TLS" targetName="rsa_decrypt" />
       <config projectName="mbed TLS" targetName="crypt_and_hash" />
       <config projectName="mbed TLS" targetName="memcheck" />
-      <config projectName="mbed TLS" targetName="server_cc" />
+      <config projectName="mbed TLS" targetName="test_suite_aes.ecb" />
       <config projectName="mbed TLS" targetName="cert_app" />
       <config projectName="mbed TLS" targetName="test_suite_arc4" />
-      <config projectName="mbed TLS" targetName="test_suite_camellia" />
+      <config projectName="mbed TLS" targetName="dh_server" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -162,7 +162,7 @@
       <file leaf-file-name="client_cust_cipher.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/playground/client_cust_cipher.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="463">
+            <state relative-caret-position="1560">
               <caret line="78" column="8" lean-forward="false" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="8" />
               <folding>
                 <element signature="e#68#96#0" expanded="true" />
@@ -178,7 +178,7 @@
       <file leaf-file-name="server_cust_cipher.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/playground/server_cust_cipher.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7113">
+            <state relative-caret-position="11600">
               <caret line="580" column="43" lean-forward="false" selection-start-line="580" selection-start-column="43" selection-end-line="580" selection-end-column="43" />
               <folding>
                 <element signature="e#1113#1132#0" expanded="true" />
@@ -193,7 +193,7 @@
       <file leaf-file-name="ssl_tls.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/library/ssl_tls.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="31632">
+            <state relative-caret-position="44380">
               <caret line="2219" column="28" lean-forward="false" selection-start-line="2219" selection-start-column="24" selection-end-line="2219" selection-end-column="28" />
               <folding />
             </state>
@@ -223,8 +223,8 @@
       <file leaf-file-name="security_level.h" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/include/mbedtls/security_level.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3000">
-              <caret line="150" column="19" lean-forward="true" selection-start-line="150" selection-start-column="19" selection-end-line="150" selection-end-column="19" />
+            <state relative-caret-position="520">
+              <caret line="56" column="83" lean-forward="false" selection-start-line="56" selection-start-column="83" selection-end-line="56" selection-end-column="83" />
               <folding />
             </state>
           </provider>
@@ -233,10 +233,13 @@
       <file leaf-file-name="certs.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/library/certs.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-900">
-              <caret line="190" column="69" lean-forward="false" selection-start-line="190" selection-start-column="69" selection-end-line="190" selection-end-column="69" />
+            <state relative-caret-position="960">
+              <caret line="146" column="8" lean-forward="false" selection-start-line="146" selection-start-column="8" selection-end-line="146" selection-end-column="8" />
               <folding>
-                <element signature="e#3408#4671#0" expanded="true" />
+                <element signature="e#953#2207#0" expanded="true" />
+                <element signature="e#3558#4812#0" expanded="true" />
+                <element signature="e#6165#7269#0" expanded="true" />
+                <element signature="e#7317#8580#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -251,8 +254,13 @@
       <find>RC4</find>
       <find>16384</find>
       <find>EOF</find>
-      <find>EOF</find>
+      <find>2048</find>
     </findStrings>
+    <replaceStrings>
+      <replace>1024</replace>
+      <replace>4092</replace>
+      <replace>8192</replace>
+    </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
     </dirStrings>
@@ -282,10 +290,10 @@
         <option value="$PROJECT_DIR$/include/mbedtls/bignum.h" />
         <option value="$PROJECT_DIR$/library/dhm.c" />
         <option value="$PROJECT_DIR$/include/mbedtls/certs.h" />
-        <option value="$PROJECT_DIR$/library/certs.c" />
         <option value="$PROJECT_DIR$/library/ssl_tls.c" />
         <option value="$PROJECT_DIR$/playground/server_cust_cipher.c" />
         <option value="$PROJECT_DIR$/playground/client_cust_cipher.c" />
+        <option value="$PROJECT_DIR$/library/certs.c" />
         <option value="$PROJECT_DIR$/include/mbedtls/security_level.h" />
       </list>
     </option>
@@ -898,12 +906,14 @@
       <workItem from="1534357243922" duration="2521000" />
       <workItem from="1534842715022" duration="7398000" />
       <workItem from="1534850675493" duration="7789000" />
-      <workItem from="1536020256044" duration="838000" />
+      <workItem from="1536020256044" duration="1438000" />
+      <workItem from="1536502210288" duration="3966000" />
+      <workItem from="1537236043436" duration="5459000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="184184000" />
+    <option name="totallyTimeSpent" value="194209000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="7" y="27" width="1920" height="1053" extended-state="6" />
@@ -911,9 +921,9 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12864584" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280757" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1661409" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912722" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25762355" sideWeight="0.49791667" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25762355" sideWeight="0.49791667" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912722" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1312,7 +1322,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/playground/client_cust_cipher.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
+        <state relative-caret-position="1560">
           <caret line="78" column="8" lean-forward="false" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="8" />
           <folding>
             <element signature="e#68#96#0" expanded="true" />
@@ -1326,7 +1336,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/playground/server_cust_cipher.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7113">
+        <state relative-caret-position="11600">
           <caret line="580" column="43" lean-forward="false" selection-start-line="580" selection-start-column="43" selection-end-line="580" selection-end-column="43" />
           <folding>
             <element signature="e#1113#1132#0" expanded="true" />
@@ -1337,28 +1347,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library/certs.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-900">
-          <caret line="190" column="69" lean-forward="false" selection-start-line="190" selection-start-column="69" selection-end-line="190" selection-end-column="69" />
-          <folding>
-            <element signature="e#3408#4671#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/library/ssl_tls.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31632">
+        <state relative-caret-position="44380">
           <caret line="2219" column="28" lean-forward="false" selection-start-line="2219" selection-start-column="24" selection-end-line="2219" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/library/certs.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="146" column="8" lean-forward="false" selection-start-line="146" selection-start-column="8" selection-end-line="146" selection-end-column="8" />
+          <folding>
+            <element signature="e#953#2207#0" expanded="true" />
+            <element signature="e#3558#4812#0" expanded="true" />
+            <element signature="e#6165#7269#0" expanded="true" />
+            <element signature="e#7317#8580#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/include/mbedtls/security_level.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3000">
-          <caret line="150" column="19" lean-forward="true" selection-start-line="150" selection-start-column="19" selection-end-line="150" selection-end-column="19" />
+        <state relative-caret-position="520">
+          <caret line="56" column="83" lean-forward="false" selection-start-line="56" selection-start-column="83" selection-end-line="56" selection-end-column="83" />
           <folding />
         </state>
       </provider>

@@ -28,6 +28,43 @@
 #include "mbedtls/certs.h"
 #include "mbedtls/security_level.h"
 
+#ifdef USE_RSA_1024
+// using RSA 1024 and equivalent key sizes
+
+/* RSA */
+const char mbedtls_test_srv_crt_rsa[] = MBEDTLS_TEST_SRV_CRT_RSA_RSA_1024;
+const size_t mbedtls_test_srv_crt_rsa_len = sizeof( mbedtls_test_srv_crt_rsa );
+
+const char mbedtls_test_srv_key_rsa[] = MBEDTLS_TEST_SRV_KEY_RSA_RSA_1024;
+const size_t mbedtls_test_srv_key_rsa_len = sizeof( mbedtls_test_srv_key_rsa );
+
+
+/* ECDH_ECDSA */
+const char mbedtls_test_srv_crt_ec[] = MBEDTLS_TEST_SRV_CRT_ECDH_ECDSA_RSA_1024;
+const size_t mbedtls_test_srv_crt_ec_len = sizeof( mbedtls_test_srv_crt_ec );
+
+/*ECDH_RSA*/
+
+/*
+ * WARNING: this certificate will expire on July 5th, 2018
+ *
+ * To generate a new one, follow the steps in ~/Documents/tmp/certs/commands.txt
+ */
+const char mbedtls_test_srv_crt_ecdh_rsa[] = MBEDTLS_TEST_SRV_CRT_ECDH_RSA_RSA_1024;
+const size_t mbedtls_test_srv_crt_ecdh_rsa_len = sizeof(mbedtls_test_srv_crt_ecdh_rsa);
+
+
+const char mbedtls_test_srv_key_ec[] = MBEDTLS_TEST_SRV_KEY_EC_RSA_1024;
+const size_t mbedtls_test_srv_key_ec_len = sizeof(mbedtls_test_srv_key_ec);
+
+const char* psk_value = PSK_112_BIT_RSA_1024;
+const size_t psk_value_len = sizeof(psk_value);
+
+const char* dhm_params = MBEDTLS_TEST_DH_PARAM_RSA_1024;
+const size_t dhm_params_len = sizeof(MBEDTLS_TEST_DH_PARAM_RSA_1024);
+
+#endif // ifdef RSA_1024
+
 #ifdef USE_RSA_2048
 // using RSA 2048 and equivalent key sizes
 
@@ -64,6 +101,83 @@ const char* dhm_params = MBEDTLS_TEST_DH_PARAM_RSA_2048;
 const size_t dhm_params_len = sizeof(MBEDTLS_TEST_DH_PARAM_RSA_2048);
 
 #endif // ifdef RSA_2048
+
+
+#ifdef USE_RSA_4092
+// using RSA 4092 and equivalent key sizes
+
+/* RSA */
+const char mbedtls_test_srv_crt_rsa[] = MBEDTLS_TEST_SRV_CRT_RSA_RSA_4092;
+const size_t mbedtls_test_srv_crt_rsa_len = sizeof( mbedtls_test_srv_crt_rsa );
+
+const char mbedtls_test_srv_key_rsa[] = MBEDTLS_TEST_SRV_KEY_RSA_RSA_4092;
+const size_t mbedtls_test_srv_key_rsa_len = sizeof( mbedtls_test_srv_key_rsa );
+
+
+/* ECDH_ECDSA */
+const char mbedtls_test_srv_crt_ec[] = MBEDTLS_TEST_SRV_CRT_ECDH_ECDSA_RSA_4092;
+const size_t mbedtls_test_srv_crt_ec_len = sizeof( mbedtls_test_srv_crt_ec );
+
+/*ECDH_RSA*/
+
+/*
+ * WARNING: this certificate will expire on July 5th, 2018
+ *
+ * To generate a new one, follow the steps in ~/Documents/tmp/certs/commands.txt
+ */
+const char mbedtls_test_srv_crt_ecdh_rsa[] = MBEDTLS_TEST_SRV_CRT_ECDH_RSA_RSA_4092;
+const size_t mbedtls_test_srv_crt_ecdh_rsa_len = sizeof(mbedtls_test_srv_crt_ecdh_rsa);
+
+
+const char mbedtls_test_srv_key_ec[] = MBEDTLS_TEST_SRV_KEY_EC_RSA_4092;
+const size_t mbedtls_test_srv_key_ec_len = sizeof(mbedtls_test_srv_key_ec);
+
+const char* psk_value = PSK_112_BIT_RSA_4092;
+const size_t psk_value_len = sizeof(psk_value);
+
+const char* dhm_params = MBEDTLS_TEST_DH_PARAM_RSA_4092;
+const size_t dhm_params_len = sizeof(MBEDTLS_TEST_DH_PARAM_RSA_4092);
+
+#endif // ifdef RSA_4092
+
+
+#ifdef USE_RSA_8192
+// using RSA 8192 and equivalent key sizes
+
+/* RSA */
+const char mbedtls_test_srv_crt_rsa[] = MBEDTLS_TEST_SRV_CRT_RSA_RSA_8192;
+const size_t mbedtls_test_srv_crt_rsa_len = sizeof( mbedtls_test_srv_crt_rsa );
+
+const char mbedtls_test_srv_key_rsa[] = MBEDTLS_TEST_SRV_KEY_RSA_RSA_8192;
+const size_t mbedtls_test_srv_key_rsa_len = sizeof( mbedtls_test_srv_key_rsa );
+
+
+/* ECDH_ECDSA */
+const char mbedtls_test_srv_crt_ec[] = MBEDTLS_TEST_SRV_CRT_ECDH_ECDSA_RSA_8192;
+const size_t mbedtls_test_srv_crt_ec_len = sizeof( mbedtls_test_srv_crt_ec );
+
+/*ECDH_RSA*/
+
+/*
+ * WARNING: this certificate will expire on July 5th, 2018
+ *
+ * To generate a new one, follow the steps in ~/Documents/tmp/certs/commands.txt
+ */
+const char mbedtls_test_srv_crt_ecdh_rsa[] = MBEDTLS_TEST_SRV_CRT_ECDH_RSA_RSA_8192;
+const size_t mbedtls_test_srv_crt_ecdh_rsa_len = sizeof(mbedtls_test_srv_crt_ecdh_rsa);
+
+
+const char mbedtls_test_srv_key_ec[] = MBEDTLS_TEST_SRV_KEY_EC_RSA_8192;
+const size_t mbedtls_test_srv_key_ec_len = sizeof(mbedtls_test_srv_key_ec);
+
+const char* psk_value = PSK_112_BIT_RSA_8192;
+const size_t psk_value_len = sizeof(psk_value);
+
+const char* dhm_params = MBEDTLS_TEST_DH_PARAM_RSA_8192;
+const size_t dhm_params_len = sizeof(MBEDTLS_TEST_DH_PARAM_RSA_8192);
+
+#endif // ifdef RSA_8192
+
 
 #ifdef USE_RSA_7680
 
@@ -142,35 +256,31 @@ const char* psk_identity = "The_Game";
 #if defined(MBEDTLS_CERTS_C)
 
 #if defined(MBEDTLS_ECDSA_C)
-#define TEST_CA_CRT_EC                                                  \
-"-----BEGIN CERTIFICATE-----\r\n"                                       \
-"MIICUjCCAdegAwIBAgIJAMFD4n5iQ8zoMAoGCCqGSM49BAMCMD4xCzAJBgNVBAYT\r\n"  \
-"Ak5MMREwDwYDVQQKEwhQb2xhclNTTDEcMBoGA1UEAxMTUG9sYXJzc2wgVGVzdCBF\r\n"  \
-"QyBDQTAeFw0xMzA5MjQxNTQ5NDhaFw0yMzA5MjIxNTQ5NDhaMD4xCzAJBgNVBAYT\r\n"  \
-"Ak5MMREwDwYDVQQKEwhQb2xhclNTTDEcMBoGA1UEAxMTUG9sYXJzc2wgVGVzdCBF\r\n"  \
-"QyBDQTB2MBAGByqGSM49AgEGBSuBBAAiA2IABMPaKzRBN1gvh1b+/Im6KUNLTuBu\r\n"  \
-"ww5XUzM5WNRStJGVOQsj318XJGJI/BqVKc4sLYfCiFKAr9ZqqyHduNMcbli4yuiy\r\n"  \
-"aY7zQa0pw7RfdadHb9UZKVVpmlM7ILRmFmAzHqOBoDCBnTAdBgNVHQ4EFgQUnW0g\r\n"  \
-"JEkBPyvLeLUZvH4kydv7NnwwbgYDVR0jBGcwZYAUnW0gJEkBPyvLeLUZvH4kydv7\r\n"  \
-"NnyhQqRAMD4xCzAJBgNVBAYTAk5MMREwDwYDVQQKEwhQb2xhclNTTDEcMBoGA1UE\r\n"  \
-"AxMTUG9sYXJzc2wgVGVzdCBFQyBDQYIJAMFD4n5iQ8zoMAwGA1UdEwQFMAMBAf8w\r\n"  \
-"CgYIKoZIzj0EAwIDaQAwZgIxAMO0YnNWKJUAfXgSJtJxexn4ipg+kv4znuR50v56\r\n"  \
-"t4d0PCu412mUC6Nnd7izvtE2MgIxAP1nnJQjZ8BWukszFQDG48wxCCyci9qpdSMv\r\n"  \
-"uCjn8pwUOkABXK8Mss90fzCfCEOtIA==\r\n"                                  \
+#define TEST_CA_CRT_EC                                                 \
+"-----BEGIN CERTIFICATE-----\r\n"                                      \
+"MIIB8TCCAZagAwIBAgIJAJkF18LNHZwSMAoGCCqGSM49BAMCMFMxCzAJBgNVBAYT\r\n" \
+"Ak5MMRMwEQYDVQQIDApTb21lLVN0YXRlMREwDwYDVQQKDAhQb2xhclNTTDEcMBoG\r\n" \
+"A1UEAwwTUG9sYXJzc2wgVGVzdCBFQyBDQTAeFw0xODA5MTgwMjA4MTNaFw0yNzEw\r\n" \
+"MjYwMjA4MTNaMFMxCzAJBgNVBAYTAk5MMRMwEQYDVQQIDApTb21lLVN0YXRlMREw\r\n" \
+"DwYDVQQKDAhQb2xhclNTTDEcMBoGA1UEAwwTUG9sYXJzc2wgVGVzdCBFQyBDQTBZ\r\n" \
+"MBMGByqGSM49AgEGCCqGSM49AwEHA0IABGxYOxQunLW0CihNXpxRtot3wlzOpdkK\r\n" \
+"qcHPappDIyiOOlVjB1RDox0VDCrUlzxv9rC5AeW1AXn/D+NX3KAC1GqjUzBRMB0G\r\n" \
+"A1UdDgQWBBRQJhOwBHktL9RP34/9XZH4qk23EzAfBgNVHSMEGDAWgBRQJhOwBHkt\r\n" \
+"L9RP34/9XZH4qk23EzAPBgNVHRMBAf8EBTADAQH/MAoGCCqGSM49BAMCA0kAMEYC\r\n" \
+"IQDU1nuLjSFEYTImezblgxH7df2H1UpDLxTzUIBxfn7Y9gIhAMLLXSHiKUBY3UwA\r\n" \
+"fpfhO0ijCh55cDkyVKPPqseJh2nH\r\n"                                     \
 "-----END CERTIFICATE-----\r\n"
+
 const char mbedtls_test_ca_crt_ec[] = TEST_CA_CRT_EC;
 const size_t mbedtls_test_ca_crt_ec_len = sizeof( mbedtls_test_ca_crt_ec );
 
 const char mbedtls_test_ca_key_ec[] =
 "-----BEGIN EC PRIVATE KEY-----\r\n"
-"Proc-Type: 4,ENCRYPTED\r\n"
-"DEK-Info: DES-EDE3-CBC,307EAB469933D64E\r\n"
-"\r\n"
-"IxbrRmKcAzctJqPdTQLA4SWyBYYGYJVkYEna+F7Pa5t5Yg/gKADrFKcm6B72e7DG\r\n"
-"ihExtZI648s0zdYw6qSJ74vrPSuWDe5qm93BqsfVH9svtCzWHW0pm1p0KTBCFfUq\r\n"
-"UsuWTITwJImcnlAs1gaRZ3sAWm7cOUidL0fo2G0fYUFNcYoCSLffCFTEHBuPnagb\r\n"
-"a77x/sY1Bvii8S9/XhDTb6pTMx06wzrm\r\n"
+"MHcCAQEEIE5IkaA2qTEKo3JdemTJmaZsyVA9ZqOw95QDI3MyaKpZoAoGCCqGSM49\r\n"
+"AwEHoUQDQgAEbFg7FC6ctbQKKE1enFG2i3fCXM6l2Qqpwc9qmkMjKI46VWMHVEOj\r\n"
+"HRUMKtSXPG/2sLkB5bUBef8P41fcoALUag==\r\n"
 "-----END EC PRIVATE KEY-----\r\n";
+
 const size_t mbedtls_test_ca_key_ec_len = sizeof( mbedtls_test_ca_key_ec );
 
 const char mbedtls_test_ca_pwd_ec[] = "PolarSSLTest";
