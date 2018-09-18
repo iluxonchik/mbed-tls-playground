@@ -13,7 +13,7 @@ RSA_TO_ECC = {
 
 def generate_DH_params(key_size):
     cwd = f'./rsa_{key_size}'
-    p = Popen(f'openssl dhparam -dsaparam -out {key_size}_dhparam.pem {key_size}'.split(' '), cwd=cwd)
+    p = Popen(f'openssl dhparam -out {key_size}_dhparam.pem {key_size}'.split(' '), cwd=cwd)
     p.wait()
 
 def generate_EC_params(key_size):
@@ -34,7 +34,7 @@ def generate_ECDHE_RSA_certificate(key_size):
     p = Popen(f'openssl req -new -key {curve_name}_private.pem -config ../conf.conf -out ecdh_rsa_out.csr'.split(' '), cwd=cwd)
     p.wait()
 
-    p = Popen(f'openssl x509 -req -in ecdh_rsa_out.csr -CAkey ../ec_cust/ca_priv_key.pem -CA ../ec_cust/ca_cert.pem -force_pubkey ./{curve_name}_public.pem -out ecdh_rsa_cert.pem -CAcreateserial -extfile ../v3.ext -days 3325'.split(' '), cwd=cwd)
+    p = Popen(f'openssl x509 -req -in ecdh_rsa_out.csr -CAkey ../ca_key_clear.pem -CA ../ca_cert.pem -force_pubkey ./{curve_name}_public.pem -out ecdh_rsa_cert.pem -CAcreateserial -extfile ../v3.ext -days 3325'.split(' '), cwd=cwd)
     p.wait()
 
 def generate_ECDHE_ECDSA_certificate(key_size):
@@ -47,7 +47,7 @@ def generate_ECDHE_ECDSA_certificate(key_size):
     except:
         pass
 
-    p = Popen(f'openssl x509 -req -in ecdh_ecdsa_out.csr -CAkey ../ec_cust/ca_priv_key.pem -CA ../ec_cust/ca_cert.pem -force_pubkey ./{curve_name}_public.pem -out ecdh_ecdsa_cert.pem -CAcreateserial -extfile ../v3.ext -days 3325'.split(' '), cwd=cwd)
+    p = Popen(f'openssl x509 -req -in ecdh_ecdsa_out.csr -CAkey ../ca_key_clear.pem -CA ../ca_cert.pem -force_pubkey ./{curve_name}_public.pem -out ecdh_ecdsa_cert.pem -CAcreateserial -extfile ../v3.ext -days 3325'.split(' '), cwd=cwd)
     p.wait()
 
 def generate_RSA_certificate(key_size):
@@ -62,9 +62,9 @@ def generate_RSA_certificate(key_size):
     p.wait()
     p = Popen(f'openssl rsa -in {key_size}_private.pem -outform PEM -pubout -out {key_size}_public.pem'.split(' '), cwd=cwd)
     p.wait()
-    p = Popen(f'openssl req -new -key {key_size}_private.pem -config ../conf.conf -out out.csr'.split(' '), cwd=cwd)
+    p = Popen(f'openssl req -new -key {key_size}_private.pem -config ../conf.conf -out rsa_out.csr'.split(' '), cwd=cwd)
     p.wait()
-    p = Popen(f'openssl x509 -req -in out.csr -CA ../ca_cert.pem -CAkey ../ca_key_clear.pem -CAcreateserial -out rsa_cert.pem -days 3325'.split(' '), cwd=cwd)
+    p = Popen(f'openssl x509 -req -in rsa_out.csr -CA ../ca_cert.pem -CAkey ../ca_key_clear.pem -CAcreateserial -out rsa_cert.pem -days 3325'.split(' '), cwd=cwd)
     p.wait()
 
 if __name__ == '__main__':
