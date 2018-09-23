@@ -54,12 +54,12 @@ int main( void )
 #endif
 
 #include "mbedtls/security_level.h"
-//#include "mbedtls/debug.h"
+#include "mbedtls/debug.h"
 
 
 #define SERVER_MSG "pong"
 
-#define DEBUG_LEVEL 3
+#define DEBUG_LEVEL 2
 
 static void my_debug( void *ctx, int level,
                       const char *file, int line,
@@ -253,6 +253,8 @@ int main( int argc, char** argv )
     custom_cipher_suite[0] = ciphersuite_id;
     custom_cipher_suite[1] = 0;
     mbedtls_printf("Chosen ciphersuite id: %d\n", custom_cipher_suite[0]);
+
+    mbedtls_ssl_conf_cert_profile( &conf, &mbedtls_x509_crt_profile_custom);
 
 
     srand((unsigned int) time(NULL));
@@ -450,6 +452,7 @@ int main( int argc, char** argv )
 
     mbedtls_ssl_conf_rng( &conf, mbedtls_ctr_drbg_random, &ctr_drbg );
     mbedtls_ssl_conf_dbg( &conf, my_debug, stdout );
+
 
 #if defined(MBEDTLS_SSL_CACHE_C)
     mbedtls_ssl_conf_session_cache( &conf, &cache,

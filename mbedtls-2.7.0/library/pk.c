@@ -41,6 +41,7 @@
 
 #include <limits.h>
 #include <stdint.h>
+#include <mbedtls/platform.h>
 
 /* Implementation that should never be optimized out by the compiler */
 static void mbedtls_zeroize( void *v, size_t n ) {

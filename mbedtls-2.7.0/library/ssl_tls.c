@@ -7699,7 +7699,7 @@ int mbedtls_ssl_config_defaults( mbedtls_ssl_config *conf,
                                    mbedtls_ssl_list_ciphersuites();
 
 #if defined(MBEDTLS_X509_CRT_PARSE_C)
-            conf->cert_profile = &mbedtls_x509_crt_profile_default;
+            conf->cert_profile = &mbedtls_x509_crt_profile_custom;
 #endif
 
 #if defined(MBEDTLS_KEY_EXCHANGE__WITH_CERT__ENABLED)

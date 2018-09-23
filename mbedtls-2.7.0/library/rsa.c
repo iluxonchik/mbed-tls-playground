@@ -1998,6 +1998,8 @@ int mbedtls_rsa_rsassa_pkcs1_v15_verify( mbedtls_rsa_context *ctx,
     if( ( ret = mbedtls_safer_memcmp( encoded, encoded_expected,
                                       sig_len ) ) != 0 )
     {
+        mbedtls_printf("\nsig_len=%d\n", sig_len);
+        mbedtls_printf("\n\nTHIS HAPPENED\n\n");
         ret = MBEDTLS_ERR_RSA_VERIFY_FAILED;
         goto cleanup;
     }

@@ -149,6 +149,10 @@ mbedtls_x509write_cert;
  * and compatibility with current deployments.
  */
 extern const mbedtls_x509_crt_profile mbedtls_x509_crt_profile_default;
+/**
+ * Custom security profile. Includes RSA 1024 keys.
+ */
+extern const mbedtls_x509_crt_profile mbedtls_x509_crt_profile_custom;
 
 /**
  * Expected next default profile. Recommended for new deployments.

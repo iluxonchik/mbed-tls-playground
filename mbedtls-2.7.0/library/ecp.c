@@ -133,11 +133,32 @@ static const mbedtls_ecp_curve_info ecp_supported_curves[] =
 /*
 * NOTE: only activate the curve for the activated security level.
 */
+
+#ifdef USE_RSA_1024
+    #if defined(MBEDTLS_ECP_DP_SECP192K1_ENABLED)
+        { MBEDTLS_ECP_DP_SECP192K1,    18,     192,    "secp192k1"         },
+    #endif
+#
+#endif
+
 #ifdef USE_RSA_2048
     #if defined(MBEDTLS_ECP_DP_SECP256R1_ENABLED)
         { MBEDTLS_ECP_DP_SECP256R1,    23,     256,    "secp256r1"         },
     #endif
 #endif
+
+#ifdef USE_RSA_4092
+    #if defined(MBEDTLS_ECP_DP_SECP384R1_ENABLED)
+        { MBEDTLS_ECP_DP_SECP384R1,    24,     384,    "secp384r1"         },
+    #endif
+#endif
+
+#ifdef USE_RSA_8192
+    #if defined(MBEDTLS_ECP_DP_SECP521R1_ENABLED)
+        { MBEDTLS_ECP_DP_SECP521R1,    25,     521,    "secp521r1"         },
+    #endif
+#endif
+
 
 #ifdef USE_RSA_7680
     #if defined(MBEDTLS_ECP_DP_SECP384R1_ENABLED)
@@ -173,11 +194,8 @@ static const mbedtls_ecp_curve_info ecp_supported_curves[] =
     #if defined(MBEDTLS_ECP_DP_SECP192R1_ENABLED)
         { MBEDTLS_ECP_DP_SECP192R1,    19,     192,    "secp192r1"         },
     #endif
-    #if defined(MBEDTLS_ECP_DP_SECP192K1_ENABLED)
-        { MBEDTLS_ECP_DP_SECP192K1,    18,     192,    "secp192k1"         },
-    #endif
 #endif
-        { MBEDTLS_ECP_DP_NONE,          0,     0,      NULL                },
+        { MBEDTLS_ECP_DP_NONE,          0,     0,      NULL                }
 };
 
 #define ECP_NB_CURVES   sizeof( ecp_supported_curves ) /    \

@@ -49,7 +49,7 @@ int main( void )
 #define SERVER_NAME "localhost"
 #define CLIENT_MSG "ping"
 
-#define DEBUG_LEVEL 1
+#define DEBUG_LEVEL 2
 
 #define MAGIC_END_BYTE 192
 
@@ -137,7 +137,11 @@ int main( int argc, char** argv )
     if (num_bytes_to_send == 4) {
         // specifically used to profile the handshake
         mbedtls_printf("Number of bytes to send is 4. Setting to default value \"PING\"\n");
-        send_buf = "PING";
+        send_buf = (unsigned char*) malloc(4 * sizeof(unsigned char));
+        send_buf[0] = 'P';
+        send_buf[1] = 'O';
+        send_buf[2] = 'N';
+        send_buf[3] = MAGIC_END_BYTE;
     } else {
         send_buf = generate_random_bytes(num_bytes_to_send);
     }
@@ -156,7 +160,7 @@ int main( int argc, char** argv )
     mbedtls_printf("Chosen ciphersuite id: %d\n\t%s\n", custom_cipher_suite[0], chosen_cipher);
 
 #if defined(MBEDTLS_DEBUG_C)
-    mbedtls_debug_set_threshold( DEBUG_LEVEL );
+    //mbedtls_debug_set_threshold( DEBUG_LEVEL );
 #endif
 
     /*
@@ -277,6 +281,8 @@ int main( int argc, char** argv )
     mbedtls_ssl_conf_ca_chain( &conf, &cacert, NULL );
     mbedtls_ssl_conf_rng( &conf, mbedtls_ctr_drbg_random, &ctr_drbg );
     mbedtls_ssl_conf_dbg( &conf, my_debug, stdout );
+    mbedtls_ssl_conf_cert_profile( &conf, &mbedtls_x509_crt_profile_custom);
+
 
     if( ( ret = mbedtls_ssl_setup( &ssl, &conf ) ) != 0 )
     {
