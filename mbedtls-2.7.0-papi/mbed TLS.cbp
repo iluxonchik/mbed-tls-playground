@@ -5214,6 +5214,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0-papi/include/mbedtls/papi_globals.h">
+			<Option target="mbedcrypto"/>
+		</Unit>
 		<Unit filename="/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0-papi/include/mbedtls/security_level.h">
 			<Option target="mbedcrypto"/>
 		</Unit>

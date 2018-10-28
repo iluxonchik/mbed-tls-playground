@@ -53,6 +53,17 @@
 #include "mbedtls/oid.h"
 #endif
 
+/* PAPI Config BEGIN */
+#include <papi.h>
+
+#include "mbedtls/papi_globals.h"
+extern int papi_retval;
+extern float mbedtls_ssl_handshake_realtime;
+extern float mbedtls_ssl_handshake_proctime;
+extern float mbedtls_ssl_handshake_mflops;
+extern long long mbedtls_ssl_handshake_flpins;
+
+/* PAPI Config END */
 
 /* Implementation that should never be optimized out by the compiler */
 static void mbedtls_zeroize( void *v, size_t n ) {
@@ -6649,6 +6660,11 @@ int mbedtls_ssl_handshake_step( mbedtls_ssl_context *ssl )
  */
 int mbedtls_ssl_handshake( mbedtls_ssl_context *ssl )
 {
+    if ((papi_retval = PAPI_ipc( &mbedtls_ssl_handshake_realtime, &mbedtls_ssl_handshake_proctime, &mbedtls_ssl_handshake_flpins, &mbedtls_ssl_handshake_mflops)) < PAPI_OK) {
+        mbedtls_printf("\n[!!!] PAPI error code %d\n%s\n", papi_retval, PAPI_strerror(papi_retval));
+        //return -1;
+    }
+
     int ret = 0;
 
     if( ssl == NULL || ssl->conf == NULL )
@@ -6665,6 +6681,13 @@ int mbedtls_ssl_handshake( mbedtls_ssl_context *ssl )
     }
 
     MBEDTLS_SSL_DEBUG_MSG( 2, ( "<= handshake" ) );
+
+    if ((papi_retval = PAPI_ipc( &mbedtls_ssl_handshake_realtime, &mbedtls_ssl_handshake_proctime, &mbedtls_ssl_handshake_flpins, &mbedtls_ssl_handshake_mflops)) < PAPI_OK) {
+        mbedtls_printf("\n[!!!] PAPI error code %d\n%s\n", papi_retval, PAPI_strerror(papi_retval));
+        return -1;
+    }
+    mbedtls_printf("\n real time: %f\nproc time: %f\n flpins: %lld\n mflops: %f\n",
+            mbedtls_ssl_handshake_realtime, mbedtls_ssl_handshake_proctime, mbedtls_ssl_handshake_flpins, mbedtls_ssl_handshake_mflops);
 
     return( ret );
 }

@@ -57,7 +57,7 @@ set(src_crypto
     version.c
     version_features.c
     xtea.c
-        ../include/mbedtls/security_level.h security_level.c)
+        ../include/mbedtls/security_level.h security_level.c ../include/mbedtls/papi_globals.h)
 
 set(src_x509
     certs.c
@@ -133,6 +133,7 @@ if(USE_STATIC_MBEDTLS_LIBRARY)
     add_library(${mbedtls_static_target} STATIC ${src_tls})
     set_target_properties(${mbedtls_static_target} PROPERTIES OUTPUT_NAME mbedtls)
     target_link_libraries(${mbedtls_static_target} ${libs} ${mbedx509_static_target})
+    target_link_libraries(${mbedtls_static_target} "/usr/local/lib/libpapi.a")
 
     install(TARGETS ${mbedtls_static_target} ${mbedx509_static_target} ${mbedcrypto_static_target}
             DESTINATION ${LIB_INSTALL_DIR}
