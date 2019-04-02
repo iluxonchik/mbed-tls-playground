@@ -5334,6 +5334,9 @@
 		<Unit filename="/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0-papi/library/padlock.c">
 			<Option target="mbedcrypto"/>
 		</Unit>
+		<Unit filename="/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0-papi/library/papi_globals.c">
+			<Option target="mbedcrypto"/>
+		</Unit>
 		<Unit filename="/home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0-papi/library/pem.c">
 			<Option target="mbedcrypto"/>
 		</Unit>

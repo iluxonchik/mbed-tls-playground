@@ -27,6 +27,21 @@
  *
  */
 
+/* PAPI Config BEGIN */
+#include <papi.h>
+
+#include "mbedtls/papi_globals.h"
+extern int papi_retval;
+
+// DH generate keypair
+extern long long mbedtls_dh_gen_keypair_proctime = 0;
+extern long long mbedtls_dh_gen_keypair_cycles_virt = 0;
+
+// DH generate shared secret
+extern long long mbedtls_dh_gen_shared_proctime = 0;
+extern long long mbedtls_dh_gen_shared_cycles_virt = 0;
+/* PAPI Config END */
+
 #if !defined(MBEDTLS_CONFIG_FILE)
 #include "mbedtls/config.h"
 #else
@@ -157,6 +172,26 @@ int mbedtls_dhm_make_params( mbedtls_dhm_context *ctx, int x_size,
                      int (*f_rng)(void *, unsigned char *, size_t),
                      void *p_rng )
 {
+    long long start_cycles_virt, end_cycles_virt, start_usec_virt, end_usec_virt;
+
+    papi_retval = PAPI_library_init(PAPI_VER_CURRENT);
+
+    if (papi_retval != PAPI_VER_CURRENT && papi_retval > 0) {
+        mbedtls_fprintf(stderr, "PAPI library version mismatch!\n");
+        exit(1);
+    }
+
+    if (papi_retval < 0) {
+        mbedtls_fprintf(stderr, "Initialization error!\n");
+        exit(1);
+    }
+
+    /* Gets the starting time in clock cycles */
+    start_cycles_virt = PAPI_get_virt_cyc();
+
+    /* Gets the starting time in microseconds */
+    start_usec_virt = PAPI_get_virt_usec();
+
     int ret, count = 0;
     size_t n1, n2, n3;
     unsigned char *p;
@@ -219,6 +254,15 @@ cleanup:
     if( ret != 0 )
         return( MBEDTLS_ERR_DHM_MAKE_PARAMS_FAILED + ret );
 
+    /* Gets the ending time in clock cycles */
+    end_cycles_virt = PAPI_get_virt_cyc();
+
+    /* Gets the ending time in microseconds */
+    end_usec_virt = PAPI_get_virt_usec();
+
+    mbedtls_dh_gen_keypair_proctime += (end_usec_virt - start_usec_virt);
+    mbedtls_dh_gen_keypair_cycles_virt += (end_cycles_virt - start_cycles_virt);
+
     return( 0 );
 }
 
@@ -269,6 +313,27 @@ int mbedtls_dhm_make_public( mbedtls_dhm_context *ctx, int x_size,
                      int (*f_rng)(void *, unsigned char *, size_t),
                      void *p_rng )
 {
+
+    long long start_cycles_virt, end_cycles_virt, start_usec_virt, end_usec_virt;
+
+    papi_retval = PAPI_library_init(PAPI_VER_CURRENT);
+
+    if (papi_retval != PAPI_VER_CURRENT && papi_retval > 0) {
+        mbedtls_fprintf(stderr, "PAPI library version mismatch!\n");
+        exit(1);
+    }
+
+    if (papi_retval < 0) {
+        mbedtls_fprintf(stderr, "Initialization error!\n");
+        exit(1);
+    }
+
+    /* Gets the starting time in clock cycles */
+    start_cycles_virt = PAPI_get_virt_cyc();
+
+    /* Gets the starting time in microseconds */
+    start_usec_virt = PAPI_get_virt_usec();
+
     int ret, count = 0;
 
     if( ctx == NULL || olen < 1 || olen > ctx->len )
@@ -304,6 +369,15 @@ cleanup:
 
     if( ret != 0 )
         return( MBEDTLS_ERR_DHM_MAKE_PUBLIC_FAILED + ret );
+
+    /* Gets the ending time in clock cycles */
+    end_cycles_virt = PAPI_get_virt_cyc();
+
+    /* Gets the ending time in microseconds */
+    end_usec_virt = PAPI_get_virt_usec();
+
+    mbedtls_dh_gen_keypair_proctime += (end_usec_virt - start_usec_virt);
+    mbedtls_dh_gen_keypair_cycles_virt += (end_cycles_virt - start_cycles_virt);
 
     return( 0 );
 }
@@ -381,6 +455,44 @@ int mbedtls_dhm_calc_secret( mbedtls_dhm_context *ctx,
                      int (*f_rng)(void *, unsigned char *, size_t),
                      void *p_rng )
 {
+    /*
+    mbedtls_printf("\n\n***Generating Shared Secret**\n\n");
+
+    // and this is how we print an mbedtls_mpi
+    char bfr [8000];
+    size_t ret_len;
+    if (mbedtls_mpi_write_string(&ctx->X, 10, bfr, 8000, &ret_len) != 0) {
+        mbedtls_printf("\nERROR reading MPI\n");
+    }
+    mbedtls_printf("\tX (private key): %s", bfr);
+
+    if (mbedtls_mpi_write_string(&ctx->GY, 10, bfr, 8000, &ret_len) != 0) {
+        mbedtls_printf("\nERROR reading MPI\n");
+    }
+    mbedtls_printf("\tGY (public key): %s", bfr);
+    */
+
+    long long start_cycles_virt, end_cycles_virt, start_usec_virt, end_usec_virt;
+
+    papi_retval = PAPI_library_init(PAPI_VER_CURRENT);
+
+    if (papi_retval != PAPI_VER_CURRENT && papi_retval > 0) {
+        mbedtls_fprintf(stderr, "PAPI library version mismatch!\n");
+        exit(1);
+    }
+
+    if (papi_retval < 0) {
+        mbedtls_fprintf(stderr, "Initialization error!\n");
+        exit(1);
+    }
+
+    /* Gets the starting time in clock cycles */
+    start_cycles_virt = PAPI_get_virt_cyc();
+
+    /* Gets the starting time in microseconds */
+    start_usec_virt = PAPI_get_virt_usec();
+
+
     int ret;
     mbedtls_mpi GYb;
 
@@ -419,6 +531,16 @@ int mbedtls_dhm_calc_secret( mbedtls_dhm_context *ctx,
 
 cleanup:
     mbedtls_mpi_free( &GYb );
+
+    /* Gets the ending time in clock cycles */
+    end_cycles_virt = PAPI_get_virt_cyc();
+
+    /* Gets the ending time in microseconds */
+    end_usec_virt = PAPI_get_virt_usec();
+
+    mbedtls_dh_gen_shared_proctime += (end_usec_virt - start_usec_virt);
+    mbedtls_dh_gen_shared_cycles_virt += (end_cycles_virt - start_cycles_virt);
+
 
     if( ret != 0 )
         return( MBEDTLS_ERR_DHM_CALC_SECRET_FAILED + ret );

@@ -42,6 +42,7 @@ int main( void )
 #include "mbedtls/ssl_ciphersuites.h"
 
 #include <string.h>
+#include <mbedtls/papi_globals.h>
 
 #include "mbedtls/security_level.h"
 
@@ -88,7 +89,8 @@ unsigned char *generate_random_bytes(size_t num_bytes) {
     return rand_bytes;
 }
 
-int main( int argc, char** argv )
+
+int main(int argc, char** argv )
 {
 
 
@@ -421,6 +423,8 @@ int main( int argc, char** argv )
 
     mbedtls_printf( " %d bytes read\n\n", num_bytes_read);
     mbedtls_ssl_close_notify( &ssl );
+
+    print_stats();
 
     exit:
 

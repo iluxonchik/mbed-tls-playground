@@ -58,11 +58,8 @@
 
 #include "mbedtls/papi_globals.h"
 extern int papi_retval;
-extern float mbedtls_ssl_handshake_realtime;
-extern float mbedtls_ssl_handshake_proctime;
-extern float mbedtls_ssl_handshake_mflops;
-extern long long mbedtls_ssl_handshake_flpins;
-
+extern long long mbedtls_ssl_handshake_proctime = 0;
+extern long long mbedtls_ssl_handshake_cycles_virt = 0;
 /* PAPI Config END */
 
 /* Implementation that should never be optimized out by the compiler */
@@ -6660,10 +6657,27 @@ int mbedtls_ssl_handshake_step( mbedtls_ssl_context *ssl )
  */
 int mbedtls_ssl_handshake( mbedtls_ssl_context *ssl )
 {
-    if ((papi_retval = PAPI_ipc( &mbedtls_ssl_handshake_realtime, &mbedtls_ssl_handshake_proctime, &mbedtls_ssl_handshake_flpins, &mbedtls_ssl_handshake_mflops)) < PAPI_OK) {
-        mbedtls_printf("\n[!!!] PAPI error code %d\n%s\n", papi_retval, PAPI_strerror(papi_retval));
-        //return -1;
+    long long start_cycles_virt, end_cycles_virt, start_cycles_real, end_cycles_real, start_usec_virt, end_usec_virt,
+              start_usec_real, end_usec_real;
+
+    papi_retval = PAPI_library_init(PAPI_VER_CURRENT);
+
+    if (papi_retval != PAPI_VER_CURRENT && papi_retval > 0) {
+        mbedtls_fprintf(stderr, "PAPI library version mismatch!\n");
+        exit(1);
     }
+
+    if (papi_retval < 0) {
+        mbedtls_fprintf(stderr, "Initialization error!\n");
+        exit(1);
+    }
+
+    /* Gets the starting time in clock cycles */
+    start_cycles_virt = PAPI_get_virt_cyc();
+
+    /* Gets the starting time in microseconds */
+    start_usec_virt = PAPI_get_virt_usec();
+
 
     int ret = 0;
 
@@ -6682,12 +6696,14 @@ int mbedtls_ssl_handshake( mbedtls_ssl_context *ssl )
 
     MBEDTLS_SSL_DEBUG_MSG( 2, ( "<= handshake" ) );
 
-    if ((papi_retval = PAPI_ipc( &mbedtls_ssl_handshake_realtime, &mbedtls_ssl_handshake_proctime, &mbedtls_ssl_handshake_flpins, &mbedtls_ssl_handshake_mflops)) < PAPI_OK) {
-        mbedtls_printf("\n[!!!] PAPI error code %d\n%s\n", papi_retval, PAPI_strerror(papi_retval));
-        return -1;
-    }
-    mbedtls_printf("\n real time: %f\nproc time: %f\n flpins: %lld\n mflops: %f\n",
-            mbedtls_ssl_handshake_realtime, mbedtls_ssl_handshake_proctime, mbedtls_ssl_handshake_flpins, mbedtls_ssl_handshake_mflops);
+    /* Gets the ending time in clock cycles */
+    end_cycles_virt = PAPI_get_virt_cyc();
+
+    /* Gets the ending time in microseconds */
+    end_usec_virt = PAPI_get_virt_usec();
+
+    mbedtls_ssl_handshake_proctime += (end_usec_virt - start_usec_virt);
+    mbedtls_ssl_handshake_cycles_virt += (end_cycles_virt - start_cycles_virt);
 
     return( ret );
 }

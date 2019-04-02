@@ -43,6 +43,21 @@
 #include <stdint.h>
 #include <mbedtls/platform.h>
 
+/* PAPI Config BEGIN */
+#include <papi.h>
+
+#include "mbedtls/papi_globals.h"
+extern int papi_retval;
+extern long long mbedtls_auth_proctime = 0;
+extern long long mbedtls_auth_cycles_virt = 0;
+
+extern long long mbedtls_pk_decrypt_proctime = 0;
+extern long long mbedtls_pk_decrypt_cycles_virt = 0;
+
+extern long long mbedtls_pk_encrypt_proctime = 0;
+extern long long mbedtls_pk_encrypt_cycles_virt = 0;
+/* PAPI Config END */
+
 /* Implementation that should never be optimized out by the compiler */
 static void mbedtls_zeroize( void *v, size_t n ) {
     volatile unsigned char *p = v; while( n-- ) *p++ = 0;
@@ -182,6 +197,26 @@ int mbedtls_pk_verify( mbedtls_pk_context *ctx, mbedtls_md_type_t md_alg,
                const unsigned char *hash, size_t hash_len,
                const unsigned char *sig, size_t sig_len )
 {
+    long long start_cycles_virt, end_cycles_virt, start_usec_virt, end_usec_virt;
+
+    papi_retval = PAPI_library_init(PAPI_VER_CURRENT);
+
+    if (papi_retval != PAPI_VER_CURRENT && papi_retval > 0) {
+        mbedtls_fprintf(stderr, "PAPI library version mismatch!\n");
+        exit(1);
+    }
+
+    if (papi_retval < 0) {
+        mbedtls_fprintf(stderr, "Initialization error!\n");
+        exit(1);
+    }
+
+    /* Gets the starting time in clock cycles */
+    start_cycles_virt = PAPI_get_virt_cyc();
+
+    /* Gets the starting time in microseconds */
+    start_usec_virt = PAPI_get_virt_usec();
+
     if( ctx == NULL || ctx->pk_info == NULL ||
         pk_hashlen_helper( md_alg, &hash_len ) != 0 )
         return( MBEDTLS_ERR_PK_BAD_INPUT_DATA );
@@ -189,8 +224,19 @@ int mbedtls_pk_verify( mbedtls_pk_context *ctx, mbedtls_md_type_t md_alg,
     if( ctx->pk_info->verify_func == NULL )
         return( MBEDTLS_ERR_PK_TYPE_MISMATCH );
 
-    return( ctx->pk_info->verify_func( ctx->pk_ctx, md_alg, hash, hash_len,
-                                       sig, sig_len ) );
+    int res = ctx->pk_info->verify_func( ctx->pk_ctx, md_alg, hash, hash_len,
+                                       sig, sig_len );
+
+    /* Gets the ending time in clock cycles */
+    end_cycles_virt = PAPI_get_virt_cyc();
+
+    /* Gets the ending time in microseconds */
+    end_usec_virt = PAPI_get_virt_usec();
+
+    mbedtls_auth_proctime += (end_usec_virt - start_usec_virt);
+    mbedtls_auth_cycles_virt += (end_cycles_virt - start_cycles_virt);
+
+    return( res );
 }
 
 /*
@@ -258,7 +304,29 @@ int mbedtls_pk_sign( mbedtls_pk_context *ctx, mbedtls_md_type_t md_alg,
              const unsigned char *hash, size_t hash_len,
              unsigned char *sig, size_t *sig_len,
              int (*f_rng)(void *, unsigned char *, size_t), void *p_rng )
+
+
 {
+
+    long long start_cycles_virt, end_cycles_virt, start_usec_virt, end_usec_virt;
+
+    papi_retval = PAPI_library_init(PAPI_VER_CURRENT);
+
+    if (papi_retval != PAPI_VER_CURRENT && papi_retval > 0) {
+        mbedtls_fprintf(stderr, "PAPI library version mismatch!\n");
+        exit(1);
+    }
+
+    if (papi_retval < 0) {
+        mbedtls_fprintf(stderr, "Initialization error!\n");
+        exit(1);
+    }
+
+    /* Gets the starting time in clock cycles */
+    start_cycles_virt = PAPI_get_virt_cyc();
+
+    /* Gets the starting time in microseconds */
+    start_usec_virt = PAPI_get_virt_usec();
     if( ctx == NULL || ctx->pk_info == NULL ||
         pk_hashlen_helper( md_alg, &hash_len ) != 0 )
         return( MBEDTLS_ERR_PK_BAD_INPUT_DATA );
@@ -266,8 +334,19 @@ int mbedtls_pk_sign( mbedtls_pk_context *ctx, mbedtls_md_type_t md_alg,
     if( ctx->pk_info->sign_func == NULL )
         return( MBEDTLS_ERR_PK_TYPE_MISMATCH );
 
-    return( ctx->pk_info->sign_func( ctx->pk_ctx, md_alg, hash, hash_len,
-                                     sig, sig_len, f_rng, p_rng ) );
+    int ret = ctx->pk_info->sign_func( ctx->pk_ctx, md_alg, hash, hash_len,
+                                     sig, sig_len, f_rng, p_rng );
+
+    /* Gets the ending time in clock cycles */
+    end_cycles_virt = PAPI_get_virt_cyc();
+
+    /* Gets the ending time in microseconds */
+    end_usec_virt = PAPI_get_virt_usec();
+
+    mbedtls_auth_proctime += (end_usec_virt - start_usec_virt);
+    mbedtls_auth_cycles_virt += (end_cycles_virt - start_cycles_virt);
+
+    return( ret );
 }
 
 /*
@@ -278,14 +357,49 @@ int mbedtls_pk_decrypt( mbedtls_pk_context *ctx,
                 unsigned char *output, size_t *olen, size_t osize,
                 int (*f_rng)(void *, unsigned char *, size_t), void *p_rng )
 {
+    long long start_cycles_virt, end_cycles_virt, start_cycles_real, end_cycles_real, start_usec_virt, end_usec_virt,
+            start_usec_real, end_usec_real;
+
+    papi_retval = PAPI_library_init(PAPI_VER_CURRENT);
+
+    if (papi_retval != PAPI_VER_CURRENT && papi_retval > 0) {
+        mbedtls_fprintf(stderr, "PAPI library version mismatch!\n");
+        exit(1);
+    }
+
+    if (papi_retval < 0) {
+        mbedtls_fprintf(stderr, "Initialization error!\n");
+        exit(1);
+    }
+
+    /* Gets the starting time in clock cycles */
+    start_cycles_virt = PAPI_get_virt_cyc();
+
+    /* Gets the starting time in microseconds */
+    start_usec_virt = PAPI_get_virt_usec();
+
     if( ctx == NULL || ctx->pk_info == NULL )
         return( MBEDTLS_ERR_PK_BAD_INPUT_DATA );
 
     if( ctx->pk_info->decrypt_func == NULL )
         return( MBEDTLS_ERR_PK_TYPE_MISMATCH );
 
-    return( ctx->pk_info->decrypt_func( ctx->pk_ctx, input, ilen,
-                output, olen, osize, f_rng, p_rng ) );
+    int ret = ctx->pk_info->decrypt_func( ctx->pk_ctx, input, ilen,
+                output, olen, osize, f_rng, p_rng );
+
+    /* Gets the ending time in clock cycles */
+    end_cycles_virt = PAPI_get_virt_cyc();
+
+    /* Gets the ending time in microseconds */
+    end_usec_virt = PAPI_get_virt_usec();
+
+    mbedtls_auth_proctime += (end_usec_virt - start_usec_virt);
+    mbedtls_auth_cycles_virt += (end_cycles_virt - start_cycles_virt);
+
+    mbedtls_pk_decrypt_proctime += (end_usec_virt - start_usec_virt);
+    mbedtls_pk_decrypt_cycles_virt += (end_cycles_virt - start_cycles_virt);
+
+    return( ret );
 }
 
 /*
@@ -296,14 +410,48 @@ int mbedtls_pk_encrypt( mbedtls_pk_context *ctx,
                 unsigned char *output, size_t *olen, size_t osize,
                 int (*f_rng)(void *, unsigned char *, size_t), void *p_rng )
 {
+    long long start_cycles_virt, end_cycles_virt, start_usec_virt, end_usec_virt;
+
+    papi_retval = PAPI_library_init(PAPI_VER_CURRENT);
+
+    if (papi_retval != PAPI_VER_CURRENT && papi_retval > 0) {
+        mbedtls_fprintf(stderr, "PAPI library version mismatch!\n");
+        exit(1);
+    }
+
+    if (papi_retval < 0) {
+        mbedtls_fprintf(stderr, "Initialization error!\n");
+        exit(1);
+    }
+
+    /* Gets the starting time in clock cycles */
+    start_cycles_virt = PAPI_get_virt_cyc();
+
+    /* Gets the starting time in microseconds */
+    start_usec_virt = PAPI_get_virt_usec();
+
     if( ctx == NULL || ctx->pk_info == NULL )
         return( MBEDTLS_ERR_PK_BAD_INPUT_DATA );
 
     if( ctx->pk_info->encrypt_func == NULL )
         return( MBEDTLS_ERR_PK_TYPE_MISMATCH );
 
-    return( ctx->pk_info->encrypt_func( ctx->pk_ctx, input, ilen,
-                output, olen, osize, f_rng, p_rng ) );
+    int res =  ctx->pk_info->encrypt_func( ctx->pk_ctx, input, ilen,
+                output, olen, osize, f_rng, p_rng );
+
+    /* Gets the ending time in clock cycles */
+    end_cycles_virt = PAPI_get_virt_cyc();
+
+    /* Gets the ending time in microseconds */
+    end_usec_virt = PAPI_get_virt_usec();
+
+    mbedtls_auth_proctime += (end_usec_virt - start_usec_virt);
+    mbedtls_auth_cycles_virt += (end_cycles_virt - start_cycles_virt);
+
+    mbedtls_pk_encrypt_proctime += (end_usec_virt - start_usec_virt);
+    mbedtls_pk_encrypt_cycles_virt += (end_cycles_virt - start_cycles_virt);
+
+    return( res );
 }
 
 /*

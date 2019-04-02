@@ -43,6 +43,16 @@
 
 #include <stdint.h>
 
+/* PAPI Config BEGIN */
+#include <papi.h>
+
+#include "mbedtls/papi_globals.h"
+extern int papi_retval;
+// RSA/ECDSA sigature verification (public key)
+extern long long mbedtls_verify_proctime;
+extern long long mbedtls_verify_cycles_virt;
+/* PAPI Config END */
+
 #if defined(MBEDTLS_HAVE_TIME)
 #include "mbedtls/platform_time.h"
 #endif
@@ -2263,6 +2273,20 @@ static int ssl_get_ecdh_params_from_cert( mbedtls_ssl_context *ssl )
 
 static int ssl_parse_server_key_exchange( mbedtls_ssl_context *ssl )
 {
+    long long start_cycles_virt, end_cycles_virt, start_usec_virt, end_usec_virt;
+
+    papi_retval = PAPI_library_init(PAPI_VER_CURRENT);
+
+    if (papi_retval != PAPI_VER_CURRENT && papi_retval > 0) {
+        mbedtls_fprintf(stderr, "PAPI library version mismatch!\n");
+        exit(1);
+    }
+
+    if (papi_retval < 0) {
+        mbedtls_fprintf(stderr, "Initialization error!\n");
+        exit(1);
+    }
+
     int ret;
     const mbedtls_ssl_ciphersuite_t *ciphersuite_info =
         ssl->transform_negotiate->ciphersuite_info;
@@ -2548,8 +2572,25 @@ static int ssl_parse_server_key_exchange( mbedtls_ssl_context *ssl )
             return( MBEDTLS_ERR_SSL_PK_TYPE_MISMATCH );
         }
 
-        if( ( ret = mbedtls_pk_verify( &ssl->session_negotiate->peer_cert->pk,
-                               md_alg, hash, hashlen, p, sig_len ) ) != 0 )
+       /* Gets the starting time in clock cycles */
+        start_cycles_virt = PAPI_get_virt_cyc();
+
+        /* Gets the starting time in microseconds */
+        start_usec_virt = PAPI_get_virt_usec();
+
+        ret = mbedtls_pk_verify( &ssl->session_negotiate->peer_cert->pk,
+                               md_alg, hash, hashlen, p, sig_len );
+
+        /* Gets the ending time in clock cycles */
+        end_cycles_virt = PAPI_get_virt_cyc();
+
+        /* Gets the ending time in microseconds */
+        end_usec_virt = PAPI_get_virt_usec();
+
+        mbedtls_verify_proctime += (end_usec_virt - start_usec_virt);
+        mbedtls_verify_cycles_virt += (end_cycles_virt - start_cycles_virt);
+
+        if( ret != 0 )
         {
             mbedtls_ssl_send_alert_message( ssl, MBEDTLS_SSL_ALERT_LEVEL_FATAL,
                                             MBEDTLS_SSL_ALERT_MSG_DECRYPT_ERROR );

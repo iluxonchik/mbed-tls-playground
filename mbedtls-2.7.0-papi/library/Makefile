@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/44/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/54/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/44/bin/cmake/linux/bin/cmake -E remove -f
+RM = /snap/clion/54/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/clion/44/bin/cmake/linux/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/clion/54/bin/cmake/linux/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/snap/clion/44/bin/cmake/linux/bin/ctest --force-new-ctest-process $(ARGS)
+	/snap/clion/54/bin/cmake/linux/bin/ctest --force-new-ctest-process $(ARGS)
 .PHONY : test
 
 # Special rule for the target test
@@ -81,7 +81,7 @@ test/fast: test
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/snap/clion/44/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/snap/clion/54/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -92,13 +92,13 @@ edit_cache/fast: edit_cache
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/snap/clion/44/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/snap/clion/54/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
 install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/snap/clion/44/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/snap/clion/54/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
 # Special rule for the target list_install_components
@@ -114,25 +114,25 @@ list_install_components/fast: list_install_components
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/snap/clion/44/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+	/snap/clion/54/bin/cmake/linux/bin/cmake -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/snap/clion/44/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+	/snap/clion/54/bin/cmake/linux/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/snap/clion/44/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/snap/clion/54/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
 install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/snap/clion/44/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/snap/clion/54/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
 # The main all target
@@ -1253,6 +1253,33 @@ padlock.c.s:
 	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0-papi && $(MAKE) -f library/CMakeFiles/mbedcrypto.dir/build.make library/CMakeFiles/mbedcrypto.dir/padlock.c.s
 .PHONY : padlock.c.s
 
+papi_globals.o: papi_globals.c.o
+
+.PHONY : papi_globals.o
+
+# target to build an object file
+papi_globals.c.o:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0-papi && $(MAKE) -f library/CMakeFiles/mbedcrypto.dir/build.make library/CMakeFiles/mbedcrypto.dir/papi_globals.c.o
+.PHONY : papi_globals.c.o
+
+papi_globals.i: papi_globals.c.i
+
+.PHONY : papi_globals.i
+
+# target to preprocess a source file
+papi_globals.c.i:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0-papi && $(MAKE) -f library/CMakeFiles/mbedcrypto.dir/build.make library/CMakeFiles/mbedcrypto.dir/papi_globals.c.i
+.PHONY : papi_globals.c.i
+
+papi_globals.s: papi_globals.c.s
+
+.PHONY : papi_globals.s
+
+# target to generate assembly for a file
+papi_globals.c.s:
+	cd /home/iluxonchik/Documents/GitHub/mbed-tls-playground/mbedtls-2.7.0-papi && $(MAKE) -f library/CMakeFiles/mbedcrypto.dir/build.make library/CMakeFiles/mbedcrypto.dir/papi_globals.c.s
+.PHONY : papi_globals.c.s
+
 pem.o: pem.c.o
 
 .PHONY : pem.o
@@ -2329,6 +2356,9 @@ help:
 	@echo "... padlock.o"
 	@echo "... padlock.i"
 	@echo "... padlock.s"
+	@echo "... papi_globals.o"
+	@echo "... papi_globals.i"
+	@echo "... papi_globals.s"
 	@echo "... pem.o"
 	@echo "... pem.i"
 	@echo "... pem.s"

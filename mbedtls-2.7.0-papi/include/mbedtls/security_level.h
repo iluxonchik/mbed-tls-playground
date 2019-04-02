@@ -32,8 +32,8 @@
 
  */
 
-#define USE_RSA_1024
-//#define USE_RSA_2048
+//#define USE_RSA_1024
+#define USE_RSA_2048
 //#define USE_RSA_4092
 //#define USE_RSA_8192
 

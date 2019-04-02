@@ -41,6 +41,18 @@
 
 #include <string.h>
 
+/* PAPI Config BEGIN */
+#include <papi.h>
+
+#include "mbedtls/papi_globals.h"
+extern int papi_retval;
+
+// RSA/ECDSA signature creation (private key)
+extern long long mbedtls_sign_proctime;
+extern long long mbedtls_sign_cycles_virt;
+
+/* PAPI Config END */
+
 #if defined(MBEDTLS_ECP_C)
 #include "mbedtls/ecp.h"
 #endif
@@ -2836,6 +2848,21 @@ static int ssl_get_ecdh_params_from_cert( mbedtls_ssl_context *ssl )
 
 static int ssl_write_server_key_exchange( mbedtls_ssl_context *ssl )
 {
+
+    long long start_cycles_virt, end_cycles_virt, start_usec_virt, end_usec_virt;
+
+    papi_retval = PAPI_library_init(PAPI_VER_CURRENT);
+
+    if (papi_retval != PAPI_VER_CURRENT && papi_retval > 0) {
+        mbedtls_fprintf(stderr, "PAPI library version mismatch!\n");
+        exit(1);
+    }
+
+    if (papi_retval < 0) {
+        mbedtls_fprintf(stderr, "Initialization error!\n");
+        exit(1);
+    }
+
     int ret;
     size_t n = 0;
     const mbedtls_ssl_ciphersuite_t *ciphersuite_info =
@@ -3175,8 +3202,25 @@ curve_matching_done:
         }
 #endif /* MBEDTLS_SSL_PROTO_TLS1_2 */
 
-        if( ( ret = mbedtls_pk_sign( mbedtls_ssl_own_key( ssl ), md_alg, hash, hashlen,
-                        p + 2 , &signature_len, ssl->conf->f_rng, ssl->conf->p_rng ) ) != 0 )
+        /* Gets the starting time in clock cycles */
+        start_cycles_virt = PAPI_get_virt_cyc();
+
+        /* Gets the starting time in microseconds */
+        start_usec_virt = PAPI_get_virt_usec();
+
+        ret = mbedtls_pk_sign( mbedtls_ssl_own_key( ssl ), md_alg, hash, hashlen,
+                        p + 2 , &signature_len, ssl->conf->f_rng, ssl->conf->p_rng );
+
+        /* Gets the ending time in clock cycles */
+        end_cycles_virt = PAPI_get_virt_cyc();
+
+        /* Gets the ending time in microseconds */
+        end_usec_virt = PAPI_get_virt_usec();
+
+        mbedtls_sign_proctime += (end_usec_virt - start_usec_virt);
+        mbedtls_sign_cycles_virt += (end_cycles_virt - start_cycles_virt);
+
+        if( ret != 0 )
         {
             MBEDTLS_SSL_DEBUG_RET( 1, "mbedtls_pk_sign", ret );
             return( ret );

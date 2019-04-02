@@ -35,6 +35,7 @@ int main( void )
 #include <stdlib.h>
 #include <string.h>
 #include <mbedtls/dhm.h>
+#include <mbedtls/papi_globals.h>
 
 #if defined(_WIN32)
 #include <windows.h>
@@ -638,6 +639,7 @@ int main( int argc, char** argv )
 
     ret = 0;
     mbedtls_printf("Terminating server...\n");
+    print_stats();
     goto exit;
 
     exit:

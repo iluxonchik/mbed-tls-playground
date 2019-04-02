@@ -3,7 +3,7 @@
 scale = 14
 a = 1/3
 b = 2/3
-#print "RSA Key Length? "
+print "RSA Key Length? "
 c = read()
 
 t = l( l(2 ^ c) )
